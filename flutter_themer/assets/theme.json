@@ -1,7 +1,8 @@
 {
     "scaffold_background_color": "#FF018A2C",
-    "app_bar_elevation": 0.0,
+    "app_bar_elevation": "0.0",
     "app_bar_color": "#FFFFFFFF",
     "app_bar_background_color": "#FF0645B1",
-    "text_color": "#FFFCDE02"
+    "text_color": "#FFFCDE02",
+    "center_title": "true"
 }

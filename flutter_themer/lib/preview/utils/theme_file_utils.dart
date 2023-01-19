@@ -10,11 +10,11 @@ class ThemeFileUtils {
         customTheme['scaffold_background_color'],
       ),
       appBarTheme: AppBarTheme(
-        elevation: customTheme['app_bar_elevation'],
+        elevation: double.parse(customTheme['app_bar_elevation']),
         backgroundColor: HexColor(
           customTheme['app_bar_background_color'],
         ),
-        centerTitle: true,
+        centerTitle: (customTheme['center_title'] as String).parseBool(),
         iconTheme: const IconThemeData(
           color: Colors.white,
           size: 18,

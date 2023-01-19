@@ -1,5 +1,18 @@
 import 'package:flutter_themer/exports/exports.dart';
 
+import 'dart:async' show Future;
+
+import 'package:flutter_themer/models/theme_ui_model.dart';
+
+Future<String> loadThemeUIModelFromFile() async {
+  return await rootBundle.loadString('assets/theme_configuration.json');
+}
+
+Future<List<ThemeUiModel>> loadThemeUIModelList() async {
+  String json = await rootBundle.loadString('assets/theme_configuration.json');
+  return themeUiModelFromJson(json);
+}
+
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
   return directory.path;

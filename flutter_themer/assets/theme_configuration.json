@@ -1,0 +1,57 @@
+[
+    {
+        "title_type": "main",
+        "title": "Scaffold",
+        "key": "scaffold",
+        "value": "",
+        "value_type": "string",
+        "input": "color",
+        "type": "color"
+    },
+    {
+        "title_type": "sub",
+        "title": "Background Color",
+        "key": "scaffold_background_color",
+        "value": "",
+        "value_type": "double",
+        "input": "color",
+        "type": "color"
+    },
+    {
+        "title_type": "main",
+        "title": "AppBar",
+        "key": "appbar",
+        "value": "",
+        "value_type": "string",
+        "input": "color",
+        "type": "color"
+    },
+    {
+        "title_type": "sub",
+        "title": "Elevation",
+        "key": "app_bar_elevation",
+        "value": "0.0",
+        "value_type": "string",
+        "input": "text_field",
+        "type": "color"
+    },
+    {
+        "title_type": "sub",
+        "title": "Background Color",
+        "key": "app_bar_background_color",
+        "value": "#FF0645B1",
+        "value_type": "string",
+        "input": "color",
+        "type": "color"
+    },
+    {
+        "title_type": "sub",
+        "title": "Center Title",
+        "key": "center_title",
+        "value": "true",
+        "value_type": "bool",
+        "input": "switch",
+        "type": "bool"
+    }
+
+]

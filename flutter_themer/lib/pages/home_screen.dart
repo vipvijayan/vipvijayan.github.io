@@ -9,6 +9,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(appTitle),
+        actions: [
+          IconButton(
+            onPressed: () async {
+              openThemeGeneratedScreen();
+            },
+            icon: const Icon(Icons.start),
+          ),
+          const SizedBox(width: 20),
+        ],
       ),
       body: Row(
         children: [

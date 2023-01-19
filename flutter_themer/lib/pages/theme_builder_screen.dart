@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_themer/exports/exports.dart';
 import 'package:flutter_themer/widgets/color_selector.dart';
 
@@ -7,75 +9,90 @@ class ThemeBuilderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<PreviewAppState>();
     return Material(
       child: ParentContainer(
         child: Column(
           children: [
             Expanded(
-              child: ListView(
-                children: [
-                  const MainTitle(title: 'Scaffold'),
-                  _row(
-                    context,
-                    'Background Color:',
-                    'scaffold_background_color',
-                  ),
-                  const Divider(),
-                  const SubTitle(title: 'Elevation'),
-                  TextFormField(
-                    keyboardType: const TextInputType.numberWithOptions(
-                      decimal: true,
-                    ),
-                    onChanged: (elevation) async {
-                      if (elevation.isEmpty) {
-                        elevation = '0.0';
-                      }
-                      final state = context.read<PreviewAppState>();
-                      state.addToTheme(
-                        'app_bar_elevation',
-                        double.parse(elevation),
-                      );
-                      state.setPreviewTheme();
-                    },
-                  ),
-                  const SizedBox(height: 10),
-                  const Divider(),
-                  const SizedBox(height: 10),
-                  const MainTitle(title: 'AppBar'),
-                  _row(
-                    context,
-                    'AppBar Background Color:',
-                    'app_bar_background_color',
-                  ),
-                ],
+              child: ListView.builder(
+                itemCount: state.themeUIModelList.length,
+                itemBuilder: (context, index) {
+                  final uiModel = state.themeUIModelList[index];
+                  if (uiModel.titleType == 'main') {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MainTitle(title: uiModel.title),
+                        const Divider(color: Colors.white60, thickness: 0.1),
+                        const SizedBox(height: 5),
+                      ],
+                    );
+                  }
+                  if (uiModel.titleType == "sub") {
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SubTitle(title: uiModel.title),
+                          if (uiModel.input == 'text_field') ...[
+                            TextFormField(
+                              keyboardType: TextInputType.numberWithOptions(
+                                decimal: uiModel.valueType == 'double',
+                              ),
+                              onFieldSubmitted: (val) async {
+                                final state = context.read<PreviewAppState>();
+                                if (uiModel.valueType == 'double') {
+                                  if (val.isEmpty) {
+                                    val = '0.0';
+                                  }
+                                }
+                                state.addToTheme(
+                                  uiModel.key,
+                                  val,
+                                );
+                                state.setPreviewTheme();
+                              },
+                            ),
+                            const SizedBox(height: 20),
+                          ],
+                          if (uiModel.input == 'switch') ...[
+                            Switch(
+                              value: (state.customTheme[uiModel.key] as String)
+                                  .parseBool(),
+                              onChanged: (val) async {
+                                final state = context.read<PreviewAppState>();
+                                state.addToTheme(uiModel.key, val.toString());
+                                state.setPreviewTheme();
+                              },
+                            ),
+                            const SizedBox(height: 20),
+                          ],
+                          if (uiModel.input == 'color') ...[
+                            const SizedBox(height: 10),
+                            ColorSelector(
+                              color: HexColor(state.customTheme[uiModel.key]),
+                              propertyKey: state.customTheme[uiModel.key],
+                              onTap: (Color color) {
+                                final state = context.read<PreviewAppState>();
+                                state.addToTheme(uiModel.key, colorHex(color));
+                                state.setPreviewTheme();
+                              },
+                            ),
+                            const SizedBox(height: 20),
+                          ]
+                        ],
+                      ),
+                    );
+                  }
+                  return Container();
+                },
               ),
             ),
           ],
         ),
       ),
-    );
-  }
-
-  _row(BuildContext context, String title, String key) {
-    final value = context.watch<PreviewAppState>().customTheme[key];
-    logD('Key: $key, value: $value');
-    if (null == value) {
-      return const SizedBox.shrink();
-    }
-    return Row(
-      children: [
-        SubTitle(title: title),
-        const SizedBox(width: 10),
-        ColorSelector(
-          color: HexColor(value),
-          propertyKey: key,
-          onTap: (Color color) {
-            final state = context.read<PreviewAppState>();
-            state.addToTheme(key, colorHex(color));
-            state.setPreviewTheme();
-          },
-        ),
-      ],
     );
   }
 }

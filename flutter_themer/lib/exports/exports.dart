@@ -33,3 +33,5 @@ export 'package:flutter_themer/widgets/title.dart';
 export 'package:flutter_themer/preview/utils/theme_file_utils.dart';
 export 'package:flutter_colorpicker/flutter_colorpicker.dart';
 export 'package:flutter_themer/preview/utils/utils.dart';
+export 'package:flutter_themer/utils/nav_utils.dart';
+export 'package:flutter_themer/preview/utils/extension/extensions.dart';

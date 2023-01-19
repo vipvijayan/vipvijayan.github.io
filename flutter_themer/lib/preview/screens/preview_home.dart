@@ -10,6 +10,7 @@ class PreviewHomeScreen extends StatelessWidget {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
+          title: const Text('Title'),
           bottom: const TabBar(
             tabs: [
               Tab(icon: Icon(Icons.directions_car)),
