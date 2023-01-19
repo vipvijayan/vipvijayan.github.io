@@ -1,6 +1,7 @@
 {
-    "scaffold_background_color": "0xFF018A2C",
-    "app_bar_color": "0xFFFFFFFF",
-    "primary_color": "0xFF0645B1",
-    "text_color": "0xFFFCDE02"
-  }
+    "scaffold_background_color": "#FF018A2C",
+    "app_bar_elevation": 0.0,
+    "app_bar_color": "#FFFFFFFF",
+    "app_bar_background_color": "#FF0645B1",
+    "text_color": "#FFFCDE02"
+}

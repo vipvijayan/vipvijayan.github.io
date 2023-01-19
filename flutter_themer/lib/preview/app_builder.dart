@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_themer/preview/utils/file_utils.dart';
+import 'package:flutter_themer/preview/utils/theme_file_utils.dart';
 
 class AppBuilder extends StatefulWidget {
   const AppBuilder({
@@ -24,11 +24,13 @@ class AppBuilderState extends State<AppBuilder> {
   @override
   void initState() {
     super.initState();
-    initThemeData();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      initThemeData();
+    });
   }
 
   initThemeData() async {
-    themeData = await initializeThemeData();
+    // themeData = await ThemeFileUtils.initializeThemeData();
     setState(() {});
   }
 

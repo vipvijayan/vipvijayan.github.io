@@ -1,37 +1,24 @@
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:flutter_themer/preview/preview_app.dart';
-import 'package:flutter_themer/widgets/parent_container.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final previewAppState = context.watch<PreviewAppState>();
     return Scaffold(
       appBar: AppBar(
         title: const Text(appTitle),
       ),
-      body: ParentContainer(
-        child: Row(
-          children: [
-            Expanded(
-              child: Container(
-                color: Colors.grey,
-                child: Column(),
-              ),
+      body: Row(
+        children: [
+          const Expanded(child: ThemeBuilderScreen()),
+          Expanded(
+            child: PreviewApp(
+              themeData: previewAppState.curThemeData,
             ),
-            Expanded(
-              child: Container(
-                color: Colors.green,
-                child: Column(
-                  children: const [
-                    Expanded(child: PreviewApp()),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

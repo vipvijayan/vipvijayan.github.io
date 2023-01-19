@@ -5,9 +5,19 @@ class PreviewHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Text('Preview'),
+    return DefaultTabController(
+      length: 3,
+      initialIndex: 0,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.directions_bike)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
+        ),
       ),
     );
   }
