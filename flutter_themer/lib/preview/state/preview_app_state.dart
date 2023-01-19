@@ -1,5 +1,5 @@
 import 'package:flutter_themer/exports/exports.dart';
 
-void main() async {
-  runApp(const App());
+class PreviewAppState extends ChangeNotifier {
+  //
 }
