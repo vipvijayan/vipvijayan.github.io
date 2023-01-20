@@ -1,13 +1,11 @@
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:flutter_themer/models/theme_ui_model.dart';
-import 'package:flutter_themer/preview/utils/file_utils.dart';
-import 'package:flutter_themer/utils/nav_utils.dart';
 
 class PreviewAppState extends ChangeNotifier {
   //
   ThemeData curThemeData = ThemeData.light();
   Map<String, dynamic> customTheme = <String, dynamic>{};
   List<ThemeUiModel> themeUIModelList = [];
+  String themeGeneratedHtml = '';
 
   init() async {
     String jsonData = await rootBundle.loadString('assets/theme.json');
@@ -29,5 +27,13 @@ class PreviewAppState extends ChangeNotifier {
 
   addToTheme(String key, dynamic value) {
     customTheme.addAll({key: value});
+  }
+
+  generateHtml() async {
+    themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
+      customTheme,
+      themeUIModelList,
+    );
+    notifyListeners();
   }
 }

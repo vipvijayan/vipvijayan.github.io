@@ -35,3 +35,7 @@ export 'package:flutter_colorpicker/flutter_colorpicker.dart';
 export 'package:flutter_themer/preview/utils/utils.dart';
 export 'package:flutter_themer/utils/nav_utils.dart';
 export 'package:flutter_themer/preview/utils/extension/extensions.dart';
+
+export 'package:flutter_themer/preview/utils/file_utils.dart';
+export 'package:flutter_themer/models/theme_ui_model.dart';
+export 'package:flutter_themer/widgets/color_selector.dart';

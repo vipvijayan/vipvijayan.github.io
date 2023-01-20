@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_themer/exports/exports.dart';
 
 class ThemeFileUtils {
@@ -26,14 +28,33 @@ class ThemeFileUtils {
         ),
       ),
       textTheme: TextTheme(
+        bodyText1: TextStyle(
+          fontSize: 24,
+          color: HexColor(customTheme['text_theme_body_text_1_color']),
+        ),
         bodyText2: TextStyle(
           fontSize: 24,
-          color: HexColor(customTheme['text_color']),
+          color: HexColor(customTheme['text_theme_body_text_2_color']),
         ),
       ),
       extensions: <ThemeExtension<dynamic>>[
         MyColors.light,
       ],
     );
+  }
+
+  static Future<String> generateThemeTxt(
+    Map<String, dynamic> customTheme,
+    List<ThemeUiModel> themeUIModelList,
+  ) async {
+    var themeHtml = await loadThemeTxt();
+    for (final themeUIModel in themeUIModelList) {
+      if (null != customTheme[themeUIModel.key]) {
+        log('Replacing:: themeUIModel.key: ${themeUIModel.key}, customTheme[themeUIModel.key]: ${customTheme[themeUIModel.key]}');
+        themeHtml = themeHtml.replaceAll(
+            "'${themeUIModel.key}'", customTheme[themeUIModel.key]);
+      }
+    }
+    return themeHtml;
   }
 }

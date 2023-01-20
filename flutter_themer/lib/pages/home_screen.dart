@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             onPressed: () async {
               openThemeGeneratedScreen();
+              previewAppState.generateHtml();
             },
             icon: const Icon(Icons.start),
           ),

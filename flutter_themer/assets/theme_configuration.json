@@ -52,6 +52,33 @@
         "value_type": "bool",
         "input": "switch",
         "type": "bool"
+    },
+    {
+        "title_type": "main",
+        "title": "Text Theme",
+        "key": "text_theme",
+        "value": "",
+        "value_type": "string",
+        "input": "color",
+        "type": "color"
+    },
+    {
+        "title_type": "sub",
+        "title": "Body Text 1",
+        "key": "text_theme_body_text_1_color",
+        "value": "#FFFFFFFF",
+        "value_type": "string",
+        "input": "color",
+        "type": "color"
+    },
+    {
+        "title_type": "sub",
+        "title": "Body Text 2",
+        "key": "text_theme_body_text_2_color",
+        "value": "#FFFFFFFF",
+        "value_type": "string",
+        "input": "color",
+        "type": "color"
     }
 
 ]

@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:flutter_themer/widgets/color_selector.dart';
 
 class ThemeBuilderScreen extends StatelessWidget {
   //
