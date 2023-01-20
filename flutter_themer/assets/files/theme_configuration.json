@@ -1,0 +1,273 @@
+[
+    {
+        "id": 1,
+        "title": "Scaffold",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 1,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+             {
+                "id": 0,
+                "title": "Primary Color",
+                "key": "primary_color",
+                "value": "#FF0645B1",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 1,
+                "title": "Background Color",
+                "key": "scaffold_background_color",
+                "value": "#FF0645B1",
+                "value_type": "string",
+                "input": "color"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "AppBar",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 2,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+             {
+                "id": 0,
+                "title": "Elevation",
+                "key": "app_bar_elevation",
+                "value": "0.0",
+                "value_type": "string",
+                "input": "text_field"
+            },
+            {
+                "id": 2,
+                "title": "Center Title",
+                "key": "center_title",
+                "value": "true",
+                "value_type": "bool",
+                "input": "switch"
+            },
+            {
+                "id": 3,
+                "title": "Background Color",
+                "key": "app_bar_background_color",
+                "value": "#FF0645B1",
+                "value_type": "string",
+                "input": "color"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Icon",
+        "main_title": false,
+        "items": [
+             {
+                "id": 0,
+                "title": "Icon Size",
+                "key": "app_bar_icon_size",
+                "value": "0.0",
+                "value_type": "string",
+                "input": "text_field"
+            },
+            {
+                "id": 2,
+                "title": "Icon Color",
+                "key": "app_bar_icon_color",
+                "value": "#FF0645B1",
+                "value_type": "string",
+                "input": "color"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Text",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 2,
+        "title": "Body Large",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Color",
+                "key": "text_theme_body_large_text_color",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Size",
+                "key": "text_theme_body_large_text_size",
+                "value": "24",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Body Medium",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Color",
+                "key": "text_theme_body_medium_text_color",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Size",
+                "key": "text_theme_body_medium_text_size",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Body Small",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Color",
+                "key": "text_theme_body_small_text_color",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Size",
+                "key": "text_theme_body_small_text_size",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Title Large",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Color",
+                "key": "text_theme_title_large_text_color",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Size",
+                "key": "text_theme_title_large_text_size",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Title Medium",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Color",
+                "key": "text_theme_title_medium_text_color",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Size",
+                "key": "text_theme_title_medium_text_size",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Title Small",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Color",
+                "key": "text_theme_title_small_text_color",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Size",
+                "key": "text_theme_title_small_text_size",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Card",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 7,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Background Color",
+                "key": "card_background_color",
+                "value": "#FFF2F2F2",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Shadow Color",
+                "key": "card_shadow_color",
+                "value": "#FFF2F2F2",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 3,
+                "title": "Elevation",
+                "key": "card_elevation",
+                "value": "3",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    }
+
+]

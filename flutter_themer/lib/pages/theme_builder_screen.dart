@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/widgets/num_stepper.dart';
 
 class ThemeBuilderScreen extends StatelessWidget {
   //
@@ -12,78 +15,99 @@ class ThemeBuilderScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              child: ListView.builder(
+              child: ListView.separated(
+                addAutomaticKeepAlives: true,
+                separatorBuilder: (context, index) => const Divider(
+                  indent: 15,
+                  endIndent: 0,
+                  height: 10,
+                ),
                 itemCount: state.themeUIModelList.length,
                 itemBuilder: (context, index) {
                   final uiModel = state.themeUIModelList[index];
-                  if (uiModel.titleType == 'main') {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        MainTitle(title: uiModel.title),
-                        const Divider(color: Colors.white60, thickness: 0.1),
-                        const SizedBox(height: 5),
-                      ],
-                    );
-                  }
-                  if (uiModel.titleType == "sub") {
-                    return Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SubTitle(title: uiModel.title),
-                          if (uiModel.input == 'text_field') ...[
-                            TextFormField(
-                              keyboardType: TextInputType.numberWithOptions(
-                                decimal: uiModel.valueType == 'double',
-                              ),
-                              onFieldSubmitted: (val) async {
-                                final state = context.read<PreviewAppState>();
-                                if (uiModel.valueType == 'double') {
-                                  if (val.isEmpty) {
-                                    val = '0.0';
-                                  }
-                                }
-                                state.addToTheme(
-                                  uiModel.key,
-                                  val,
-                                );
-                                state.setPreviewTheme();
-                              },
-                            ),
-                            const SizedBox(height: 20),
-                          ],
-                          if (uiModel.input == 'switch') ...[
-                            Switch(
-                              value: (state.customTheme[uiModel.key] as String)
-                                  .parseBool(),
-                              onChanged: (val) async {
-                                final state = context.read<PreviewAppState>();
-                                state.addToTheme(uiModel.key, val.toString());
-                                state.setPreviewTheme();
-                              },
-                            ),
-                            const SizedBox(height: 20),
-                          ],
-                          if (uiModel.input == 'color') ...[
-                            const SizedBox(height: 10),
-                            ColorSelector(
-                              color: HexColor(state.customTheme[uiModel.key]),
-                              propertyKey: state.customTheme[uiModel.key],
-                              onTap: (Color color) {
-                                final state = context.read<PreviewAppState>();
-                                state.addToTheme(uiModel.key, colorHex(color));
-                                state.setPreviewTheme();
-                              },
-                            ),
-                            const SizedBox(height: 20),
-                          ]
-                        ],
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(
+                            uiModel.mainTitle ? 20 : 40, 5, 20, 0),
+                        child: MainTitle(
+                          title: uiModel.title,
+                          fontSize: uiModel.mainTitle ? 24 : null,
+                        ),
                       ),
-                    );
-                  }
-                  return Container();
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(40, 5, 20, 0),
+                        child: Wrap(
+                          runSpacing: 10,
+                          spacing: 30,
+                          children: uiModel.items.map((uiChild) {
+                            if (uiChild.input == 'color') {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SubTitle(title: uiChild.title),
+                                  ColorSelector(
+                                    color: HexColor(
+                                        state.customTheme[uiChild.key]),
+                                    propertyKey: state.customTheme[uiChild.key],
+                                    onTap: (Color color) {
+                                      state.addToTheme(
+                                          uiChild.key, colorHex(color));
+                                      unawaited(state.setPreviewTheme());
+                                    },
+                                  ),
+                                  const SizedBox(height: 20),
+                                ],
+                              );
+                            }
+                            if (uiChild.input == 'text_field') {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SubTitle(title: uiChild.title),
+                                  NumericStepButton(
+                                    defaultCounter: double.parse(
+                                      state.customTheme[uiChild.key],
+                                    ).toInt(),
+                                    maxValue: 50,
+                                    minValue: 0,
+                                    onChanged: (int val) {
+                                      state.addToTheme(
+                                          uiChild.key, val.toString());
+                                      unawaited(state.setPreviewTheme());
+                                    },
+                                  ),
+                                  const SizedBox(height: 20),
+                                ],
+                              );
+                            }
+                            if (uiChild.input == 'switch') {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SubTitle(title: uiChild.title),
+                                  Switch(
+                                    value: (state.customTheme[uiChild.key]
+                                            as String)
+                                        .parseBool(),
+                                    onChanged: (val) async {
+                                      state.addToTheme(
+                                          uiChild.key, val.toString());
+                                      unawaited(state.setPreviewTheme());
+                                    },
+                                  ),
+                                  const SizedBox(height: 20),
+                                ],
+                              );
+                            } else {
+                              return const SizedBox.shrink();
+                            }
+                          }).toList(),
+                        ),
+                      ),
+                    ],
+                  );
                 },
               ),
             ),

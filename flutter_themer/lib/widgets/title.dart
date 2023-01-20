@@ -14,7 +14,10 @@ class SubTitle extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: Text(
         title,
-        style: Theme.of(context).textTheme.titleSmall,
+        style: Theme.of(context)
+            .textTheme
+            .titleSmall
+            ?.copyWith(color: Colors.grey),
       ),
     );
   }

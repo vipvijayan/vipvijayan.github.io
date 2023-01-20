@@ -6,6 +6,10 @@ const letterSpacing = 1.1;
 const transition = PageTransitionsTheme(builders: {
   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
   TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+  TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
+  TargetPlatform.fuchsia: CupertinoPageTransitionsBuilder(),
+  TargetPlatform.windows: CupertinoPageTransitionsBuilder(),
+  TargetPlatform.linux: CupertinoPageTransitionsBuilder(),
 });
 
 class AppTheme {
@@ -96,7 +100,7 @@ class AppTheme {
     dividerTheme: DividerThemeData(
       indent: 20,
       endIndent: 25,
-      thickness: 0.1,
+      thickness: 0.05,
       color: Colors.grey,
     ),
     iconTheme: IconThemeData(

@@ -8,7 +8,7 @@ class PreviewAppState extends ChangeNotifier {
   String themeGeneratedHtml = '';
 
   init() async {
-    String jsonData = await rootBundle.loadString('assets/theme.json');
+    String jsonData = await loadDefaultThemeValuesFile();
     if (customTheme.keys.isEmpty) {
       logD('Custom Theme is Empty. Initializing with Default values');
       customTheme = jsonDecode(jsonData);
@@ -20,7 +20,7 @@ class PreviewAppState extends ChangeNotifier {
     });
   }
 
-  setPreviewTheme() async {
+  Future<void> setPreviewTheme() async {
     curThemeData = await ThemeFileUtils.initializeThemeData(customTheme);
     notifyListeners();
   }
@@ -29,7 +29,7 @@ class PreviewAppState extends ChangeNotifier {
     customTheme.addAll({key: value});
   }
 
-  generateHtml() async {
+  Future<void> generateHtml() async {
     themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
       customTheme,
       themeUIModelList,

@@ -10,7 +10,9 @@ class GeneratedThemeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final previewAppState = context.watch<PreviewAppState>();
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Generated Theme'),
+      ),
       body: ParentContainer(
         child: SingleChildScrollView(
           child: Html(data: previewAppState.themeGeneratedHtml),
