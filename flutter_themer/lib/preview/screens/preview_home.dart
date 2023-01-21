@@ -7,6 +7,7 @@ class PreviewHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       type: MaterialType.transparency,
+      // color: HexColor('#28282B'),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -17,16 +18,33 @@ class PreviewHomeScreen extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
+                  Positioned(
+                    top: 25,
+                    left: 25,
+                    child: Container(
+                      height: 90,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.horizontal(
+                          left: Radius.circular(30),
+                          right: Radius.circular(30),
+                        ),
+                        color: Theme.of(context).appBarTheme.backgroundColor,
+                      ),
+                      width: 440,
+                    ),
+                  ),
                   Container(
-                    margin: const EdgeInsets.only(top: 45),
-                    height: 880,
-                    width: 430,
+                    margin: const EdgeInsets.only(top: 90),
+                    height: 900,
+                    width: 440,
                     child: DefaultTabController(
                       length: 3,
                       initialIndex: 0,
                       child: Scaffold(
                         appBar: AppBar(
-                          title: const Text('Title'),
+                          title: const Text(
+                            'Preview',
+                          ),
                           actions: const [
                             Icon(Icons.settings),
                             SizedBox(width: 20),
@@ -41,7 +59,7 @@ class PreviewHomeScreen extends StatelessWidget {
                                 text: 'Buttons',
                               ),
                               Tab(
-                                text: 'Tab 3',
+                                text: 'Cards',
                               ),
                             ],
                           ),
@@ -49,26 +67,17 @@ class PreviewHomeScreen extends StatelessWidget {
                         body: const TabBarView(
                           children: [
                             DemoTab(),
-                            DemoTab(),
-                            DemoTab(),
+                            ButtonTab(),
+                            CardTab(),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  Positioned(
-                    top: 30,
-                    left: 40,
-                    child: Container(
-                      height: 50,
-                      color: Theme.of(context).appBarTheme.backgroundColor,
-                      width: 430,
-                    ),
-                  ),
                   IgnorePointer(
                     ignoring: true,
                     child: Image.asset(
-                      'assets/images/iphone_14.png',
+                      'assets/images/iphone_14_1.png',
                       filterQuality: FilterQuality.high,
                       alignment: Alignment.center,
                     ),
@@ -97,43 +106,83 @@ class DemoTab extends StatelessWidget {
             'Body Large',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
-          const SizedBox(height: 20),
+          const Divider(height: 30),
           Text(
             'Body Medium',
             style: Theme.of(context).textTheme.bodyMedium,
           ),
-          const SizedBox(height: 20),
+          const Divider(height: 20),
           Text(
             'Body Small',
             style: Theme.of(context).textTheme.bodySmall,
           ),
-          const SizedBox(height: 20),
+          const Divider(height: 20),
           Text(
             'Title Large',
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          const SizedBox(height: 20),
+          const Divider(height: 20),
           Text(
             'Title Medium',
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          const SizedBox(height: 20),
+          const Divider(height: 20),
           Text(
             'Title Small',
             style: Theme.of(context).textTheme.titleSmall,
           ),
-          const SizedBox(height: 20),
-          const Card(
-            child: ListTile(
-              title: Text('Hello'),
-              subtitle: Text('Flutter'),
-            ),
-          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ButtonTab extends StatelessWidget {
+  const ButtonTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
           TextButton(
             onPressed: () async {
               //
             },
-            child: const Text('Tap Me'),
+            child: const Text('Text Button'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CardTab extends StatelessWidget {
+  const CardTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Card(
+            child: ListTile(
+              dense: false,
+              leading: Icon(Icons.favorite_border),
+              contentPadding: EdgeInsets.all(20),
+              iconColor: Colors.white,
+              textColor: Colors.white,
+              title: Text(
+                'Hello',
+              ),
+              subtitle: Text(
+                'Flutter',
+              ),
+            ),
           ),
         ],
       ),

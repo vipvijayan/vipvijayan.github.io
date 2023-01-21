@@ -125,6 +125,13 @@ class ThemeFileUtils {
           ),
         ),
       ),
+      snackBarTheme: SnackBarThemeData(
+        backgroundColor: Colors.white,
+        elevation: 3,
+        contentTextStyle: TextStyle(
+          color: Colors.white,
+        ),
+      ),
       extensions: <ThemeExtension<dynamic>>[
         MyColors.light,
       ],

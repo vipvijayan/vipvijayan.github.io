@@ -153,7 +153,7 @@ class AppTheme {
     brightness: Brightness.dark,
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      elevation: 0,
+      elevation: 3,
       backgroundColor: HexColor('#222222'),
       iconTheme: IconThemeData(
         color: Colors.green,
@@ -220,7 +220,7 @@ class AppTheme {
       indent: 15,
       endIndent: 0,
       thickness: 0.1,
-      color: Colors.white,
+      color: Colors.grey,
     ),
     iconTheme: IconThemeData(
       color: Colors.white,

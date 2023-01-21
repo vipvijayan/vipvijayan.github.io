@@ -11,7 +11,8 @@ class ThemeBuilderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<PreviewAppState>();
     return Material(
-      // type: MaterialType.transparency,
+      type: MaterialType.transparency,
+      // color: HexColor('#28282B'),
       child: ParentContainer(
         child: Column(
           children: [
@@ -20,7 +21,9 @@ class ThemeBuilderScreen extends StatelessWidget {
                 addAutomaticKeepAlives: true,
                 cacheExtent: 200,
                 separatorBuilder: (context, index) => const Divider(
-                  height: 10,
+                  height: 20,
+                  // color: Colors.transparent,
+                  thickness: 0.1,
                 ),
                 itemCount: state.themeUIModelList.length,
                 itemBuilder: (context, index) {
