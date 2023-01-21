@@ -1,6 +1,6 @@
 import 'package:flutter_themer/exports/exports.dart';
 
-const dimen = 40.0;
+const dimen = 45.0;
 
 class ColorSelector extends StatelessWidget {
   const ColorSelector({
@@ -29,7 +29,7 @@ class ColorSelector extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.zero,
         height: dimen,
-        width: dimen * 2,
+        width: dimen,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3),
           color: color,

@@ -83,6 +83,48 @@ class ThemeFileUtils {
           customTheme['card_elevation'] as String,
         ),
       ),
+      tabBarTheme: TabBarTheme(
+        indicatorSize: TabBarIndicatorSize.label,
+        labelColor: HexColor(
+          customTheme['tabbar_selected_label_color'],
+        ),
+        unselectedLabelColor: HexColor(
+          customTheme['tabbar_unselected_label_color'],
+        ),
+        indicator: ShapeDecoration(
+          shape: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: HexColor(
+                customTheme['tabbar_indicator_color'],
+              ),
+              width: double.parse(
+                customTheme['tabbar_indicator_width'] as String,
+              ),
+              style: BorderStyle.solid,
+            ),
+          ),
+        ),
+        labelStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+          letterSpacing: 1.2,
+          fontWeight: FontWeight.bold,
+        ),
+        unselectedLabelStyle: const TextStyle(
+          color: Colors.white,
+          letterSpacing: 1.1,
+          fontSize: 10,
+        ),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.all<Color>(
+            HexColor(
+              customTheme['text_button_foreground_color'],
+            ),
+          ),
+        ),
+      ),
       extensions: <ThemeExtension<dynamic>>[
         MyColors.light,
       ],
@@ -97,9 +139,9 @@ class ThemeFileUtils {
     for (final themeUIModel in themeUIModelList) {
       for (final uiItem in themeUIModel.items) {
         if (null != customTheme[uiItem.key]) {
-          logD(
-            'Replacing:: key: ${uiItem.key}, value: ${customTheme[uiItem.key]}',
-          );
+          // logD(
+          //   'Replacing:: key: ${uiItem.key}, value: ${customTheme[uiItem.key]}',
+          // );
           themeHtml = themeHtml.replaceAll(
             "'${uiItem.key}'",
             customTheme[uiItem.key],

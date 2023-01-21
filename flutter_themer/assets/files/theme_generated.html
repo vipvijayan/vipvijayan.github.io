@@ -32,13 +32,45 @@
             fontSize: 'text_theme_title_large_text_size',
             color: Color(0x'text_theme_title_large_text_color'),
           ),
-          titleSmall: TextStyle(
-            fontSize: 'text_theme_title_small_text_size',
-            color: Color(0x'text_theme_title_small_text_color'),
-          ),
           titleMedium: TextStyle(
             fontSize: 'text_theme_title_medium_text_size',
             color: Color(0x'text_theme_title_medium_text_color'),
+          ),
+          titleSmall: TextStyle(
+            fontSize: 'text_theme_title_small_text_size',
+            color: Color(0x'text_theme_title_small_text_color'),
+          ),          
+        ),
+        tabBarTheme: TabBarTheme(
+          indicatorSize: TabBarIndicatorSize.label,
+          unselectedLabelColor: Color(0x'tabbar_unselected_label_color'),
+          labelColor: Color(0x'tabbar_selected_label_color'),
+          indicator: const ShapeDecoration(
+            shape: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Color(0x'tabbar_indicator_color'),
+                width: 'tabbar_indicator_width',
+                style: BorderStyle.solid,
+              ),
+            ),
+          ),
+          labelStyle: const TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+            letterSpacing: 1.2,
+            fontWeight: FontWeight.bold,
+          ),
+          unselectedLabelStyle: const TextStyle(
+            color: Colors.white,
+            letterSpacing: 1.1,
+            fontSize: 10,
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all&#9001;Color&#9002;(
+              'text_button_foreground_color'
+            ),
           ),
         ),
         cardTheme: CardTheme(

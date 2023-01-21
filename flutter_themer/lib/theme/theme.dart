@@ -24,6 +24,13 @@ class AppTheme {
     primaryColorLight: const Color.fromARGB(255, 59, 243, 157),
     scaffoldBackgroundColor: lightBaseColor,
     drawerTheme: const DrawerThemeData(backgroundColor: Colors.white),
+    buttonTheme: const ButtonThemeData(
+      height: 40,
+      buttonColor: Colors.teal,
+      disabledColor: Colors.grey,
+      focusColor: Colors.tealAccent,
+      splashColor: Colors.yellow,
+    ),
     appBarTheme: AppBarTheme(
       elevation: 0,
       backgroundColor: lightBaseColor,
@@ -66,7 +73,7 @@ class AppTheme {
       indicatorSize: TabBarIndicatorSize.label,
       unselectedLabelColor: Colors.white.withOpacity(0.9),
       labelColor: Colors.white,
-      indicator: ShapeDecoration(
+      indicator: const ShapeDecoration(
         shape: UnderlineInputBorder(
           borderSide: BorderSide(
             color: Colors.transparent,
@@ -75,14 +82,14 @@ class AppTheme {
           ),
         ),
       ),
-      labelStyle: TextStyle(
+      labelStyle: const TextStyle(
         color: Colors.white,
         fontSize: 14,
         letterSpacing: 1.2,
         fontWeight: FontWeight.bold,
         // fontFamily: Fonts.TIMES_NEW_ROMAN,
       ),
-      unselectedLabelStyle: TextStyle(
+      unselectedLabelStyle: const TextStyle(
         color: Colors.white,
         // fontWeight: FontWeight.bold,
         letterSpacing: 1.1,
@@ -98,10 +105,10 @@ class AppTheme {
       ),
     ),
     dividerTheme: DividerThemeData(
-      indent: 20,
-      endIndent: 25,
+      indent: 15,
+      endIndent: 0,
       thickness: 0.05,
-      color: Colors.grey,
+      color: Colors.white10,
     ),
     iconTheme: IconThemeData(
       color: Colors.white70,
@@ -210,8 +217,8 @@ class AppTheme {
       shadowColor: HexColor('#808088'),
     ),
     dividerTheme: DividerThemeData(
-      indent: 40,
-      endIndent: 25,
+      indent: 15,
+      endIndent: 0,
       thickness: 0.1,
       color: Colors.white,
     ),

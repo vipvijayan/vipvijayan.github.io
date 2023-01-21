@@ -268,6 +268,72 @@
                 "input": "text_field"
             }
         ]
+    },
+    {
+        "id": 9,
+        "title": "Tab Bar",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 7,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Selected Label Color",
+                "key": "tabbar_selected_label_color",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "UnSelected Label Color",
+                "key": "tabbar_unselected_label_color",
+                "value": "#FFF2F2F2",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 3,
+                "title": "Indicator Color",
+                "key": "tabbar_indicator_color",
+                "value": "#FFF2F2F2",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 4,
+                "title": "Indicator Width",
+                "key": "tabbar_indicator_width",
+                "value": "3",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Text Button",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 11,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Foreground Color",
+                "key": "text_button_foreground_color",
+                "value": "#FF008080",
+                "value_type": "string",
+                "input": "color"
+            }
+        ]
     }
 
 ]

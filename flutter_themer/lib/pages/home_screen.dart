@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Row(
         children: [
-          const Expanded(child: ThemeBuilderScreen()),
+          const Expanded(flex: 2, child: ThemeBuilderScreen()),
           Expanded(
             child: PreviewApp(
               themeData: previewAppState.curThemeData,

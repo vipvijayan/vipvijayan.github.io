@@ -20,10 +20,15 @@
     "text_theme_title_large_text_color": "#FF000000",
     "text_theme_title_small_text_size": "20",
     "text_theme_title_small_text_color": "#FF000000",
-    "text_theme_title_medium_text_size": "20",
+    "text_theme_title_medium_text_size": "24",
     "text_theme_title_medium_text_color": "#FF000000",
     "center_title": "true",
     "card_background_color": "#FF008080",
     "card_shadow_color": "#FFC2C2C2",
-    "card_elevation": "3"
+    "card_elevation": "3",
+    "tabbar_selected_label_color": "#FFFFFFFF",
+    "tabbar_unselected_label_color": "#FFF2F2F2",
+    "tabbar_indicator_color": "#FFFFFFFF",
+    "tabbar_indicator_width": "3",
+    "text_button_foreground_color": "#FF008080"
 }

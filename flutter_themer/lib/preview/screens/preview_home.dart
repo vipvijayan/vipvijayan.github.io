@@ -14,37 +14,66 @@ class PreviewHomeScreen extends StatelessWidget {
           Flexible(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(30),
-              child: SizedBox(
-                height: 900,
-                width: 415,
-                child: DefaultTabController(
-                  length: 3,
-                  initialIndex: 0,
-                  child: Scaffold(
-                    appBar: AppBar(
-                      title: const Text('Title'),
-                      actions: const [
-                        Icon(Icons.settings),
-                        SizedBox(width: 20),
-                      ],
-                      leading: const Icon(Icons.menu),
-                      bottom: const TabBar(
-                        tabs: [
-                          Tab(icon: Icon(Icons.directions_car)),
-                          Tab(icon: Icon(Icons.directions_bike)),
-                          Tab(icon: Icon(Icons.directions_bike)),
-                        ],
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(top: 45),
+                    height: 880,
+                    width: 430,
+                    child: DefaultTabController(
+                      length: 3,
+                      initialIndex: 0,
+                      child: Scaffold(
+                        appBar: AppBar(
+                          title: const Text('Title'),
+                          actions: const [
+                            Icon(Icons.settings),
+                            SizedBox(width: 20),
+                          ],
+                          leading: const Icon(Icons.menu),
+                          bottom: const TabBar(
+                            tabs: [
+                              Tab(
+                                text: 'Text',
+                              ),
+                              Tab(
+                                text: 'Buttons',
+                              ),
+                              Tab(
+                                text: 'Tab 3',
+                              ),
+                            ],
+                          ),
+                        ),
+                        body: const TabBarView(
+                          children: [
+                            DemoTab(),
+                            DemoTab(),
+                            DemoTab(),
+                          ],
+                        ),
                       ),
                     ),
-                    body: const TabBarView(
-                      children: [
-                        DemoTab(),
-                        DemoTab(),
-                        DemoTab(),
-                      ],
+                  ),
+                  Positioned(
+                    top: 30,
+                    left: 40,
+                    child: Container(
+                      height: 50,
+                      color: Theme.of(context).appBarTheme.backgroundColor,
+                      width: 430,
                     ),
                   ),
-                ),
+                  IgnorePointer(
+                    ignoring: true,
+                    child: Image.asset(
+                      'assets/images/iphone_14.png',
+                      filterQuality: FilterQuality.high,
+                      alignment: Alignment.center,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -99,6 +128,12 @@ class DemoTab extends StatelessWidget {
               title: Text('Hello'),
               subtitle: Text('Flutter'),
             ),
+          ),
+          TextButton(
+            onPressed: () async {
+              //
+            },
+            child: const Text('Tap Me'),
           ),
         ],
       ),

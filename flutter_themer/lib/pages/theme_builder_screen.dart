@@ -11,15 +11,15 @@ class ThemeBuilderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<PreviewAppState>();
     return Material(
+      // type: MaterialType.transparency,
       child: ParentContainer(
         child: Column(
           children: [
             Expanded(
               child: ListView.separated(
                 addAutomaticKeepAlives: true,
+                cacheExtent: 200,
                 separatorBuilder: (context, index) => const Divider(
-                  indent: 15,
-                  endIndent: 0,
                   height: 10,
                 ),
                 itemCount: state.themeUIModelList.length,

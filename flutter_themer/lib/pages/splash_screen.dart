@@ -5,11 +5,9 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: const Center(
-          child: Icon(Icons.draw_outlined),
-        ),
+    return const Scaffold(
+      body: Center(
+        child: Icon(Icons.draw_outlined),
       ),
     );
   }
