@@ -7,20 +7,20 @@ class PreviewHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       type: MaterialType.transparency,
-      // color: HexColor('#28282B'),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Flexible(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(30),
+            child: SizedBox(
+              height: 900,
+              width: 800,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   Positioned(
-                    top: 25,
-                    left: 25,
+                    top: 23,
+                    left: 58.5,
                     child: Container(
                       height: 90,
                       decoration: BoxDecoration(
@@ -30,46 +30,48 @@ class PreviewHomeScreen extends StatelessWidget {
                         ),
                         color: Theme.of(context).appBarTheme.backgroundColor,
                       ),
-                      width: 440,
+                      width: 400,
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 90),
-                    height: 900,
-                    width: 440,
-                    child: DefaultTabController(
-                      length: 3,
-                      initialIndex: 0,
-                      child: Scaffold(
-                        appBar: AppBar(
-                          title: const Text(
-                            'Preview',
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 60),
+                      height: 790,
+                      width: 400,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
+                          bottomRight: Radius.circular(30),
+                        ),
+                        color: Colors.green,
+                      ),
+                      child: DefaultTabController(
+                        length: 3,
+                        initialIndex: 0,
+                        child: Scaffold(
+                          appBar: AppBar(
+                            title: const Text(previewTitle),
+                            actions: const [
+                              Icon(Icons.settings),
+                              SizedBox(width: 20),
+                            ],
+                            leading: const Icon(Icons.menu),
+                            bottom: const TabBar(
+                              tabs: [
+                                Tab(text: 'Text'),
+                                Tab(text: 'Buttons'),
+                                Tab(text: 'Cards'),
+                              ],
+                            ),
                           ),
-                          actions: const [
-                            Icon(Icons.settings),
-                            SizedBox(width: 20),
-                          ],
-                          leading: const Icon(Icons.menu),
-                          bottom: const TabBar(
-                            tabs: [
-                              Tab(
-                                text: 'Text',
-                              ),
-                              Tab(
-                                text: 'Buttons',
-                              ),
-                              Tab(
-                                text: 'Cards',
-                              ),
+                          body: const TabBarView(
+                            children: [
+                              DemoTab(),
+                              ButtonTab(),
+                              CardTab(),
                             ],
                           ),
-                        ),
-                        body: const TabBarView(
-                          children: [
-                            DemoTab(),
-                            ButtonTab(),
-                            CardTab(),
-                          ],
                         ),
                       ),
                     ),
@@ -77,7 +79,9 @@ class PreviewHomeScreen extends StatelessWidget {
                   IgnorePointer(
                     ignoring: true,
                     child: Image.asset(
-                      'assets/images/iphone_14_1.png',
+                      iphoneBg,
+                      height: 900,
+                      width: 700,
                       filterQuality: FilterQuality.high,
                       alignment: Alignment.center,
                     ),
@@ -142,18 +146,41 @@ class ButtonTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextButton(
-            onPressed: () async {
-              //
-            },
-            child: const Text('Text Button'),
-          ),
-        ],
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          //
+        },
+        child: const Icon(Icons.add),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextButton(
+              onPressed: () async {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Hello, How are you?"),
+                  ),
+                );
+              },
+              child: const Text('Text Button'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () async {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Hello, How are you?"),
+                  ),
+                );
+              },
+              child: const Text('Elevated Button Button'),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -184,6 +211,10 @@ class CardTab extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: 30),
+          Divider(),
+          SizedBox(height: 30),
+          Center(child: CircularProgressIndicator()),
         ],
       ),
     );

@@ -30,5 +30,21 @@
     "tabbar_unselected_label_color": "#FFF2F2F2",
     "tabbar_indicator_color": "#FFFFFFFF",
     "tabbar_indicator_width": "3",
-    "text_button_foreground_color": "#FF008080"
+    "text_button_foreground_color": "#FF008080",
+    "snackbar_background_color": "#FF008080",
+    "snackbar_text_color": "#FFFFFFFF",
+    "snackbar_elevation": "3",
+    "divider_left_padding": "20",
+    "divider_end_padding": "20",
+    "divider_thickness": "1",
+    "divider_color":  "#FF008080",
+    "progress_indicator_color": "#FF008080",
+    "refresh_background_color": "#FF00FF00",
+    "floating_btn_foreground_color": "#FFFFFFFF",
+    "floating_btn_background_color": "#FF008080",
+    "floating_btn_icon_size": "20",
+    "floating_btn_enable_feedback": "true",
+    "elevated_btn_foreground_color": "#FF008080",
+    "elevated_btn_background_color": "#FFF2F2F2",
+    "elevated_btn_elevation": "3"
 }

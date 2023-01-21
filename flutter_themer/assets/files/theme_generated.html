@@ -78,5 +78,41 @@
           shadowColor: Color(0x'card_shadow_color'),
           elevation: 'card_elevation'
         ),
+        snackBarTheme: SnackBarThemeData(
+          backgroundColor: Color(0x'snackbar_background_color'),
+          elevation: 'snackbar_elevation',
+          contentTextStyle: TextStyle(
+            color: Color(0x'snackbar_text_color'),
+          ),
+        ),
+        dividerTheme: DividerThemeData(
+          indent:'divider_left_padding',
+          endIndent: 'divider_end_padding',
+          thickness: 'divider_thickness',
+          color: Color(0x'divider_color'),
+        ),
+        progressIndicatorTheme: ProgressIndicatorThemeData(
+          color: Color(0x'progress_indicator_color'),
+          refreshBackgroundColor: Color(0x'refresh_background_color'),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          foregroundColor: Color(0x'floating_btn_foreground_color'),
+          iconSize: 'floating_btn_icon_size',
+          backgroundColor: Color(0x'floating_btn_background_color'),
+          enableFeedback: 'floating_btn_enable_feedback',
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.all&#9001;Color&#9002;(
+            Color(0x''elevated_btn_foreground_color'),
+          ),
+          backgroundColor: MaterialStateProperty.all&#9001;Color&#9002;(
+            Color(0x'elevated_btn_background_color'),
+          ),
+          elevation: MaterialStateProperty.all&#9001;double&#9002;(
+            'elevated_btn_elevation',
+          ),
+        ),
+      ),
     )
 </pre>

@@ -6,11 +6,13 @@ class ThemeFileUtils {
   ) async {
     logD(jsonEncode(customTheme));
     return ThemeData(
+      // useMaterial3: true,
       primaryColor: HexColor(customTheme['primary_color']),
       scaffoldBackgroundColor: HexColor(
         customTheme['scaffold_background_color'],
       ),
       appBarTheme: AppBarTheme(
+        // color: Colors.red,
         elevation: double.parse(customTheme['app_bar_elevation']),
         backgroundColor: HexColor(
           customTheme['app_bar_background_color'],
@@ -76,6 +78,11 @@ class ThemeFileUtils {
           color: HexColor(customTheme['text_theme_title_medium_text_color']),
         ),
       ),
+      colorScheme: ColorScheme.dark(
+        brightness: Brightness.dark,
+        primary: Colors.white,
+        onSecondary: Colors.black,
+      ),
       cardTheme: CardTheme(
         color: HexColor(customTheme['card_background_color']),
         shadowColor: HexColor(customTheme['card_shadow_color']),
@@ -126,10 +133,58 @@ class ThemeFileUtils {
         ),
       ),
       snackBarTheme: SnackBarThemeData(
-        backgroundColor: Colors.white,
-        elevation: 3,
+        backgroundColor: HexColor(
+          customTheme['snackbar_background_color'],
+        ),
+        elevation: double.parse(
+          customTheme['snackbar_elevation'] as String,
+        ),
         contentTextStyle: TextStyle(
-          color: Colors.white,
+          color: HexColor(
+            customTheme['snackbar_text_color'],
+          ),
+        ),
+      ),
+      dividerTheme: DividerThemeData(
+        indent: double.parse(
+          customTheme['divider_left_padding'] as String,
+        ),
+        endIndent: double.parse(
+          customTheme['divider_end_padding'] as String,
+        ),
+        thickness: double.parse(
+          customTheme['divider_thickness'] as String,
+        ),
+        color: HexColor(customTheme['divider_color']),
+      ),
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        color: HexColor(customTheme['progress_indicator_color']),
+        refreshBackgroundColor: HexColor(
+          customTheme['refresh_background_color'],
+        ),
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        foregroundColor: HexColor(customTheme['floating_btn_foreground_color']),
+        iconSize: double.parse(customTheme['floating_btn_icon_size'] as String),
+        backgroundColor: HexColor(customTheme['floating_btn_background_color']),
+        enableFeedback:
+            (customTheme['floating_btn_enable_feedback'] as String).parseBool(),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.all<Color>(
+            HexColor(
+              customTheme['elevated_btn_foreground_color'],
+            ),
+          ),
+          backgroundColor: MaterialStateProperty.all<Color>(
+            HexColor(
+              customTheme['elevated_btn_background_color'],
+            ),
+          ),
+          elevation: MaterialStateProperty.all<double>(
+            double.parse(customTheme['elevated_btn_elevation']),
+          ),
         ),
       ),
       extensions: <ThemeExtension<dynamic>>[

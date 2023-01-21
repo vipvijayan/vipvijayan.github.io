@@ -334,6 +334,199 @@
                 "input": "color"
             }
         ]
+    },
+    {
+        "id": 12,
+        "title": "SnackBar",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 11,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Background Color",
+                "key": "snackbar_background_color",
+                "value": "#FF008080",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Text Color",
+                "key": "snackbar_text_color",
+                "value": "#FF008080",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 3,
+                "title": "Elevation",
+                "key": "snackbar_elevation",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Divider",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 11,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Color",
+                "key": "divider_color",
+                "value": "#FF008080",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Left Padding",
+                "key": "divider_left_padding",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            },
+            {
+                "id": 3,
+                "title": "Right Padding",
+                "key": "divider_end_padding",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            },
+            {
+                "id": 4,
+                "title": "Thickness",
+                "key": "divider_thickness",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Progress Indicator",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 11,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Color",
+                "key": "progress_indicator_color",
+                "value": "#FF008080",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Refresh Backgorund Color",
+                "key": "refresh_background_color",
+                "value": "#FF00FF00",
+                "value_type": "string",
+                "input": "color"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Floating Action Button",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 14,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Icon Color",
+                "key": "floating_btn_foreground_color",
+                "value": "#FFFFFFFF",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Background Color",
+                "key": "floating_btn_background_color",
+                "value": "#FF008080",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 3,
+                "title": "Icon Size",
+                "key": "floating_btn_icon_size",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            },
+            {
+                "id": 4,
+                "title": "Enable Feedback",
+                "key": "floating_btn_enable_feedback",
+                "value": "true",
+                "value_type": "bool",
+                "input": "switch"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Elevated Button",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 14,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Foreground Color",
+                "key": "elevated_btn_foreground_color",
+                "value": "#FF008080",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Background Color",
+                "key": "elevated_btn_background_color",
+                "value": "#F",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 3,
+                "title": "Elevation",
+                "key": "elevated_btn_elevation",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
     }
 
 ]

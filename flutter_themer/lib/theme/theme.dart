@@ -154,6 +154,7 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       centerTitle: true,
       elevation: 3,
+      toolbarHeight: kToolbarHeight + 20,
       backgroundColor: HexColor('#222222'),
       iconTheme: IconThemeData(
         color: Colors.green,
@@ -210,6 +211,7 @@ class AppTheme {
     ),
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: Colors.teal,
+      refreshBackgroundColor: Colors.green,
     ),
     indicatorColor: Colors.white.withOpacity(0.3),
     cardTheme: CardTheme(
@@ -232,6 +234,7 @@ class AppTheme {
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       foregroundColor: Colors.orange,
+      backgroundColor: Colors.red,
     ),
     textTheme: TextTheme(
       bodyLarge: TextStyle(
