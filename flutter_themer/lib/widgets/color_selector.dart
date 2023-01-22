@@ -26,14 +26,39 @@ class ColorSelector extends StatelessWidget {
           },
         );
       },
-      child: Container(
-        padding: EdgeInsets.zero,
-        height: dimen,
-        width: dimen,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3),
-          color: color,
-        ),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.zero,
+            height: dimen,
+            width: dimen * 3,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(3),
+              color: color,
+            ),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                colorHex(color).toUpperCase(),
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      color: Colors.grey[300],
+                      fontWeight: FontWeight.w100,
+                      fontSize: 14,
+                    ),
+              ),
+              IconButton(
+                iconSize: 14,
+                padding: EdgeInsets.zero,
+                onPressed: () async {
+                  //
+                },
+                icon: const Icon(Icons.copy),
+              )
+            ],
+          ),
+        ],
       ),
     );
   }

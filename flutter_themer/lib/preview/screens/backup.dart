@@ -8,55 +8,89 @@ class PreviewHomeScreen extends StatelessWidget {
     final previewAppState = context.watch<PreviewAppState>();
     return Material(
       type: MaterialType.transparency,
-      child: ListView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          if (previewAppState.showResolutionInput) const ResolutionUI(),
-          const SizedBox(height: 30),
-          Center(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(45),
-              child: Container(
-                padding: const EdgeInsets.only(top: 50),
-                height: previewAppState.height,
-                width: previewAppState.width,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(30),
-                  ),
-                  color: Theme.of(context).appBarTheme.backgroundColor,
-                ),
-                child: DefaultTabController(
-                  length: 3,
-                  initialIndex: 0,
-                  child: Scaffold(
-                    appBar: AppBar(
-                      title: const Text(previewTitle),
-                      actions: const [
-                        Icon(Icons.settings),
-                        SizedBox(width: 20),
-                      ],
-                      leading: const Icon(Icons.menu),
-                      bottom: const TabBar(
-                        tabs: [
-                          Tab(text: 'Text'),
-                          Tab(text: 'Buttons'),
-                          Tab(text: 'Cards'),
-                        ],
+          const ResolutionUI(),
+          Flexible(
+            child: SizedBox(
+              height: 900,
+              width: 800,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Positioned(
+                  //   top: 23,
+                  //   left: 58.5,
+                  //   child: Container(
+                  //     height: 90,
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: const BorderRadius.horizontal(
+                  //         left: Radius.circular(30),
+                  //         right: Radius.circular(30),
+                  //       ),
+                  //       color: Theme.of(context).appBarTheme.backgroundColor,
+                  //     ),
+                  //     width: 400,
+                  //   ),
+                  // ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      // margin: const EdgeInsets.only(top: 60),
+                      height: previewAppState.height,
+                      width: previewAppState.width,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                        color: Colors.green,
+                      ),
+                      child: DefaultTabController(
+                        length: 3,
+                        initialIndex: 0,
+                        child: Scaffold(
+                          appBar: AppBar(
+                            title: const Text(previewTitle),
+                            actions: const [
+                              Icon(Icons.settings),
+                              SizedBox(width: 20),
+                            ],
+                            leading: const Icon(Icons.menu),
+                            bottom: const TabBar(
+                              tabs: [
+                                Tab(text: 'Text'),
+                                Tab(text: 'Buttons'),
+                                Tab(text: 'Cards'),
+                              ],
+                            ),
+                          ),
+                          body: const TabBarView(
+                            children: [
+                              DemoTab(),
+                              ButtonTab(),
+                              CardTab(),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                    body: const TabBarView(
-                      children: [
-                        DemoTab(),
-                        ButtonTab(),
-                        CardTab(),
-                      ],
-                    ),
                   ),
-                ),
+                  // IgnorePointer(
+                  //   ignoring: true,
+                  //   child: Image.asset(
+                  //     iphoneBg,
+                  //     height: 900,
+                  //     width: 700,
+                  //     filterQuality: FilterQuality.high,
+                  //     alignment: Alignment.center,
+                  //   ),
+                  // ),
+                ],
               ),
             ),
           ),
-          const SizedBox(height: 20),
         ],
       ),
     );

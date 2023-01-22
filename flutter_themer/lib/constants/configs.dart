@@ -1,3 +1,3 @@
 const showDebugBanner = false;
 
-const appVersion = 'alpha';
+const appVersion = 'α';

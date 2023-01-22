@@ -151,10 +151,11 @@ class AppTheme {
     primaryColor: Colors.white,
     primaryColorDark: HexColor('#808088'),
     brightness: Brightness.dark,
+
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      elevation: 3,
-      toolbarHeight: kToolbarHeight + 20,
+      elevation: 0,
+      toolbarHeight: kToolbarHeight + 40,
       backgroundColor: HexColor('#222222'),
       iconTheme: IconThemeData(
         color: Colors.green,

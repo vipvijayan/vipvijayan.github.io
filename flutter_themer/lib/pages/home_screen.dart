@@ -1,4 +1,5 @@
 import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/widgets/theme_toggler.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,7 +9,6 @@ class HomeScreen extends StatelessWidget {
     final previewAppState = context.watch<PreviewAppState>();
     return Scaffold(
       appBar: AppBar(
-        elevation: 6,
         title: Row(
           children: [
             const SizedBox(width: 25),
@@ -23,6 +23,27 @@ class HomeScreen extends StatelessWidget {
         ),
         centerTitle: false,
         actions: [
+          IconButton(
+            onPressed: () async {
+              previewAppState.setResInputShow(
+                !previewAppState.showResolutionInput,
+              );
+            },
+            icon: const Icon(Icons.devices_outlined),
+          ),
+          const VerticalDivider(
+            endIndent: 30,
+            indent: 30,
+            thickness: 0.2,
+            width: 40,
+          ),
+          const ThemeToggler(),
+          const VerticalDivider(
+            endIndent: 30,
+            indent: 30,
+            thickness: 0.2,
+            width: 40,
+          ),
           IconButton(
             onPressed: () async {
               openThemeGeneratedScreen();
@@ -44,7 +65,7 @@ class HomeScreen extends StatelessWidget {
         color: HexColor('#28282B'),
         child: Row(
           children: [
-            const Expanded(flex: 2, child: ThemeBuilderScreen()),
+            const Expanded(child: ThemeBuilderScreen()),
             // const VerticalDivider(
             //   endIndent: 30,
             // ),

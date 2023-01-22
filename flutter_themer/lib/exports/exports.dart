@@ -39,3 +39,9 @@ export 'package:flutter_themer/preview/utils/extension/extensions.dart';
 export 'package:flutter_themer/preview/utils/file_utils.dart';
 export 'package:flutter_themer/models/theme_ui_model.dart';
 export 'package:flutter_themer/widgets/color_selector.dart';
+
+export 'package:window_manager/window_manager.dart';
+export 'package:flutter_themer/state/app_state.dart';
+export 'package:flutter/scheduler.dart' hide Flow;
+export 'package:flutter_themer/utils/app_utils.dart';
+export 'package:flutter_themer/widgets/resolution_ui.dart';

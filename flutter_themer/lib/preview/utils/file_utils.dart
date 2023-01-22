@@ -18,8 +18,11 @@ Future<String> loadThemeTxt() async {
   return await rootBundle.loadString('$filesDir/theme_generated.html');
 }
 
-Future<String> loadDefaultThemeValuesFile() async {
-  return await rootBundle.loadString('$filesDir/theme_default.json');
+Future<String> loadDefaultThemeValuesFile(bool darkeMode) async {
+  final fileName =
+      darkeMode ? 'theme_default_dark.json' : 'theme_default_light.json';
+  logD('Loading file: $fileName');
+  return await rootBundle.loadString('$filesDir/$fileName');
 }
 
 Future<String> get _localPath async {
