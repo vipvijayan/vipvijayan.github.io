@@ -25,6 +25,12 @@ class ThemeCustomColorsUI extends StatelessWidget {
                     },
                   ),
                 ),
+                IconButton(
+                  onPressed: () async {
+                    //
+                  },
+                  icon: const Icon(Icons.delete_outline),
+                )
               ],
             ),
           );

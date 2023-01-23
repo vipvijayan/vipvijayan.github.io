@@ -150,13 +150,19 @@ class ThemeBuilderScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     const MainTitle(
-                      title: 'Custom Colors',
+                      title: customColorsTitle,
                       fontSize: 24,
                     ),
+                    const Spacer(),
                     IconButton(
                       onPressed: (() {
-                        state.customColors
-                            .add(CustomColor(id: 0, name: '', colorCode: ''));
+                        state.customColors.add(
+                          CustomColor(
+                            id: random.nextInt(50),
+                            name: '',
+                            colorCode: '',
+                          ),
+                        );
                         state.refresh();
                       }),
                       icon: const Icon(Icons.add),
@@ -164,7 +170,8 @@ class ThemeBuilderScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              ThemeCustomColorsUI(),
+              const SizedBox(height: 20),
+              const ThemeCustomColorsUI(),
             ],
           ),
         ),
