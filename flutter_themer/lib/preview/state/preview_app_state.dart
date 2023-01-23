@@ -18,6 +18,14 @@ class PreviewAppState extends ChangeNotifier {
 
   List<CustomColor> customColors = [];
 
+  removeFromCustomColorsList(int id) async {
+    for (final c in customColors) {
+      if (id == c.id) {
+        customColors.remove(c);
+      }
+    }
+  }
+
   Future<void> init({bool refresh = false, bool darkMode = false}) async {
     customTheme.clear();
     themeUIModelList.clear();
@@ -63,17 +71,21 @@ class PreviewAppState extends ChangeNotifier {
   }
 
   Future<void> generateHtml() async {
-    themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
+    final themeHtml = await ThemeFileUtils.generateThemeTxt(
       customTheme,
       themeUIModelList,
     );
+    final customHtml = await ThemeFileUtils.generateCustomThemeTxt(
+      customColors,
+    );
+    themeGeneratedHtml = '<pre>$themeHtml<br /><br />$customHtml';
     notifyListeners();
   }
 }
 
 class CustomColor {
   final int id;
-  final String name;
-  final String colorCode;
+  String name;
+  String colorCode;
   CustomColor({required this.id, required this.name, required this.colorCode});
 }

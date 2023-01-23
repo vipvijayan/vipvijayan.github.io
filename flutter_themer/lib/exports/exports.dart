@@ -1,5 +1,6 @@
 export 'dart:convert';
 export 'dart:io';
+export 'dart:async';
 
 export 'package:flutter/material.dart';
 export 'package:flutter_themer/app/app.dart';
@@ -46,3 +47,6 @@ export 'package:flutter/scheduler.dart' hide Flow;
 export 'package:flutter_themer/utils/app_utils.dart';
 export 'package:flutter_themer/widgets/resolution_ui.dart';
 export 'package:flutter_themer/widgets/theme_toggler.dart';
+
+export 'package:flutter_themer/widgets/num_stepper.dart';
+export 'package:flutter_themer/widgets/theme_custom_colors.dart';

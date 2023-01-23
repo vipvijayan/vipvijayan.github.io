@@ -1,8 +1,4 @@
-import 'dart:async';
-
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:flutter_themer/widgets/num_stepper.dart';
-import 'package:flutter_themer/widgets/theme_custom_colors.dart';
 
 class ThemeBuilderScreen extends StatelessWidget {
   //
@@ -184,7 +180,10 @@ class ThemeBuilderScreen extends StatelessWidget {
     List<DropdownMenuItem<String>> dropdownItems = items.map((e) {
       final values = e.split("#");
       logD("drop: ${values[1]}");
-      return DropdownMenuItem(value: values[1], child: Text(values.first));
+      return DropdownMenuItem(
+        value: values[1],
+        child: Text(values.first),
+      );
     }).toList();
     return dropdownItems;
   }

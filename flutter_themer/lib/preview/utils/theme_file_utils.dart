@@ -239,6 +239,24 @@ class ThemeFileUtils {
     }
     return themeHtml;
   }
+
+  static Future<String> generateCustomThemeTxt(
+    List<CustomColor> customColors,
+  ) async {
+    final length = customColors.length;
+    if (0 == length) {
+      return '';
+    }
+    var themeHtml = await loadCustomColorsTxt();
+    final newLine = length == 1 ? '' : '\n';
+    for (final cColor in customColors) {
+      themeHtml = themeHtml.replaceAll(
+        'params',
+        'required this.${cColor.name},$newLine',
+      );
+    }
+    return themeHtml;
+  }
 }
 
 tabIndicatorSize(String size) {

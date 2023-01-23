@@ -14,20 +14,34 @@ class ThemeCustomColorsUI extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(40, 5, 20, 0),
             child: Row(
               children: [
-                Expanded(child: TextFormField()),
+                Expanded(
+                  child: TextFormField(
+                    keyboardType: TextInputType.name,
+                    decoration: const InputDecoration(
+                      hintText: 'Color Name (max 30 Chars)',
+                    ),
+                    onChanged: (value) {
+                      if (value.length > 30) {
+                        return;
+                      }
+                      customColor.name = value;
+                    },
+                  ),
+                ),
                 const SizedBox(width: 30),
                 Expanded(
                   child: ColorSelector(
                     color: HexColor('#FFFFFFFF'),
                     propertyKey: '1',
                     onTap: (Color color) {
-                      //
+                      customColor.colorCode = colorHex(color);
                     },
                   ),
                 ),
                 IconButton(
                   onPressed: () async {
-                    //
+                    previewAppState.removeFromCustomColorsList(customColor.id);
+                    previewAppState.refresh();
                   },
                   icon: const Icon(Icons.delete_outline),
                 )
