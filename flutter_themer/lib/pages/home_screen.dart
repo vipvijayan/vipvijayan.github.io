@@ -1,5 +1,4 @@
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:flutter_themer/widgets/theme_toggler.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -66,9 +65,6 @@ class HomeScreen extends StatelessWidget {
         child: Row(
           children: [
             const Expanded(child: ThemeBuilderScreen()),
-            // const VerticalDivider(
-            //   endIndent: 30,
-            // ),
             const SizedBox(width: 30),
             Expanded(
               child: PreviewApp(

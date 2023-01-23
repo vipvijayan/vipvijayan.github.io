@@ -42,7 +42,7 @@
           ),          
         ),
         tabBarTheme: TabBarTheme(
-          indicatorSize: TabBarIndicatorSize.label,
+          indicatorSize: 'tabbar_indicator_size',
           unselectedLabelColor: Color(0x'tabbar_unselected_label_color'),
           labelColor: Color(0x'tabbar_selected_label_color'),
           indicator: const ShapeDecoration(
@@ -112,6 +112,11 @@
           elevation: MaterialStateProperty.all&#9001;double&#9002;(
             'elevated_btn_elevation',
           ),
+        ),
+        drawerTheme: DrawerThemeData(
+          backgroundColor: Color(0x'drawer_background_color'),
+          elevation: 'drawer_elevation,
+          width: 'drawer_width',
         ),
       ),
     )

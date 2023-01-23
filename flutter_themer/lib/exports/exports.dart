@@ -45,3 +45,4 @@ export 'package:flutter_themer/state/app_state.dart';
 export 'package:flutter/scheduler.dart' hide Flow;
 export 'package:flutter_themer/utils/app_utils.dart';
 export 'package:flutter_themer/widgets/resolution_ui.dart';
+export 'package:flutter_themer/widgets/theme_toggler.dart';

@@ -26,7 +26,8 @@ class ColorSelector extends StatelessWidget {
           },
         );
       },
-      child: Column(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             padding: EdgeInsets.zero,
@@ -37,29 +38,25 @@ class ColorSelector extends StatelessWidget {
               color: color,
             ),
           ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                colorHex(color).toUpperCase(),
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Colors.grey[300],
-                      fontWeight: FontWeight.w100,
-                      fontSize: 14,
-                    ),
-              ),
-              IconButton(
-                iconSize: 14,
-                padding: EdgeInsets.zero,
-                onPressed: () async {
-                  //
-                },
-                icon: const Icon(Icons.copy),
-              )
-            ],
-          ),
+          IconButton(
+            iconSize: 14,
+            padding: EdgeInsets.zero,
+            onPressed: () async {
+              //
+            },
+            icon: const Icon(Icons.copy_outlined),
+          )
         ],
       ),
     );
   }
 }
+
+// Text(
+              //   colorHex(color).toUpperCase(),
+              //   style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              //         color: Colors.grey[300],
+              //         fontWeight: FontWeight.w100,
+              //         fontSize: 14,
+              //       ),
+              // ),

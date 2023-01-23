@@ -6,6 +6,8 @@ class PreviewAppState extends ChangeNotifier {
   Map<String, dynamic> customTheme = <String, dynamic>{};
   List<ThemeUiModel> themeUIModelList = [];
   String themeGeneratedHtml = '';
+
+  // Device Resolution
   double width = 415;
   double height = 900;
 
@@ -14,7 +16,7 @@ class PreviewAppState extends ChangeNotifier {
 
   bool showResolutionInput = false;
 
-  init({bool refresh = false, bool darkMode = false}) async {
+  Future<void> init({bool refresh = false, bool darkMode = false}) async {
     customTheme.clear();
     themeUIModelList.clear();
     String jsonData = await loadDefaultThemeValuesFile(darkMode);
@@ -24,13 +26,13 @@ class PreviewAppState extends ChangeNotifier {
     }
     curThemeData = await ThemeFileUtils.initializeThemeData(customTheme);
     themeUIModelList = await loadThemeUIModelList();
+    if (refresh) {
+      notifyListeners();
+    }
     if (!refresh) {
       Future.delayed(const Duration(seconds: 1), () async {
         openHome();
       });
-    }
-    if (refresh) {
-      notifyListeners();
     }
   }
 
@@ -47,6 +49,10 @@ class PreviewAppState extends ChangeNotifier {
 
   setResInputShow(bool show) async {
     showResolutionInput = show;
+    notifyListeners();
+  }
+
+  refresh() {
     notifyListeners();
   }
 

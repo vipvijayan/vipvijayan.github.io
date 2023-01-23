@@ -29,13 +29,20 @@ class PreviewHomeScreen extends StatelessWidget {
                   length: 3,
                   initialIndex: 0,
                   child: Scaffold(
+                    key: scaffoldKey,
+                    drawer: _drawer(),
                     appBar: AppBar(
                       title: const Text(previewTitle),
                       actions: const [
                         Icon(Icons.settings),
                         SizedBox(width: 20),
                       ],
-                      leading: const Icon(Icons.menu),
+                      leading: IconButton(
+                        icon: const Icon(Icons.menu),
+                        onPressed: () async {
+                          scaffoldKey.currentState?.openDrawer();
+                        },
+                      ),
                       bottom: const TabBar(
                         tabs: [
                           Tab(text: 'Text'),
@@ -186,4 +193,31 @@ class CardTab extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _drawer() {
+  return Drawer(
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: [
+        const DrawerHeader(
+          child: Icon(Icons.face_outlined),
+        ),
+        ListTile(
+          title: const Text('Item 1'),
+          onTap: () {
+            // Update the state of the app.
+            // ...
+          },
+        ),
+        ListTile(
+          title: const Text('Item 2'),
+          onTap: () {
+            // Update the state of the app.
+            // ...
+          },
+        ),
+      ],
+    ),
+  );
 }

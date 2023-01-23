@@ -289,12 +289,28 @@
                 "input": "color"
             },
             {
+                "id": 4,
+                "title": "Label Font Size",
+                "key": "tabbar_label_font_size",
+                "value": "3",
+                "value_type": "string",
+                "input": "text_field"
+            },
+            {
                 "id": 2,
                 "title": "UnSelected Label Color",
                 "key": "tabbar_unselected_label_color",
                 "value": "#FFF2F2F2",
                 "value_type": "string",
                 "input": "color"
+            },
+            {
+                "id": 4,
+                "title": "Unselected Label Font Size",
+                "key": "tabbar_unselected_label_font_size",
+                "value": "3",
+                "value_type": "string",
+                "input": "text_field"
             },
             {
                 "id": 3,
@@ -311,6 +327,14 @@
                 "value": "3",
                 "value_type": "string",
                 "input": "text_field"
+            },
+            {
+                "id": 4,
+                "title": "Indicator Width",
+                "key": "tabbar_indicator_size",
+                "value": "3",
+                "value_type": "string",
+                "input": "dropdown"
             }
         ]
     },
@@ -523,6 +547,43 @@
                 "title": "Elevation",
                 "key": "elevated_btn_elevation",
                 "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Drawer",
+        "main_title": true,
+        "items": []
+    },
+    {
+        "id": 16,
+        "title": "Properties",
+        "main_title": false,
+        "items": [
+            {
+                "id": 1,
+                "title": "Background Color",
+                "key": "drawer_background_color",
+                "value": "#FF008080",
+                "value_type": "string",
+                "input": "color"
+            },
+            {
+                "id": 2,
+                "title": "Elevation",
+                "key": "drawer_elevation",
+                "value": "20",
+                "value_type": "string",
+                "input": "text_field"
+            },
+            {
+                "id": 3,
+                "title": "Width",
+                "key": "drawer_width",
+                "value": "300",
                 "value_type": "string",
                 "input": "text_field"
             }

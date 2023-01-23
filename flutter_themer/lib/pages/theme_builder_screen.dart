@@ -49,12 +49,13 @@ class ThemeBuilderScreen extends StatelessWidget {
                                 children: [
                                   SubTitle(title: uiChild.title),
                                   ColorSelector(
-                                    color: HexColor(
-                                        state.customTheme[uiChild.key]),
-                                    propertyKey: state.customTheme[uiChild.key],
+                                    color: HexColor(state
+                                        .customTheme[uiChild.key]['value']),
+                                    propertyKey: state.customTheme[uiChild.key]
+                                        ['value'],
                                     onTap: (Color color) {
-                                      state.addToTheme(
-                                          uiChild.key, colorHex(color));
+                                      state.customTheme[uiChild.key]['value'] =
+                                          colorHex(color);
                                       unawaited(state.setPreviewTheme());
                                     },
                                   ),
@@ -69,13 +70,13 @@ class ThemeBuilderScreen extends StatelessWidget {
                                   SubTitle(title: uiChild.title),
                                   NumericStepButton(
                                     defaultCounter: double.parse(
-                                      state.customTheme[uiChild.key],
+                                      state.customTheme[uiChild.key]['value'],
                                     ).toInt(),
-                                    maxValue: 50,
+                                    maxValue: 900,
                                     minValue: 0,
                                     onChanged: (int val) {
-                                      state.addToTheme(
-                                          uiChild.key, val.toString());
+                                      state.customTheme[uiChild.key]['value'] =
+                                          val.toString();
                                       unawaited(state.setPreviewTheme());
                                     },
                                   ),
@@ -90,11 +91,37 @@ class ThemeBuilderScreen extends StatelessWidget {
                                   SubTitle(title: uiChild.title),
                                   Switch(
                                     value: (state.customTheme[uiChild.key]
-                                            as String)
+                                            ['value'] as String)
                                         .parseBool(),
                                     onChanged: (val) async {
-                                      state.addToTheme(
-                                          uiChild.key, val.toString());
+                                      state.customTheme[uiChild.key]['value'] =
+                                          val.toString();
+                                      unawaited(state.setPreviewTheme());
+                                    },
+                                  ),
+                                  const SizedBox(height: 20),
+                                ],
+                              );
+                            }
+                            if (uiChild.input == 'dropdown') {
+                              final value =
+                                  state.customTheme[uiChild.key]['value'];
+                              final items = value.split(",");
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SubTitle(title: uiChild.title),
+                                  DropdownButton<String>(
+                                    value: state.customTheme[uiChild.key]
+                                        ['selected'],
+                                    items: _dropDownItems(items),
+                                    onChanged: (String? value) {
+                                      if (null == value) {
+                                        return;
+                                      }
+                                      state.customTheme[uiChild.key]
+                                          ['selected'] = value;
+                                      state.refresh();
                                       unawaited(state.setPreviewTheme());
                                     },
                                   ),
@@ -116,5 +143,15 @@ class ThemeBuilderScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _dropDownItems(List<String> items) {
+    logD('Items: ${items.toString()}');
+    List<DropdownMenuItem<String>> dropdownItems = items.map((e) {
+      final values = e.split("#");
+      logD("drop: ${values[1]}");
+      return DropdownMenuItem(value: values[1], child: Text(values.first));
+    }).toList();
+    return dropdownItems;
   }
 }
