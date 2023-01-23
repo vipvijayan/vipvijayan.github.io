@@ -16,6 +16,8 @@ class PreviewAppState extends ChangeNotifier {
 
   bool showResolutionInput = false;
 
+  List<CustomColor> customColors = [];
+
   Future<void> init({bool refresh = false, bool darkMode = false}) async {
     customTheme.clear();
     themeUIModelList.clear();
@@ -67,4 +69,11 @@ class PreviewAppState extends ChangeNotifier {
     );
     notifyListeners();
   }
+}
+
+class CustomColor {
+  final int id;
+  final String name;
+  final String colorCode;
+  CustomColor({required this.id, required this.name, required this.colorCode});
 }

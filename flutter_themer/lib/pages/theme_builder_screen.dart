@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_themer/exports/exports.dart';
 import 'package:flutter_themer/widgets/num_stepper.dart';
+import 'package:flutter_themer/widgets/theme_custom_colors.dart';
 
 class ThemeBuilderScreen extends StatelessWidget {
   //
@@ -13,11 +14,14 @@ class ThemeBuilderScreen extends StatelessWidget {
     return Material(
       type: MaterialType.transparency,
       child: ParentContainer(
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView.separated(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ListView.separated(
                 addAutomaticKeepAlives: true,
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
                 cacheExtent: 200,
                 separatorBuilder: (context, index) => const Divider(
                   height: 20,
@@ -138,8 +142,31 @@ class ThemeBuilderScreen extends StatelessWidget {
                   );
                 },
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              const Divider(height: 20, thickness: 0.1),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 5, 20, 0),
+                child: Row(
+                  children: [
+                    const MainTitle(
+                      title: 'Custom Colors',
+                      fontSize: 24,
+                    ),
+                    IconButton(
+                      onPressed: (() {
+                        state.customColors
+                            .add(CustomColor(id: 0, name: '', colorCode: ''));
+                        state.refresh();
+                      }),
+                      icon: const Icon(Icons.add),
+                    )
+                  ],
+                ),
+              ),
+              ThemeCustomColorsUI(),
+            ],
+          ),
         ),
       ),
     );
