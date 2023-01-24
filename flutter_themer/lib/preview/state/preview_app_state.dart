@@ -6,6 +6,7 @@ class PreviewAppState extends ChangeNotifier {
   Map<String, dynamic> customTheme = <String, dynamic>{};
   List<ThemeUiModel> themeUIModelList = [];
   String themeGeneratedHtml = '';
+  String customHtml = '';
 
   // Device Resolution
   double width = 415;
@@ -71,14 +72,15 @@ class PreviewAppState extends ChangeNotifier {
   }
 
   Future<void> generateHtml() async {
-    final themeHtml = await ThemeFileUtils.generateThemeTxt(
+    themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
       customTheme,
       themeUIModelList,
     );
-    final customHtml = await ThemeFileUtils.generateCustomThemeTxt(
+    customHtml = await ThemeFileUtils.generateCustomThemeTxt(
       customColors,
     );
-    themeGeneratedHtml = '<pre>$themeHtml<br /><br />$customHtml';
+    // themeGeneratedHtml = '<pre>$themeHtml<br /><br />$customHtml';
+    themeGeneratedHtml = '$themeGeneratedHtml\n\n';
     notifyListeners();
   }
 }

@@ -67,7 +67,7 @@
         ),
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all<Color>(
+            foregroundColor: MaterialStateProperty.all&#60;Color&#62;(
               Color(0x'text_button_foreground_color')
             ),
           ),
@@ -101,16 +101,15 @@
           enableFeedback: 'floating_btn_enable_feedback',
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all<Color>(
-              Color(0x'elevated_btn_foreground_color'),
-            ),
-            backgroundColor: MaterialStateProperty.all<Color>(
-              Color(0x'elevated_btn_background_color'),
-            ),
-            elevation: MaterialStateProperty.all<double>(
-              'elevated_btn_elevation',
-            ),
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.all&#60;Color&#62;(
+            Color(0x'elevated_btn_foreground_color'),
+          ),
+          backgroundColor: MaterialStateProperty.all&#60;Color&#62;(
+            Color(0x'elevated_btn_background_color'),
+          ),
+          elevation: MaterialStateProperty.all&#60;double&#62;(
+            'elevated_btn_elevation',
           ),
         ),
         drawerTheme: DrawerThemeData(
@@ -118,4 +117,5 @@
           elevation: 'drawer_elevation',
           width: 'drawer_width',
         ),
+      ),
     )

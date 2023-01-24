@@ -1,9 +1,7 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_themer/exports/exports.dart';
 
 class GeneratedThemeScreen extends StatelessWidget {
+  //
   const GeneratedThemeScreen({super.key});
 
   @override
@@ -12,10 +10,84 @@ class GeneratedThemeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Generated Theme'),
+        actions: [
+          // IconButton(
+          //   onPressed: () async {
+          //     copyToClipboard(previewAppState.themeGeneratedHtml);
+          //   },
+          //   icon: const Icon(Icons.copy),
+          // )
+        ],
       ),
       body: ParentContainer(
         child: SingleChildScrollView(
-          child: Html(data: previewAppState.themeGeneratedHtml),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: HighlightView(
+                      previewAppState.themeGeneratedHtml,
+                      language: 'dart',
+                      theme: githubGistTheme,
+                      padding: const EdgeInsets.all(20),
+                      textStyle: const TextStyle(
+                        fontFamily: 'courier',
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: 10,
+                    top: 10,
+                    child: IconButton(
+                      onPressed: () async {
+                        copyToClipboard(previewAppState.themeGeneratedHtml);
+                      },
+                      icon: const Icon(
+                        Icons.copy,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(width: 30),
+              Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: HighlightView(
+                      previewAppState.customHtml,
+                      language: 'dart',
+                      theme: githubGistTheme,
+                      padding: const EdgeInsets.all(20),
+                      textStyle: const TextStyle(
+                        fontFamily: 'courier',
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: 10,
+                    top: 10,
+                    child: IconButton(
+                      onPressed: () async {
+                        copyToClipboard(previewAppState.customHtml);
+                      },
+                      icon: const Icon(
+                        Icons.copy,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

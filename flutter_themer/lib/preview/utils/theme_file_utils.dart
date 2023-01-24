@@ -233,7 +233,10 @@ class ThemeFileUtils {
           } else {
             val = customTheme[uiItem.key]['value'];
           }
-          themeHtml = themeHtml.replaceAll("'${uiItem.key}'", val);
+          themeHtml = themeHtml.replaceAll(
+            "'${uiItem.key}'",
+            val.replaceAll('#', ''),
+          );
         }
       }
     }

@@ -1,5 +1,5 @@
 @immutable
-class MyColors extends ThemeExtension<MyColors> {
+class MyColors extends ThemeExtension&#60;MyColors&#62; {
   
   const MyColors({
     params
@@ -8,7 +8,7 @@ class MyColors extends ThemeExtension<MyColors> {
   'declarations'
 
   @override
-  ThemeExtension<MyColors> copyWith({
+  ThemeExtension&#60;MyColors&#62; copyWith({
     'copyWith_constructor_declarations'
   }) {
     return MyColors(
@@ -17,7 +17,7 @@ class MyColors extends ThemeExtension<MyColors> {
   }
 
   @override
-  ThemeExtension<MyColors> lerp(ThemeExtension<MyColors>? other, double t) {
+  ThemeExtension&#60;MyColors&#62; lerp(ThemeExtension&#60;MyColors&#62;? other, double t) {
     if (other is! MyColors) {
       return this;
     }

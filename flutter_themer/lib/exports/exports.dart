@@ -50,3 +50,5 @@ export 'package:flutter_themer/widgets/theme_toggler.dart';
 
 export 'package:flutter_themer/widgets/num_stepper.dart';
 export 'package:flutter_themer/widgets/theme_custom_colors.dart';
+export 'package:flutter_highlight/flutter_highlight.dart';
+export 'package:flutter_highlight/themes/github-gist.dart';
