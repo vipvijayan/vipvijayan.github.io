@@ -1,34 +1,26 @@
 import 'package:flutter/material.dart';
 
-class NumericStepButton extends StatefulWidget {
+class NumericStepButton extends StatelessWidget {
   final int minValue;
   final int maxValue;
   final int defaultCounter;
-  final ValueChanged<int> onChanged;
+  final Function onIncrement;
+  final Function onDecrement;
 
   const NumericStepButton({
     Key? key,
     this.minValue = 0,
     this.maxValue = 10,
     this.defaultCounter = 0,
-    required this.onChanged,
+    required this.onIncrement,
+    required this.onDecrement,
   }) : super(key: key);
 
-  @override
-  State<NumericStepButton> createState() {
-    return _NumericStepButtonState();
-  }
-}
-
-class _NumericStepButtonState extends State<NumericStepButton> {
-  //
-  int counter = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    counter = widget.defaultCounter;
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   counter = widget.defaultCounter;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -53,16 +45,17 @@ class _NumericStepButtonState extends State<NumericStepButton> {
             iconSize: 20.0,
             color: Theme.of(context).primaryColor,
             onPressed: () {
-              setState(() {
-                if (counter > widget.minValue) {
-                  counter--;
-                }
-                widget.onChanged(counter);
-              });
+              onDecrement();
+              // setState(() {
+              //   if (defaultCounter > minValue) {
+              //     counter--;
+              //   }
+              //   // widget.onChanged(counter);
+              // });
             },
           ),
           Text(
-            '$counter',
+            '$defaultCounter',
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.tealAccent,
@@ -80,12 +73,13 @@ class _NumericStepButtonState extends State<NumericStepButton> {
             iconSize: 20.0,
             color: Theme.of(context).primaryColor,
             onPressed: () {
-              setState(() {
-                if (counter < widget.maxValue) {
-                  counter++;
-                }
-                widget.onChanged(counter);
-              });
+              // setState(() {
+              //   if (counter < widget.maxValue) {
+              //     counter++;
+              //   }
+              //   widget.onChanged(counter);
+              // });
+              onIncrement();
             },
           ),
         ],

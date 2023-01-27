@@ -30,6 +30,12 @@ class HomeScreen extends StatelessWidget {
             },
             icon: const Icon(Icons.devices_outlined),
           ),
+          IconButton(
+            onPressed: () async {
+              previewAppState.init(refresh: true);
+            },
+            icon: const Icon(Icons.refresh_outlined),
+          ),
           const VerticalDivider(
             endIndent: 30,
             indent: 30,

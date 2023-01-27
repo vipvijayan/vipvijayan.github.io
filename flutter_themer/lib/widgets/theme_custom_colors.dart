@@ -10,6 +10,9 @@ class ThemeCustomColorsUI extends StatelessWidget {
     return Column(
       children: previewAppState.customColors.map(
         (customColor) {
+          final curColor = HexColor(Preferences.darkTheme
+              ? customColor.darkModeColorCode
+              : customColor.lightModeColorCode);
           return Container(
             padding: const EdgeInsets.fromLTRB(40, 5, 20, 0),
             child: Row(
@@ -18,10 +21,10 @@ class ThemeCustomColorsUI extends StatelessWidget {
                   child: TextFormField(
                     keyboardType: TextInputType.name,
                     decoration: const InputDecoration(
-                      hintText: 'Color Name (max 30 Chars)',
+                      hintText: 'Color Name (max 20 Chars)',
                     ),
                     onChanged: (value) {
-                      if (value.length > 30) {
+                      if (value.length > 20) {
                         return;
                       }
                       customColor.name = value;
@@ -32,10 +35,15 @@ class ThemeCustomColorsUI extends StatelessWidget {
                 Expanded(
                   child: ColorSelector(
                     title: 'Custom Color ${customColor.name}',
-                    color: HexColor('#FFFFFFFF'),
+                    color: curColor,
                     propertyKey: '1',
                     onTap: (Color color) {
-                      customColor.colorCode = colorHex(color);
+                      if (Preferences.darkTheme) {
+                        customColor.darkModeColorCode = colorHex(color);
+                        return;
+                      }
+                      customColor.lightModeColorCode = colorHex(color);
+                      previewAppState.refresh();
                     },
                   ),
                 ),

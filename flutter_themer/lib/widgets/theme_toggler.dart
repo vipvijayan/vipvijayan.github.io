@@ -5,18 +5,22 @@ class ThemeToggler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeState = context.watch<ThemeAppState>();
+    final state = context.watch<PreviewAppState>();
     return Row(
       children: [
-        const Text('Dark Mode'),
+        Text(
+          'DARK',
+          style: Theme.of(context).textTheme.titleSmall,
+        ),
         Switch(
-          value: themeState.darkTheme,
+          value: state.darkTheme,
           onChanged: ((value) {
-            themeState.setTheme(value);
-            context
-                .read<PreviewAppState>()
-                .init(refresh: true, darkMode: themeState.darkTheme);
-            themeState.refresh();
+            Preferences.darkTheme = value;
+            state.darkTheme = value;
+            state.refresh();
+            unawaited(
+              state.refreshPreview(),
+            );
           }),
         ),
       ],

@@ -2,6 +2,7 @@ import 'package:flutter_themer/exports/exports.dart';
 
 class PreviewAppState extends ChangeNotifier {
   //
+  bool darkTheme = false;
   ThemeData curThemeData = ThemeData.light();
   // Map<String, dynamic> customTheme = <String, dynamic>{};
 
@@ -27,22 +28,15 @@ class PreviewAppState extends ChangeNotifier {
     }
   }
 
-  Future<void> init({bool refresh = false, bool darkMode = false}) async {
-    // customTheme.clear();
+  Future<void> init({bool refresh = false}) async {
     themeUIModelList.clear();
     themeUIModelList = await loadThemeUIModelList();
     curThemeData = await ThemeFileUtils.refreshThemeData();
-    if (refresh) {
-      notifyListeners();
-    }
-    if (!refresh) {
-      Future.delayed(const Duration(seconds: 1), () async {
-        openHome();
-      });
-    }
+    notifyListeners();
+    if (!refresh) openHome();
   }
 
-  Future<void> setPreviewTheme() async {
+  Future<void> refreshPreview() async {
     curThemeData = await ThemeFileUtils.refreshThemeData();
     notifyListeners();
   }
@@ -62,27 +56,27 @@ class PreviewAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  addToTheme(String key, dynamic value) {
-    // customTheme.addAll({key: value});
-  }
-
   Future<void> generateHtml() async {
-    // themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
-    //   customTheme,
-    //   themeUIModelList,
-    // );
-    // customHtml = await ThemeFileUtils.generateCustomThemeTxt(
-    //   customColors,
-    // );
-    // // themeGeneratedHtml = '<pre>$themeHtml<br /><br />$customHtml';
-    // themeGeneratedHtml = '$themeGeneratedHtml\n\n';
-    // notifyListeners();
+    themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
+      themeUIModelList,
+    );
+    customHtml = await ThemeFileUtils.generateCustomThemeTxt(
+      customColors,
+    );
+    themeGeneratedHtml = '$themeGeneratedHtml\n\n';
+    notifyListeners();
   }
 }
 
 class CustomColor {
   final int id;
   String name;
-  String colorCode;
-  CustomColor({required this.id, required this.name, required this.colorCode});
+  String lightModeColorCode;
+  String darkModeColorCode;
+  CustomColor({
+    required this.id,
+    required this.name,
+    this.lightModeColorCode = '#FF000000',
+    this.darkModeColorCode = '#FFFFFFFF',
+  });
 }

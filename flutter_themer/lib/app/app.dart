@@ -17,9 +17,6 @@ class App extends StatelessWidget {
           },
           lazy: false,
         ),
-        ChangeNotifierProvider(
-          create: (_) => ThemeAppState(),
-        ),
       ],
       child: MaterialApp(
         navigatorKey: navKey,

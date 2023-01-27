@@ -9,22 +9,21 @@ class ThemeFileUtils {
       primaryColor: HexColor(themeMap['primary_color']),
       scaffoldBackgroundColor: HexColor(themeMap['scaffold_background_color']),
       appBarTheme: AppBarTheme(
-        // color: Colors.red,
-        elevation: double.parse(themeMap['app_bar_elevation']),
-        backgroundColor: HexColor(themeMap['scaffold_background_color']),
-        // centerTitle:
-        //     (customTheme['center_title']['value'] as String).parseBool(),
-        // iconTheme: IconThemeData(
-        //   color: HexColor(customTheme['app_bar_icon_color']['value']),
-        //   size:
-        //       double.parse(customTheme['app_bar_icon_size']['value'] as String),
-        // ),
-        // systemOverlayStyle: const SystemUiOverlayStyle(
-        //   statusBarColor: Colors.blue,
-        //   statusBarIconBrightness: Brightness.dark,
-        //   statusBarBrightness: Brightness.dark,
-        // ),
-      ),
+          // color: Colors.red,
+          elevation: double.parse(themeMap['app_bar_elevation']),
+          backgroundColor: HexColor(themeMap['scaffold_background_color']),
+          centerTitle: themeMap['center_title']
+          // iconTheme: IconThemeData(
+          //   color: HexColor(customTheme['app_bar_icon_color']['value']),
+          //   size:
+          //       double.parse(customTheme['app_bar_icon_size']['value'] as String),
+          // ),
+          // systemOverlayStyle: const SystemUiOverlayStyle(
+          //   statusBarColor: Colors.blue,
+          //   statusBarIconBrightness: Brightness.dark,
+          //   statusBarBrightness: Brightness.dark,
+          // ),
+          ),
       // textTheme: TextTheme(
       //   // bodyText1: TextStyle(
       //   //   fontSize: double.parse(
@@ -214,24 +213,31 @@ class ThemeFileUtils {
 
   static Map<String, dynamic> getThemeMap() {
     Map<String, dynamic> map = <String, dynamic>{};
-    final dark = isDarkMode();
     for (final themeUIModel in themeUIModelList) {
       final items = themeUIModel.items;
       for (final item in items) {
         final subItems = item.subItems;
         for (final subItem in subItems) {
           if (subItem.input == 'color') {
-            map[subItem.key] = dark
+            map[subItem.key] = Preferences.darkTheme
                 ? subItem.dark.value.first.value
                 : subItem.light.value.first.value;
           }
           if (subItem.input == 'number') {
-            map[subItem.key] = dark
+            map[subItem.key] = Preferences.darkTheme
                 ? subItem.dark.value.first.value
                 : subItem.light.value.first.value;
           }
+          if (subItem.input == 'boolean') {
+            map[subItem.key] = (Preferences.darkTheme
+                    ? subItem.dark.value.first.value
+                    : subItem.light.value.first.value)
+                .parseBool();
+          }
           if (subItem.input == 'dropdown') {
-            final list = dark ? subItem.dark.value : subItem.light.value;
+            final list = Preferences.darkTheme
+                ? subItem.dark.value
+                : subItem.light.value;
             map[subItem.key] = list
                 .firstWhere(
                   (element) => element.selected,
@@ -245,27 +251,47 @@ class ThemeFileUtils {
   }
 
   static Future<String> generateThemeTxt(
-    Map<String, dynamic> customTheme,
     List<ThemeUiModel> themeUIModelList,
   ) async {
     var themeHtml = await loadThemeTxt();
-    // for (final themeUIModel in themeUIModelList) {
-    //   for (final uiItem in themeUIModel.items) {
-    //     if (null != customTheme[uiItem.key]) {
-    //       logD('Type: ${customTheme[uiItem.key]['type']}');
-    //       var val = '';
-    //       if (customTheme[uiItem.key]['type'] == 'dropdown') {
-    //         val = customTheme[uiItem.key]['selected'];
-    //       } else {
-    //         val = customTheme[uiItem.key]['value'];
-    //       }
-    //       themeHtml = themeHtml.replaceAll(
-    //         "'${uiItem.key}'",
-    //         val.replaceAll('#', ''),
-    //       );
-    //     }
-    //   }
-    // }
+    for (final themeUIModel in themeUIModelList) {
+      final items = themeUIModel.items;
+      for (final item in items) {
+        final subItems = item.subItems;
+        for (final subItem in subItems) {
+          var val = '';
+          if (subItem.input == 'color') {
+            val = Preferences.darkTheme
+                ? subItem.dark.value.first.value
+                : subItem.light.value.first.value;
+          }
+          if (subItem.input == 'number') {
+            val = Preferences.darkTheme
+                ? subItem.dark.value.first.value
+                : subItem.light.value.first.value;
+          }
+          if (subItem.input == 'boolean') {
+            val = Preferences.darkTheme
+                ? subItem.dark.value.first.value
+                : subItem.light.value.first.value;
+          }
+          if (subItem.input == 'dropdown') {
+            final list = Preferences.darkTheme
+                ? subItem.dark.value
+                : subItem.light.value;
+            val = list
+                .firstWhere(
+                  (element) => element.selected,
+                )
+                .value;
+          }
+          themeHtml = themeHtml.replaceAll(
+            "'${subItem.key}'",
+            val.replaceAll('#', ''),
+          );
+        }
+      }
+    }
     return themeHtml;
   }
 
@@ -278,12 +304,37 @@ class ThemeFileUtils {
     }
     var themeHtml = await loadCustomColorsTxt();
     final newLine = length == 1 ? '' : '\n';
+    var str999 = '';
+    var str888 = '';
+    var str777 = '';
+    var str666 = '';
+    var str555 = '';
+    var str444 = '';
+    var str333 = '';
+    int counter = 0;
     for (final cColor in customColors) {
-      themeHtml = themeHtml.replaceAll(
-        'params',
-        'required this.${cColor.name},$newLine',
-      );
+      if (cColor.name.trim().isEmpty) continue;
+      final space = counter == 0 ? '' : '  ';
+      str999 += '$space this.${cColor.name},$newLine';
+      str888 += '$space final Color? ${cColor.name};$newLine';
+      str777 += '$space Color? ${cColor.name},$newLine';
+      str666 +=
+          '$space ${cColor.name}: ${cColor.name} ?? this.${cColor.name},$newLine';
+      counter++;
+      str555 +=
+          '$space ${cColor.name}: Color.lerp(${cColor.name}, other.${cColor.name},t),$newLine';
+      str444 +=
+          "$space ${cColor.name}: Color(0x${cColor.lightModeColorCode}),$newLine";
+      str333 +=
+          "$space ${cColor.name}: Color(0x${cColor.darkModeColorCode}),$newLine";
     }
+    themeHtml = themeHtml.replaceAll('9999999999', str999);
+    themeHtml = themeHtml.replaceAll('8888888888', str888);
+    themeHtml = themeHtml.replaceAll('7777777777', str777);
+    themeHtml = themeHtml.replaceAll('6666666666', str666);
+    themeHtml = themeHtml.replaceAll('5555555555', str555);
+    themeHtml = themeHtml.replaceAll('4444444444', str444);
+    themeHtml = themeHtml.replaceAll('3333333333', str333);
     return themeHtml;
   }
 }
