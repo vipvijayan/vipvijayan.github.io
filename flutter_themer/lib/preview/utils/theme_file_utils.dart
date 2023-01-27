@@ -8,25 +8,23 @@ class ThemeFileUtils {
       // useMaterial3: true,
       primaryColor: HexColor(themeMap['primary_color']),
       scaffoldBackgroundColor: HexColor(themeMap['scaffold_background_color']),
-      // appBarTheme: AppBarTheme(
-      //   // color: Colors.red,
-      //   elevation: double.parse(customTheme['app_bar_elevation']['value']),
-      //   backgroundColor: HexColor(
-      //     customTheme['app_bar_background_color']['value'],
-      //   ),
-      //   centerTitle:
-      //       (customTheme['center_title']['value'] as String).parseBool(),
-      //   iconTheme: IconThemeData(
-      //     color: HexColor(customTheme['app_bar_icon_color']['value']),
-      //     size:
-      //         double.parse(customTheme['app_bar_icon_size']['value'] as String),
-      //   ),
-      //   systemOverlayStyle: const SystemUiOverlayStyle(
-      //     statusBarColor: Colors.blue,
-      //     statusBarIconBrightness: Brightness.dark,
-      //     statusBarBrightness: Brightness.dark,
-      //   ),
-      // ),
+      appBarTheme: AppBarTheme(
+        // color: Colors.red,
+        elevation: double.parse(themeMap['app_bar_elevation']),
+        backgroundColor: HexColor(themeMap['scaffold_background_color']),
+        // centerTitle:
+        //     (customTheme['center_title']['value'] as String).parseBool(),
+        // iconTheme: IconThemeData(
+        //   color: HexColor(customTheme['app_bar_icon_color']['value']),
+        //   size:
+        //       double.parse(customTheme['app_bar_icon_size']['value'] as String),
+        // ),
+        // systemOverlayStyle: const SystemUiOverlayStyle(
+        //   statusBarColor: Colors.blue,
+        //   statusBarIconBrightness: Brightness.dark,
+        //   statusBarBrightness: Brightness.dark,
+        // ),
+      ),
       // textTheme: TextTheme(
       //   // bodyText1: TextStyle(
       //   //   fontSize: double.parse(
@@ -95,44 +93,43 @@ class ThemeFileUtils {
       //     customTheme['card_elevation']['value'] as String,
       //   ),
       // ),
-      // tabBarTheme: TabBarTheme(
-      //   indicatorSize:
-      //       tabIndicatorSize(customTheme['tabbar_indicator_size']['selected']),
-      //   labelColor: HexColor(
-      //     customTheme['tabbar_selected_label_color']['value'],
-      //   ),
-      //   unselectedLabelColor: HexColor(
-      //     customTheme['tabbar_unselected_label_color']['value'],
-      //   ),
-      //   indicator: ShapeDecoration(
-      //     shape: UnderlineInputBorder(
-      //       borderSide: BorderSide(
-      //         color: HexColor(
-      //           customTheme['tabbar_indicator_color']['value'],
-      //         ),
-      //         width: double.parse(
-      //           customTheme['tabbar_indicator_width']['value'] as String,
-      //         ),
-      //         style: BorderStyle.solid,
-      //       ),
-      //     ),
-      //   ),
-      //   labelStyle: TextStyle(
-      //     color: Colors.white,
-      //     fontSize: double.parse(
-      //       customTheme['tabbar_label_font_size']['value'] as String,
-      //     ),
-      //     letterSpacing: 1.2,
-      //     fontWeight: FontWeight.bold,
-      //   ),
-      //   unselectedLabelStyle: TextStyle(
-      //     color: Colors.white,
-      //     letterSpacing: 1.1,
-      //     fontSize: double.parse(
-      //       customTheme['tabbar_unselected_label_font_size']['value'] as String,
-      //     ),
-      //   ),
-      // ),
+      tabBarTheme: TabBarTheme(
+        indicatorSize: tabIndicatorSize(themeMap['tabbar_indicator_size']),
+        // labelColor: HexColor(
+        //   customTheme['tabbar_selected_label_color']['value'],
+        // ),
+        // unselectedLabelColor: HexColor(
+        //   customTheme['tabbar_unselected_label_color']['value'],
+        // ),
+        // indicator: ShapeDecoration(
+        //   shape: UnderlineInputBorder(
+        //     borderSide: BorderSide(
+        //       color: HexColor(
+        //         customTheme['tabbar_indicator_color']['value'],
+        //       ),
+        //       width: double.parse(
+        //         customTheme['tabbar_indicator_width']['value'] as String,
+        //       ),
+        //       style: BorderStyle.solid,
+        //     ),
+        //   ),
+        // ),
+        // labelStyle: TextStyle(
+        //   color: Colors.white,
+        //   fontSize: double.parse(
+        //     customTheme['tabbar_label_font_size']['value'] as String,
+        //   ),
+        //   letterSpacing: 1.2,
+        //   fontWeight: FontWeight.bold,
+        // ),
+        // unselectedLabelStyle: TextStyle(
+        //   color: Colors.white,
+        //   letterSpacing: 1.1,
+        //   fontSize: double.parse(
+        //     customTheme['tabbar_unselected_label_font_size']['value'] as String,
+        //   ),
+        // ),
+      ),
       // textButtonTheme: TextButtonThemeData(
       //   style: ButtonStyle(
       //     foregroundColor: MaterialStateProperty.all<Color>(
@@ -223,7 +220,24 @@ class ThemeFileUtils {
       for (final item in items) {
         final subItems = item.subItems;
         for (final subItem in subItems) {
-          map[subItem.key] = dark ? subItem.dark.value : subItem.light.value;
+          if (subItem.input == 'color') {
+            map[subItem.key] = dark
+                ? subItem.dark.value.first.value
+                : subItem.light.value.first.value;
+          }
+          if (subItem.input == 'number') {
+            map[subItem.key] = dark
+                ? subItem.dark.value.first.value
+                : subItem.light.value.first.value;
+          }
+          if (subItem.input == 'dropdown') {
+            final list = dark ? subItem.dark.value : subItem.light.value;
+            map[subItem.key] = list
+                .firstWhere(
+                  (element) => element.selected,
+                )
+                .value;
+          }
         }
       }
     }

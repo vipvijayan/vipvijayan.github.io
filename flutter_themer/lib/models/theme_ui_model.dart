@@ -106,15 +106,47 @@ class Dark {
   });
 
   final int id;
-  String value;
+  final List<Value> value;
 
   factory Dark.fromJson(Map<String, dynamic> json) => Dark(
         id: json["id"],
-        value: json["value"],
+        value: List<Value>.from(json["value"].map((x) => Value.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
+        "value": List<dynamic>.from(value.map((x) => x.toJson())),
+      };
+}
+
+class Value {
+  Value({
+    required this.id,
+    required this.label,
+    this.selected = true,
+    required this.value,
+    required this.selectedValue,
+  });
+
+  final int id;
+  final String label;
+  bool selected;
+  String value;
+  String selectedValue;
+
+  factory Value.fromJson(Map<String, dynamic> json) => Value(
+        id: json["id"],
+        label: json["label"],
+        selected: json["selected"],
+        value: json["value"],
+        selectedValue: json["selected_value"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "label": label,
+        "selected": selected,
         "value": value,
+        "selected_value": selectedValue,
       };
 }

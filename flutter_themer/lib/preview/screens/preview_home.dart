@@ -16,13 +16,11 @@ class PreviewHomeScreen extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(45),
               child: Container(
-                padding: const EdgeInsets.only(top: 50),
+                padding: const EdgeInsets.only(top: kToolbarHeight),
                 height: previewAppState.height,
                 width: previewAppState.width,
                 decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(30),
-                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(30)),
                   color: Theme.of(context).appBarTheme.backgroundColor,
                 ),
                 child: DefaultTabController(

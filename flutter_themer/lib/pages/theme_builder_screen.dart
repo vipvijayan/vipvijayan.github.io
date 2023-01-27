@@ -7,6 +7,7 @@ class ThemeBuilderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<PreviewAppState>();
+    final dark = isDarkMode();
     return Material(
       type: MaterialType.transparency,
       child: ParentContainer(
@@ -49,9 +50,9 @@ class ThemeBuilderScreen extends StatelessWidget {
                                   spacing: 30,
                                   children: item.subItems.map((subItem) {
                                     if (subItem.input == 'color') {
-                                      final val = isDarkMode()
-                                          ? subItem.dark.value
-                                          : subItem.light.value;
+                                      final currentVal = dark
+                                          ? subItem.dark.value.first.value
+                                          : subItem.light.value.first.value;
                                       return Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -59,15 +60,79 @@ class ThemeBuilderScreen extends StatelessWidget {
                                           SubTitle(title: subItem.title),
                                           ColorSelector(
                                             title: uiModel.title,
-                                            color: HexColor(val),
-                                            propertyKey: val,
+                                            color: HexColor(currentVal),
+                                            propertyKey: currentVal,
                                             onTap: (Color color) {
                                               if (isDarkMode()) {
-                                                subItem.dark.value =
+                                                subItem.dark.value.first.value =
                                                     colorHex(color);
                                               } else {
-                                                subItem.light.value =
-                                                    colorHex(color);
+                                                subItem.light.value.first
+                                                    .value = colorHex(color);
+                                              }
+                                              unawaited(
+                                                state.setPreviewTheme(),
+                                              );
+                                            },
+                                          ),
+                                          const SizedBox(height: 20),
+                                        ],
+                                      );
+                                    }
+                                    if (subItem.input == 'dropdown') {
+                                      final list = dark
+                                          ? subItem.dark.value
+                                          : subItem.light.value;
+                                      final currentVal = list.firstWhere(
+                                        (element) => element.selected,
+                                      );
+                                      return Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          SubTitle(title: subItem.title),
+                                          DropdownButton<Value>(
+                                            value: currentVal,
+                                            items: _dropDownItems(list),
+                                            onChanged: (Value? value) {
+                                              if (null == value) {
+                                                return;
+                                              }
+                                              for (var e in list) {
+                                                e.selected = e.id == value.id;
+                                              }
+                                              state.refresh();
+                                              unawaited(
+                                                state.setPreviewTheme(),
+                                              );
+                                            },
+                                          ),
+                                          const SizedBox(height: 20),
+                                        ],
+                                      );
+                                    }
+                                    if (subItem.input == 'number') {
+                                      final currentVal = dark
+                                          ? subItem.dark.value.first.value
+                                          : subItem.light.value.first.value;
+                                      return Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          SubTitle(title: subItem.title),
+                                          NumericStepButton(
+                                            defaultCounter:
+                                                double.parse(currentVal)
+                                                    .toInt(),
+                                            maxValue: 900,
+                                            minValue: 0,
+                                            onChanged: (int val) {
+                                              if (isDarkMode()) {
+                                                subItem.dark.value.first.value =
+                                                    val.toString();
+                                              } else {
+                                                subItem.light.value.first
+                                                    .value = val.toString();
                                               }
                                               unawaited(
                                                 state.setPreviewTheme(),
@@ -127,14 +192,12 @@ class ThemeBuilderScreen extends StatelessWidget {
     );
   }
 
-  _dropDownItems(List<String> items) {
+  _dropDownItems(List<Value> items) {
     logD('Items: ${items.toString()}');
-    List<DropdownMenuItem<String>> dropdownItems = items.map((e) {
-      final values = e.split("#");
-      logD("drop: ${values[1]}");
-      return DropdownMenuItem(
-        value: values[1],
-        child: Text(values.first),
+    List<DropdownMenuItem<Value>> dropdownItems = items.map((e) {
+      return DropdownMenuItem<Value>(
+        value: e,
+        child: Text(e.label),
       );
     }).toList();
     return dropdownItems;
@@ -142,27 +205,7 @@ class ThemeBuilderScreen extends StatelessWidget {
 }
 
 
-// if (uiChild.input == 'number') {
-                            //   return Column(
-                            //     crossAxisAlignment: CrossAxisAlignment.start,
-                            //     children: [
-                            //       SubTitle(title: uiChild.title),
-                            //       NumericStepButton(
-                            //         defaultCounter: double.parse(
-                            //           state.customTheme[uiChild.key]['value'],
-                            //         ).toInt(),
-                            //         maxValue: 900,
-                            //         minValue: 0,
-                            //         onChanged: (int val) {
-                            //           state.customTheme[uiChild.key]['value'] =
-                            //               val.toString();
-                            //           unawaited(state.setPreviewTheme());
-                            //         },
-                            //       ),
-                            //       const SizedBox(height: 20),
-                            //     ],
-                            //   );
-                            // }
+
                             // if (uiChild.input == 'switch') {
                             //   return Column(
                             //     crossAxisAlignment: CrossAxisAlignment.start,
