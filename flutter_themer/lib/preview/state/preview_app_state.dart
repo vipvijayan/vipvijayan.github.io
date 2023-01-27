@@ -3,8 +3,8 @@ import 'package:flutter_themer/exports/exports.dart';
 class PreviewAppState extends ChangeNotifier {
   //
   ThemeData curThemeData = ThemeData.light();
-  Map<String, dynamic> customTheme = <String, dynamic>{};
-  List<ThemeUiModel> themeUIModelList = [];
+  // Map<String, dynamic> customTheme = <String, dynamic>{};
+
   String themeGeneratedHtml = '';
   String customHtml = '';
 
@@ -28,15 +28,10 @@ class PreviewAppState extends ChangeNotifier {
   }
 
   Future<void> init({bool refresh = false, bool darkMode = false}) async {
-    customTheme.clear();
+    // customTheme.clear();
     themeUIModelList.clear();
-    String jsonData = await loadDefaultThemeValuesFile(darkMode);
-    if (customTheme.keys.isEmpty) {
-      logD('Custom Theme is Empty. Initializing with Default values');
-      customTheme = jsonDecode(jsonData);
-    }
-    curThemeData = await ThemeFileUtils.initializeThemeData(customTheme);
     themeUIModelList = await loadThemeUIModelList();
+    curThemeData = await ThemeFileUtils.refreshThemeData();
     if (refresh) {
       notifyListeners();
     }
@@ -48,7 +43,7 @@ class PreviewAppState extends ChangeNotifier {
   }
 
   Future<void> setPreviewTheme() async {
-    curThemeData = await ThemeFileUtils.initializeThemeData(customTheme);
+    curThemeData = await ThemeFileUtils.refreshThemeData();
     notifyListeners();
   }
 
@@ -68,20 +63,20 @@ class PreviewAppState extends ChangeNotifier {
   }
 
   addToTheme(String key, dynamic value) {
-    customTheme.addAll({key: value});
+    // customTheme.addAll({key: value});
   }
 
   Future<void> generateHtml() async {
-    themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
-      customTheme,
-      themeUIModelList,
-    );
-    customHtml = await ThemeFileUtils.generateCustomThemeTxt(
-      customColors,
-    );
-    // themeGeneratedHtml = '<pre>$themeHtml<br /><br />$customHtml';
-    themeGeneratedHtml = '$themeGeneratedHtml\n\n';
-    notifyListeners();
+    // themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
+    //   customTheme,
+    //   themeUIModelList,
+    // );
+    // customHtml = await ThemeFileUtils.generateCustomThemeTxt(
+    //   customColors,
+    // );
+    // // themeGeneratedHtml = '<pre>$themeHtml<br /><br />$customHtml';
+    // themeGeneratedHtml = '$themeGeneratedHtml\n\n';
+    // notifyListeners();
   }
 }
 

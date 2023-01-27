@@ -4,32 +4,61 @@ String colorHex(Color color) => '#${color.value.toRadixString(16)}';
 
 Future<void> showColorDialog(
   BuildContext context, {
+  required String title,
   required String propertyKey,
   required Function(Color color) onTap,
 }) async {
-  showModalBottomSheet(
-    elevation: 0,
+  showDialog(
     context: context,
-    builder: (context) {
-      return Dialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-        elevation: 0,
-        child: SizedBox(
-          height: 300,
-          child: Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(30),
-            child: ColorPicker(
-              pickerColor: pickerColor,
-              pickerAreaBorderRadius: BorderRadius.circular(20),
-              colorPickerWidth: 600,
-              onColorChanged: ((color) async {
-                onTap(color);
-              }),
-            ),
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(title),
+        content: SingleChildScrollView(
+          child: HueRingPicker(
+            pickerColor: pickerColor,
+            onColorChanged: ((color) {
+              onTap(color);
+            }),
+            // showLabel: true, // only on portrait mode
           ),
         ),
+        actions: <Widget>[
+          TextButton(
+            child: Text(
+              'DONE',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
       );
     },
   );
+  // showModalBottomSheet(
+  //   elevation: 0,
+  //   context: context,
+  //   builder: (context) {
+  //     return Dialog(
+  //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+  //       elevation: 0,
+  //       child: SizedBox(
+  //         height: 300,
+  //         child: Container(
+  //           alignment: Alignment.center,
+  //           padding: const EdgeInsets.all(30),
+  //           child: ColorPicker(
+  //             pickerColor: pickerColor,
+  //             pickerAreaBorderRadius: BorderRadius.circular(20),
+  //             colorPickerWidth: 600,
+  //             onColorChanged: ((color) async {
+  //               onTap(color);
+  //             }),
+  //           ),
+  //         ),
+  //       ),
+  //     );
+  //   },
+  // );
 }

@@ -16,3 +16,5 @@ const customColorsTitle = 'Custom Colors';
 var scaffoldKey = GlobalKey<ScaffoldState>();
 
 final random = Random();
+
+List<ThemeUiModel> themeUIModelList = [];

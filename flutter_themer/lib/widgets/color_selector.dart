@@ -5,11 +5,13 @@ const dimen = 45.0;
 class ColorSelector extends StatelessWidget {
   const ColorSelector({
     super.key,
+    required this.title,
     required this.color,
     required this.propertyKey,
     required this.onTap,
   });
 
+  final String title;
   final Color color;
   final String propertyKey;
   final Function(Color color) onTap;
@@ -20,6 +22,7 @@ class ColorSelector extends StatelessWidget {
       onTap: () async {
         showColorDialog(
           context,
+          title: title,
           propertyKey: propertyKey,
           onTap: (color) {
             onTap(color);
@@ -51,12 +54,3 @@ class ColorSelector extends StatelessWidget {
     );
   }
 }
-
-// Text(
-              //   colorHex(color).toUpperCase(),
-              //   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-              //         color: Colors.grey[300],
-              //         fontWeight: FontWeight.w100,
-              //         fontSize: 14,
-              //       ),
-              // ),

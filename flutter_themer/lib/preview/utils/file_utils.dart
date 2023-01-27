@@ -1,7 +1,5 @@
 import 'package:flutter_themer/exports/exports.dart';
 
-import 'dart:async' show Future;
-
 const filesDir = 'assets/files';
 
 Future<String> loadThemeUIModelFromFile() async {

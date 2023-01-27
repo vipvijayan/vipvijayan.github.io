@@ -31,6 +31,7 @@ class ThemeCustomColorsUI extends StatelessWidget {
                 const SizedBox(width: 30),
                 Expanded(
                   child: ColorSelector(
+                    title: 'Custom Color ${customColor.name}',
                     color: HexColor('#FFFFFFFF'),
                     propertyKey: '1',
                     onTap: (Color color) {

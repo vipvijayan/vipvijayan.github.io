@@ -23,114 +23,66 @@ class ThemeBuilderScreen extends StatelessWidget {
                   height: 20,
                   thickness: 0.1,
                 ),
-                itemCount: state.themeUIModelList.length,
+                itemCount: themeUIModelList.length,
                 itemBuilder: (context, index) {
-                  final uiModel = state.themeUIModelList[index];
+                  final uiModel = themeUIModelList[index];
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.fromLTRB(
-                            uiModel.mainTitle ? 20 : 40, 5, 20, 0),
+                        padding: const EdgeInsets.fromLTRB(20, 5, 20, 0),
                         child: MainTitle(
                           title: uiModel.title,
-                          fontSize: uiModel.mainTitle ? 24 : null,
+                          fontSize: 24,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(40, 5, 20, 0),
-                        child: Wrap(
-                          runSpacing: 10,
-                          spacing: 30,
-                          children: uiModel.items.map((uiChild) {
-                            if (uiChild.input == 'color') {
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SubTitle(title: uiChild.title),
-                                  ColorSelector(
-                                    color: HexColor(state
-                                        .customTheme[uiChild.key]['value']),
-                                    propertyKey: state.customTheme[uiChild.key]
-                                        ['value'],
-                                    onTap: (Color color) {
-                                      state.customTheme[uiChild.key]['value'] =
-                                          colorHex(color);
-                                      unawaited(state.setPreviewTheme());
-                                    },
-                                  ),
-                                  const SizedBox(height: 20),
-                                ],
-                              );
-                            }
-                            if (uiChild.input == 'text_field') {
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SubTitle(title: uiChild.title),
-                                  NumericStepButton(
-                                    defaultCounter: double.parse(
-                                      state.customTheme[uiChild.key]['value'],
-                                    ).toInt(),
-                                    maxValue: 900,
-                                    minValue: 0,
-                                    onChanged: (int val) {
-                                      state.customTheme[uiChild.key]['value'] =
-                                          val.toString();
-                                      unawaited(state.setPreviewTheme());
-                                    },
-                                  ),
-                                  const SizedBox(height: 20),
-                                ],
-                              );
-                            }
-                            if (uiChild.input == 'switch') {
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SubTitle(title: uiChild.title),
-                                  Switch(
-                                    value: (state.customTheme[uiChild.key]
-                                            ['value'] as String)
-                                        .parseBool(),
-                                    onChanged: (val) async {
-                                      state.customTheme[uiChild.key]['value'] =
-                                          val.toString();
-                                      unawaited(state.setPreviewTheme());
-                                    },
-                                  ),
-                                  const SizedBox(height: 20),
-                                ],
-                              );
-                            }
-                            if (uiChild.input == 'dropdown') {
-                              final value =
-                                  state.customTheme[uiChild.key]['value'];
-                              final items = value.split(",");
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SubTitle(title: uiChild.title),
-                                  DropdownButton<String>(
-                                    value: state.customTheme[uiChild.key]
-                                        ['selected'],
-                                    items: _dropDownItems(items),
-                                    onChanged: (String? value) {
-                                      if (null == value) {
-                                        return;
-                                      }
-                                      state.customTheme[uiChild.key]
-                                          ['selected'] = value;
-                                      state.refresh();
-                                      unawaited(state.setPreviewTheme());
-                                    },
-                                  ),
-                                  const SizedBox(height: 20),
-                                ],
-                              );
-                            } else {
-                              return const SizedBox.shrink();
-                            }
+                        padding: const EdgeInsets.fromLTRB(30, 5, 20, 0),
+                        child: Column(
+                          children: uiModel.items.map((item) {
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                MainTitle(title: item.title),
+                                Wrap(
+                                  runSpacing: 10,
+                                  spacing: 30,
+                                  children: item.subItems.map((subItem) {
+                                    if (subItem.input == 'color') {
+                                      final val = isDarkMode()
+                                          ? subItem.dark.value
+                                          : subItem.light.value;
+                                      return Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          SubTitle(title: subItem.title),
+                                          ColorSelector(
+                                            title: uiModel.title,
+                                            color: HexColor(val),
+                                            propertyKey: val,
+                                            onTap: (Color color) {
+                                              if (isDarkMode()) {
+                                                subItem.dark.value =
+                                                    colorHex(color);
+                                              } else {
+                                                subItem.light.value =
+                                                    colorHex(color);
+                                              }
+                                              unawaited(
+                                                state.setPreviewTheme(),
+                                              );
+                                            },
+                                          ),
+                                          const SizedBox(height: 20),
+                                        ],
+                                      );
+                                    }
+                                    return Container();
+                                  }).toList(),
+                                ),
+                              ],
+                            );
                           }).toList(),
                         ),
                       ),
@@ -188,3 +140,74 @@ class ThemeBuilderScreen extends StatelessWidget {
     return dropdownItems;
   }
 }
+
+
+// if (uiChild.input == 'number') {
+                            //   return Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.start,
+                            //     children: [
+                            //       SubTitle(title: uiChild.title),
+                            //       NumericStepButton(
+                            //         defaultCounter: double.parse(
+                            //           state.customTheme[uiChild.key]['value'],
+                            //         ).toInt(),
+                            //         maxValue: 900,
+                            //         minValue: 0,
+                            //         onChanged: (int val) {
+                            //           state.customTheme[uiChild.key]['value'] =
+                            //               val.toString();
+                            //           unawaited(state.setPreviewTheme());
+                            //         },
+                            //       ),
+                            //       const SizedBox(height: 20),
+                            //     ],
+                            //   );
+                            // }
+                            // if (uiChild.input == 'switch') {
+                            //   return Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.start,
+                            //     children: [
+                            //       SubTitle(title: uiChild.title),
+                            //       Switch(
+                            //         value: (state.customTheme[uiChild.key]
+                            //                 ['value'] as String)
+                            //             .parseBool(),
+                            //         onChanged: (val) async {
+                            //           state.customTheme[uiChild.key]['value'] =
+                            //               val.toString();
+                            //           unawaited(state.setPreviewTheme());
+                            //         },
+                            //       ),
+                            //       const SizedBox(height: 20),
+                            //     ],
+                            //   );
+                            // }
+                            // if (uiChild.input == 'dropdown') {
+                            //   final value =
+                            //       state.customTheme[uiChild.key]['value'];
+                            //   final items = value.split(",");
+                            //   return Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.start,
+                            //     children: [
+                            //       SubTitle(title: uiChild.title),
+                            //       DropdownButton<String>(
+                            //         value: state.customTheme[uiChild.key]
+                            //             ['selected'],
+                            //         items: _dropDownItems(items),
+                            //         onChanged: (String? value) {
+                            //           if (null == value) {
+                            //             return;
+                            //           }
+                            //           state.customTheme[uiChild.key]
+                            //               ['selected'] = value;
+                            //           state.refresh();
+                            //           unawaited(state.setPreviewTheme());
+                            //         },
+                            //       ),
+                            //       const SizedBox(height: 20),
+                            //     ],
+                            //   );
+                            // }
+                            // else {
+                            //   return const SizedBox.shrink();
+                            // }

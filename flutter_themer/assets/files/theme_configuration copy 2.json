@@ -1,0 +1,103 @@
+[
+    {
+        "id": 1,
+        "title": "Scaffold",
+        "items": [
+             {
+                "id": 0,
+                "title": "Primary Color",
+                "key": "primary_color",
+                "value_type": "string",
+                "input": "color",
+                "dark": {
+                    "id": 0,
+                    "value": "#FF0645B1"
+                },
+                "light": {
+                    "id": 1,
+                    "value": "#FF0645B1"
+                }
+            },
+            {
+                "id": 1,
+                "title": "Background Color",
+                "key": "scaffold_background_color",
+                "value_type": "string",
+                "input": "color",
+                "dark": {
+                    "id": 0,
+                    "value": "#FF0645B1"
+                },
+                "light": {
+                    "id": 0,
+                    "value": "#FF0645B1"
+                }
+            },
+            {
+                "id": 2,
+                "title": "Elevation",
+                "key": "app_bar_elevation",
+                "value_type": "string",
+                "input": "number",
+                "dark": {
+                    "id": 0,
+                    "value": "0"
+                },
+                "light": {
+                    "id": 0,
+                    "value": "0"
+                }
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Tab Bar",
+        "main_title": false,
+        "items": [
+            {
+                "id": 4,
+                "title": "Tab Bar",
+                "sub_title": "Indicator Width",
+                "key": "tabbar_indicator_size",
+                "value": "3",
+                "value_type": "string",
+                "input": "dropdown",
+                "dark": {
+                    "id": 0,
+                    "value": [
+                       {
+                        "id": 0,
+                        "label": "tab",
+                        "selected": true,
+                        "value": "TabBarIndicatorSize.tab"
+                       },
+                       {
+                        "id": 1,
+                        "label": "label",
+                        "selected": false,
+                        "value": "TabBarIndicatorSize.label"
+                       }
+                    ]
+                },
+                "light": {
+                    "id": 1,
+                    "value": [
+                        {
+                         "id": 0,
+                         "label": "tab",
+                         "selected": true,
+                         "value": "TabBarIndicatorSize.tab"
+                        },
+                        {
+                         "id": 1,
+                         "label": "label",
+                         "selected": false,
+                         "value": "TabBarIndicatorSize.label"
+                        }
+                     ]
+                }
+            }
+        ]
+    }
+]
