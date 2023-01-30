@@ -4,9 +4,9 @@ class PreviewAppState extends ChangeNotifier {
   //
   bool darkTheme = false;
   ThemeData curThemeData = ThemeData.light();
-  // Map<String, dynamic> customTheme = <String, dynamic>{};
 
   String themeGeneratedHtml = '';
+  String usageHtml = '';
   String customHtml = '';
 
   // Device Resolution
@@ -19,6 +19,10 @@ class PreviewAppState extends ChangeNotifier {
   bool showResolutionInput = false;
 
   List<CustomColor> customColors = [];
+  List<ThemeTab> themeTabs = [
+    const ThemeTab(id: 0, title: 'Basic'),
+    const ThemeTab(id: 1, title: 'Advanced'),
+  ];
 
   removeFromCustomColorsList(int id) async {
     for (final c in customColors) {
@@ -34,6 +38,13 @@ class PreviewAppState extends ChangeNotifier {
     curThemeData = await ThemeFileUtils.refreshThemeData();
     notifyListeners();
     if (!refresh) openHome();
+    initUsageData();
+  }
+
+  Future<void> initUsageData() async {
+    Future.delayed(const Duration(seconds: 2), () async {
+      usageHtml = await laodUsageHtml();
+    });
   }
 
   Future<void> refreshPreview() async {
@@ -57,13 +68,16 @@ class PreviewAppState extends ChangeNotifier {
   }
 
   Future<void> generateHtml() async {
-    themeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
-      themeUIModelList,
-    );
-    customHtml = await ThemeFileUtils.generateCustomThemeTxt(
-      customColors,
-    );
-    themeGeneratedHtml = '$themeGeneratedHtml\n\n';
+    String lightThemeGeneratedHtml =
+        await ThemeFileUtils.generateThemeTxt(themeUIModelList, dark: false);
+    String darkThemeGeneratedHtml =
+        await ThemeFileUtils.generateThemeTxt(themeUIModelList, dark: true);
+    customHtml = await ThemeFileUtils.generateCustomThemeTxt(customColors);
+    lightThemeGeneratedHtml =
+        "import 'package:flutter/material.dart';\n\nclass AppTheme { \n\n$lightThemeGeneratedHtml";
+    darkThemeGeneratedHtml =
+        darkThemeGeneratedHtml.replaceAll('lightTheme', 'darkTheme');
+    themeGeneratedHtml = '$lightThemeGeneratedHtml\n$darkThemeGeneratedHtml\n}';
     notifyListeners();
   }
 }
@@ -79,4 +93,10 @@ class CustomColor {
     this.lightModeColorCode = '#FF000000',
     this.darkModeColorCode = '#FFFFFFFF',
   });
+}
+
+class ThemeTab {
+  final int id;
+  final String title;
+  const ThemeTab({required this.id, required this.title});
 }

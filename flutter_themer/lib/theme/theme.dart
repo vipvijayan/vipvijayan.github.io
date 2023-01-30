@@ -151,14 +151,12 @@ class AppTheme {
     primaryColor: Colors.white,
     primaryColorDark: HexColor('#808088'),
     brightness: Brightness.dark,
-
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       centerTitle: true,
       elevation: 0,
-      toolbarHeight: kToolbarHeight + 40,
-      backgroundColor: HexColor('#222222'),
+      backgroundColor: Colors.black,
       iconTheme: IconThemeData(
-        color: Colors.green,
+        color: Colors.greenAccent,
         size: 18,
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -167,20 +165,20 @@ class AppTheme {
         statusBarBrightness: Brightness.dark,
       ),
     ),
-    drawerTheme: DrawerThemeData(
+    drawerTheme: const DrawerThemeData(
       backgroundColor: Colors.black,
-    ), //HexColor('#20b2aa')
+    ),
     snackBarTheme: SnackBarThemeData(
       backgroundColor: HexColor('#20b2aa'),
       elevation: 3,
-      contentTextStyle: TextStyle(
+      contentTextStyle: const TextStyle(
         color: Colors.white,
       ),
     ),
     tabBarTheme: TabBarTheme(
       indicatorSize: TabBarIndicatorSize.label,
       // unselectedLabelColor: HexColor('#DAF7A6'),
-      indicator: ShapeDecoration(
+      indicator: const ShapeDecoration(
         shape: UnderlineInputBorder(
           borderSide: BorderSide(
             color: Colors.transparent,
@@ -190,13 +188,13 @@ class AppTheme {
         ),
       ),
       labelColor: HexColor('#52CC9D'),
-      labelStyle: TextStyle(
+      labelStyle: const TextStyle(
         fontSize: 14,
         letterSpacing: 1.1,
         // fontFamily: curFont,
         fontWeight: FontWeight.bold,
       ),
-      unselectedLabelStyle: TextStyle(
+      unselectedLabelStyle: const TextStyle(
         color: Colors.white30,
         fontSize: 10,
         letterSpacing: 1.1,
@@ -210,7 +208,7 @@ class AppTheme {
       onPrimary: darkBaseTheme,
       secondary: Colors.blue,
     ),
-    progressIndicatorTheme: ProgressIndicatorThemeData(
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: Colors.teal,
       refreshBackgroundColor: Colors.green,
     ),
@@ -219,26 +217,26 @@ class AppTheme {
       color: Colors.black,
       shadowColor: HexColor('#808088'),
     ),
-    dividerTheme: DividerThemeData(
+    dividerTheme: const DividerThemeData(
       indent: 15,
       endIndent: 0,
       thickness: 0.1,
       color: Colors.grey,
     ),
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: Colors.white,
       size: 20,
     ),
-    primaryIconTheme: IconThemeData(
+    primaryIconTheme: const IconThemeData(
       color: Colors.white,
       size: 20,
     ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
       foregroundColor: Colors.orange,
       backgroundColor: Colors.red,
     ),
     textTheme: TextTheme(
-      bodyLarge: TextStyle(
+      bodyLarge: const TextStyle(
         color: Colors.white,
         fontSize: 18.0,
         letterSpacing: letterSpacing,
@@ -248,17 +246,17 @@ class AppTheme {
         fontSize: 18.0,
         letterSpacing: letterSpacing,
       ),
-      bodySmall: TextStyle(
+      bodySmall: const TextStyle(
         color: Colors.white,
         fontSize: 18.0,
         letterSpacing: letterSpacing,
       ),
-      titleSmall: TextStyle(
+      titleSmall: const TextStyle(
         color: Colors.white70,
         fontSize: 16.0,
         letterSpacing: 1,
       ),
-      titleMedium: TextStyle(
+      titleMedium: const TextStyle(
         color: Colors.grey,
         fontSize: 16.0,
         letterSpacing: letterSpacing,

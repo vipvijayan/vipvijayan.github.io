@@ -52,3 +52,5 @@ export 'package:flutter_themer/widgets/theme_custom_colors.dart';
 export 'package:flutter_highlight/flutter_highlight.dart';
 export 'package:flutter_highlight/themes/github-gist.dart';
 export 'package:flutter_themer/preview/utils/preferences.dart';
+export 'package:flutter_themer/widgets/theme_expand_title.dart';
+export 'package:flutter_themer/widgets/theme_widgets/theme_color.dart';

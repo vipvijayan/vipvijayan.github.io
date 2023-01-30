@@ -10,8 +10,10 @@ Future<void> showColorDialog(
 }) async {
   showDialog(
     context: context,
+    barrierColor: Colors.transparent,
     builder: (BuildContext context) {
       return AlertDialog(
+        elevation: 0,
         title: Text(title),
         content: SingleChildScrollView(
           child: HueRingPicker(

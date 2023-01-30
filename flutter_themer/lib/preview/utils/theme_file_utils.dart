@@ -6,13 +6,40 @@ class ThemeFileUtils {
     logD(jsonEncode(themeMap));
     return ThemeData(
       // useMaterial3: true,
-      primaryColor: HexColor(themeMap['primary_color']),
-      scaffoldBackgroundColor: HexColor(themeMap['scaffold_background_color']),
+      // brightness: Brightness.dark,
+      // primaryColor: HexColor(themeMap['key_primary_color']),
+      scaffoldBackgroundColor:
+          HexColor(themeMap['key_scaffold_background_color']),
+      colorScheme: ColorScheme.light(
+        primary: HexColor(themeMap['key_primary']),
+        onPrimary: HexColor(themeMap['key_on_primary']),
+        primaryContainer: HexColor(themeMap['key_primary_container']),
+        onPrimaryContainer: HexColor(themeMap['key_on_primary_container']),
+        secondary: HexColor(themeMap['key_secondary']),
+        onSecondary: HexColor(themeMap['key_on_secondary']),
+        secondaryContainer: HexColor(themeMap['key_secondary_container']),
+        onSecondaryContainer: HexColor(themeMap['key_on_secondary_container']),
+        surface: HexColor(themeMap['key_surface']),
+        onSurface: HexColor(themeMap['key_on_surface']),
+        surfaceTint: HexColor(themeMap['key_surface_tint']),
+        surfaceVariant: HexColor(themeMap['key_surface_variant']),
+        onSurfaceVariant: HexColor(themeMap['key_on_surface_variant']),
+        error: HexColor(themeMap['key_error']),
+        onError: HexColor(themeMap['key_on_error']),
+        errorContainer: HexColor(themeMap['key_error_container']),
+        onErrorContainer: HexColor(themeMap['key_on_error_container']),
+        brightness: brightness(themeMap['key_brightness']),
+        tertiary: HexColor(themeMap['key_tertiary']),
+        onTertiary: HexColor(themeMap['key_on_tertiary']),
+        tertiaryContainer: HexColor(themeMap['key_tertiary_container']),
+        onTertiaryContainer: HexColor(themeMap['key_on_tertiary_container']),
+        outline: HexColor(themeMap['key_cs_outline']),
+        shadow: HexColor(themeMap['key_cs_shadow']),
+      ),
       appBarTheme: AppBarTheme(
-          // color: Colors.red,
-          elevation: double.parse(themeMap['app_bar_elevation']),
-          backgroundColor: HexColor(themeMap['scaffold_background_color']),
-          centerTitle: themeMap['center_title']
+          elevation: double.parse(themeMap['key_app_bar_elevation']),
+          backgroundColor: HexColor(themeMap['key_app_bar_background_color']),
+          centerTitle: themeMap['key_center_title']
           // iconTheme: IconThemeData(
           //   color: HexColor(customTheme['app_bar_icon_color']['value']),
           //   size:
@@ -93,7 +120,7 @@ class ThemeFileUtils {
       //   ),
       // ),
       tabBarTheme: TabBarTheme(
-        indicatorSize: tabIndicatorSize(themeMap['tabbar_indicator_size']),
+        indicatorSize: tabIndicatorSize(themeMap['key_tabbar_indicator_size']),
         // labelColor: HexColor(
         //   customTheme['tabbar_selected_label_color']['value'],
         // ),
@@ -251,8 +278,9 @@ class ThemeFileUtils {
   }
 
   static Future<String> generateThemeTxt(
-    List<ThemeUiModel> themeUIModelList,
-  ) async {
+    List<ThemeUiModel> themeUIModelList, {
+    required bool dark,
+  }) async {
     var themeHtml = await loadThemeTxt();
     for (final themeUIModel in themeUIModelList) {
       final items = themeUIModel.items;
@@ -261,29 +289,23 @@ class ThemeFileUtils {
         for (final subItem in subItems) {
           var val = '';
           if (subItem.input == 'color') {
-            val = Preferences.darkTheme
+            val = dark
                 ? subItem.dark.value.first.value
                 : subItem.light.value.first.value;
           }
           if (subItem.input == 'number') {
-            val = Preferences.darkTheme
+            val = dark
                 ? subItem.dark.value.first.value
                 : subItem.light.value.first.value;
           }
           if (subItem.input == 'boolean') {
-            val = Preferences.darkTheme
+            val = dark
                 ? subItem.dark.value.first.value
                 : subItem.light.value.first.value;
           }
           if (subItem.input == 'dropdown') {
-            final list = Preferences.darkTheme
-                ? subItem.dark.value
-                : subItem.light.value;
-            val = list
-                .firstWhere(
-                  (element) => element.selected,
-                )
-                .value;
+            final list = dark ? subItem.dark.value : subItem.light.value;
+            val = list.firstWhere((element) => element.selected).value;
           }
           themeHtml = themeHtml.replaceAll(
             "'${subItem.key}'",
@@ -346,4 +368,8 @@ tabIndicatorSize(String size) {
     default:
       return TabBarIndicatorSize.tab;
   }
+}
+
+brightness(bool bright) {
+  return bright ? Brightness.light : Brightness.dark;
 }

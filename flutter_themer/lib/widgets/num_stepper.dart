@@ -40,18 +40,14 @@ class NumericStepButton extends StatelessWidget {
               Icons.remove,
               color: Colors.red,
             ),
-            padding:
-                const EdgeInsets.symmetric(vertical: 4.0, horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(
+              vertical: 4.0,
+              horizontal: 18.0,
+            ),
             iconSize: 20.0,
             color: Theme.of(context).primaryColor,
             onPressed: () {
               onDecrement();
-              // setState(() {
-              //   if (defaultCounter > minValue) {
-              //     counter--;
-              //   }
-              //   // widget.onChanged(counter);
-              // });
             },
           ),
           Text(
@@ -59,7 +55,7 @@ class NumericStepButton extends StatelessWidget {
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.tealAccent,
-              fontSize: 24.0,
+              fontSize: 12.0,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -68,17 +64,13 @@ class NumericStepButton extends StatelessWidget {
               Icons.add,
               color: Colors.green,
             ),
-            padding:
-                const EdgeInsets.symmetric(vertical: 4.0, horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(
+              vertical: 4.0,
+              horizontal: 18.0,
+            ),
             iconSize: 20.0,
             color: Theme.of(context).primaryColor,
             onPressed: () {
-              // setState(() {
-              //   if (counter < widget.maxValue) {
-              //     counter++;
-              //   }
-              //   widget.onChanged(counter);
-              // });
               onIncrement();
             },
           ),

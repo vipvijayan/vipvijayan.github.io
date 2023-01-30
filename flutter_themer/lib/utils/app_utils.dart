@@ -19,3 +19,19 @@ showToast(String text) async {
     ),
   );
 }
+
+setWindowSize() async {
+  if (Platform.isMacOS || Platform.isWindows) {
+    WindowOptions windowOptions = const WindowOptions(
+      size: Size(1600, 1300),
+      center: true,
+      backgroundColor: Colors.transparent,
+      skipTaskbar: false,
+      titleBarStyle: TitleBarStyle.hidden,
+    );
+    windowManager.waitUntilReadyToShow(windowOptions, () async {
+      await windowManager.show();
+      await windowManager.focus();
+    });
+  }
+}

@@ -67,10 +67,10 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Container(
-        color: HexColor('#28282B'),
+        color: bgColor,
         child: Row(
           children: [
-            const Expanded(child: ThemeBuilderScreen()),
+            const Expanded(flex: 2, child: ThemeBuilderScreen()),
             const SizedBox(width: 30),
             Expanded(
               child: PreviewApp(

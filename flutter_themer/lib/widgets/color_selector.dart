@@ -35,7 +35,7 @@ class ColorSelector extends StatelessWidget {
           Container(
             padding: EdgeInsets.zero,
             height: dimen,
-            width: dimen * 3,
+            width: dimen * 2,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3),
               color: color,
@@ -45,7 +45,12 @@ class ColorSelector extends StatelessWidget {
             iconSize: 14,
             padding: EdgeInsets.zero,
             onPressed: () async {
-              //
+              copyToClipboard(
+                colorToHex(color),
+                callback: () {
+                  showToast('$title color copied');
+                },
+              );
             },
             icon: const Icon(Icons.copy_outlined),
           )

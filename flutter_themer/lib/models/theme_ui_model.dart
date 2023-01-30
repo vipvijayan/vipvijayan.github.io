@@ -15,21 +15,25 @@ class ThemeUiModel {
     required this.id,
     required this.title,
     required this.items,
+    this.expanded = false,
   });
 
   final int id;
   final String title;
+  bool expanded;
   final List<Item> items;
 
   factory ThemeUiModel.fromJson(Map<String, dynamic> json) => ThemeUiModel(
         id: json["id"],
         title: json["title"],
+        expanded: json["expanded"],
         items: List<Item>.from(json["items"].map((x) => Item.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,
+        "expanded": expanded,
         "items": List<dynamic>.from(items.map((x) => x.toJson())),
       };
 }

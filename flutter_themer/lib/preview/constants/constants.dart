@@ -8,6 +8,8 @@ const themeFileName = 'theme.json';
 Color pickerColor = const Color(0xff443a49);
 Color currentColor = const Color(0xff443a49);
 
+Color bgColor = Colors.black; // HexColor('#28282B');
+
 // images
 const iphoneBg = 'assets/images/iphone_14_1.png';
 const previewTitle = 'Preview';

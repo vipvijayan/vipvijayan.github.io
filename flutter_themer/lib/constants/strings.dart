@@ -1,1 +1,1 @@
-const appTitle = 'Flutter Themer';
+const appTitle = 'FLUTTER THEMER';
