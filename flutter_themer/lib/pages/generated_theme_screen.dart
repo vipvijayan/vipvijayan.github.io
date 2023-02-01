@@ -25,7 +25,7 @@ class GeneratedThemeScreen extends StatelessWidget {
       ),
       body: Container(
         padding: const EdgeInsets.all(20),
-        color: bgColor,
+        color: Theme.of(context).appBarTheme.backgroundColor,
         child: SingleChildScrollView(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -64,19 +64,19 @@ class GeneratedThemeScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: HighlightView(
-                            previewAppState.usageHtml,
-                            language: 'dart',
-                            theme: githubGistTheme,
-                            padding: const EdgeInsets.all(20),
-                            textStyle: const TextStyle(
-                              fontFamily: 'courier',
-                              fontSize: 14,
-                            ),
-                          ),
-                        ),
+                        // ClipRRect(
+                        //   borderRadius: BorderRadius.circular(10),
+                        //   child: HighlightView(
+                        //     previewAppState.usageHtml,
+                        //     language: 'dart',
+                        //     theme: githubGistTheme,
+                        //     padding: const EdgeInsets.all(20),
+                        //     textStyle: const TextStyle(
+                        //       fontFamily: 'courier',
+                        //       fontSize: 14,
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ],

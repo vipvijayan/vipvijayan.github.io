@@ -5,65 +5,51 @@ class PreviewHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final previewAppState = context.watch<PreviewAppState>();
-    return Material(
-      type: MaterialType.transparency,
-      child: ListView(
-        children: [
-          if (previewAppState.showResolutionInput) const ResolutionUI(),
-          const SizedBox(height: 30),
-          Center(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(45),
-              child: Container(
-                padding: const EdgeInsets.only(top: kToolbarHeight),
-                height: previewAppState.height,
-                width: previewAppState.width,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(30)),
-                  color: Theme.of(context).appBarTheme.backgroundColor,
+    return Column(
+      children: [
+        // if (previewAppState.showResolutionInput) const ResolutionUI(),
+        // const SizedBox(height: 30),
+        Expanded(
+          child: DefaultTabController(
+            length: 4,
+            initialIndex: 0,
+            child: Scaffold(
+              key: scaffoldKey,
+              drawer: _drawer(),
+              appBar: AppBar(
+                title: const Text(previewTitle),
+                actions: const [
+                  Icon(Icons.settings),
+                  SizedBox(width: 20),
+                ],
+                leading: IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () async {
+                    scaffoldKey.currentState?.openDrawer();
+                  },
                 ),
-                child: DefaultTabController(
-                  length: 3,
-                  initialIndex: 0,
-                  child: Scaffold(
-                    key: scaffoldKey,
-                    drawer: _drawer(),
-                    appBar: AppBar(
-                      title: const Text(previewTitle),
-                      actions: const [
-                        Icon(Icons.settings),
-                        SizedBox(width: 20),
-                      ],
-                      leading: IconButton(
-                        icon: const Icon(Icons.menu),
-                        onPressed: () async {
-                          scaffoldKey.currentState?.openDrawer();
-                        },
-                      ),
-                      bottom: const TabBar(
-                        tabs: [
-                          Tab(text: 'Text'),
-                          Tab(text: 'Buttons'),
-                          Tab(text: 'Cards'),
-                        ],
-                      ),
-                    ),
-                    body: const TabBarView(
-                      children: [
-                        DemoTab(),
-                        ButtonTab(),
-                        CardTab(),
-                      ],
-                    ),
-                  ),
+                bottom: const TabBar(
+                  tabs: [
+                    Tab(text: 'Text'),
+                    Tab(text: 'Buttons'),
+                    Tab(text: 'Inputs'),
+                    Tab(text: 'Cards'),
+                  ],
                 ),
+              ),
+              body: const TabBarView(
+                children: [
+                  DemoTab(),
+                  ButtonTab(),
+                  InputTab(),
+                  CardTab(),
+                ],
               ),
             ),
           ),
-          const SizedBox(height: 20),
-        ],
-      ),
+        ),
+        const SizedBox(height: 20),
+      ],
     );
   }
 }
@@ -121,7 +107,7 @@ class ButtonTab extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          //
+          showToast("Hello, How are you?");
         },
         child: const Icon(Icons.add),
       ),
@@ -132,24 +118,37 @@ class ButtonTab extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () async {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Hello, How are you?"),
-                  ),
-                );
+                showToast("Hello, How are you?");
               },
               child: const Text('Text Button'),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Hello, How are you?"),
-                  ),
-                );
+                showToast("Hello, How are you?");
               },
               child: const Text('Elevated Button Button'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class InputTab extends StatelessWidget {
+  const InputTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextFormField(
+              validator: (value) => 'Please enter your name',
             ),
           ],
         ),

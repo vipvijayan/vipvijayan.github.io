@@ -44,7 +44,6 @@ export 'package:flutter_themer/widgets/color_selector.dart';
 export 'package:window_manager/window_manager.dart';
 export 'package:flutter/scheduler.dart' hide Flow;
 export 'package:flutter_themer/utils/app_utils.dart';
-export 'package:flutter_themer/widgets/resolution_ui.dart';
 export 'package:flutter_themer/widgets/theme_toggler.dart';
 
 export 'package:flutter_themer/widgets/num_stepper.dart';
@@ -54,3 +53,5 @@ export 'package:flutter_highlight/themes/github-gist.dart';
 export 'package:flutter_themer/preview/utils/preferences.dart';
 export 'package:flutter_themer/widgets/theme_expand_title.dart';
 export 'package:flutter_themer/widgets/theme_widgets/theme_color.dart';
+
+export 'package:flutter_themer/pages/theme_builder_tab.dart';

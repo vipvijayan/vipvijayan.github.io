@@ -1,0 +1,909 @@
+[ 
+      {
+         "id":1,
+         "title":"Color Scheme",
+         "expanded": true,
+         "basic": true,
+         "items":[
+            {
+               "title":"Background Colors",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Background Color",
+                     "key":"key_cs_background_color",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF000000",
+                           "selected_value": "#FF000000"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id": 1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Background Color",
+                     "key":"key_cs_on_background_color",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF003258",
+                           "selected_value": "#FF003258"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
+                        }
+                        ]
+                     }
+                  }
+               ]
+            },
+            {
+               "title":"Primary Colors",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Primary Color",
+                     "key":"key_cs_primary",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF9ECAFF",
+                           "selected_value": "#FF9ECAFF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Primary Color",
+                     "key":"key_cs_on_primary",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF003258",
+                           "selected_value": "#FF003258"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"Primary Container",
+                     "key":"key_cs_primary_container",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0049FD",
+                           "selected_value": "#FF0049FD"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Primary Container",
+                     "key":"key_cs_on_primary_container",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF001D36",
+                           "selected_value": "#FF001D36"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Primary Container",
+                     "key":"key_cs_inverse_primary",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF001D36",
+                           "selected_value": "#FF001D36"
+                        }
+                        ]
+                     }
+                  }
+               ]
+            },
+            {
+               "title":"Secondary Colors",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Secondary Color",
+                     "key":"key_cs_secondary",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF9ECAFF",
+                           "selected_value": "#FF9ECAFF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Secondary Color",
+                     "key":"key_cs_on_secondary",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF003258",
+                           "selected_value": "#FF003258"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"Secondary Container",
+                     "key":"key_cs_secondary_container",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0049FD",
+                           "selected_value": "#FF0049FD"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Secondary Container",
+                     "key":"key_cs_on_secondary_container",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF001D36",
+                           "selected_value": "#FF001D36"
+                        }
+                        ]
+                     }
+                  }
+               ]
+            },
+            {
+               "title":"Tertiary Colors",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Tertiary",
+                     "key":"key_cs_tertiary",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF9ECAFF",
+                           "selected_value": "#FF9ECAFF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Tertiary",
+                     "key":"key_cs_on_tertiary",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF003258",
+                           "selected_value": "#FF003258"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"Tertiary Container",
+                     "key":"key_cs_tertiary_container",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0049FD",
+                           "selected_value": "#FF0049FD"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Tertiary Container",
+                     "key":"key_cs_on_tertiary_container",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF001D36",
+                           "selected_value": "#FF001D36"
+                        }
+                        ]
+                     }
+                  }
+               ]
+            },
+            {
+               "title":"Error Colors",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Error",
+                     "key":"key_cs_error",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF9ECAFF",
+                           "selected_value": "#FF9ECAFF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Error",
+                     "key":"key_cs_on_error",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF003258",
+                           "selected_value": "#FF003258"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"Error Container",
+                     "key":"key_cs_error_container",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0049FD",
+                           "selected_value": "#FF0049FD"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Error Container",
+                     "key":"key_cs_on_error_container",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF001D36",
+                           "selected_value": "#FF001D36"
+                        }
+                        ]
+                     }
+                  }
+               ]
+            },
+            {
+               "title":"Surface",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Surface Color",
+                     "key":"key_cs_surface",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF9ECAFF",
+                           "selected_value": "#FF9ECAFF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Surface Color",
+                     "key":"key_cs_on_surface",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF003258",
+                           "selected_value": "#FF003258"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"Surface Tint",
+                     "key":"key_cs_surface_tint",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0049FD",
+                           "selected_value": "#FF0049FD"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"Surface Variant",
+                     "key":"key_cs_surface_variant",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF001D36",
+                           "selected_value": "#FF001D36"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Surface Variant",
+                     "key":"key_cs_on_surface_variant",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF001D36",
+                           "selected_value": "#FF001D36"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"Inverse Surface",
+                     "key":"key_cs_inverse_surface",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFD1E4FF",
+                           "selected_value": "#FFD1E4FF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF001D36",
+                           "selected_value": "#FF001D36"
+                        }
+                        ]
+                     }
+                  }
+               ]
+            },
+            {
+               "title":"Others",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Outline Color",
+                     "key":"key_cs_outline",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF9ECAFF",
+                           "selected_value": "#FF9ECAFF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Shadow Color",
+                     "key":"key_cs_shadow",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF9ECAFF",
+                           "selected_value": "#FF9ECAFF"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  }
+               ]
+            }
+         ]
+      }
+ ]

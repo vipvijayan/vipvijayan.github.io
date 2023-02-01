@@ -1,19 +1,17 @@
 import 'package:flutter_themer/exports/exports.dart';
 
-const dimen = 45.0;
+const dimen = 50.0;
 
 class ColorSelector extends StatelessWidget {
   const ColorSelector({
     super.key,
     required this.title,
     required this.color,
-    required this.propertyKey,
     required this.onTap,
   });
 
   final String title;
   final Color color;
-  final String propertyKey;
   final Function(Color color) onTap;
 
   @override
@@ -23,7 +21,6 @@ class ColorSelector extends StatelessWidget {
         showColorDialog(
           context,
           title: title,
-          propertyKey: propertyKey,
           onTap: (color) {
             onTap(color);
           },
@@ -35,25 +32,25 @@ class ColorSelector extends StatelessWidget {
           Container(
             padding: EdgeInsets.zero,
             height: dimen,
-            width: dimen * 2,
+            width: dimen,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(3),
+              borderRadius: BorderRadius.circular(dimen / 2),
               color: color,
             ),
           ),
-          IconButton(
-            iconSize: 14,
-            padding: EdgeInsets.zero,
-            onPressed: () async {
-              copyToClipboard(
-                colorToHex(color),
-                callback: () {
-                  showToast('$title color copied');
-                },
-              );
-            },
-            icon: const Icon(Icons.copy_outlined),
-          )
+          // IconButton(
+          //   iconSize: 14,
+          //   padding: EdgeInsets.zero,
+          //   onPressed: () async {
+          //     copyToClipboard(
+          //       colorToHex(color),
+          //       callback: () {
+          //         showToast('$title color copied');
+          //       },
+          //     );
+          //   },
+          //   icon: const Icon(Icons.copy_outlined),
+          // )
         ],
       ),
     );

@@ -1,3 +1,3 @@
 class Preferences {
-  static bool darkTheme = false;
+  // static bool darkTheme = false;
 }

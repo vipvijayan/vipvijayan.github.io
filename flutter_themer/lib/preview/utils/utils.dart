@@ -5,7 +5,6 @@ String colorHex(Color color) => '#${color.value.toRadixString(16)}';
 Future<void> showColorDialog(
   BuildContext context, {
   required String title,
-  required String propertyKey,
   required Function(Color color) onTap,
 }) async {
   showDialog(
@@ -28,7 +27,7 @@ Future<void> showColorDialog(
           TextButton(
             child: Text(
               'DONE',
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             onPressed: () {
               Navigator.of(context).pop();

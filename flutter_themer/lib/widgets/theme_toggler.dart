@@ -13,10 +13,10 @@ class ThemeToggler extends StatelessWidget {
           style: Theme.of(context).textTheme.titleSmall,
         ),
         Switch(
-          value: state.darkTheme,
+          value: state.appDarkTheme,
           onChanged: ((value) {
-            Preferences.darkTheme = value;
-            state.darkTheme = value;
+            //Preferences.darkTheme = value;
+            state.appDarkTheme = value;
             state.refresh();
             unawaited(
               state.refreshPreview(),

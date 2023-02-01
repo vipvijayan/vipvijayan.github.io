@@ -1,5 +1,4 @@
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:flutter_themer/pages/theme_builder_tab.dart';
 
 class ThemeBuilderScreen extends StatelessWidget {
   //
@@ -8,25 +7,25 @@ class ThemeBuilderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<PreviewAppState>();
-    return Material(
-      type: MaterialType.transparency,
-      child: DefaultTabController(
-        length: state.themeTabs.length,
-        initialIndex: 0,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Theme'),
-            bottom: TabBar(
-              tabs: state.themeTabs
-                  .map((e) => Tab(text: e.title.toUpperCase()))
-                  .toList(),
-            ),
-          ),
-          body: TabBarView(
-            children: state.themeTabs
-                .map((e) => ThemeBuilderTab(themeTab: e))
+    return DefaultTabController(
+      length: state.themeParentModels.length,
+      initialIndex: 0,
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 0,
+          bottom: TabBar(
+            onTap: (value) {
+              state.curSelectedThemeModel = state.themeParentModels[value];
+            },
+            tabs: state.themeParentModels
+                .map((e) => Tab(text: e.title.toUpperCase()))
                 .toList(),
           ),
+        ),
+        body: TabBarView(
+          children: state.themeParentModels
+              .map((e) => ThemeBuilderTab(themeTab: e))
+              .toList(),
         ),
       ),
     );

@@ -6,14 +6,15 @@ Future<String> loadThemeUIModelFromFile() async {
   return await rootBundle.loadString('$filesDir/theme_configuration.json');
 }
 
-Future<List<ThemeUiModel>> loadThemeUIModelList() async {
-  final json =
-      await rootBundle.loadString('$filesDir/theme_configuration.json');
+Future<List<ThemeUiModel>> loadThemeUIModelList(int themeId) async {
+  final json = await rootBundle.loadString(
+    '$filesDir/theme_configuration_$themeId.json',
+  );
   return themeUiModelFromJson(json);
 }
 
-Future<String> loadThemeTxt() async {
-  return await rootBundle.loadString('$filesDir/theme_generated.html');
+Future<String> loadThemeTxt(int themeId) async {
+  return await rootBundle.loadString('$filesDir/theme_generated_$themeId.html');
 }
 
 Future<String> loadCustomColorsTxt() async {

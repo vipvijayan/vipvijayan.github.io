@@ -19,4 +19,12 @@ var scaffoldKey = GlobalKey<ScaffoldState>();
 
 final random = Random();
 
-List<ThemeUiModel> themeUIModelList = [];
+// List<ThemeUiModel> themeUIModelList = [];
+
+enum ThemeIDs {
+  basic(0),
+  advanced(1);
+
+  const ThemeIDs(this.value);
+  final int value;
+}

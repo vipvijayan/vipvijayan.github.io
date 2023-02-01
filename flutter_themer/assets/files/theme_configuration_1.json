@@ -3,6 +3,7 @@
          "id":1,
          "title":"Color Scheme",
          "expanded": true,
+         "basic": true,
          "items":[
             {
                "title":"Background Colors",
@@ -941,6 +942,7 @@
        "id":1,
        "title":"Scaffold",
        "expanded": true,
+       "basic": false,
        "items":[
           {
              "title":"Properties",
@@ -1049,6 +1051,7 @@
       "id": 2,
       "title":"App Bar",
       "expanded": true,
+      "basic": false,
       "items":[
          {
             "title":"Properties",
@@ -1125,6 +1128,7 @@
       "id": 3,
       "title":"Tab Bar",
       "expanded": true,
+      "basic": false,
       "items":[
          {
             "title":"Properties",

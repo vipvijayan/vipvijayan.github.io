@@ -2,27 +2,17 @@ import 'package:flutter_themer/exports/exports.dart';
 
 class PreviewAppState extends ChangeNotifier {
   //
-  bool darkTheme = false;
-  ThemeData curThemeData = ThemeData.light();
-
+  bool appDarkTheme = false;
   String themeGeneratedHtml = '';
   String usageHtml = '';
   String customHtml = '';
 
-  // Device Resolution
-  double width = 415;
-  double height = 900;
-
-  double tempWidth = 415;
-  double tempHeight = 900;
-
-  bool showResolutionInput = false;
-
   List<CustomColor> customColors = [];
-  List<ThemeTab> themeTabs = [
-    const ThemeTab(id: 0, title: 'Basic'),
-    const ThemeTab(id: 1, title: 'Advanced'),
+  List<ThemeParentModel> themeParentModels = [
+    ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
+    ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
+  ThemeParentModel? curSelectedThemeModel;
 
   removeFromCustomColorsList(int id) async {
     for (final c in customColors) {
@@ -33,9 +23,11 @@ class PreviewAppState extends ChangeNotifier {
   }
 
   Future<void> init({bool refresh = false}) async {
-    themeUIModelList.clear();
-    themeUIModelList = await loadThemeUIModelList();
-    curThemeData = await ThemeFileUtils.refreshThemeData();
+    for (final tTabs in themeParentModels) {
+      tTabs.themeUiModelList = await loadThemeUIModelList(tTabs.id);
+      tTabs.curThemeData = await ThemeFileUtils.refreshThemeData(tTabs);
+    }
+    curSelectedThemeModel = themeParentModels.first;
     notifyListeners();
     if (!refresh) openHome();
     initUsageData();
@@ -47,19 +39,14 @@ class PreviewAppState extends ChangeNotifier {
     });
   }
 
+  currentTheme() {
+    return curSelectedThemeModel?.curThemeData ?? ThemeData.light();
+  }
+
   Future<void> refreshPreview() async {
-    curThemeData = await ThemeFileUtils.refreshThemeData();
-    notifyListeners();
-  }
-
-  setDeviceDimens() async {
-    width = tempWidth;
-    height = tempHeight;
-    notifyListeners();
-  }
-
-  setResInputShow(bool show) async {
-    showResolutionInput = show;
+    for (final tTabs in themeParentModels) {
+      tTabs.curThemeData = await ThemeFileUtils.refreshThemeData(tTabs);
+    }
     notifyListeners();
   }
 
@@ -68,16 +55,26 @@ class PreviewAppState extends ChangeNotifier {
   }
 
   Future<void> generateHtml() async {
-    String lightThemeGeneratedHtml =
-        await ThemeFileUtils.generateThemeTxt(themeUIModelList, dark: false);
-    String darkThemeGeneratedHtml =
-        await ThemeFileUtils.generateThemeTxt(themeUIModelList, dark: true);
+    if (null == curSelectedThemeModel) {
+      return;
+    }
+    String lightThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
+      curSelectedThemeModel!.themeUiModelList,
+      themeId: curSelectedThemeModel!.id,
+      dark: false,
+    );
+    String darkThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
+      curSelectedThemeModel!.themeUiModelList,
+      themeId: curSelectedThemeModel!.id,
+      dark: true,
+    );
     customHtml = await ThemeFileUtils.generateCustomThemeTxt(customColors);
     lightThemeGeneratedHtml =
         "import 'package:flutter/material.dart';\n\nclass AppTheme { \n\n$lightThemeGeneratedHtml";
     darkThemeGeneratedHtml =
         darkThemeGeneratedHtml.replaceAll('lightTheme', 'darkTheme');
-    themeGeneratedHtml = '$lightThemeGeneratedHtml\n$darkThemeGeneratedHtml\n}';
+    themeGeneratedHtml =
+        '$lightThemeGeneratedHtml\n$darkThemeGeneratedHtml\n}\n\n// Usage\n\n$usageHtml';
     notifyListeners();
   }
 }
@@ -95,8 +92,17 @@ class CustomColor {
   });
 }
 
-class ThemeTab {
+class ThemeParentModel {
   final int id;
   final String title;
-  const ThemeTab({required this.id, required this.title});
+  ThemeData? curThemeData;
+  Brightness brightness;
+  List<ThemeUiModel> themeUiModelList;
+  ThemeParentModel({
+    required this.id,
+    required this.title,
+    this.themeUiModelList = const [],
+    this.curThemeData,
+    this.brightness = Brightness.light,
+  });
 }

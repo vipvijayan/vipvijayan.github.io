@@ -24,14 +24,6 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () async {
-              previewAppState.setResInputShow(
-                !previewAppState.showResolutionInput,
-              );
-            },
-            icon: const Icon(Icons.devices_outlined),
-          ),
-          IconButton(
-            onPressed: () async {
               previewAppState.init(refresh: true);
             },
             icon: const Icon(Icons.refresh_outlined),
@@ -50,10 +42,7 @@ class HomeScreen extends StatelessWidget {
             width: 40,
           ),
           IconButton(
-            onPressed: () async {
-              openThemeGeneratedScreen();
-              previewAppState.generateHtml();
-            },
+            onPressed: () async {},
             icon: const Icon(Icons.start),
           ),
           const SizedBox(width: 20),
@@ -66,19 +55,18 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        color: bgColor,
-        child: Row(
-          children: [
-            const Expanded(flex: 2, child: ThemeBuilderScreen()),
-            const SizedBox(width: 30),
-            Expanded(
+      body: Row(
+        children: [
+          const Expanded(flex: 2, child: ThemeBuilderScreen()),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
               child: PreviewApp(
-                themeData: previewAppState.curThemeData,
+                themeData: previewAppState.currentTheme(),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

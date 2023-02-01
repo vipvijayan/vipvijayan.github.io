@@ -1,7 +1,7 @@
 import 'package:flutter_themer/exports/exports.dart';
 
 var darkBaseTheme = HexColor('#272727');
-var lightBaseColor = HexColor('#2cccd3');
+var lightBaseColor = Colors.white; // HexColor('#2cccd3');
 const letterSpacing = 1.1;
 const transition = PageTransitionsTheme(builders: {
   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
@@ -36,7 +36,7 @@ class AppTheme {
       backgroundColor: lightBaseColor,
       centerTitle: true,
       iconTheme: const IconThemeData(
-        color: Colors.white,
+        color: Colors.grey,
         size: 18,
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -45,14 +45,14 @@ class AppTheme {
         statusBarBrightness: Brightness.dark,
       ),
     ),
-    indicatorColor: Colors.white,
+    indicatorColor: Colors.teal,
     colorScheme: ColorScheme.light(
       primary: lightBaseColor,
       onPrimary: Colors.white,
       secondary: Colors.red,
     ),
     progressIndicatorTheme: const ProgressIndicatorThemeData(
-      color: Colors.white,
+      color: Colors.black,
     ),
     inputDecorationTheme: InputDecorationTheme(
       focusedBorder: const UnderlineInputBorder(
@@ -71,8 +71,8 @@ class AppTheme {
     ),
     tabBarTheme: TabBarTheme(
       indicatorSize: TabBarIndicatorSize.label,
-      unselectedLabelColor: Colors.white.withOpacity(0.9),
-      labelColor: Colors.white,
+      unselectedLabelColor: Colors.black.withOpacity(0.9),
+      labelColor: Colors.green,
       indicator: const ShapeDecoration(
         shape: UnderlineInputBorder(
           borderSide: BorderSide(
@@ -83,14 +83,14 @@ class AppTheme {
         ),
       ),
       labelStyle: const TextStyle(
-        color: Colors.white,
+        color: Colors.black,
         fontSize: 14,
         letterSpacing: 1.2,
         fontWeight: FontWeight.bold,
         // fontFamily: Fonts.TIMES_NEW_ROMAN,
       ),
       unselectedLabelStyle: const TextStyle(
-        color: Colors.white,
+        color: Colors.black,
         // fontWeight: FontWeight.bold,
         letterSpacing: 1.1,
         // fontFamily: Fonts.TIMES_NEW_ROMAN,
@@ -100,18 +100,18 @@ class AppTheme {
     snackBarTheme: SnackBarThemeData(
       backgroundColor: lightBaseColor,
       elevation: 3,
-      contentTextStyle: TextStyle(
-        color: Colors.white,
+      contentTextStyle: const TextStyle(
+        color: Colors.black,
       ),
     ),
-    dividerTheme: DividerThemeData(
+    dividerTheme: const DividerThemeData(
       indent: 15,
       endIndent: 0,
-      thickness: 0.05,
-      color: Colors.white10,
+      thickness: 0.1,
+      color: Colors.grey,
     ),
     iconTheme: IconThemeData(
-      color: Colors.white70,
+      color: Colors.grey,
       size: 20,
     ),
     textTheme: TextTheme(
@@ -126,7 +126,7 @@ class AppTheme {
         letterSpacing: letterSpacing,
       ),
       bodySmall: TextStyle(
-        color: Colors.white,
+        color: Colors.black,
         fontSize: 18.0,
         letterSpacing: letterSpacing,
       ),
@@ -136,7 +136,7 @@ class AppTheme {
         letterSpacing: letterSpacing,
       ),
       titleMedium: TextStyle(
-        color: Colors.grey,
+        color: Colors.black,
         fontSize: 16.0,
         letterSpacing: letterSpacing,
       ),

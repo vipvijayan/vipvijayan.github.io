@@ -23,7 +23,7 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: showDebugBanner,
         showPerformanceOverlay: false,
         theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
+        darkTheme: AppTheme.lightTheme,
         home: const SplashScreen(),
       ),
     );

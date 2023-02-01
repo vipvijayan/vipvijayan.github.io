@@ -7,10 +7,11 @@ class ThemeCustomColorsUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final previewAppState = context.watch<PreviewAppState>();
+    final dark = isDarkBrightness(previewAppState.curSelectedThemeModel);
     return Column(
       children: previewAppState.customColors.map(
         (customColor) {
-          final curColor = HexColor(Preferences.darkTheme
+          final curColor = HexColor(dark
               ? customColor.darkModeColorCode
               : customColor.lightModeColorCode);
           return Container(
@@ -36,9 +37,8 @@ class ThemeCustomColorsUI extends StatelessWidget {
                   child: ColorSelector(
                     title: 'Custom Color ${customColor.name}',
                     color: curColor,
-                    propertyKey: '1',
                     onTap: (Color color) {
-                      if (Preferences.darkTheme) {
+                      if (dark) {
                         customColor.darkModeColorCode = colorHex(color);
                         return;
                       }
