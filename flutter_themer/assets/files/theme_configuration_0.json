@@ -5,75 +5,7 @@
          "expanded": true,
          "basic": true,
          "items":[
-            {
-               "title":"Background Colors",
-               "sub_items":[
-                  {
-                     "id":0,
-                     "subtitle":false,
-                     "title":"Background Color",
-                     "key":"key_cs_background_color",
-                     "value_type":"string",
-                     "input":"color",
-                     "dark":{
-                        "id":0,
-                        "value":[ 
-                        {
-                           "id": 0,
-                           "label":"color",
-                           "selected": true,
-                           "value": "#FF000000",
-                           "selected_value": "#FF000000"
-                        }
-                        ]
-                     },
-                     "light":{
-                        "id": 1,
-                        "value":[ 
-                        {
-                           "id": 0,
-                           "label":"color",
-                           "selected": true,
-                           "value": "#FF0061A4",
-                           "selected_value": "#FF0061A4"
-                        }
-                        ]
-                     }
-                  },
-                  {
-                     "id":1,
-                     "subtitle":false,
-                     "title":"On Background Color",
-                     "key":"key_cs_on_background_color",
-                     "value_type":"string",
-                     "input":"color",
-                     "dark":{
-                        "id":0,
-                        "value":[ 
-                        {
-                           "id": 0,
-                           "label":"color",
-                           "selected": true,
-                           "value": "#FF003258",
-                           "selected_value": "#FF003258"
-                        }
-                        ]
-                     },
-                     "light":{
-                        "id":1,
-                        "value":[ 
-                        {
-                           "id": 0,
-                           "label":"color",
-                           "selected": true,
-                           "value": "#FFFFFFFF",
-                           "selected_value": "#FFFFFFFF"
-                        }
-                        ]
-                     }
-                  }
-               ]
-            },
+           
             {
                "title":"Primary Colors",
                "sub_items":[
@@ -522,8 +454,8 @@
                            "id": 0,
                            "label":"color",
                            "selected": true,
-                           "value": "#FF9ECAFF",
-                           "selected_value": "#FF9ECAFF"
+                           "value": "#FFE30D1E",
+                           "selected_value": "#FFE30D1E"
                         }
                         ]
                      },
@@ -534,8 +466,8 @@
                            "id": 0,
                            "label":"color",
                            "selected": true,
-                           "value": "#FF0061A4",
-                           "selected_value": "#FF0061A4"
+                           "value": "#FFE30D1E",
+                           "selected_value": "#FFE30D1E"
                         }
                         ]
                      }
@@ -554,8 +486,8 @@
                            "id": 0,
                            "label":"color",
                            "selected": true,
-                           "value": "#FF003258",
-                           "selected_value": "#FF003258"
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
                         }
                         ]
                      },
@@ -899,6 +831,153 @@
                            "value": "#FF0061A4",
                            "selected_value": "#FF0061A4"
                         }
+                        ]
+                     }
+                  }
+               ]
+            },
+            {
+               "title":"Background Colors",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Background Color",
+                     "key":"key_cs_background_color",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF000000",
+                           "selected_value": "#FF000000"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id": 1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF0061A4",
+                           "selected_value": "#FF0061A4"
+                        }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"On Background Color",
+                     "key":"key_cs_on_background_color",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FF003258",
+                           "selected_value": "#FF003258"
+                        }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                        {
+                           "id": 0,
+                           "label":"color",
+                           "selected": true,
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
+                        }
+                        ]
+                     }
+                  }
+               ]
+            }
+            
+         ]
+      },
+      {
+         "id":2,
+         "title":"Primary Text Theme",
+         "expanded": true,
+         "basic": false,
+         "items":[
+            {
+               "title":"Body Large",
+               "sub_items":[
+                  {
+                     "id":0,
+                     "subtitle":false,
+                     "title":"Color",
+                     "key":"key_primary_txt_theme_color",
+                     "value_type":"string",
+                     "input":"color",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                          {
+                             "id": 0,
+                             "label":"color",
+                             "selected": true,
+                             "value": "#FFFFFFFF",
+                             "selected_value": "#FFFFFFFF"
+                          }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                          {
+                             "id": 0,
+                             "label":"color",
+                             "selected": true,
+                             "value": "#FF000000",
+                             "selected_value": "#FF000000"
+                          }
+                        ]
+                     }
+                  },
+                  {
+                     "id":1,
+                     "subtitle":false,
+                     "title":"Size",
+                     "key":"key_primary_txt_theme_font_size",
+                     "value_type":"string",
+                     "input":"number",
+                     "dark":{
+                        "id":0,
+                        "value":[ 
+                          {
+                             "id": 0,
+                             "label":"Font Size",
+                             "selected": true,
+                             "value": "16",
+                             "selected_value": "16"
+                          }
+                        ]
+                     },
+                     "light":{
+                        "id":1,
+                        "value":[ 
+                          {
+                             "id": 0,
+                             "label":"Font Size",
+                             "selected": true,
+                             "value": "16",
+                             "selected_value": "16"
+                          }
                         ]
                      }
                   }

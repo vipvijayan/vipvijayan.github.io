@@ -47,10 +47,11 @@ class ThemeFileUtils {
             isDense: false,
             floatingLabelBehavior: FloatingLabelBehavior.auto,
           ),
-          primaryTextTheme: const TextTheme(
+          primaryTextTheme: TextTheme(
             bodyLarge: TextStyle(
-              color: Colors.white,
-              fontSize: 16.0,
+              color: HexColor(themeMap['key_primary_txt_theme_color']),
+              fontSize:
+                  double.parse(themeMap['key_primary_txt_theme_font_size']),
             ),
           ),
         );
@@ -91,10 +92,10 @@ class ThemeFileUtils {
           isDense: false,
           floatingLabelBehavior: FloatingLabelBehavior.auto,
         ),
-        primaryTextTheme: const TextTheme(
+        primaryTextTheme: TextTheme(
           bodyLarge: TextStyle(
-            color: Colors.black,
-            fontSize: 16.0,
+            color: HexColor(themeMap['key_primary_txt_theme_color']),
+            fontSize: double.parse(themeMap['key_primary_txt_theme_font_size']),
           ),
         ),
       );

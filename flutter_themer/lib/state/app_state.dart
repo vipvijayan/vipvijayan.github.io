@@ -9,7 +9,7 @@ class ThemeAppState extends ChangeNotifier {
 
   List<CustomColor> customColors = [];
   List<ThemeParentModel> themeParentModels = [
-    // ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
+    ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
     ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
   ThemeParentModel? curSelectedThemeModel;

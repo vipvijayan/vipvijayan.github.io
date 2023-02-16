@@ -17,7 +17,6 @@ class ThemeBuilderTab extends StatelessWidget {
     final dark = isDarkBrightness(themeTab);
     return Container(
       padding: const EdgeInsets.all(20),
-      alignment: Alignment.topLeft,
       child: Column(
         children: [
           _mainHeader(state),
@@ -110,39 +109,54 @@ class ThemeBuilderTab extends StatelessWidget {
             children: [
               MainTitle(title: item.title),
               Container(
+                height: 130,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
                   color: Colors.grey[100],
                 ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Wrap(
-                        runSpacing: 40,
-                        spacing: 20,
-                        runAlignment: WrapAlignment.spaceBetween,
-                        children: item.subItems.map((subItem) {
-                          if (subItem.input == 'color') {
-                            return _color(uiModel, subItem, dark, state);
-                          }
-                          if (subItem.input == 'dropdown') {
-                            return _dropDown(uiModel, subItem, dark, state);
-                          }
-                          if (subItem.input == 'boolean') {
-                            return _toggle(
-                                context, uiModel, subItem, dark, state);
-                          }
-                          if (subItem.input == 'number') {
-                            return _number(
-                                context, uiModel, subItem, dark, state);
-                          }
-                          return Container();
-                        }).toList(),
-                      ),
-                    ),
-                  ],
+                child: ListView.builder(
+                  itemCount: item.subItems.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    final subItem = item.subItems[index];
+                    Widget widget = Container();
+                    if (subItem.input == 'color') {
+                      widget = _color(uiModel, subItem, dark, state);
+                    }
+                    if (subItem.input == 'dropdown') {
+                      widget = _dropDown(uiModel, subItem, dark, state);
+                    }
+                    if (subItem.input == 'boolean') {
+                      widget = _toggle(context, uiModel, subItem, dark, state);
+                    }
+                    if (subItem.input == 'number') {
+                      widget = _number(context, uiModel, subItem, dark, state);
+                    }
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: widget,
+                    );
+                  },
                 ),
+
+                // child: Row(
+                //   children: item.subItems.map((subItem) {
+                //     if (subItem.input == 'color') {
+                //       return _color(uiModel, subItem, dark, state);
+                //     }
+                //     if (subItem.input == 'dropdown') {
+                //       return _dropDown(uiModel, subItem, dark, state);
+                //     }
+                //     if (subItem.input == 'boolean') {
+                //       return _toggle(context, uiModel, subItem, dark, state);
+                //     }
+                //     if (subItem.input == 'number') {
+                //       return _number(context, uiModel, subItem, dark, state);
+                //     }
+                //     return Container();
+                //   }).toList(),
+                // ),
               ),
             ],
           );

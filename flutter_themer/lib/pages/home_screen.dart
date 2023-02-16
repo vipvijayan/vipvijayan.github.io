@@ -7,7 +7,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final previewAppState = context.watch<ThemeAppState>();
     return Scaffold(
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
+        elevation: 0,
         title: Row(
           children: [
             const SizedBox(width: 25),
@@ -39,15 +41,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Row(
         children: [
-          const Expanded(flex: 2, child: ThemeBuilderScreen()),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: PreviewApp(
-                themeData: previewAppState.currentTheme(),
-              ),
+            child: PreviewApp(
+              themeData: previewAppState.currentTheme(),
             ),
           ),
+          const Expanded(flex: 2, child: ThemeBuilderScreen()),
         ],
       ),
     );

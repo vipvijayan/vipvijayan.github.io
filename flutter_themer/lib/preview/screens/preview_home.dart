@@ -136,8 +136,15 @@ class ButtonTab extends StatelessWidget {
   }
 }
 
-class InputTab extends StatelessWidget {
+class InputTab extends StatefulWidget {
   const InputTab({super.key});
+
+  @override
+  State<InputTab> createState() => _InputTabState();
+}
+
+class _InputTabState extends State<InputTab> {
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -147,8 +154,29 @@ class InputTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextFormField(
-              validator: (value) => 'Please enter your name',
+            Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(hintText: 'name'),
+                    validator: (text) {
+                      if (text == null || text.isEmpty) {
+                        return 'Text is empty';
+                      }
+                      return null;
+                    },
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        //
+                      }
+                    },
+                    child: Text('Submit'),
+                  )
+                ],
+              ),
             ),
           ],
         ),

@@ -7,11 +7,27 @@ class ThemeBuilderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<ThemeAppState>();
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 0,
+    return DefaultTabController(
+      length: state.themeParentModels.length,
+      child: Scaffold(
+        appBar: TabBar(
+          onTap: (index) {},
+          labelColor: Colors.black,
+          tabs: state.themeParentModels
+              .map(
+                (e) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(e.title),
+                ),
+              )
+              .toList(),
+        ),
+        body: TabBarView(
+          children: state.themeParentModels
+              .map((e) => ThemeBuilderTab(themeTab: e))
+              .toList(),
+        ),
       ),
-      body: ThemeBuilderTab(themeTab: state.themeParentModels.first),
     );
   }
 }

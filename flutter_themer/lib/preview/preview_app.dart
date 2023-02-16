@@ -12,10 +12,11 @@ class PreviewApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return DevicePreview(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      tools: [],
       data: const DevicePreviewData(
         settings: DevicePreviewSettingsData(
           backgroundTheme: DevicePreviewBackgroundThemeData.light,
+          toolbarTheme: DevicePreviewToolBarThemeData.light,
+          toolbarPosition: DevicePreviewToolBarPositionData.top,
         ),
       ),
       builder: (context) {
