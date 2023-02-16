@@ -5,7 +5,7 @@ class ThemeToggler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.watch<PreviewAppState>();
+    final state = context.watch<ThemeAppState>();
     return Row(
       children: [
         Text(

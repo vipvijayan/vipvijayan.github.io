@@ -20,7 +20,6 @@ Future<void> showColorDialog(
             onColorChanged: ((color) {
               onTap(color);
             }),
-            // showLabel: true, // only on portrait mode
           ),
         ),
         actions: <Widget>[

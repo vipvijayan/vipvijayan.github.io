@@ -7,7 +7,7 @@ class GeneratedThemeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final previewAppState = context.watch<PreviewAppState>();
+    final previewAppState = context.watch<ThemeAppState>();
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: kToolbarHeight,

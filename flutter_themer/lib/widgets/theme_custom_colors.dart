@@ -6,7 +6,7 @@ class ThemeCustomColorsUI extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final previewAppState = context.watch<PreviewAppState>();
+    final previewAppState = context.watch<ThemeAppState>();
     final dark = isDarkBrightness(previewAppState.curSelectedThemeModel);
     return Column(
       children: previewAppState.customColors.map(

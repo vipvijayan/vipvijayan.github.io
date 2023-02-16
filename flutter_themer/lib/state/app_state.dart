@@ -1,6 +1,6 @@
 import 'package:flutter_themer/exports/exports.dart';
 
-class PreviewAppState extends ChangeNotifier {
+class ThemeAppState extends ChangeNotifier {
   //
   bool appDarkTheme = false;
   String themeGeneratedHtml = '';
@@ -9,7 +9,7 @@ class PreviewAppState extends ChangeNotifier {
 
   List<CustomColor> customColors = [];
   List<ThemeParentModel> themeParentModels = [
-    ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
+    // ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
     ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
   ThemeParentModel? curSelectedThemeModel;

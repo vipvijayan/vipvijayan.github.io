@@ -11,7 +11,7 @@ class App extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) {
-            final state = PreviewAppState();
+            final state = ThemeAppState();
             state.init();
             return state;
           },

@@ -5,7 +5,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final previewAppState = context.watch<PreviewAppState>();
+    final previewAppState = context.watch<ThemeAppState>();
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -28,24 +28,6 @@ class HomeScreen extends StatelessWidget {
             },
             icon: const Icon(Icons.refresh_outlined),
           ),
-          const VerticalDivider(
-            endIndent: 30,
-            indent: 30,
-            thickness: 0.2,
-            width: 40,
-          ),
-          const ThemeToggler(),
-          const VerticalDivider(
-            endIndent: 30,
-            indent: 30,
-            thickness: 0.2,
-            width: 40,
-          ),
-          IconButton(
-            onPressed: () async {},
-            icon: const Icon(Icons.start),
-          ),
-          const SizedBox(width: 20),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(

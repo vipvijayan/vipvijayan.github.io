@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter_themer/exports/exports.dart';
 
 const themeFileName = 'theme.json';
@@ -18,8 +16,6 @@ const customColorsTitle = 'Custom Colors';
 var scaffoldKey = GlobalKey<ScaffoldState>();
 
 final random = Random();
-
-// List<ThemeUiModel> themeUIModelList = [];
 
 enum ThemeIDs {
   basic(0),

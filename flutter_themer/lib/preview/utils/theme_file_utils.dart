@@ -47,6 +47,12 @@ class ThemeFileUtils {
             isDense: false,
             floatingLabelBehavior: FloatingLabelBehavior.auto,
           ),
+          primaryTextTheme: const TextTheme(
+            bodyLarge: TextStyle(
+              color: Colors.white,
+              fontSize: 16.0,
+            ),
+          ),
         );
       }
       return ThemeData(
@@ -85,6 +91,12 @@ class ThemeFileUtils {
           isDense: false,
           floatingLabelBehavior: FloatingLabelBehavior.auto,
         ),
+        primaryTextTheme: const TextTheme(
+          bodyLarge: TextStyle(
+            color: Colors.black,
+            fontSize: 16.0,
+          ),
+        ),
       );
     }
 
@@ -92,51 +104,31 @@ class ThemeFileUtils {
       return ThemeData(
         // useMaterial3: true,
         brightness: themeParentModel.brightness,
+        inputDecorationTheme: const InputDecorationTheme(
+          alignLabelWithHint: false,
+          filled: false,
+          floatingLabelAlignment: FloatingLabelAlignment.start,
+          isCollapsed: false,
+          isDense: false,
+          floatingLabelBehavior: FloatingLabelBehavior.auto,
+        ),
         // primaryColor: HexColor(themeMap['key_cs_primary_color']),
         // scaffoldBackgroundColor:
         //     HexColor(themeMap['key_scaffold_background_color']),
-        // colorScheme: ColorScheme.light(
-        //   primary: HexColor(themeMap['key_cs_primary']),
-        //   onPrimary: HexColor(themeMap['key_cs_on_primary']),
-        //   primaryContainer: HexColor(themeMap['key_cs_primary_container']),
-        //   onPrimaryContainer: HexColor(themeMap['key_cs_on_primary_container']),
-        //   secondary: HexColor(themeMap['key_cs_secondary']),
-        //   onSecondary: HexColor(themeMap['key_cs_on_secondary']),
-        //   secondaryContainer: HexColor(themeMap['key_cs_secondary_container']),
-        //   onSecondaryContainer:
-        //       HexColor(themeMap['key_cs_on_secondary_container']),
-        //   surface: HexColor(themeMap['key_cs_surface']),
-        //   onSurface: HexColor(themeMap['key_cs_on_surface']),
-        //   surfaceTint: HexColor(themeMap['key_cs_surface_tint']),
-        //   surfaceVariant: HexColor(themeMap['key_cs_surface_variant']),
-        //   onSurfaceVariant: HexColor(themeMap['key_cs_on_surface_variant']),
-        //   error: HexColor(themeMap['key_cs_error']),
-        //   onError: HexColor(themeMap['key_cs_on_error']),
-        //   errorContainer: HexColor(themeMap['key_cs_error_container']),
-        //   onErrorContainer: HexColor(themeMap['key_cs_on_error_container']),
-        //   brightness: brightness(themeMap['key_cs_brightness']),
-        //   tertiary: HexColor(themeMap['key_cs_tertiary']),
-        //   onTertiary: HexColor(themeMap['key_cs_on_tertiary']),
-        //   tertiaryContainer: HexColor(themeMap['key_cs_tertiary_container']),
-        //   onTertiaryContainer: HexColor(themeMap['key_cs_on_tertiary_container']),
-        //   outline: HexColor(themeMap['key_cs_cs_outline']),
-        //   shadow: HexColor(themeMap['key_cs_shadow']),
-        // ),
         appBarTheme: AppBarTheme(
-            elevation: double.parse(themeMap['key_app_bar_elevation']),
-            backgroundColor: HexColor(themeMap['key_app_bar_background_color']),
-            centerTitle: themeMap['key_center_title']
-            // iconTheme: IconThemeData(
-            //   color: HexColor(customTheme['app_bar_icon_color']['value']),
-            //   size:
-            //       double.parse(customTheme['app_bar_icon_size']['value'] as String),
-            // ),
-            // systemOverlayStyle: const SystemUiOverlayStyle(
-            //   statusBarColor: Colors.blue,
-            //   statusBarIconBrightness: Brightness.dark,
-            //   statusBarBrightness: Brightness.dark,
-            // ),
-            ),
+          elevation: double.parse(themeMap['key_app_bar_elevation']),
+          backgroundColor: HexColor(themeMap['key_app_bar_background_color']),
+          centerTitle: themeMap['key_center_title'],
+          iconTheme: IconThemeData(
+            color: HexColor(themeMap['key_app_bar_icon_color']),
+            size: double.parse(themeMap['key_app_bar_icon_size']),
+          ),
+          systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarColor: Colors.blue,
+            statusBarIconBrightness: Brightness.dark,
+            statusBarBrightness: Brightness.dark,
+          ),
+        ),
         // textTheme: TextTheme(
         //   // bodyText1: TextStyle(
         //   //   fontSize: double.parse(
@@ -612,6 +604,7 @@ class ThemeFileUtils {
             val = dark
                 ? subItem.dark.value.first.value
                 : subItem.light.value.first.value;
+            val = "Color(0x$val)";
           }
           if (subItem.input == 'number') {
             val = dark

@@ -54,7 +54,7 @@ class NumericStepButton extends StatelessWidget {
             '$defaultCounter',
             textAlign: TextAlign.center,
             style: const TextStyle(
-              color: Colors.tealAccent,
+              color: Colors.black,
               fontSize: 12.0,
               fontWeight: FontWeight.w500,
             ),

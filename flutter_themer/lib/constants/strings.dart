@@ -1,1 +1,0 @@
-const appTitle = 'FLUTTER THEMER';

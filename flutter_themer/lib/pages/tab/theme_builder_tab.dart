@@ -12,7 +12,7 @@ class ThemeBuilderTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.watch<PreviewAppState>();
+    final state = context.watch<ThemeAppState>();
     final themeModelList = themeTab.themeUiModelList;
     final dark = isDarkBrightness(themeTab);
     return Container(
@@ -58,7 +58,7 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  SizedBox _mainHeader(PreviewAppState state) {
+  SizedBox _mainHeader(ThemeAppState state) {
     return SizedBox(
       height: 90,
       child: Column(
@@ -98,12 +98,8 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  _mainUI(
-    BuildContext context,
-    ThemeUiModel uiModel,
-    bool dark,
-    PreviewAppState state,
-  ) {
+  _mainUI(BuildContext context, ThemeUiModel uiModel, bool dark,
+      ThemeAppState state) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(30, 5, 20, 0),
       child: Column(
@@ -138,7 +134,8 @@ class ThemeBuilderTab extends StatelessWidget {
                                 context, uiModel, subItem, dark, state);
                           }
                           if (subItem.input == 'number') {
-                            return _number(uiModel, subItem, dark, state);
+                            return _number(
+                                context, uiModel, subItem, dark, state);
                           }
                           return Container();
                         }).toList(),
@@ -154,7 +151,7 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  _customUI(PreviewAppState state) {
+  _customUI(ThemeAppState state) {
     return Column(
       children: [
         Padding(
@@ -191,7 +188,7 @@ class ThemeBuilderTab extends StatelessWidget {
     ThemeUiModel uiModel,
     SubItem subItem,
     bool dark,
-    PreviewAppState state,
+    ThemeAppState state,
   ) {
     final color =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
@@ -213,10 +210,11 @@ class ThemeBuilderTab extends StatelessWidget {
   }
 
   Column _number(
+    BuildContext context,
     ThemeUiModel uiModel,
     SubItem subItem,
     bool dark,
-    PreviewAppState state,
+    ThemeAppState state,
   ) {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
@@ -224,7 +222,12 @@ class ThemeBuilderTab extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SubTitle(title: subItem.title),
+        Text(
+          subItem.title,
+          maxLines: 1,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 12),
+        ),
+        const SizedBox(height: 5),
         NumericStepButton(
           defaultCounter: double.parse(currentVal).toInt(),
           maxValue: 900,
@@ -254,7 +257,7 @@ class ThemeBuilderTab extends StatelessWidget {
     ThemeUiModel uiModel,
     SubItem subItem,
     bool dark,
-    PreviewAppState state,
+    ThemeAppState state,
   ) {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
@@ -284,7 +287,7 @@ class ThemeBuilderTab extends StatelessWidget {
     ThemeUiModel uiModel,
     SubItem subItem,
     bool dark,
-    PreviewAppState state,
+    ThemeAppState state,
   ) {
     final list = dark ? subItem.dark.value : subItem.light.value;
     final currentVal = list.firstWhere(

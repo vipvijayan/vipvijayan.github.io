@@ -35,6 +35,7 @@ class AppTheme {
       elevation: 0,
       backgroundColor: lightBaseColor,
       centerTitle: true,
+      toolbarHeight: kToolbarHeight + 30,
       iconTheme: const IconThemeData(
         color: Colors.grey,
         size: 18,
@@ -84,7 +85,7 @@ class AppTheme {
       ),
       labelStyle: const TextStyle(
         color: Colors.black,
-        fontSize: 14,
+        // fontSize: 14,
         letterSpacing: 1.2,
         fontWeight: FontWeight.bold,
         // fontFamily: Fonts.TIMES_NEW_ROMAN,
