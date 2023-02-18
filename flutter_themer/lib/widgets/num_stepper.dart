@@ -16,20 +16,13 @@ class NumericStepButton extends StatelessWidget {
     required this.onDecrement,
   }) : super(key: key);
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   counter = widget.defaultCounter;
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.zero,
-      height: 45,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
-        color: Colors.black12,
+        borderRadius: BorderRadius.circular(6),
+        color: Colors.grey[50],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -55,7 +48,7 @@ class NumericStepButton extends StatelessWidget {
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.black,
-              fontSize: 12.0,
+              fontSize: 18.0,
               fontWeight: FontWeight.w500,
             ),
           ),

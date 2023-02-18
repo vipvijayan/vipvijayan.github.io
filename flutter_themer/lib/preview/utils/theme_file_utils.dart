@@ -9,9 +9,8 @@ class ThemeFileUtils {
     if (ThemeIDs.basic.value == themeParentModel.id) {
       if (isDarkBrightness(themeParentModel)) {
         return ThemeData(
-          brightness: Brightness.dark,
+          brightness: themeParentModel.brightness,
           colorScheme: ColorScheme.dark(
-            brightness: Brightness.dark,
             primary: HexColor(themeMap['key_cs_primary']),
             onPrimary: HexColor(themeMap['key_cs_on_primary']),
             primaryContainer: HexColor(themeMap['key_cs_primary_container']),
@@ -113,9 +112,6 @@ class ThemeFileUtils {
           isDense: false,
           floatingLabelBehavior: FloatingLabelBehavior.auto,
         ),
-        // primaryColor: HexColor(themeMap['key_cs_primary_color']),
-        // scaffoldBackgroundColor:
-        //     HexColor(themeMap['key_scaffold_background_color']),
         appBarTheme: AppBarTheme(
           elevation: double.parse(themeMap['key_app_bar_elevation']),
           backgroundColor: HexColor(themeMap['key_app_bar_background_color']),
@@ -130,19 +126,50 @@ class ThemeFileUtils {
             statusBarBrightness: Brightness.dark,
           ),
         ),
-        // textTheme: TextTheme(
-        //   // bodyText1: TextStyle(
-        //   //   fontSize: double.parse(
-        //   //     customTheme['text_theme_body_text_1_size'] as String,
-        //   //   ),
-        //   //   color: HexColor(customTheme['text_theme_body_text_1_color']),
-        //   // ),
-        //   // bodyText2: TextStyle(
-        //   //   fontSize: double.parse(
-        //   //     customTheme['text_theme_body_text_2_size'] as String,
-        //   //   ),
-        //   //   color: HexColor(customTheme['text_theme_body_text_2_color']),
-        //   // ),
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(
+            fontSize: double.parse(themeMap['key_txt_theme_body_large_size']),
+            color: HexColor(themeMap['key_txt_theme_body_large_color']),
+            letterSpacing: double.parse(
+              themeMap['key_txt_theme_body_large_letter_spacing'],
+            ),
+          ),
+          bodyMedium: TextStyle(
+            fontSize: double.parse(themeMap['key_txt_theme_body_medium_size']),
+            color: HexColor(themeMap['key_txt_theme_body_medium_color']),
+            letterSpacing: double.parse(
+              themeMap['key_txt_theme_body_medium_letter_spacing'],
+            ),
+          ),
+          bodySmall: TextStyle(
+            fontSize: double.parse(themeMap['key_txt_theme_body_small_size']),
+            color: HexColor(themeMap['key_txt_theme_body_small_color']),
+            letterSpacing: double.parse(
+              themeMap['key_txt_theme_body_small_letter_spacing'],
+            ),
+          ),
+          titleLarge: TextStyle(
+            fontSize: double.parse(themeMap['key_txt_theme_title_large_size']),
+            color: HexColor(themeMap['key_txt_theme_title_large_color']),
+            letterSpacing: double.parse(
+              themeMap['key_txt_theme_title_large_letter_spacing'],
+            ),
+          ),
+          titleMedium: TextStyle(
+            fontSize: double.parse(themeMap['key_txt_theme_title_medium_size']),
+            color: HexColor(themeMap['key_txt_theme_title_medium_color']),
+            letterSpacing: double.parse(
+              themeMap['key_txt_theme_title_medium_letter_spacing'],
+            ),
+          ),
+          titleSmall: TextStyle(
+            fontSize: double.parse(themeMap['key_txt_theme_title_small_size']),
+            color: HexColor(themeMap['key_txt_theme_title_small_color']),
+            letterSpacing: double.parse(
+              themeMap['key_txt_theme_title_small_letter_spacing'],
+            ),
+          ),
+        ),
         //   bodyLarge: TextStyle(
         //     fontSize: double.parse(
         //       customTheme['text_theme_body_large_text_size']['value'] as String,
@@ -590,7 +617,8 @@ class ThemeFileUtils {
   }
 
   static Future<String> generateThemeTxt(
-    List<ThemeUiModel> themeUIModelList, {
+    List<ThemeUiModel> themeUIModelList,
+    bool hasCustomColors, {
     required int themeId,
     required bool dark,
   }) async {
@@ -630,7 +658,31 @@ class ThemeFileUtils {
           "'key_cs_brightness",
           brightnessString(!dark),
         );
+        if (dark) {
+          themeHtml = themeHtml.replaceAll(
+            "ColorScheme.light",
+            "ColorScheme.dark",
+          );
+        }
       }
+    }
+    if (hasCustomColors) {
+      if (dark) {
+        themeHtml = themeHtml.replaceAll(
+          "'extensions'",
+          "extensions: <ThemeExtension<dynamic>>[ MyColors.dark ],",
+        );
+      } else {
+        themeHtml = themeHtml.replaceAll(
+          "'extensions'",
+          "extensions: <ThemeExtension<dynamic>>[ MyColors.light ],",
+        );
+      }
+    } else {
+      themeHtml = themeHtml.replaceAll(
+        "'extensions'",
+        "",
+      );
     }
     return themeHtml;
   }

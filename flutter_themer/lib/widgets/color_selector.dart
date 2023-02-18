@@ -1,7 +1,5 @@
 import 'package:flutter_themer/exports/exports.dart';
 
-const dimen = 60.0;
-
 class ColorSelector extends StatelessWidget {
   const ColorSelector({
     super.key,
@@ -21,6 +19,7 @@ class ColorSelector extends StatelessWidget {
         showColorDialog(
           context,
           title: title,
+          currentColor: color,
           onTap: (color) {
             onTap(color);
           },
@@ -31,10 +30,10 @@ class ColorSelector extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.zero,
-            height: dimen,
-            width: dimen,
+            height: controlsDimen,
+            width: controlsDimen,
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey, width: 0.3),
+              border: Border.all(color: Colors.grey, width: 0.1),
               borderRadius: BorderRadius.circular(6),
               color: color,
             ),

@@ -54,3 +54,5 @@ export 'package:flutter_themer/preview/utils/preferences.dart';
 export 'package:flutter_themer/widgets/theme_expand_title.dart';
 export 'package:flutter_themer/widgets/theme_widgets/theme_color.dart';
 export 'package:flutter_themer/pages/tab/theme_builder_tab.dart';
+export 'package:flutter_themer/models/custom_color.dart';
+export 'package:flutter_themer/models/theme_parent_model.dart';

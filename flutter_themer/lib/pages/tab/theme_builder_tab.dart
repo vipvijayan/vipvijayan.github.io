@@ -20,16 +20,22 @@ class ThemeBuilderTab extends StatelessWidget {
       child: Column(
         children: [
           _mainHeader(state),
+          const Divider(),
           Expanded(
             child: ListView.separated(
               addAutomaticKeepAlives: true,
               cacheExtent: 200,
-              separatorBuilder: (context, index) => const Divider(
-                height: 20,
-                thickness: 0.1,
-              ),
-              itemCount: themeModelList.length,
+              separatorBuilder: (context, index) => const SizedBox(height: 10),
+              itemCount: themeModelList.length + 1,
               itemBuilder: (context, index) {
+                if (index == themeModelList.length) {
+                  return Column(
+                    children: [
+                      const Divider(height: 20, thickness: 0.1),
+                      _customUI(state),
+                    ],
+                  );
+                }
                 final uiModel = themeModelList[index];
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,8 +56,6 @@ class ThemeBuilderTab extends StatelessWidget {
               },
             ),
           ),
-          const Divider(height: 20, thickness: 0.1),
-          _customUI(state),
         ],
       ),
     );
@@ -59,39 +63,34 @@ class ThemeBuilderTab extends StatelessWidget {
 
   SizedBox _mainHeader(ThemeAppState state) {
     return SizedBox(
-      height: 90,
-      child: Column(
+      height: 80,
+      child: Row(
         children: [
-          Row(
-            children: [
-              Flexible(
-                child: Row(
-                  children: [
-                    const MainTitle(title: 'Brightness'),
-                    const SizedBox(width: 10),
-                    CupertinoSwitch(
-                      value: !isDarkBrightness(themeTab),
-                      onChanged: (on) {
-                        themeTab.brightness =
-                            on ? Brightness.light : Brightness.dark;
-                        state.refresh();
-                        state.refreshPreview();
-                      },
-                    ),
-                  ],
+          Flexible(
+            child: Row(
+              children: [
+                const MainTitle(title: 'Brightness'),
+                const SizedBox(width: 10),
+                CupertinoSwitch(
+                  value: !isDarkBrightness(themeTab),
+                  onChanged: (on) {
+                    themeTab.brightness =
+                        on ? Brightness.light : Brightness.dark;
+                    state.refresh();
+                    state.refreshPreview();
+                  },
                 ),
-              ),
-              const Spacer(),
-              IconButton(
-                onPressed: () async {
-                  openThemeGeneratedScreen();
-                  state.generateHtml();
-                },
-                icon: const Icon(Icons.view_agenda),
-              )
-            ],
+              ],
+            ),
           ),
-          const Divider(),
+          const Spacer(),
+          IconButton(
+            onPressed: () async {
+              openThemeGeneratedScreen();
+              state.generateHtml();
+            },
+            icon: const Icon(Icons.view_agenda),
+          )
         ],
       ),
     );
@@ -107,13 +106,15 @@ class ThemeBuilderTab extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              MainTitle(title: item.title),
+              const SizedBox(height: 10),
+              Text(item.title, style: Theme.of(context).textTheme.titleSmall),
+              const SizedBox(height: 10),
               Container(
-                height: 130,
-                padding: const EdgeInsets.all(20),
+                height: controlsDimen + 30,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.grey[100],
+                  color: Colors.grey[200],
                 ),
                 child: ListView.builder(
                   itemCount: item.subItems.length,
@@ -133,30 +134,21 @@ class ThemeBuilderTab extends StatelessWidget {
                     if (subItem.input == 'number') {
                       widget = _number(context, uiModel, subItem, dark, state);
                     }
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 20),
-                      child: widget,
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: controlsDimen,
+                          width: 170,
+                          alignment: Alignment.centerLeft,
+                          padding: const EdgeInsets.only(right: 30),
+                          child: widget,
+                        ),
+                      ],
                     );
                   },
                 ),
-
-                // child: Row(
-                //   children: item.subItems.map((subItem) {
-                //     if (subItem.input == 'color') {
-                //       return _color(uiModel, subItem, dark, state);
-                //     }
-                //     if (subItem.input == 'dropdown') {
-                //       return _dropDown(uiModel, subItem, dark, state);
-                //     }
-                //     if (subItem.input == 'boolean') {
-                //       return _toggle(context, uiModel, subItem, dark, state);
-                //     }
-                //     if (subItem.input == 'number') {
-                //       return _number(context, uiModel, subItem, dark, state);
-                //     }
-                //     return Container();
-                //   }).toList(),
-                // ),
               ),
             ],
           );
@@ -178,7 +170,7 @@ class ThemeBuilderTab extends StatelessWidget {
               ),
               const Spacer(),
               IconButton(
-                onPressed: (() {
+                onPressed: (() async {
                   state.customColors.add(
                     CustomColor(
                       id: random.nextInt(50),
@@ -211,19 +203,13 @@ class ThemeBuilderTab extends StatelessWidget {
       subItem: subItem,
       currentColor: color,
       onPressed: (color) async {
-        await _updateColor(
-          subItem,
-          color,
-          dark,
-        );
-        unawaited(
-          state.refreshPreview(),
-        );
+        await _updateColor(subItem, color, dark);
+        unawaited(state.refreshPreview());
       },
     );
   }
 
-  Column _number(
+  Widget _number(
     BuildContext context,
     ThemeUiModel uiModel,
     SubItem subItem,
@@ -234,7 +220,7 @@ class ThemeBuilderTab extends StatelessWidget {
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           subItem.title,
@@ -242,31 +228,26 @@ class ThemeBuilderTab extends StatelessWidget {
           style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 12),
         ),
         const SizedBox(height: 5),
-        NumericStepButton(
-          defaultCounter: double.parse(currentVal).toInt(),
-          maxValue: 900,
-          minValue: 0,
-          onDecrement: () async {
-            await _decrementNumber(
-              subItem,
-              dark,
-            );
-            unawaited(state.refreshPreview());
-          },
-          onIncrement: () async {
-            await _incrementNumber(
-              subItem,
-              dark,
-            );
-            unawaited(state.refreshPreview());
-          },
+        Expanded(
+          child: NumericStepButton(
+            defaultCounter: double.parse(currentVal).toInt(),
+            maxValue: 900,
+            minValue: 0,
+            onDecrement: () async {
+              await _decrementNumber(subItem, dark);
+              unawaited(state.refreshPreview());
+            },
+            onIncrement: () async {
+              await _incrementNumber(subItem, dark);
+              unawaited(state.refreshPreview());
+            },
+          ),
         ),
-        const SizedBox(height: 20),
       ],
     );
   }
 
-  Column _toggle(
+  Widget _toggle(
     BuildContext context,
     ThemeUiModel uiModel,
     SubItem subItem,
@@ -276,22 +257,22 @@ class ThemeBuilderTab extends StatelessWidget {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           subItem.title,
           style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 12),
         ),
-        CupertinoSwitch(
-          value: currentVal.parseBool(),
-          onChanged: (bool val) async {
-            await _updateBoolean(
-              subItem,
-              val,
-              dark,
-            );
-            unawaited(state.refreshPreview());
-          },
+        const SizedBox(height: 5),
+        const Spacer(),
+        Expanded(
+          child: CupertinoSwitch(
+            value: currentVal.parseBool(),
+            onChanged: (bool val) async {
+              await _updateBoolean(subItem, val, dark);
+              unawaited(state.refreshPreview());
+            },
+          ),
         ),
       ],
     );
@@ -311,6 +292,7 @@ class ThemeBuilderTab extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SubTitle(title: subItem.title),
+        const SizedBox(height: 5),
         DropdownButton<Value>(
           isDense: true,
           value: currentVal,
@@ -327,7 +309,6 @@ class ThemeBuilderTab extends StatelessWidget {
             unawaited(state.refreshPreview());
           },
         ),
-        const SizedBox(height: 20),
       ],
     );
   }
@@ -353,15 +334,18 @@ class ThemeBuilderTab extends StatelessWidget {
   }
 
   _decrementNumber(SubItem subItem, bool dark) async {
-    if (subItem.dark.value.first.value == '0') {
-      return;
-    }
     if (dark) {
-      subItem.dark.value.first.value =
-          (int.parse(subItem.dark.value.first.value) - 1).toString();
+      final curVal = int.parse(subItem.dark.value.first.value);
+      if (curVal <= 0) {
+        return;
+      }
+      subItem.dark.value.first.value = (curVal - 1).toString();
     } else {
-      subItem.light.value.first.value =
-          (int.parse(subItem.light.value.first.value) - 1).toString();
+      final curVal = int.parse(subItem.light.value.first.value);
+      if (curVal <= 0) {
+        return;
+      }
+      subItem.light.value.first.value = (curVal - 1).toString();
     }
   }
 

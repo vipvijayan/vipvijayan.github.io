@@ -109,7 +109,7 @@ class GeneratedThemeScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(20),
                           textStyle: const TextStyle(
                             fontFamily: 'courier',
-                            fontSize: 16,
+                            fontSize: 14,
                           ),
                         ),
                       ),

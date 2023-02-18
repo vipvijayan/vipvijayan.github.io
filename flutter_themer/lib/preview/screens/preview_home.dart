@@ -157,9 +157,10 @@ class _InputTabState extends State<InputTab> {
             Form(
               key: _formKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextFormField(
-                    decoration: InputDecoration(hintText: 'name'),
+                    decoration: const InputDecoration(hintText: 'name'),
                     validator: (text) {
                       if (text == null || text.isEmpty) {
                         return 'Text is empty';
@@ -173,8 +174,20 @@ class _InputTabState extends State<InputTab> {
                         //
                       }
                     },
-                    child: Text('Submit'),
-                  )
+                    child: const Text('Submit'),
+                  ),
+                  Checkbox(
+                    value: true,
+                    onChanged: (value) => {},
+                  ),
+                  CheckboxListTile(
+                    value: true,
+                    title: Text(
+                      'Apple',
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    onChanged: (value) => {},
+                  ),
                 ],
               ),
             ),

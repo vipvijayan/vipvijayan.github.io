@@ -15,13 +15,16 @@ class ThemeAppState extends ChangeNotifier {
   ThemeParentModel? curSelectedThemeModel;
 
   removeFromCustomColorsList(int id) async {
-    for (final c in customColors) {
+    final temp = <CustomColor>[];
+    temp.addAll(customColors);
+    for (final c in temp) {
       if (id == c.id) {
         customColors.remove(c);
       }
     }
   }
 
+  // refresh = true used to reload default configuration after the app started
   Future<void> init({bool refresh = false}) async {
     for (final tTabs in themeParentModels) {
       tTabs.themeUiModelList = await loadThemeUIModelList(tTabs.id);
@@ -60,11 +63,13 @@ class ThemeAppState extends ChangeNotifier {
     }
     String lightThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
       curSelectedThemeModel!.themeUiModelList,
+      customColors.isNotEmpty,
       themeId: curSelectedThemeModel!.id,
       dark: false,
     );
     String darkThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
       curSelectedThemeModel!.themeUiModelList,
+      customColors.isNotEmpty,
       themeId: curSelectedThemeModel!.id,
       dark: true,
     );
@@ -77,32 +82,4 @@ class ThemeAppState extends ChangeNotifier {
         '$lightThemeGeneratedHtml\n$darkThemeGeneratedHtml\n}\n\n// Usage\n\n$usageHtml';
     notifyListeners();
   }
-}
-
-class CustomColor {
-  final int id;
-  String name;
-  String lightModeColorCode;
-  String darkModeColorCode;
-  CustomColor({
-    required this.id,
-    required this.name,
-    this.lightModeColorCode = '#FF000000',
-    this.darkModeColorCode = '#FFFFFFFF',
-  });
-}
-
-class ThemeParentModel {
-  final int id;
-  final String title;
-  ThemeData? curThemeData;
-  Brightness brightness;
-  List<ThemeUiModel> themeUiModelList;
-  ThemeParentModel({
-    required this.id,
-    required this.title,
-    this.themeUiModelList = const [],
-    this.curThemeData,
-    this.brightness = Brightness.light,
-  });
 }

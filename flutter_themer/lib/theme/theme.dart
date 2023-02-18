@@ -2,7 +2,7 @@ import 'package:flutter_themer/exports/exports.dart';
 
 var darkBaseTheme = HexColor('#272727');
 var lightBaseColor = Colors.white; // HexColor('#2cccd3');
-const letterSpacing = 1.1;
+const letterSpacing = 0.8;
 const transition = PageTransitionsTheme(builders: {
   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
   TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
@@ -111,7 +111,7 @@ class AppTheme {
       thickness: 0.1,
       color: Colors.grey,
     ),
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: Colors.grey,
       size: 20,
     ),
@@ -121,22 +121,22 @@ class AppTheme {
         fontSize: 18.0,
         letterSpacing: letterSpacing,
       ),
-      bodyMedium: TextStyle(
+      bodyMedium: const TextStyle(
         color: Colors.black,
         fontSize: 18.0,
         letterSpacing: letterSpacing,
       ),
-      bodySmall: TextStyle(
+      bodySmall: const TextStyle(
         color: Colors.black,
         fontSize: 18.0,
         letterSpacing: letterSpacing,
       ),
-      titleSmall: TextStyle(
+      titleSmall: const TextStyle(
         color: Colors.grey,
         fontSize: 16.0,
         letterSpacing: letterSpacing,
       ),
-      titleMedium: TextStyle(
+      titleMedium: const TextStyle(
         color: Colors.black,
         fontSize: 16.0,
         letterSpacing: letterSpacing,

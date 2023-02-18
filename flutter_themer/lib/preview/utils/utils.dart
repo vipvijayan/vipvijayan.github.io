@@ -5,6 +5,7 @@ String colorHex(Color color) => '#${color.value.toRadixString(16)}';
 Future<void> showColorDialog(
   BuildContext context, {
   required String title,
+  Color currentColor = defaultPickerColor,
   required Function(Color color) onTap,
 }) async {
   showDialog(
@@ -12,11 +13,13 @@ Future<void> showColorDialog(
     barrierColor: Colors.transparent,
     builder: (BuildContext context) {
       return AlertDialog(
+        backgroundColor: Colors.grey,
         elevation: 0,
         title: Text(title),
         content: SingleChildScrollView(
           child: HueRingPicker(
-            pickerColor: pickerColor,
+            pickerAreaBorderRadius: const BorderRadius.all(Radius.circular(6)),
+            pickerColor: currentColor,
             onColorChanged: ((color) {
               onTap(color);
             }),
@@ -26,7 +29,7 @@ Future<void> showColorDialog(
           TextButton(
             child: Text(
               'DONE',
-              style: Theme.of(context).textTheme.titleSmall,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             onPressed: () {
               Navigator.of(context).pop();

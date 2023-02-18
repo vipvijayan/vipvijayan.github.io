@@ -11,7 +11,10 @@ class ThemeBuilderScreen extends StatelessWidget {
       length: state.themeParentModels.length,
       child: Scaffold(
         appBar: TabBar(
-          onTap: (index) {},
+          onTap: (index) {
+            state.curSelectedThemeModel = state.themeParentModels[index];
+            state.refreshPreview();
+          },
           labelColor: Colors.black,
           tabs: state.themeParentModels
               .map(

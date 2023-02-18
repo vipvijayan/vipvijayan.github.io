@@ -15,7 +15,7 @@ class MainTitle extends StatelessWidget {
         style: Theme.of(context)
             .textTheme
             .titleLarge
-            ?.copyWith(fontSize: fontSize ?? 18),
+            ?.copyWith(fontSize: fontSize ?? 14),
       ),
     );
   }

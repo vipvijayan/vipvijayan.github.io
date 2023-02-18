@@ -16,45 +16,42 @@ class ThemeColor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 170,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ColorSelector(
-            title: uiModel.title,
-            color: HexColor(currentColor),
-            onTap: (Color color) async {
-              onPressed(color);
-            },
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        ColorSelector(
+          title: '${uiModel.title} - ${subItem.title}',
+          color: HexColor(currentColor),
+          onTap: (Color color) async {
+            onPressed(color);
+          },
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                subItem.title,
+                maxLines: 2,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(fontSize: 12),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                colorToHex(HexColor(currentColor)),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall
+                    ?.copyWith(color: Colors.grey, fontSize: 10),
+              ),
+            ],
           ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  subItem.title,
-                  maxLines: 2,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge
-                      ?.copyWith(fontSize: 12),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  colorToHex(HexColor(currentColor)),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall
-                      ?.copyWith(color: Colors.grey, fontSize: 10),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

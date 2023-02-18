@@ -23,8 +23,8 @@
                            "id": 0,
                            "label":"color",
                            "selected": true,
-                           "value": "#FF9ECAFF",
-                           "selected_value": "#FF9ECAFF"
+                           "value": "#FF000000",
+                           "selected_value": "#FF000000"
                         }
                         ]
                      },
@@ -87,8 +87,8 @@
                            "id": 0,
                            "label":"color",
                            "selected": true,
-                           "value": "#FF0049FD",
-                           "selected_value": "#FF0049FD"
+                           "value": "#FF000000",
+                           "selected_value": "#FF000000"
                         }
                         ]
                      },
@@ -119,8 +119,8 @@
                            "id": 0,
                            "label":"color",
                            "selected": true,
-                           "value": "#FFD1E4FF",
-                           "selected_value": "#FFD1E4FF"
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
                         }
                         ]
                      },
@@ -131,40 +131,8 @@
                            "id": 0,
                            "label":"color",
                            "selected": true,
-                           "value": "#FF001D36",
-                           "selected_value": "#FF001D36"
-                        }
-                        ]
-                     }
-                  },
-                  {
-                     "id":1,
-                     "subtitle":false,
-                     "title":"On Primary Container",
-                     "key":"key_cs_inverse_primary",
-                     "value_type":"string",
-                     "input":"color",
-                     "dark":{
-                        "id":0,
-                        "value":[ 
-                        {
-                           "id": 0,
-                           "label":"color",
-                           "selected": true,
-                           "value": "#FFD1E4FF",
-                           "selected_value": "#FFD1E4FF"
-                        }
-                        ]
-                     },
-                     "light":{
-                        "id":1,
-                        "value":[ 
-                        {
-                           "id": 0,
-                           "label":"color",
-                           "selected": true,
-                           "value": "#FF001D36",
-                           "selected_value": "#FF001D36"
+                           "value": "#FFFFFFFF",
+                           "selected_value": "#FFFFFFFF"
                         }
                         ]
                      }
@@ -943,8 +911,8 @@
                              "id": 0,
                              "label":"color",
                              "selected": true,
-                             "value": "#FF000000",
-                             "selected_value": "#FF000000"
+                             "value": "#FFFFFFFF",
+                             "selected_value": "#FFFFFFFF"
                           }
                         ]
                      }

@@ -9,38 +9,6 @@
              "title":"Properties",
              "sub_items":[
                 {
-                   "id":0,
-                   "subtitle":false,
-                   "title":"Primary Color",
-                   "key":"key_primary_color",
-                   "value_type":"string",
-                   "input":"color",
-                   "dark":{
-                      "id":0,
-                      "value":[ 
-                        {
-                           "id": 0,
-                           "label":"color",
-                           "selected": true,
-                           "value": "#FF0645B1",
-                           "selected_value": "#FF0645B1"
-                        }
-                      ]
-                   },
-                   "light":{
-                      "id":1,
-                      "value":[ 
-                        {
-                           "id": 0,
-                           "label":"color",
-                           "selected": true,
-                           "value": "#FF0645B1",
-                           "selected_value": "#FF0645B1"
-                        }
-                      ]
-                   }
-                },
-                {
                    "id":1,
                    "subtitle":false,
                    "title":"Background Color",
@@ -71,39 +39,8 @@
                         }
                       ]
                    }
-                },
-                {
-                   "id":2,
-                   "subtitle":false,
-                   "title":"Elevation",
-                   "key":"key_app_bar_elevation",
-                   "value_type":"string",
-                   "input":"number",
-                   "dark":{
-                      "id":0,
-                      "value":[ 
-                        {
-                           "id": 0,
-                           "label":"Elevation",
-                           "selected": true,
-                           "value": "0",
-                           "selected_value": "0"
-                        }
-                      ]
-                   },
-                   "light":{
-                      "id":0,
-                      "value":[ 
-                        {
-                           "id": 0,
-                           "label":"Elevation",
-                           "selected": true,
-                           "value": "0",
-                           "selected_value": "0"
-                        }
-                      ]
-                   }
                 }
+               
              ]
           }
        ]
@@ -146,6 +83,38 @@
                         "value": "#FF0000FF",
                         "selected_value": "#FF0000FF"
                      }
+                     ]
+                  }
+               },
+               {
+                  "id":2,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_app_bar_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
                      ]
                   }
                },
@@ -306,6 +275,620 @@
                            "value": "TabBarIndicatorSize.label",
                            "selected_value": "TabBarIndicatorSize.label"
                         }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":2,
+      "title":"Text Theme",
+      "expanded": true,
+      "basic": false,
+      "items":[
+         {
+            "title":"Body Large",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_body_large_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_body_large_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "16",
+                          "selected_value": "16"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "16",
+                          "selected_value": "16"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_body_large_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Body Medium",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_body_medium_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_body_medium_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "14",
+                          "selected_value": "14"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "14",
+                          "selected_value": "14"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_body_medium_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Body Small",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_body_small_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_body_small_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "12",
+                          "selected_value": "12"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "12",
+                          "selected_value": "12"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_body_small_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Title Large",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_title_large_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_title_large_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "16",
+                          "selected_value": "16"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "16",
+                          "selected_value": "16"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_title_large_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Title Medium",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_title_medium_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_title_medium_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "14",
+                          "selected_value": "14"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "14",
+                          "selected_value": "14"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_title_medium_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Title Small",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_title_small_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_title_small_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "12",
+                          "selected_value": "12"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Font Size",
+                          "selected": true,
+                          "value": "12",
+                          "selected_value": "12"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_title_small_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Letter Spacing",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
                      ]
                   }
                }
