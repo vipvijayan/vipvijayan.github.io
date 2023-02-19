@@ -2,7 +2,7 @@
     {
        "id":1,
        "title":"Scaffold",
-       "expanded": true,
+       "expanded": false,
        "basic": false,
        "items":[
           {
@@ -48,7 +48,7 @@
     {
       "id": 2,
       "title":"App Bar",
-      "expanded": true,
+      "expanded": false,
       "basic": false,
       "items":[
          {
@@ -226,7 +226,7 @@
     {
       "id": 3,
       "title":"Tab Bar",
-      "expanded": true,
+      "expanded": false,
       "basic": false,
       "items":[
          {
@@ -235,7 +235,7 @@
                {
                   "id":0,
                   "subtitle":false,
-                  "title":"Indicator Width",
+                  "title":"Indicator Size",
                   "key":"key_tabbar_indicator_size",
                   "value_type":"string",
                   "input":"dropdown",
@@ -277,6 +277,180 @@
                         }
                      ]
                   }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Indicator Border Style",
+                  "key":"key_tabbar_indicator_underline_border_style",
+                  "value_type":"string",
+                  "input":"dropdown",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id": 0,
+                           "label":"BorderStyle.solid",
+                           "selected": true,
+                           "value": "BorderStyle.solid",
+                           "selected_value": "BorderStyle.solid"
+                        },
+                        {
+                           "id": 1,
+                           "label":"BorderStyle.none",
+                           "selected": false,
+                           "value": "BorderStyle.none",
+                           "selected_value": "BorderStyle.none"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id": 0,
+                           "label":"BorderStyle.solid",
+                           "selected": true,
+                           "value": "BorderStyle.solid",
+                           "selected_value": "BorderStyle.solid"
+                        },
+                        {
+                           "id": 1,
+                           "label":"BorderStyle.none",
+                           "selected": false,
+                           "value": "BorderStyle.none",
+                           "selected_value": "BorderStyle.none"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Indicator Color",
+                  "key":"key_tabbar_indicator_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Indicator Color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 1,
+                          "label":"Indicator Color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Indicator Width",
+                  "key":"key_tabbar_indicator_width",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Indicator Width",
+                          "selected": true,
+                          "value": "1",
+                          "selected_value": "1"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Indicator Width",
+                          "selected": true,
+                          "value": "1",
+                          "selected_value": "1"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Selected Label Color",
+                  "key":"key_tabbar_selected_label_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Unselected Label Color",
+                  "key":"key_tabbar_unselected_label_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
                }
             ]
          }
@@ -285,7 +459,7 @@
    {
       "id":2,
       "title":"Text Theme",
-      "expanded": true,
+      "expanded": false,
       "basic": false,
       "items":[
          {

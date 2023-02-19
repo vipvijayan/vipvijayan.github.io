@@ -8,11 +8,6 @@
         color: 'key_app_bar_icon_color',
         size: 'key_app_bar_icon_size',
       ),
-      systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: Colors.blue,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.dark,
-      ),
     ),
     textTheme: TextTheme(
       bodyLarge: TextStyle(
@@ -24,100 +19,35 @@
         color: 'key_txt_theme_body_medium_color',
       ),
       bodySmall: TextStyle(
-        fontSize: 'text_theme_body_small_text_size',
-        color: 'text_theme_body_small_text_color'),
+        fontSize: 'key_txt_theme_body_small_size',
+        color: 'key_txt_theme_body_small_color',
       ),
       titleLarge: TextStyle(
-        fontSize: 'text_theme_title_large_text_size',
-        color: 'text_theme_title_large_text_color'),
+        fontSize: 'key_txt_theme_title_large_size',
+        color: 'key_txt_theme_title_large_color'),
       ),
       titleMedium: TextStyle(
-        fontSize: 'text_theme_title_medium_text_size',
-        color: 'text_theme_title_medium_text_color'),
+        fontSize: 'key_txt_theme_title_medium_size',
+        color: 'key_txt_theme_title_medium_color'),
       ),
       titleSmall: TextStyle(
-        fontSize: 'text_theme_title_small_text_size',
-        color: 'text_theme_title_small_text_color'),
+        fontSize: 'key_txt_theme_title_small_size',
+        color: 'key_txt_theme_title_small_color'),
       ),          
     ),
     tabBarTheme: TabBarTheme(
-      indicatorSize: 'tabbar_indicator_size',
-      unselectedLabelColor: 'tabbar_unselected_label_color'),
-      labelColor: 'tabbar_selected_label_color'),
+      indicatorSize: 'key_tabbar_indicator_size',
+      unselectedLabelColor: 'key_tabbar_unselected_label_color',
+      labelColor: 'key_tabbar_selected_label_color',
       indicator: const ShapeDecoration(
         shape: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: 'tabbar_indicator_color'),
-            width: 'tabbar_indicator_width',
-            style: BorderStyle.solid,
+            color: 'key_tabbar_indicator_color',
+            width: 'key_tabbar_indicator_width',
+            style: 'key_tabbar_indicator_underline_border_style',
           ),
         ),
-      ),
-      labelStyle: const TextStyle(
-        color: Colors.white,
-        fontSize: 14,
-        letterSpacing: 1.2,
-        fontWeight: FontWeight.bold,
-      ),
-      unselectedLabelStyle: const TextStyle(
-        color: Colors.white,
-        letterSpacing: 1.1,
-        fontSize: 10,
-      ),
-    ),
-    textButtonTheme: TextButtonThemeData(
-      style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all<Color>(
-          'text_button_foreground_color')
-        ),
-      ),
-    ),
-    cardTheme: CardTheme(
-      color: 'card_background_color'),
-      shadowColor: 'card_shadow_color'),
-      elevation: 'card_elevation'
-    ),
-    snackBarTheme: SnackBarThemeData(
-      backgroundColor: 'snackbar_background_color'),
-      elevation: 'snackbar_elevation',
-      contentTextStyle: TextStyle(
-        color: 'snackbar_text_color'),
-      ),
-    ),
-    dividerTheme: DividerThemeData(
-      indent:'divider_left_padding',
-      endIndent: 'divider_end_padding',
-      thickness: 'divider_thickness',
-      color: 'divider_color'),
-    ),
-    progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: 'progress_indicator_color'),
-      refreshBackgroundColor: 'refresh_background_color'),
-    ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
-      foregroundColor: 'floating_btn_foreground_color'),
-      iconSize: 'floating_btn_icon_size',
-      backgroundColor: 'floating_btn_background_color'),
-      enableFeedback: 'floating_btn_enable_feedback',
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all<Color>(
-          'elevated_btn_foreground_color'),
-        ),
-        backgroundColor: MaterialStateProperty.all<Color>(
-          'elevated_btn_background_color'),
-        ),
-        elevation: MaterialStateProperty.all<double>(
-          'elevated_btn_elevation',
-        ),
-      ),
-    ),
-    drawerTheme: DrawerThemeData(
-      backgroundColor: 'drawer_background_color'),
-      elevation: 'drawer_elevation',
-      width: 'drawer_width',
-    ),
+      )
   );
 
   

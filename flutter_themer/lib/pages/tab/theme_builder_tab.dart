@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_themer/exports/exports.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ThemeBuilderTab extends StatelessWidget {
   //
@@ -89,7 +90,10 @@ class ThemeBuilderTab extends StatelessWidget {
               openThemeGeneratedScreen();
               state.generateHtml();
             },
-            icon: const Icon(Icons.view_agenda),
+            icon: const FaIcon(
+              FontAwesomeIcons.fileExport,
+              color: Colors.green,
+            ),
           )
         ],
       ),
@@ -140,7 +144,7 @@ class ThemeBuilderTab extends StatelessWidget {
                       children: [
                         Container(
                           height: controlsDimen,
-                          width: 170,
+                          width: 250,
                           alignment: Alignment.centerLeft,
                           padding: const EdgeInsets.only(right: 30),
                           child: widget,

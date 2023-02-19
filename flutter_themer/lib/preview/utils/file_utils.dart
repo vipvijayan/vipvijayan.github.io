@@ -25,6 +25,10 @@ Future<String> laodUsageHtml() async {
   return await rootBundle.loadString('$filesDir/usage.html');
 }
 
+Future<String> loadCustomThemeUsage() async {
+  return await rootBundle.loadString('$filesDir/custom_theme_usage.html');
+}
+
 Future<String> loadDefaultThemeValuesFile(bool darkeMode) async {
   final fileName =
       darkeMode ? 'theme_default_dark.json' : 'theme_default_light.json';

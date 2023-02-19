@@ -14,27 +14,28 @@ class ExpandTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            child: MainTitle(
-              title: title,
-              fontSize: 20,
+    return InkWell(
+      radius: 6,
+      onTap: onPressed,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: MainTitle(
+                title: title,
+                fontSize: 20,
+              ),
             ),
-          ),
-          IconButton(
-            onPressed: onPressed,
-            icon: Icon(
+            Icon(
               expanded
                   ? Icons.keyboard_arrow_up_rounded
                   : Icons.keyboard_arrow_down_rounded,
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

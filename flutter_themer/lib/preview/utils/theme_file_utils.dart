@@ -104,6 +104,9 @@ class ThemeFileUtils {
       return ThemeData(
         // useMaterial3: true,
         brightness: themeParentModel.brightness,
+        scaffoldBackgroundColor: HexColor(
+          themeMap['key_scaffold_background_color'],
+        ),
         inputDecorationTheme: const InputDecorationTheme(
           alignLabelWithHint: false,
           filled: false,
@@ -228,25 +231,25 @@ class ThemeFileUtils {
         tabBarTheme: TabBarTheme(
           indicatorSize:
               tabIndicatorSize(themeMap['key_tabbar_indicator_size']),
-          // labelColor: HexColor(
-          //   customTheme['tabbar_selected_label_color']['value'],
-          // ),
-          // unselectedLabelColor: HexColor(
-          //   customTheme['tabbar_unselected_label_color']['value'],
-          // ),
-          // indicator: ShapeDecoration(
-          //   shape: UnderlineInputBorder(
-          //     borderSide: BorderSide(
-          //       color: HexColor(
-          //         customTheme['tabbar_indicator_color']['value'],
-          //       ),
-          //       width: double.parse(
-          //         customTheme['tabbar_indicator_width']['value'] as String,
-          //       ),
-          //       style: BorderStyle.solid,
-          //     ),
-          //   ),
-          // ),
+          labelColor: HexColor(themeMap['key_tabbar_selected_label_color']),
+          unselectedLabelColor: HexColor(
+            themeMap['key_tabbar_unselected_label_color'],
+          ),
+          indicator: ShapeDecoration(
+            shape: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: HexColor(
+                  themeMap['key_tabbar_indicator_color'],
+                ),
+                width: double.parse(
+                  themeMap['key_tabbar_indicator_width'],
+                ),
+                style: tabBarIndicatorUnderlineBorderStyle(
+                  themeMap['key_tabbar_indicator_underline_border_style'],
+                ),
+              ),
+            ),
+          ),
           // labelStyle: TextStyle(
           //   color: Colors.white,
           //   fontSize: double.parse(
@@ -728,6 +731,15 @@ class ThemeFileUtils {
     themeHtml = themeHtml.replaceAll('4444444444', str444);
     themeHtml = themeHtml.replaceAll('3333333333', str333);
     return themeHtml;
+  }
+}
+
+tabBarIndicatorUnderlineBorderStyle(String borderStyle) {
+  switch (borderStyle) {
+    case 'BorderStyle.solid':
+      return BorderStyle.solid;
+    default:
+      return BorderStyle.none;
   }
 }
 

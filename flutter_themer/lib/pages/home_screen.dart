@@ -1,4 +1,5 @@
 import 'package:flutter_themer/exports/exports.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,7 +14,7 @@ class HomeScreen extends StatelessWidget {
         title: Row(
           children: [
             const SizedBox(width: 25),
-            const FlutterLogo(),
+            const FaIcon(FontAwesomeIcons.themeisle),
             const SizedBox(width: 30),
             Text(
               appTitle,

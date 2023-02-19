@@ -9,7 +9,7 @@ class ThemeAppState extends ChangeNotifier {
 
   List<CustomColor> customColors = [];
   List<ThemeParentModel> themeParentModels = [
-    ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
+    ThemeParentModel(id: ThemeIDs.basic.value, title: 'Primary'),
     ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
   ThemeParentModel? curSelectedThemeModel;
@@ -74,12 +74,18 @@ class ThemeAppState extends ChangeNotifier {
       dark: true,
     );
     customHtml = await ThemeFileUtils.generateCustomThemeTxt(customColors);
+
     lightThemeGeneratedHtml =
         "import 'package:flutter/material.dart';\n\nclass AppTheme { \n\n$lightThemeGeneratedHtml";
     darkThemeGeneratedHtml =
         darkThemeGeneratedHtml.replaceAll('lightTheme', 'darkTheme');
     themeGeneratedHtml =
         '$lightThemeGeneratedHtml\n$darkThemeGeneratedHtml\n}\n\n// Usage\n\n$usageHtml';
+    if (customColors.isNotEmpty) {
+      final customThemeUsage = await loadCustomThemeUsage();
+      themeGeneratedHtml =
+          '$themeGeneratedHtml\n\n// Custom Colors Usage\n\n$customThemeUsage';
+    }
     notifyListeners();
   }
 }
