@@ -221,13 +221,11 @@ class ThemeFileUtils {
         //   primary: Colors.white,
         //   onSecondary: Colors.black,
         // ),
-        // cardTheme: CardTheme(
-        //   color: HexColor(customTheme['card_background_color']['value']),
-        //   shadowColor: HexColor(customTheme['card_shadow_color']['value']),
-        //   elevation: double.parse(
-        //     customTheme['card_elevation']['value'] as String,
-        //   ),
-        // ),
+        cardTheme: CardTheme(
+          color: HexColor(themeMap['key_card_background_color']),
+          shadowColor: HexColor(themeMap['key_card_shadow_color']),
+          elevation: double.parse(themeMap['key_card_elevation']),
+        ),
         tabBarTheme: TabBarTheme(
           indicatorSize:
               tabIndicatorSize(themeMap['key_tabbar_indicator_size']),
@@ -266,57 +264,53 @@ class ThemeFileUtils {
           //   ),
           // ),
         ),
-        // textButtonTheme: TextButtonThemeData(
-        //   style: ButtonStyle(
-        //     foregroundColor: MaterialStateProperty.all<Color>(
-        //       HexColor(
-        //         customTheme['text_button_foreground_color']['value'],
-        //       ),
-        //     ),
-        //   ),
-        // ),
-        // snackBarTheme: SnackBarThemeData(
-        //   backgroundColor: HexColor(
-        //     customTheme['snackbar_background_color']['value'],
-        //   ),
-        //   elevation: double.parse(
-        //     customTheme['snackbar_elevation']['value'] as String,
-        //   ),
-        //   contentTextStyle: TextStyle(
-        //     color: HexColor(
-        //       customTheme['snackbar_text_color']['value'],
-        //     ),
-        //   ),
-        // ),
-        // dividerTheme: DividerThemeData(
-        //   indent: double.parse(
-        //     customTheme['divider_left_padding']['value'] as String,
-        //   ),
-        //   endIndent: double.parse(
-        //     customTheme['divider_end_padding']['value'] as String,
-        //   ),
-        //   thickness: double.parse(
-        //     customTheme['divider_thickness']['value'] as String,
-        //   ),
-        //   color: HexColor(customTheme['divider_color']['value']),
-        // ),
-        // progressIndicatorTheme: ProgressIndicatorThemeData(
-        //   color: HexColor(customTheme['progress_indicator_color']['value']),
-        //   refreshBackgroundColor: HexColor(
-        //     customTheme['refresh_background_color']['value'],
-        //   ),
-        // ),
-        // floatingActionButtonTheme: FloatingActionButtonThemeData(
-        //   foregroundColor:
-        //       HexColor(customTheme['floating_btn_foreground_color']['value']),
-        //   iconSize: double.parse(
-        //       customTheme['floating_btn_icon_size']['value'] as String),
-        //   backgroundColor:
-        //       HexColor(customTheme['floating_btn_background_color']['value']),
-        //   enableFeedback:
-        //       (customTheme['floating_btn_enable_feedback']['value'] as String)
-        //           .parseBool(),
-        // ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all<Color>(
+              HexColor(
+                themeMap['key_txt_btn_foreground_color'],
+              ),
+            ),
+            backgroundColor: MaterialStateProperty.all<Color>(
+              HexColor(
+                themeMap['key_txt_btn_background_color'],
+              ),
+            ),
+          ),
+        ),
+        snackBarTheme: SnackBarThemeData(
+          backgroundColor: HexColor(
+            themeMap['key_snackbar_background_color'],
+          ),
+          elevation: double.parse(
+            themeMap['key_snackbar_elevation'],
+          ),
+          contentTextStyle: TextStyle(
+            color: HexColor(
+              themeMap['key_snackbar_content_txt_color'],
+            ),
+          ),
+        ),
+        dividerTheme: DividerThemeData(
+          indent: double.parse(themeMap['key_divider_indent']),
+          endIndent: double.parse(themeMap['key_divider_end_indent']),
+          thickness: double.parse(themeMap['key_divider_thickness']),
+          color: HexColor(themeMap['key_divider_color']),
+        ),
+        progressIndicatorTheme: ProgressIndicatorThemeData(
+          color: HexColor(themeMap['key_progress_indicator_color']),
+          refreshBackgroundColor: HexColor(
+            themeMap['key_progress_indicator_refresh_background_color'],
+          ),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          foregroundColor:
+              HexColor(themeMap['key_floating_btn_foreground_color']),
+          iconSize: double.parse(themeMap['key_floating_btn_icon_size']),
+          backgroundColor:
+              HexColor(themeMap['key_floating_btn_background_color']),
+          enableFeedback: themeMap['key_floating_btn_enable_feedback'],
+        ),
         // elevatedButtonTheme: ElevatedButtonThemeData(
         //   style: ButtonStyle(
         //     foregroundColor: MaterialStateProperty.all<Color>(
@@ -334,14 +328,11 @@ class ThemeFileUtils {
         //     ),
         //   ),
         // ),
-        // drawerTheme: DrawerThemeData(
-        //   backgroundColor: HexColor(
-        //     customTheme['drawer_background_color']['value'],
-        //   ),
-        //   elevation:
-        //       double.parse(customTheme['drawer_elevation']['value'] as String),
-        //   width: double.parse(customTheme['drawer_width']['value'] as String),
-        // ),
+        drawerTheme: DrawerThemeData(
+          backgroundColor: HexColor(themeMap['key_drawer_background_color']),
+          elevation: double.parse(themeMap['key_drawer_elevation']),
+          width: double.parse(themeMap['key_drawer_width']),
+        ),
         // extensions: <ThemeExtension<dynamic>>[
         //   MyColors.light,
         // ],

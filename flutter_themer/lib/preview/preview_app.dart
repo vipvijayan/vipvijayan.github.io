@@ -12,13 +12,13 @@ class PreviewApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return DevicePreview(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      data: const DevicePreviewData(
-        settings: DevicePreviewSettingsData(
-          backgroundTheme: DevicePreviewBackgroundThemeData.light,
-          toolbarTheme: DevicePreviewToolBarThemeData.light,
-          toolbarPosition: DevicePreviewToolBarPositionData.top,
-        ),
-      ),
+      // data: const DevicePreviewData(
+      //   settings: DevicePreviewSettingsData(
+      //     backgroundTheme: DevicePreviewBackgroundThemeData.light,
+      //     toolbarTheme: DevicePreviewToolBarThemeData.light,
+      //     toolbarPosition: DevicePreviewToolBarPositionData.top,
+      //   ),
+      // ),
       builder: (context) {
         return MaterialApp(
           useInheritedMediaQuery: true,
@@ -28,7 +28,7 @@ class PreviewApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           showPerformanceOverlay: false,
           theme: themeData,
-          darkTheme: themeData,
+          // darkTheme: themeData,
           home: const PreviewHomeScreen(),
         );
       },

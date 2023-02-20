@@ -1,10 +1,16 @@
 import 'package:flutter_themer/exports/exports.dart';
 
 class MainTitle extends StatelessWidget {
-  const MainTitle({super.key, required this.title, this.fontSize});
+  const MainTitle({
+    super.key,
+    required this.title,
+    this.fontSize,
+    this.txtColor = Colors.black,
+  });
 
   final String title;
   final double? fontSize;
+  final Color txtColor;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +21,7 @@ class MainTitle extends StatelessWidget {
         style: Theme.of(context)
             .textTheme
             .titleLarge
-            ?.copyWith(fontSize: fontSize ?? 14),
+            ?.copyWith(fontSize: fontSize ?? 14, color: txtColor),
       ),
     );
   }

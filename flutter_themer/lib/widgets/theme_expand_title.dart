@@ -16,6 +16,9 @@ class ExpandTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       radius: 6,
+      customBorder: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(6),
+      ),
       onTap: onPressed,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -23,10 +26,25 @@ class ExpandTitle extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Container(
+            //   height: 20,
+            //   width: 20,
+            //   decoration: BoxDecoration(
+            //     color: expanded ? Colors.teal : Colors.grey[200],
+            //     border: Border.all(
+            //       color: Colors.grey[200]!,
+            //     ),
+            //     borderRadius: const BorderRadius.all(
+            //       Radius.circular(3),
+            //     ),
+            //   ),
+            // ),
+            // const SizedBox(width: 20),
             Expanded(
               child: MainTitle(
                 title: title,
                 fontSize: 20,
+                txtColor: expanded ? Colors.teal : Colors.black,
               ),
             ),
             Icon(

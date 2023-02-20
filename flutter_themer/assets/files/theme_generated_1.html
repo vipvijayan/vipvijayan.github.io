@@ -48,6 +48,46 @@
           ),
         ),
       )
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all<Color>(
+         'key_txt_btn_foreground_color',          
+        ),
+        backgroundColor: MaterialStateProperty.all<Color>(
+         'key_txt_btn_background_color',          
+        ),
+      ),
+    ),
+    cardTheme: CardTheme(
+      color: 'key_card_background_color',
+      shadowColor: 'key_card_shadow_color',
+      elevation: 'key_card_elevation',
+    ),
+    snackBarTheme: SnackBarThemeData(
+      backgroundColor: 'key_snackbar_background_color',      
+      elevation: 'key_snackbar_elevation',
+      contentTextStyle: TextStyle(
+        color: 'key_snackbar_content_txt_color',
+      ),
+    ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      foregroundColor:'key_floating_btn_foreground_color',
+      iconSize:'key_floating_btn_icon_size',
+      backgroundColor:'key_floating_btn_background_color',
+      enableFeedback: 'key_floating_btn_enable_feedback',
+    ),
+    drawerTheme: DrawerThemeData(
+      backgroundColor: 'key_drawer_background_color',
+      elevation: 'key_drawer_elevation',
+      width: 'key_drawer_width',
+    ),
+    dividerTheme: DividerThemeData(
+      indent: 'key_divider_indent',
+      endIndent: 'key_divider_end_indent',
+      thickness: 'key_divider_thickness',
+      color: 'key_divider_color',
+    ),
   );
 
   

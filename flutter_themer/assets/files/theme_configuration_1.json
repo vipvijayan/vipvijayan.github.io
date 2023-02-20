@@ -6,7 +6,7 @@
        "basic": false,
        "items":[
           {
-             "title":"Properties",
+             "title":"",
              "sub_items":[
                 {
                    "id":1,
@@ -52,7 +52,7 @@
       "basic": false,
       "items":[
          {
-            "title":"Properties",
+            "title":"",
             "sub_items":[
                {
                   "id":1,
@@ -68,8 +68,8 @@
                         "id": 0,
                         "label":"color",
                         "selected": true,
-                        "value": "#FFD1E4FF",
-                        "selected_value": "#FFD1E4FF"
+                        "value": "#FF000000",
+                        "selected_value": "#FF000000"
                      }
                      ]
                   },
@@ -1069,5 +1069,762 @@
             ]
          }
       ]
-   }
+   },
+   {
+      "id":1,
+      "title":"Button",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"Text Button",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Foreground Color",
+                  "key":"key_txt_btn_foreground_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_txt_btn_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_snackbar_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "0",
+                          "selected_value": "0"
+                       }
+                     ]
+                  }
+               }
+              
+            ]
+         },
+         {
+            "title":"Floating Action Button",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Foreground Color",
+                  "key":"key_floating_btn_foreground_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Foreground Color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Foreground Color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_floating_btn_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Icon Size",
+                  "key":"key_floating_btn_icon_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Icon Size",
+                          "selected": true,
+                          "value": "16",
+                          "selected_value": "16"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Icon Size",
+                          "selected": true,
+                          "value": "16",
+                          "selected_value": "16"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Enable Feedback",
+                  "key":"key_floating_btn_enable_feedback",
+                  "value_type":"boolean",
+                  "input":"boolean",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id": 0,
+                           "label":"Enable Feedback",
+                           "selected": true,
+                           "value": "true",
+                           "selected_value":"true"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id": 0,
+                           "label":"Enable Feedback",
+                           "selected": true,
+                           "value": "true",
+                           "selected_value":"true"
+                        }
+                     ]
+                  }
+               }              
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"SnackBar",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_snackbar_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Context Text Color",
+                  "key":"key_snackbar_content_txt_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               }              
+              
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Card",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_card_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Shadow Color",
+                  "key":"key_card_shadow_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_card_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  }
+               }              
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Progress Indicator",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_progress_indicator_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFF23C919",
+                          "selected_value": "#FFFF23C919"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFF23C919",
+                          "selected_value": "#FFFF23C919"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Refresh Background Color",
+                  "key":"key_progress_indicator_refresh_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
+               }
+              
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Drawer",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Foreground Color",
+                  "key":"key_drawer_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_drawer_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  }
+               } ,
+               {
+                  "id": 1,
+                  "subtitle":false,
+                  "title":"Width",
+                  "key":"key_drawer_width",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Width",
+                          "selected": true,
+                          "value": "330",
+                          "selected_value": "330"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Width",
+                          "selected": true,
+                          "value": "330",
+                          "selected_value": "330"
+                       }
+                     ]
+                  }
+               } 
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Divider",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_divider_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Thickness",
+                  "key":"key_divider_thickness",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Thickness",
+                          "selected": true,
+                          "value": "1",
+                          "selected_value": "1"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Thickness",
+                          "selected": true,
+                          "value": "1",
+                          "selected_value": "1"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Indent",
+                  "key":"key_divider_indent",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Indent",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Indent",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  }
+               } ,{
+                  "id":1,
+                  "subtitle":false,
+                  "title":"End Indent",
+                  "key":"key_divider_end_indent",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"End Indent",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"End Indent",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  }
+               }               
+            ]
+         }
+      ]
+   }  
  ]

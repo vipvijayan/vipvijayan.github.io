@@ -7,8 +7,6 @@ class PreviewHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // if (previewAppState.showResolutionInput) const ResolutionUI(),
-        // const SizedBox(height: 30),
         Expanded(
           child: DefaultTabController(
             length: 4,
@@ -106,9 +104,7 @@ class ButtonTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          showToast("Hello, How are you?");
-        },
+        onPressed: () async {},
         child: const Icon(Icons.add),
       ),
       body: Padding(
@@ -130,6 +126,17 @@ class ButtonTab extends StatelessWidget {
               child: const Text('Elevated Button Button'),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  showToast(String text) async {
+    ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
+      SnackBar(
+        content: Text(
+          text,
+          style: Theme.of(scaffoldKey.currentContext!).textTheme.bodyLarge,
         ),
       ),
     );

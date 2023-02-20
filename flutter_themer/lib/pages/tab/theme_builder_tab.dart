@@ -110,8 +110,10 @@ class ThemeBuilderTab extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 10),
-              Text(item.title, style: Theme.of(context).textTheme.titleSmall),
+              if (item.title.isNotEmpty) ...[
+                const SizedBox(height: 10),
+                Text(item.title, style: Theme.of(context).textTheme.titleSmall),
+              ],
               const SizedBox(height: 10),
               Container(
                 height: controlsDimen + 30,
