@@ -1,55 +1,54 @@
 [
-    {
-       "id":1,
-       "title":"Scaffold",
-       "expanded": false,
-       "basic": false,
-       "items":[
-          {
-             "title":"",
-             "sub_items":[
-                {
-                   "id":1,
-                   "subtitle":false,
-                   "title":"Background Color",
-                   "key":"key_scaffold_background_color",
-                   "value_type":"string",
-                   "input":"color",
-                   "dark":{
-                      "id":0,
-                      "value":[ 
+   {
+      "id":1,
+      "title":"Scaffold",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_scaffold_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"color",
-                           "selected": true,
-                           "value": "#FF000000",
-                           "selected_value": "#FF000000"
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
                         }
-                      ]
-                   },
-                   "light":{
-                      "id":1,
-                      "value":[ 
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"color",
-                           "selected": true,
-                           "value": "#FFe4e4e4",
-                           "selected_value": "#FFe4e4e4"
+                           "selected":true,
+                           "value":"#FFFBFBFB",
+                           "selected_value":"#FFFBFBFB"
                         }
-                      ]
-                   }
-                }
-               
-             ]
-          }
-       ]
-    },
-    {
-      "id": 2,
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":2,
       "title":"App Bar",
-      "expanded": false,
-      "basic": false,
+      "expanded":false,
+      "basic":false,
       "items":[
          {
             "title":"",
@@ -63,26 +62,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                     {
-                        "id": 0,
-                        "label":"color",
-                        "selected": true,
-                        "value": "#FF000000",
-                        "selected_value": "#FF000000"
-                     }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                     {
-                        "id": 0,
-                        "label":"color",
-                        "selected": true,
-                        "value": "#FF0000FF",
-                        "selected_value": "#FF0000FF"
-                     }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF0000FF",
+                           "selected_value":"#FF0000FF"
+                        }
                      ]
                   }
                },
@@ -95,26 +94,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   },
                   "light":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   }
                },
@@ -129,10 +128,10 @@
                      "id":0,
                      "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"Center Title",
-                           "selected": true,
-                           "value": "true",
+                           "selected":true,
+                           "value":"true",
                            "selected_value":"true"
                         }
                      ]
@@ -141,10 +140,10 @@
                      "id":1,
                      "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"Center Title",
-                           "selected": true,
-                           "value": "true",
+                           "selected":true,
+                           "value":"true",
                            "selected_value":"true"
                         }
                      ]
@@ -153,7 +152,7 @@
             ]
          },
          {
-            "title":"Icon Theme",
+            "title":"Icon Button Theme",
             "sub_items":[
                {
                   "id":1,
@@ -164,26 +163,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                     {
-                        "id": 0,
-                        "label":"color",
-                        "selected": true,
-                        "value": "#FFFFFFFF",
-                        "selected_value": "#FFFFFFFF"
-                     }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                     {
-                        "id": 0,
-                        "label":"color",
-                        "selected": true,
-                        "value": "#FFFFFFFF",
-                        "selected_value": "#FFFFFFFF"
-                     }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   }
                },
@@ -198,10 +197,10 @@
                      "id":0,
                      "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"Icon Size",
-                           "selected": true,
-                           "value": "20",
+                           "selected":true,
+                           "value":"20",
                            "selected_value":"20"
                         }
                      ]
@@ -210,10 +209,10 @@
                      "id":1,
                      "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"Center Title",
-                           "selected": true,
-                           "value": "20",
+                           "selected":true,
+                           "value":"20",
                            "selected_value":"20"
                         }
                      ]
@@ -223,11 +222,56 @@
          }
       ]
    },
-    {
-      "id": 3,
-      "title":"Tab Bar",
+   {
+      "id":1,
+      "title":"Icon Theme",
       "expanded": false,
       "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_icon_theme_icon_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF0000FF",
+                          "selected_value": "#FF0000FF"
+                       }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":3,
+      "title":"Tab Bar",
+      "expanded":false,
+      "basic":false,
       "items":[
          {
             "title":"Properties",
@@ -243,18 +287,18 @@
                      "id":0,
                      "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"tab",
-                           "selected": true,
-                           "value": "TabBarIndicatorSize.tab",
-                           "selected_value": "TabBarIndicatorSize.tab"
+                           "selected":true,
+                           "value":"TabBarIndicatorSize.tab",
+                           "selected_value":"TabBarIndicatorSize.tab"
                         },
                         {
-                           "id": 1,
+                           "id":1,
                            "label":"label",
-                           "selected": false,
-                           "value": "TabBarIndicatorSize.label",
-                           "selected_value": "TabBarIndicatorSize.label"
+                           "selected":false,
+                           "value":"TabBarIndicatorSize.label",
+                           "selected_value":"TabBarIndicatorSize.label"
                         }
                      ]
                   },
@@ -262,18 +306,18 @@
                      "id":1,
                      "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"tab",
-                           "selected": true,
-                           "value": "TabBarIndicatorSize.tab",
-                           "selected_value": "TabBarIndicatorSize.tab"
+                           "selected":true,
+                           "value":"TabBarIndicatorSize.tab",
+                           "selected_value":"TabBarIndicatorSize.tab"
                         },
                         {
-                           "id": 1,
+                           "id":1,
                            "label":"label",
-                           "selected": false,
-                           "value": "TabBarIndicatorSize.label",
-                           "selected_value": "TabBarIndicatorSize.label"
+                           "selected":false,
+                           "value":"TabBarIndicatorSize.label",
+                           "selected_value":"TabBarIndicatorSize.label"
                         }
                      ]
                   }
@@ -289,18 +333,18 @@
                      "id":0,
                      "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"BorderStyle.solid",
-                           "selected": true,
-                           "value": "BorderStyle.solid",
-                           "selected_value": "BorderStyle.solid"
+                           "selected":true,
+                           "value":"BorderStyle.solid",
+                           "selected_value":"BorderStyle.solid"
                         },
                         {
-                           "id": 1,
+                           "id":1,
                            "label":"BorderStyle.none",
-                           "selected": false,
-                           "value": "BorderStyle.none",
-                           "selected_value": "BorderStyle.none"
+                           "selected":false,
+                           "value":"BorderStyle.none",
+                           "selected_value":"BorderStyle.none"
                         }
                      ]
                   },
@@ -308,18 +352,18 @@
                      "id":1,
                      "value":[
                         {
-                           "id": 0,
+                           "id":0,
                            "label":"BorderStyle.solid",
-                           "selected": true,
-                           "value": "BorderStyle.solid",
-                           "selected_value": "BorderStyle.solid"
+                           "selected":true,
+                           "value":"BorderStyle.solid",
+                           "selected_value":"BorderStyle.solid"
                         },
                         {
-                           "id": 1,
+                           "id":1,
                            "label":"BorderStyle.none",
-                           "selected": false,
-                           "value": "BorderStyle.none",
-                           "selected_value": "BorderStyle.none"
+                           "selected":false,
+                           "value":"BorderStyle.none",
+                           "selected_value":"BorderStyle.none"
                         }
                      ]
                   }
@@ -333,26 +377,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Indicator Color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Indicator Color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 1,
-                          "label":"Indicator Color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
+                     "value":[
+                        {
+                           "id":1,
+                           "label":"Indicator Color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
                      ]
                   }
                },
@@ -365,26 +409,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Indicator Width",
-                          "selected": true,
-                          "value": "1",
-                          "selected_value": "1"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Indicator Width",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Indicator Width",
-                          "selected": true,
-                          "value": "1",
-                          "selected_value": "1"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Indicator Width",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
                      ]
                   }
                },
@@ -397,26 +441,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   }
                },
@@ -429,26 +473,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   }
                }
@@ -459,8 +503,8 @@
    {
       "id":2,
       "title":"Text Theme",
-      "expanded": false,
-      "basic": false,
+      "expanded":false,
+      "basic":false,
       "items":[
          {
             "title":"Body Large",
@@ -474,26 +518,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
                      ]
                   }
                },
@@ -506,26 +550,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "16",
-                          "selected_value": "16"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"16",
+                           "selected_value":"16"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "16",
-                          "selected_value": "16"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"16",
+                           "selected_value":"16"
+                        }
                      ]
                   }
                },
@@ -538,26 +582,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   }
                }
@@ -575,26 +619,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
                      ]
                   }
                },
@@ -607,26 +651,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "14",
-                          "selected_value": "14"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"14",
+                           "selected_value":"14"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "14",
-                          "selected_value": "14"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"14",
+                           "selected_value":"14"
+                        }
                      ]
                   }
                },
@@ -639,26 +683,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   }
                }
@@ -676,26 +720,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
                      ]
                   }
                },
@@ -708,26 +752,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "12",
-                          "selected_value": "12"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"12",
+                           "selected_value":"12"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "12",
-                          "selected_value": "12"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"12",
+                           "selected_value":"12"
+                        }
                      ]
                   }
                },
@@ -740,26 +784,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   }
                }
@@ -777,26 +821,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
                      ]
                   }
                },
@@ -809,26 +853,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "16",
-                          "selected_value": "16"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"16",
+                           "selected_value":"16"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "16",
-                          "selected_value": "16"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"16",
+                           "selected_value":"16"
+                        }
                      ]
                   }
                },
@@ -841,26 +885,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   }
                }
@@ -878,26 +922,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
                      ]
                   }
                },
@@ -910,26 +954,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "14",
-                          "selected_value": "14"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"14",
+                           "selected_value":"14"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "14",
-                          "selected_value": "14"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"14",
+                           "selected_value":"14"
+                        }
                      ]
                   }
                },
@@ -942,26 +986,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   }
                }
@@ -979,26 +1023,26 @@
                   "input":"color",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
                      ]
                   }
                },
@@ -1011,26 +1055,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "12",
-                          "selected_value": "12"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"12",
+                           "selected_value":"12"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Font Size",
-                          "selected": true,
-                          "value": "12",
-                          "selected_value": "12"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"12",
+                           "selected_value":"12"
+                        }
                      ]
                   }
                },
@@ -1043,26 +1087,26 @@
                   "input":"number",
                   "dark":{
                      "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   },
                   "light":{
                      "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Letter Spacing",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
                      ]
                   }
                }
@@ -1073,8 +1117,8 @@
    {
       "id":1,
       "title":"Button",
-      "expanded": false,
-      "basic": false,
+      "expanded":false,
+      "basic":false,
       "items":[
          {
             "title":"Text Button",
@@ -1084,6 +1128,1263 @@
                   "subtitle":false,
                   "title":"Foreground Color",
                   "key":"key_txt_btn_foreground_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_txt_btn_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_snackbar_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Elevated Button",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Foreground Color",
+                  "key":"key_elevated_btn_foreground_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_elevated_btn_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Background Color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Background Color",
+                           "selected":true,
+                           "value":"#FF0000FF",
+                           "selected_value":"#FF0000FF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_elevated_btn_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Floating Action Button",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Foreground Color",
+                  "key":"key_floating_btn_foreground_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Foreground Color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Foreground Color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_floating_btn_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Icon Size",
+                  "key":"key_floating_btn_icon_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Icon Size",
+                           "selected":true,
+                           "value":"16",
+                           "selected_value":"16"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Icon Size",
+                           "selected":true,
+                           "value":"16",
+                           "selected_value":"16"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Enable Feedback",
+                  "key":"key_floating_btn_enable_feedback",
+                  "value_type":"boolean",
+                  "input":"boolean",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Enable Feedback",
+                           "selected":true,
+                           "value":"true",
+                           "selected_value":"true"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Enable Feedback",
+                           "selected":true,
+                           "value":"true",
+                           "selected_value":"true"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Icon Button",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_icon_btn_theme_icon_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Size",
+                           "selected":true,
+                           "value":"16",
+                           "selected_value":"16"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Size",
+                           "selected":true,
+                           "value":"16",
+                           "selected_value":"16"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Filled Button",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_filled_btn_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Background Color",
+                           "selected":true,
+                           "value":"#FF093C0C",
+                           "selected_value":"#FF093C0C"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Background Color",
+                           "selected":true,
+                           "value":"#FF093C0C",
+                           "selected_value":"#FF093C0C"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Foreground Color",
+                  "key":"key_filled_btn_foreground_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Foreground Color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Foreground Color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"SnackBar",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_snackbar_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Context Text Color",
+                  "key":"key_snackbar_content_txt_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Card",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_card_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Shadow Color",
+                  "key":"key_card_shadow_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_card_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Progress Indicator",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_progress_indicator_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFF23C919",
+                           "selected_value":"#FFFF23C919"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFF23C919",
+                           "selected_value":"#FFFF23C919"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Refresh Background Color",
+                  "key":"key_progress_indicator_refresh_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Drawer",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Foreground Color",
+                  "key":"key_drawer_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_drawer_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Width",
+                  "key":"key_drawer_width",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Width",
+                           "selected":true,
+                           "value":"330",
+                           "selected_value":"330"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Width",
+                           "selected":true,
+                           "value":"330",
+                           "selected_value":"330"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Divider",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_divider_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Thickness",
+                  "key":"key_divider_thickness",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Thickness",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Thickness",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Indent",
+                  "key":"key_divider_indent",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Indent",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Indent",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"End Indent",
+                  "key":"key_divider_end_indent",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"End Indent",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"End Indent",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Checkbox",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Check Color",
+                  "key":"key_checkbox_theme_check_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Fill Color",
+                  "key":"key_checkbox_theme_fill_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF093C0C",
+                           "selected_value":"#FF093C0C"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"List Tile",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Title Color",
+                  "key":"key_list_tile_title_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFC2C2C2",
+                           "selected_value":"#FFC2C2C2"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFC2C2C2",
+                           "selected_value":"#FFC2C2C2"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Icon Color",
+                  "key":"key_list_tile_icon_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF0000FF",
+                           "selected_value":"#FF0000FF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF0000FF",
+                           "selected_value":"#FF0000FF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Selected Color",
+                  "key":"key_list_tile_selected_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF00FF00",
+                           "selected_value":"#FF00FF00"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF00FF00",
+                           "selected_value":"#FF00FF00"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Horizontal Title Gap",
+                  "key":"key_list_tile_horizontal_title_gap",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Title Gap",
+                           "selected":true,
+                           "value":"10",
+                           "selected_value":"10"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Title Gap",
+                           "selected":true,
+                           "value":"10",
+                           "selected_value":"10"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Chips",
+      "expanded":false,
+      "basic":false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_chip_theme_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_chip_theme_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"3",
+                           "selected_value":"3"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Radio",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Fill Color",
+                  "key":"key_radio_theme_fill_color",
                   "value_type":"string",
                   "input":"color",
                   "dark":{
@@ -1102,11 +2403,11 @@
                      "id":1,
                      "value":[ 
                        {
-                          "id": 0,
+                          "id": 1,
                           "label":"color",
                           "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
+                          "value": "#FF0000FF",
+                          "selected_value": "#FF0000FF"
                        }
                      ]
                   }
@@ -1142,538 +2443,6 @@
                        }
                      ]
                   }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Elevation",
-                  "key":"key_snackbar_elevation",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
-                     ]
-                  }
-               }
-              
-            ]
-         },
-         {
-            "title":"Elevated Button",
-            "sub_items":[
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Foreground Color",
-                  "key":"key_elevated_btn_foreground_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Background Color",
-                  "key":"key_elevated_btn_background_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Background Color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Background Color",
-                          "selected": true,
-                          "value": "#FF0000FF",
-                          "selected_value": "#FF0000FF"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Elevation",
-                  "key":"key_elevated_btn_elevation",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "0",
-                          "selected_value": "0"
-                       }
-                     ]
-                  }
-               }
-              
-            ]
-         },
-         {
-            "title":"Floating Action Button",
-            "sub_items":[
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Foreground Color",
-                  "key":"key_floating_btn_foreground_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Foreground Color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Foreground Color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Background Color",
-                  "key":"key_floating_btn_background_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Icon Size",
-                  "key":"key_floating_btn_icon_size",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Icon Size",
-                          "selected": true,
-                          "value": "16",
-                          "selected_value": "16"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Icon Size",
-                          "selected": true,
-                          "value": "16",
-                          "selected_value": "16"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":0,
-                  "subtitle":false,
-                  "title":"Enable Feedback",
-                  "key":"key_floating_btn_enable_feedback",
-                  "value_type":"boolean",
-                  "input":"boolean",
-                  "dark":{
-                     "id":0,
-                     "value":[
-                        {
-                           "id": 0,
-                           "label":"Enable Feedback",
-                           "selected": true,
-                           "value": "true",
-                           "selected_value":"true"
-                        }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[
-                        {
-                           "id": 0,
-                           "label":"Enable Feedback",
-                           "selected": true,
-                           "value": "true",
-                           "selected_value":"true"
-                        }
-                     ]
-                  }
-               }              
-            ]
-         }
-      ]
-   },
-   {
-      "id":1,
-      "title":"SnackBar",
-      "expanded": false,
-      "basic": false,
-      "items":[
-         {
-            "title":"",
-            "sub_items":[
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Background Color",
-                  "key":"key_snackbar_background_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Context Text Color",
-                  "key":"key_snackbar_content_txt_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  }
-               }              
-              
-            ]
-         }
-      ]
-   },
-   {
-      "id":1,
-      "title":"Card",
-      "expanded": false,
-      "basic": false,
-      "items":[
-         {
-            "title":"",
-            "sub_items":[
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Background Color",
-                  "key":"key_card_background_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Shadow Color",
-                  "key":"key_card_shadow_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Elevation",
-                  "key":"key_card_elevation",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "3",
-                          "selected_value": "3"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "3",
-                          "selected_value": "3"
-                       }
-                     ]
-                  }
-               }              
-            ]
-         }
-      ]
-   },
-   {
-      "id":1,
-      "title":"Progress Indicator",
-      "expanded": false,
-      "basic": false,
-      "items":[
-         {
-            "title":"",
-            "sub_items":[
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Color",
-                  "key":"key_progress_indicator_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFF23C919",
-                          "selected_value": "#FFFF23C919"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFF23C919",
-                          "selected_value": "#FFFF23C919"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Refresh Background Color",
-                  "key":"key_progress_indicator_refresh_background_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  }
                }
               
             ]
@@ -1682,7 +2451,7 @@
    },
    {
       "id":1,
-      "title":"Drawer",
+      "title":"Switch",
       "expanded": false,
       "basic": false,
       "items":[
@@ -1692,398 +2461,8 @@
                {
                   "id":1,
                   "subtitle":false,
-                  "title":"Foreground Color",
-                  "key":"key_drawer_background_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Elevation",
-                  "key":"key_drawer_elevation",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "3",
-                          "selected_value": "3"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Elevation",
-                          "selected": true,
-                          "value": "3",
-                          "selected_value": "3"
-                       }
-                     ]
-                  }
-               } ,
-               {
-                  "id": 1,
-                  "subtitle":false,
-                  "title":"Width",
-                  "key":"key_drawer_width",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Width",
-                          "selected": true,
-                          "value": "330",
-                          "selected_value": "330"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Width",
-                          "selected": true,
-                          "value": "330",
-                          "selected_value": "330"
-                       }
-                     ]
-                  }
-               } 
-            ]
-         }
-      ]
-   },
-   {
-      "id":1,
-      "title":"Divider",
-      "expanded": false,
-      "basic": false,
-      "items":[
-         {
-            "title":"",
-            "sub_items":[
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Color",
-                  "key":"key_divider_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Thickness",
-                  "key":"key_divider_thickness",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Thickness",
-                          "selected": true,
-                          "value": "1",
-                          "selected_value": "1"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Thickness",
-                          "selected": true,
-                          "value": "1",
-                          "selected_value": "1"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Indent",
-                  "key":"key_divider_indent",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Indent",
-                          "selected": true,
-                          "value": "3",
-                          "selected_value": "3"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Indent",
-                          "selected": true,
-                          "value": "3",
-                          "selected_value": "3"
-                       }
-                     ]
-                  }
-               } ,{
-                  "id":1,
-                  "subtitle":false,
-                  "title":"End Indent",
-                  "key":"key_divider_end_indent",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"End Indent",
-                          "selected": true,
-                          "value": "3",
-                          "selected_value": "3"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"End Indent",
-                          "selected": true,
-                          "value": "3",
-                          "selected_value": "3"
-                       }
-                     ]
-                  }
-               }               
-            ]
-         }
-      ]
-   },
-   {
-      "id":1,
-      "title":"Checkbox",
-      "expanded": false,
-      "basic": false,
-      "items":[
-         {
-            "title":"",
-            "sub_items":[
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Check Color",
-                  "key":"key_checkbox_theme_check_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF000000",
-                          "selected_value": "#FF000000"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Fill Color",
-                  "key":"key_checkbox_theme_fill_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF093C0C",
-                          "selected_value": "#FF093C0C"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFFFFFFF",
-                          "selected_value": "#FFFFFFFF"
-                       }
-                     ]
-                  }
-               }
-            ]
-         }
-      ]
-   },
-   {
-      "id":1,
-      "title":"List Tile",
-      "expanded": false,
-      "basic": false,
-      "items":[
-         {
-            "title":"",
-            "sub_items":[
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Title Color",
-                  "key":"key_list_tile_title_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFC2C2C2",
-                          "selected_value": "#FFC2C2C2"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FFC2C2C2",
-                          "selected_value": "#FFC2C2C2"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Icon Color",
-                  "key":"key_list_tile_icon_color",
-                  "value_type":"string",
-                  "input":"color",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF0000FF",
-                          "selected_value": "#FF0000FF"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"color",
-                          "selected": true,
-                          "value": "#FF0000FF",
-                          "selected_value": "#FF0000FF"
-                       }
-                     ]
-                  }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Selected Color",
-                  "key":"key_list_tile_selected_color",
+                  "title":"Track Color",
+                  "key":"key_switch_theme_track_color",
                   "value_type":"string",
                   "input":"color",
                   "dark":{
@@ -2110,42 +2489,9 @@
                        }
                      ]
                   }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Horizontal Title Gap",
-                  "key":"key_list_tile_horizontal_title_gap",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Title Gap",
-                          "selected": true,
-                          "value": "10",
-                          "selected_value": "10"
-                       }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[ 
-                       {
-                          "id": 0,
-                          "label":"Title Gap",
-                          "selected": true,
-                          "value": "10",
-                          "selected_value": "10"
-                       }
-                     ]
-                  }
-               } 
-              
+               }
             ]
          }
       ]
    }
- ]
+]

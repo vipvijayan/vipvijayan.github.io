@@ -97,8 +97,15 @@ class DemoTab extends StatelessWidget {
   }
 }
 
-class ButtonTab extends StatelessWidget {
+class ButtonTab extends StatefulWidget {
   const ButtonTab({super.key});
+
+  @override
+  State<ButtonTab> createState() => _ButtonTabState();
+}
+
+class _ButtonTabState extends State<ButtonTab> {
+  bool _switch1 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -124,6 +131,39 @@ class ButtonTab extends StatelessWidget {
                 showToast("Hello, How are you?");
               },
               child: const Text('Elevated Button Button'),
+            ),
+            const SizedBox(height: 20),
+            Row(
+              children: const [
+                Chip(label: Text('Hello')),
+                SizedBox(width: 10),
+                Chip(
+                  label: Text('Hello'),
+                  deleteIcon: Icon(Icons.delete),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            IconButton(
+              onPressed: () async {},
+              icon: const Icon(Icons.info_outline),
+            ),
+            FilledButton(onPressed: () {}, child: const Text('Filled Button')),
+            const SizedBox(height: 20),
+            const Divider(),
+            const SizedBox(height: 20),
+            const Text('Radio'),
+            Radio(value: true, groupValue: true, onChanged: (val) {}),
+            const Divider(),
+            const SizedBox(height: 20),
+            const Text('Switch'),
+            Switch(
+              value: _switch1,
+              onChanged: (val) {
+                setState(() {
+                  _switch1 = !_switch1;
+                });
+              },
             ),
           ],
         ),

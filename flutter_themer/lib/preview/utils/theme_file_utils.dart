@@ -239,6 +239,44 @@ class ThemeFileUtils {
           ),
           visualDensity: VisualDensity.comfortable,
         ),
+        chipTheme: ChipThemeData(
+          backgroundColor: HexColor(
+            themeMap['key_chip_theme_background_color'],
+          ),
+          elevation: double.parse(
+            themeMap['key_chip_theme_elevation'],
+          ),
+        ),
+        iconButtonTheme: IconButtonThemeData(
+          style: ButtonStyle(
+            iconSize: MaterialStateProperty.all<double>(
+              double.parse(themeMap['key_icon_btn_theme_icon_size']),
+            ),
+          ),
+        ),
+        iconTheme: IconThemeData(
+          color: HexColor(themeMap['key_icon_theme_icon_color']),
+        ),
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateProperty.all<Color>(
+            HexColor(themeMap['key_radio_theme_fill_color']),
+          ),
+        ),
+        switchTheme: SwitchThemeData(
+          trackColor: MaterialStateProperty.all<Color>(
+            HexColor(themeMap['key_switch_theme_track_color']),
+          ),
+        ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(
+              HexColor(themeMap['key_filled_btn_background_color']),
+            ),
+            foregroundColor: MaterialStateProperty.all<Color>(
+              HexColor(themeMap['key_filled_btn_foreground_color']),
+            ),
+          ),
+        ),
         listTileTheme: ListTileThemeData(
           tileColor: HexColor(themeMap['key_list_tile_title_color']),
           iconColor: HexColor(themeMap['key_list_tile_icon_color']),

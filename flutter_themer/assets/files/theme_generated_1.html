@@ -72,6 +72,40 @@
         ),
       ),
     ),
+    chipTheme: ChipThemeData(
+      backgroundColor: 'key_chip_theme_background_color',
+      elevation: 'key_chip_theme_elevation',
+    ),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        iconSize: MaterialStateProperty.all<double>(
+          'key_icon_btn_theme_icon_size',
+        ),
+      ),
+    ),
+    switchTheme: SwitchThemeData(
+      trackColor: MaterialStateProperty.all<Color>(
+        'key_switch_theme_track_color',
+      ),
+    ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(
+          'key_filled_btn_background_color',
+        ),
+        foregroundColor: MaterialStateProperty.all<Color>(
+          'key_filled_btn_foreground_color',
+        ),
+      ),
+    ),
+    radioTheme: RadioThemeData(
+      fillColor: MaterialStateProperty.all<Color>(
+        'key_radio_theme_fill_color',
+      ),
+    ),
+    iconTheme: IconThemeData(
+      color: 'key_icon_theme_icon_color',
+    ),
     checkboxTheme: CheckboxThemeData(
       checkColor: MaterialStateProperty.all<Color>(
         'key_checkbox_theme_check_color',
