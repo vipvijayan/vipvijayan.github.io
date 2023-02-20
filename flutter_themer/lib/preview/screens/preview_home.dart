@@ -153,6 +153,13 @@ class InputTab extends StatefulWidget {
 class _InputTabState extends State<InputTab> {
   final _formKey = GlobalKey<FormState>();
 
+  bool _checked = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,6 +182,7 @@ class _InputTabState extends State<InputTab> {
                       return null;
                     },
                   ),
+                  const SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
@@ -183,10 +191,21 @@ class _InputTabState extends State<InputTab> {
                     },
                     child: const Text('Submit'),
                   ),
+                  const SizedBox(height: 10),
                   Checkbox(
-                    value: true,
-                    onChanged: (value) => {},
+                    value: _checked,
+                    onChanged: (value) {
+                      setState(() {
+                        _checked = !_checked;
+                      });
+                    },
                   ),
+                  const SizedBox(height: 10),
+                  const ListTile(
+                    title: Text('List Title'),
+                    leading: Icon(Icons.alarm),
+                  ),
+                  const SizedBox(height: 10),
                   CheckboxListTile(
                     value: true,
                     title: Text(
@@ -195,6 +214,7 @@ class _InputTabState extends State<InputTab> {
                     ),
                     onChanged: (value) => {},
                   ),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),

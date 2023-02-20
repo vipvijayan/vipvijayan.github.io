@@ -13,7 +13,13 @@ Future<void> showColorDialog(
     barrierColor: Colors.transparent,
     builder: (BuildContext context) {
       return AlertDialog(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey[100],
+        titlePadding: const EdgeInsets.all(20),
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
+          side: BorderSide(color: Colors.grey[300]!),
+        ),
+        contentPadding: const EdgeInsets.all(30),
         elevation: 0,
         title: Text(title),
         content: SingleChildScrollView(
@@ -29,7 +35,10 @@ Future<void> showColorDialog(
           TextButton(
             child: Text(
               'DONE',
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.copyWith(fontWeight: FontWeight.bold),
             ),
             onPressed: () {
               Navigator.of(context).pop();

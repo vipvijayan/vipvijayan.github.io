@@ -173,54 +173,6 @@ class ThemeFileUtils {
             ),
           ),
         ),
-        //   bodyLarge: TextStyle(
-        //     fontSize: double.parse(
-        //       customTheme['text_theme_body_large_text_size']['value'] as String,
-        //     ),
-        //     color: HexColor(
-        //         customTheme['text_theme_body_large_text_color']['value']),
-        //   ),
-        //   bodyMedium: TextStyle(
-        //     fontSize: double.parse(
-        //       customTheme['text_theme_body_medium_text_size']['value'] as String,
-        //     ),
-        //     color: HexColor(
-        //         customTheme['text_theme_body_medium_text_color']['value']),
-        //   ),
-        //   bodySmall: TextStyle(
-        //     fontSize: double.parse(
-        //       customTheme['text_theme_body_small_text_size']['value'] as String,
-        //     ),
-        //     color: HexColor(
-        //         customTheme['text_theme_body_small_text_color']['value']),
-        //   ),
-        //   titleLarge: TextStyle(
-        //     fontSize: double.parse(
-        //       customTheme['text_theme_title_large_text_size']['value'] as String,
-        //     ),
-        //     color: HexColor(
-        //         customTheme['text_theme_title_large_text_color']['value']),
-        //   ),
-        //   titleSmall: TextStyle(
-        //     fontSize: double.parse(
-        //       customTheme['text_theme_title_small_text_size']['value'] as String,
-        //     ),
-        //     color: HexColor(
-        //         customTheme['text_theme_title_small_text_color']['value']),
-        //   ),
-        //   titleMedium: TextStyle(
-        //     fontSize: double.parse(
-        //       customTheme['text_theme_title_medium_text_size']['value'] as String,
-        //     ),
-        //     color: HexColor(
-        //         customTheme['text_theme_title_medium_text_color']['value']),
-        //   ),
-        // ),
-        // colorScheme: const ColorScheme.dark(
-        //   brightness: Brightness.dark,
-        //   primary: Colors.white,
-        //   onSecondary: Colors.black,
-        // ),
         cardTheme: CardTheme(
           color: HexColor(themeMap['key_card_background_color']),
           shadowColor: HexColor(themeMap['key_card_shadow_color']),
@@ -278,6 +230,22 @@ class ThemeFileUtils {
             ),
           ),
         ),
+        checkboxTheme: CheckboxThemeData(
+          checkColor: MaterialStateProperty.all<Color>(
+            HexColor(themeMap['key_checkbox_theme_check_color']),
+          ),
+          fillColor: MaterialStateProperty.all<Color>(
+            HexColor(themeMap['key_checkbox_theme_fill_color']),
+          ),
+          visualDensity: VisualDensity.comfortable,
+        ),
+        listTileTheme: ListTileThemeData(
+          tileColor: HexColor(themeMap['key_list_tile_title_color']),
+          iconColor: HexColor(themeMap['key_list_tile_icon_color']),
+          selectedColor: HexColor(themeMap['key_list_tile_selected_color']),
+          horizontalTitleGap:
+              double.parse(themeMap['key_list_tile_horizontal_title_gap']),
+        ),
         snackBarTheme: SnackBarThemeData(
           backgroundColor: HexColor(
             themeMap['key_snackbar_background_color'],
@@ -311,23 +279,19 @@ class ThemeFileUtils {
               HexColor(themeMap['key_floating_btn_background_color']),
           enableFeedback: themeMap['key_floating_btn_enable_feedback'],
         ),
-        // elevatedButtonTheme: ElevatedButtonThemeData(
-        //   style: ButtonStyle(
-        //     foregroundColor: MaterialStateProperty.all<Color>(
-        //       HexColor(
-        //         customTheme['elevated_btn_foreground_color']['value'],
-        //       ),
-        //     ),
-        //     backgroundColor: MaterialStateProperty.all<Color>(
-        //       HexColor(
-        //         customTheme['elevated_btn_background_color']['value'],
-        //       ),
-        //     ),
-        //     elevation: MaterialStateProperty.all<double>(
-        //       double.parse(customTheme['elevated_btn_elevation']['value']),
-        //     ),
-        //   ),
-        // ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all<Color>(
+              HexColor(themeMap['key_elevated_btn_foreground_color']),
+            ),
+            backgroundColor: MaterialStateProperty.all<Color>(
+              HexColor(themeMap['key_elevated_btn_background_color']),
+            ),
+            elevation: MaterialStateProperty.all<double>(
+              double.parse(themeMap['key_elevated_btn_elevation']),
+            ),
+          ),
+        ),
         drawerTheme: DrawerThemeData(
           backgroundColor: HexColor(themeMap['key_drawer_background_color']),
           elevation: double.parse(themeMap['key_drawer_elevation']),
