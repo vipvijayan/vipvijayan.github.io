@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ThemeBuilderTab extends StatelessWidget {
   //

@@ -26,20 +26,20 @@ class ExpandTitle extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Container(
-            //   height: 20,
-            //   width: 20,
-            //   decoration: BoxDecoration(
-            //     color: expanded ? Colors.teal : Colors.grey[200],
-            //     border: Border.all(
-            //       color: Colors.grey[200]!,
-            //     ),
-            //     borderRadius: const BorderRadius.all(
-            //       Radius.circular(3),
-            //     ),
-            //   ),
-            // ),
-            // const SizedBox(width: 20),
+            Container(
+              height: 10,
+              width: 10,
+              decoration: BoxDecoration(
+                color: expanded ? Colors.teal : Colors.grey[200],
+                border: Border.all(
+                  color: Colors.grey[200]!,
+                ),
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(5),
+                ),
+              ),
+            ),
+            const SizedBox(width: 20),
             Expanded(
               child: MainTitle(
                 title: title,

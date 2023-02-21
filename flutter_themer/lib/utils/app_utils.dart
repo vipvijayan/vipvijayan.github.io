@@ -9,7 +9,7 @@ copyToClipboard(String text, {VoidCallback? callback}) async {
   callback?.call();
 }
 
-showToast(String text) async {
+showSnackBar(String text) async {
   ScaffoldMessenger.of(navKey.currentContext!).showSnackBar(
     SnackBar(
       content: Text(
@@ -17,6 +17,17 @@ showToast(String text) async {
         style: Theme.of(navKey.currentContext!).textTheme.bodyLarge,
       ),
     ),
+  );
+}
+
+showToast(String text) async {
+  Fluttertoast.showToast(
+    msg: text,
+    toastLength: Toast.LENGTH_SHORT,
+    gravity: ToastGravity.CENTER,
+    timeInSecForIosWeb: 1,
+    textColor: Colors.white,
+    fontSize: 16.0,
   );
 }
 

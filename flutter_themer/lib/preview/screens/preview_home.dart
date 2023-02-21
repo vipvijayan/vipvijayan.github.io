@@ -1,6 +1,7 @@
 import 'package:flutter_themer/exports/exports.dart';
 
 class PreviewHomeScreen extends StatelessWidget {
+  //
   const PreviewHomeScreen({super.key});
 
   @override
@@ -9,7 +10,7 @@ class PreviewHomeScreen extends StatelessWidget {
       children: [
         Expanded(
           child: DefaultTabController(
-            length: 4,
+            length: 5,
             initialIndex: 0,
             child: Scaffold(
               key: scaffoldKey,
@@ -32,6 +33,7 @@ class PreviewHomeScreen extends StatelessWidget {
                     Tab(text: 'Buttons'),
                     Tab(text: 'Inputs'),
                     Tab(text: 'Cards'),
+                    Tab(text: 'Others'),
                   ],
                 ),
               ),
@@ -41,6 +43,7 @@ class PreviewHomeScreen extends StatelessWidget {
                   ButtonTab(),
                   InputTab(),
                   CardTab(),
+                  OthersTab(),
                 ],
               ),
             ),
@@ -106,6 +109,7 @@ class ButtonTab extends StatefulWidget {
 
 class _ButtonTabState extends State<ButtonTab> {
   bool _switch1 = true;
+  double _sliderVal = 0.3;
 
   @override
   Widget build(BuildContext context) {
@@ -125,14 +129,19 @@ class _ButtonTabState extends State<ButtonTab> {
               },
               child: const Text('Text Button'),
             ),
+            const Divider(),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
-                showToast("Hello, How are you?");
+                showPreviewAlert(context);
               },
               child: const Text('Elevated Button Button'),
             ),
-            const SizedBox(height: 20),
+            const Divider(height: 40),
+            FilledButton(onPressed: () {}, child: const Text('Filled Button')),
+            const Divider(height: 40),
+            const Text('Chips'),
+            const SizedBox(height: 10),
             Row(
               children: const [
                 Chip(label: Text('Hello')),
@@ -143,19 +152,16 @@ class _ButtonTabState extends State<ButtonTab> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const Divider(height: 40),
+            const Text('Icon Button'),
             IconButton(
               onPressed: () async {},
               icon: const Icon(Icons.info_outline),
             ),
-            FilledButton(onPressed: () {}, child: const Text('Filled Button')),
-            const SizedBox(height: 20),
-            const Divider(),
-            const SizedBox(height: 20),
+            const Divider(height: 40),
             const Text('Radio'),
             Radio(value: true, groupValue: true, onChanged: (val) {}),
-            const Divider(),
-            const SizedBox(height: 20),
+            const Divider(height: 40),
             const Text('Switch'),
             Switch(
               value: _switch1,
@@ -165,6 +171,16 @@ class _ButtonTabState extends State<ButtonTab> {
                 });
               },
             ),
+            const Divider(height: 40),
+            const Text('Slider'),
+            Slider(
+              value: _sliderVal,
+              onChanged: (value) {
+                setState(() {
+                  _sliderVal = value;
+                });
+              },
+            )
           ],
         ),
       ),
@@ -173,12 +189,7 @@ class _ButtonTabState extends State<ButtonTab> {
 
   showToast(String text) async {
     ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
-      SnackBar(
-        content: Text(
-          text,
-          style: Theme.of(scaffoldKey.currentContext!).textTheme.bodyLarge,
-        ),
-      ),
+      SnackBar(content: Text(text)),
     );
   }
 }
@@ -213,6 +224,7 @@ class _InputTabState extends State<InputTab> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const Text('Text Input'),
                   TextFormField(
                     decoration: const InputDecoration(hintText: 'name'),
                     validator: (text) {
@@ -231,6 +243,8 @@ class _InputTabState extends State<InputTab> {
                     },
                     child: const Text('Submit'),
                   ),
+                  const Divider(height: 40),
+                  const Text('Checkbox'),
                   const SizedBox(height: 10),
                   Checkbox(
                     value: _checked,
@@ -325,4 +339,36 @@ Widget _drawer() {
       ],
     ),
   );
+}
+
+class OthersTab extends StatefulWidget {
+  const OthersTab({super.key});
+
+  @override
+  State<OthersTab> createState() => _OthersTabState();
+}
+
+class _OthersTabState extends State<OthersTab> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          const Spacer(),
+          BottomAppBar(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Bottom navigation Bar',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }

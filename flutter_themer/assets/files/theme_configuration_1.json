@@ -1186,38 +1186,6 @@
                         }
                      ]
                   }
-               },
-               {
-                  "id":1,
-                  "subtitle":false,
-                  "title":"Elevation",
-                  "key":"key_snackbar_elevation",
-                  "value_type":"string",
-                  "input":"number",
-                  "dark":{
-                     "id":0,
-                     "value":[
-                        {
-                           "id":0,
-                           "label":"Elevation",
-                           "selected":true,
-                           "value":"0",
-                           "selected_value":"0"
-                        }
-                     ]
-                  },
-                  "light":{
-                     "id":1,
-                     "value":[
-                        {
-                           "id":0,
-                           "label":"Elevation",
-                           "selected":true,
-                           "value":"0",
-                           "selected_value":"0"
-                        }
-                     ]
-                  }
                }
             ]
          },
@@ -1598,8 +1566,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FF008080",
+                           "selected_value":"#FF008080"
                         }
                      ]
                   }
@@ -1618,8 +1586,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FFFFFFFF",
-                           "selected_value":"#FFFFFFFF"
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
                         }
                      ]
                   },
@@ -1630,8 +1598,40 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_snackbar_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
                         }
                      ]
                   }
@@ -2111,8 +2111,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
                         }
                      ]
                   }
@@ -2143,8 +2143,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FFFFFFFF",
-                           "selected_value":"#FFFFFFFF"
+                           "value":"#FF093C0C",
+                           "selected_value":"#FF093C0C"
                         }
                      ]
                   }
@@ -2486,6 +2486,271 @@
                           "selected": true,
                           "value": "#FF00FF00",
                           "selected_value": "#FF00FF00"
+                       }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Dialogs",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_dialog_theme_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Background Color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Background Color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
+               }
+              
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Slider",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Active Track Color",
+                  "key":"key_slider_theme_active_track_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#008080",
+                          "selected_value": "#008080"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#008080",
+                          "selected_value": "#008080"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Inactive Track Color",
+                  "key":"key_slider_theme_inactive_track_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFD3D3D3",
+                          "selected_value": "#FFD3D3D3"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFD3D3D3",
+                          "selected_value": "#FFD3D3D3"
+                       }
+                     ]
+                  }
+               }
+              
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"Bottom AppBar",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_bottom_appbar_theme_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF008080",
+                          "selected_value": "#FF008080"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF008080",
+                          "selected_value": "#FF008080"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Surface Tint Color",
+                  "key":"key_bottom_appbar_theme_surface_tint_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Elevation",
+                  "key":"key_bottom_appbar_theme_elevation",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "3",
+                          "selected_value": "3"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Height",
+                  "key":"key_bottom_appbar_theme_height",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "56",
+                          "selected_value": "56"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Elevation",
+                          "selected": true,
+                          "value": "56",
+                          "selected_value": "56"
                        }
                      ]
                   }

@@ -1,5 +1,5 @@
   static final lightTheme = ThemeData(
-    colorScheme: ColorScheme.light(
+    colorScheme: const ColorScheme.light(
       primary: 'key_cs_primary',
       onPrimary: 'key_cs_on_primary',
       primaryContainer: 'key_cs_primary_container',
@@ -25,6 +25,66 @@
       outline: 'key_cs_outline',
       shadow: 'key_cs_shadow',
     ),
+    primaryTextTheme: const TextTheme(
+      bodyLarge: TextStyle(
+        color: Colors.white,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w400,
+        fontSize: 16.0,
+        inherit: true,
+        letterSpacing: 0.5,
+        textBaseline: TextBaseline.alphabetic,
+      ),
+      bodyMedium: TextStyle(
+        color: Colors.white,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w400,
+        fontSize: 14.0,
+        inherit: true,
+        letterSpacing: 0.5,
+        textBaseline: TextBaseline.alphabetic,
+      ),
+      bodySmall: TextStyle(
+        color: Colors.white,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w400,
+        fontSize: 12.0,
+        inherit: true,
+        letterSpacing: 0.5,
+        textBaseline: TextBaseline.alphabetic,
+      ),
+      titleLarge: TextStyle(
+        color: Colors.white,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w500,
+        fontSize: 20.0,
+        inherit: true,
+        letterSpacing: 0.5,
+        textBaseline: TextBaseline.alphabetic,
+      ),
+      titleMedium: TextStyle(
+        color: Colors.white,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+        inherit: true,
+        letterSpacing: 0.5,
+        textBaseline: TextBaseline.alphabetic,
+      ),
+      titleSmall: TextStyle(
+        color: Colors.white,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+        inherit: true,
+        letterSpacing: 0.5,
+        textBaseline: TextBaseline.alphabetic,
+      ),
+    ),
+    scaffoldBackgroundColor: const Color(0xff000000),
+    secondaryHeaderColor: const Color(0xff000000),
+    shadowColor: const Color(0xff00ff00),
+    splashColor: const Color(0xff00ff00),
     brightness: 'key_cs_brightness',
     'extensions'
   );

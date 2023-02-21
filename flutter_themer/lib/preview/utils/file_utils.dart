@@ -10,7 +10,9 @@ Future<List<ThemeUiModel>> loadThemeUIModelList(int themeId) async {
   final json = await rootBundle.loadString(
     '$filesDir/theme_configuration_$themeId.json',
   );
-  return themeUiModelFromJson(json);
+  final themeModelList = themeUiModelFromJson(json);
+  themeModelList.sort((a, b) => a.title.compareTo(b.title));
+  return themeModelList;
 }
 
 Future<String> loadThemeTxt(int themeId) async {

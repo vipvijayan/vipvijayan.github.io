@@ -28,7 +28,7 @@ class ThemeAppState extends ChangeNotifier {
   Future<void> init({bool refresh = false}) async {
     for (final tTabs in themeParentModels) {
       tTabs.themeUiModelList = await loadThemeUIModelList(tTabs.id);
-      tTabs.curThemeData = await ThemeFileUtils.refreshThemeData(tTabs);
+      tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
     }
     curSelectedThemeModel = themeParentModels.first;
     notifyListeners();
@@ -48,7 +48,7 @@ class ThemeAppState extends ChangeNotifier {
 
   Future<void> refreshPreview() async {
     for (final tTabs in themeParentModels) {
-      tTabs.curThemeData = await ThemeFileUtils.refreshThemeData(tTabs);
+      tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
     }
     notifyListeners();
   }
@@ -76,7 +76,7 @@ class ThemeAppState extends ChangeNotifier {
     customHtml = await ThemeFileUtils.generateCustomThemeTxt(customColors);
 
     lightThemeGeneratedHtml =
-        "import 'package:flutter/material.dart';\n\nclass AppTheme { \n\n$lightThemeGeneratedHtml";
+        "import 'package:flutter/material.dart';\n\nclass AppTheme { \n\n  AppTheme._();\n\n$lightThemeGeneratedHtml";
     darkThemeGeneratedHtml =
         darkThemeGeneratedHtml.replaceAll('lightTheme', 'darkTheme');
     themeGeneratedHtml =

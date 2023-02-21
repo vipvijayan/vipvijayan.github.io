@@ -39,9 +39,9 @@ class GeneratedThemeScreen extends StatelessWidget {
                     CopyCode(
                       onPressed: () async {
                         copyToClipboard(
-                          previewAppState.customHtml,
+                          previewAppState.themeGeneratedHtml,
                           callback: () {
-                            showToast('Code Copied');
+                            showSnackBar('Code Copied');
                           },
                         );
                       },

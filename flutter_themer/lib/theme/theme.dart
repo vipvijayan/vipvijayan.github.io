@@ -98,13 +98,6 @@ class AppTheme {
         fontSize: 10,
       ),
     ),
-    snackBarTheme: SnackBarThemeData(
-      backgroundColor: lightBaseColor,
-      elevation: 3,
-      contentTextStyle: const TextStyle(
-        color: Colors.black,
-      ),
-    ),
     dividerTheme: const DividerThemeData(
       indent: 15,
       endIndent: 0,
