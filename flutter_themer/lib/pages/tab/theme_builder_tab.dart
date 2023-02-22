@@ -170,7 +170,7 @@ class ThemeBuilderTab extends StatelessWidget {
             children: [
               const MainTitle(
                 title: customColorsTitle,
-                fontSize: 24,
+                fontSize: 18,
               ),
               const Spacer(),
               IconButton(

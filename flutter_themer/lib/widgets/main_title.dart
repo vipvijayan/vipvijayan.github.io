@@ -18,10 +18,11 @@ class MainTitle extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: Text(
         title,
-        style: Theme.of(context)
-            .textTheme
-            .titleLarge
-            ?.copyWith(fontSize: fontSize ?? 14, color: txtColor),
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              fontSize: fontSize ?? 14,
+              color: txtColor,
+              fontWeight: FontWeight.bold,
+            ),
       ),
     );
   }

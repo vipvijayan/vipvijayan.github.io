@@ -1111,6 +1111,309 @@
                   }
                }
             ]
+         },
+         {
+            "title":"Label Large",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_label_large_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_label_large_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"14",
+                           "selected_value":"14"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"14",
+                           "selected_value":"14"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_label_large_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Label Medium",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_label_medium_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_label_medium_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"11",
+                           "selected_value":"11"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"11",
+                           "selected_value":"11"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_label_medium_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Label Small",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_label_small_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_label_small_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"10",
+                           "selected_value":"10"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"10",
+                           "selected_value":"10"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_label_small_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  }
+               }
+            ]
          }
       ]
    },
@@ -1422,7 +1725,140 @@
                   }
                }
             ]
-         },
+         },  
+         {
+            "title":"Toggle Button",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_toggle_buttons_theme_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FF42A5F5",
+                           "selected_value":"#FF42A5F5"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FFFF0300",
+                           "selected_value":"#FFFF0300"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Fill Color",
+                  "key":"key_toggle_buttons_theme_fill_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Selected Color",
+                  "key":"key_toggle_buttons_theme_selected_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FF0000FF",
+                           "selected_value":"#FF0000FF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FF0000FF",
+                           "selected_value":"#FF0000FF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Border Color",
+                  "key":"key_toggle_buttons_theme_border_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },    
          {
             "title":"Icon Button",
             "sub_items":[
@@ -2758,5 +3194,192 @@
             ]
          }
       ]
-   }
+   },
+   {
+      "id":1,
+      "title":"Dropdown Menu",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"Input Decoration",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Fill Color",
+                  "key":"key_dropdown_menu_theme_input_decoration_fill_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Fill Color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Fill Color",
+                          "selected": true,
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Icon Color",
+                  "key":"key_dropdown_menu_theme_input_decoration_icon_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Icon Color",
+                          "selected": true,
+                          "value": "#FF0000FF",
+                          "selected_value": "#FF0000FF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"Icon Color",
+                          "selected": true,
+                          "value": "#FF0000FF",
+                          "selected_value": "#FF0000FF"
+                       }
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":1,
+      "title":"ButtonBar",
+      "expanded": false,
+      "basic": false,
+      "items":[
+         {
+            "title":"",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Button Height",
+                  "key":"key_btn_bar_theme_btn_height",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "36",
+                          "selected_value": "36"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "36",
+                          "selected_value": "36"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Minimum Width",
+                  "key":"key_btn_bar_theme_btn_min_width",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "64",
+                          "selected_value": "64"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "64",
+                          "selected_value": "64"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Button Aligned Dropdown",
+                  "key":"key_btn_bar_theme_btn_aligned_dropdown",
+                  "value_type":"string",
+                  "input":"boolean",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "true",
+                          "selected_value": "true"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "true",
+                          "selected_value": "true"
+                       }
+                     ]
+                  }
+               }
+              
+            ]
+         }
+      ]
+   }  
 ]

@@ -21,7 +21,7 @@ class ExpandTitle extends StatelessWidget {
       ),
       onTap: onPressed,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,15 +35,15 @@ class ExpandTitle extends StatelessWidget {
                   color: Colors.grey[200]!,
                 ),
                 borderRadius: const BorderRadius.all(
-                  Radius.circular(5),
+                  Radius.circular(6),
                 ),
               ),
             ),
-            const SizedBox(width: 20),
+            const SizedBox(width: 15),
             Expanded(
               child: MainTitle(
                 title: title,
-                fontSize: 20,
+                fontSize: 18,
                 txtColor: expanded ? Colors.teal : Colors.black,
               ),
             ),

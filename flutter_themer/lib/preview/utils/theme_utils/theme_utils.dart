@@ -276,6 +276,27 @@ Future<ThemeData> refreshThemeData(
             themeMap['key_txt_theme_title_small_letter_spacing'],
           ),
         ),
+        labelLarge: TextStyle(
+          fontSize: double.parse(themeMap['key_txt_theme_label_large_size']),
+          color: HexColor(themeMap['key_txt_theme_label_large_color']),
+          letterSpacing: double.parse(
+            themeMap['key_txt_theme_label_large_letter_spacing'],
+          ),
+        ),
+        labelMedium: TextStyle(
+          fontSize: double.parse(themeMap['key_txt_theme_label_medium_size']),
+          color: HexColor(themeMap['key_txt_theme_label_medium_color']),
+          letterSpacing: double.parse(
+            themeMap['key_txt_theme_label_medium_letter_spacing'],
+          ),
+        ),
+        labelSmall: TextStyle(
+          fontSize: double.parse(themeMap['key_txt_theme_label_small_size']),
+          color: HexColor(themeMap['key_txt_theme_label_small_color']),
+          letterSpacing: double.parse(
+            themeMap['key_txt_theme_label_small_letter_spacing'],
+          ),
+        ),
       ),
       cardTheme: CardTheme(
         color: HexColor(themeMap['key_card_background_color']),
@@ -416,6 +437,30 @@ Future<ThemeData> refreshThemeData(
           themeMap['key_progress_indicator_refresh_background_color'],
         ),
       ),
+      dropdownMenuTheme: DropdownMenuThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          fillColor: HexColor(
+            themeMap['key_dropdown_menu_theme_input_decoration_fill_color'],
+          ),
+          iconColor: HexColor(
+            themeMap['key_dropdown_menu_theme_input_decoration_icon_color'],
+          ),
+        ),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: HexColor(
+          themeMap['key_toggle_buttons_theme_fill_color'],
+        ),
+        color: HexColor(
+          themeMap['key_toggle_buttons_theme_color'],
+        ),
+        selectedColor: HexColor(
+          themeMap['key_toggle_buttons_theme_selected_color'],
+        ),
+        borderColor: HexColor(
+          themeMap['key_toggle_buttons_theme_border_color'],
+        ),
+      ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         foregroundColor:
             HexColor(themeMap['key_floating_btn_foreground_color']),
@@ -457,6 +502,14 @@ Future<ThemeData> refreshThemeData(
           themeMap['key_bottom_appbar_theme_surface_tint_color'],
         ),
         height: double.parse(themeMap['key_bottom_appbar_theme_height']),
+      ),
+      buttonBarTheme: ButtonBarThemeData(
+        buttonHeight: double.parse(themeMap['key_btn_bar_theme_btn_height']),
+        buttonMinWidth: double.parse(
+          themeMap['key_btn_bar_theme_btn_min_width'],
+        ),
+        buttonAlignedDropdown:
+            themeMap['key_btn_bar_theme_btn_aligned_dropdown'],
       ),
       extensions: <ThemeExtension<dynamic>>[
         MyColors.light,

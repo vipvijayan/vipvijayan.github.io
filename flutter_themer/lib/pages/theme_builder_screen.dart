@@ -16,19 +16,19 @@ class ThemeBuilderScreen extends StatelessWidget {
             state.refreshPreview();
           },
           labelColor: Colors.black,
-          tabs: state.themeParentModels
-              .map(
-                (e) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(e.title),
-                ),
-              )
-              .toList(),
+          tabs: state.themeParentModels.map(
+            (e) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(e.title),
+              );
+            },
+          ).toList(),
         ),
         body: TabBarView(
-          children: state.themeParentModels
-              .map((e) => ThemeBuilderTab(themeTab: e))
-              .toList(),
+          children: state.themeParentModels.map((e) {
+            return ThemeBuilderTab(themeTab: e);
+          }).toList(),
         ),
       ),
     );
