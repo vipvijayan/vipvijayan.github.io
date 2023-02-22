@@ -34,8 +34,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FFFBFBFB",
-                           "selected_value":"#FFFBFBFB"
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
                         }
                      ]
                   }
@@ -67,8 +67,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FF1A1C1E",
+                           "selected_value":"#FF1A1C1E"
                         }
                      ]
                   },
@@ -79,8 +79,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF0000FF",
-                           "selected_value":"#FF0000FF"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   }
@@ -200,8 +200,8 @@
                            "id":0,
                            "label":"Icon Size",
                            "selected":true,
-                           "value":"20",
-                           "selected_value":"20"
+                           "value":"24",
+                           "selected_value":"24"
                         }
                      ]
                   },
@@ -209,11 +209,11 @@
                      "id":1,
                      "value":[
                         {
-                           "id":0,
-                           "label":"Center Title",
+                           "id":1,
+                           "label":"Icon Size",
                            "selected":true,
-                           "value":"20",
-                           "selected_value":"20"
+                           "value":"24",
+                           "selected_value":"24"
                         }
                      ]
                   }
@@ -257,8 +257,8 @@
                           "id": 0,
                           "label":"color",
                           "selected": true,
-                          "value": "#FF0000FF",
-                          "selected_value": "#FF0000FF"
+                          "value": "#FF1976D2",
+                          "selected_value": "#FF1976D2"
                        }
                      ]
                   }
@@ -506,6 +506,317 @@
       "expanded":false,
       "basic":false,
       "items":[
+         {
+            "title":"Display Large",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_display_large_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_display_large_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"96",
+                           "selected_value":"96"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"96",
+                           "selected_value":"96"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_display_large_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"-2",
+                           "selected_value":"-2"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"-2",
+                           "selected_value":"-2"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Display Medium",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_display_medium_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_display_medium_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"60",
+                           "selected_value":"60",
+                           "min_value": "0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"60",
+                           "selected_value":"60",
+                           "min_value": "0"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_display_medium_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"-2",
+                           "selected_value":"-2",
+                           "min_value": "-3"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"-2",
+                           "selected_value":"-2",
+                           "min_value": "-3"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Display Small",
+            "sub_items":[
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_txt_theme_display_small_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_txt_theme_display_small_size",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"48",
+                           "selected_value":"48",
+                           "min_value": "0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Font Size",
+                           "selected":true,
+                           "value":"48",
+                           "selected_value":"48",
+                           "min_value": "0"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Letter Spacing",
+                  "key":"key_txt_theme_display_small_letter_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0",
+                           "min_value": "-2"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Letter Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0",
+                           "min_value": "-2"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
          {
             "title":"Body Large",
             "sub_items":[
@@ -1452,8 +1763,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   }
@@ -1541,8 +1852,8 @@
                            "id":0,
                            "label":"Background Color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   },
@@ -1553,8 +1864,8 @@
                            "id":0,
                            "label":"Background Color",
                            "selected":true,
-                           "value":"#FF0000FF",
-                           "selected_value":"#FF0000FF"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   }
@@ -1654,8 +1965,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   }
@@ -1755,8 +2066,8 @@
                            "id":0,
                            "label":"Color",
                            "selected":true,
-                           "value":"#FFFF0300",
-                           "selected_value":"#FFFF0300"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   }
@@ -1807,8 +2118,8 @@
                            "id":0,
                            "label":"Color",
                            "selected":true,
-                           "value":"#FF0000FF",
-                           "selected_value":"#FF0000FF"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   },
@@ -1819,8 +2130,8 @@
                            "id":0,
                            "label":"Color",
                            "selected":true,
-                           "value":"#FF0000FF",
-                           "selected_value":"#FF0000FF"
+                           "value":"#FF0D47A1",
+                           "selected_value":"#FF0D47A1"
                         }
                      ]
                   }
@@ -1851,8 +2162,40 @@
                            "id":0,
                            "label":"Color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FFBDBDBD",
+                           "selected_value":"#FFBDBDBD"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Selected Border Color",
+                  "key":"key_toggle_buttons_theme_selected_border_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Color",
+                           "selected":true,
+                           "value":"#FF757575",
+                           "selected_value":"#FF757575"
                         }
                      ]
                   }
@@ -1862,6 +2205,38 @@
          {
             "title":"Icon Button",
             "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_icon_btn_icon_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FFFFFFFF",
+                          "selected_value": "#FFFFFFFF"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#FF1976D2",
+                          "selected_value": "#FF1976D2"
+                       }
+                     ]
+                  }
+               },
                {
                   "id":1,
                   "subtitle":false,
@@ -1913,8 +2288,8 @@
                            "id":0,
                            "label":"Background Color",
                            "selected":true,
-                           "value":"#FF093C0C",
-                           "selected_value":"#FF093C0C"
+                           "value":"#FFCB4617",
+                           "selected_value":"#FFCB4617"
                         }
                      ]
                   },
@@ -1925,8 +2300,8 @@
                            "id":0,
                            "label":"Background Color",
                            "selected":true,
-                           "value":"#FF093C0C",
-                           "selected_value":"#FF093C0C"
+                           "value":"#FFCB4617",
+                           "selected_value":"#FFCB4617"
                         }
                      ]
                   }
@@ -2644,8 +3019,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF0000FF",
-                           "selected_value":"#FF0000FF"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   },
@@ -2656,8 +3031,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF0000FF",
-                           "selected_value":"#FF0000FF"
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
                         }
                      ]
                   }
@@ -2753,8 +3128,72 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FFFF5722",
+                           "selected_value":"#FFFF5722"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF26C6DA",
+                           "selected_value":"#FF26C6DA"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_chip_theme_selected_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFE64A19",
+                           "selected_value":"#FFE64A19"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF00ACC1",
+                           "selected_value":"#FF00ACC1"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_chip_theme_selected_label_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
                         }
                      ]
                   },
@@ -2842,8 +3281,8 @@
                           "id": 1,
                           "label":"color",
                           "selected": true,
-                          "value": "#FF0000FF",
-                          "selected_value": "#FF0000FF"
+                          "value": "#FF1976D2",
+                          "selected_value": "#FF1976D2"
                        }
                      ]
                   }
@@ -2908,8 +3347,8 @@
                           "id": 0,
                           "label":"color",
                           "selected": true,
-                          "value": "#FF00FF00",
-                          "selected_value": "#FF00FF00"
+                          "value": "#FF17CB21",
+                          "selected_value": "#FF17CB21"
                        }
                      ]
                   },
@@ -2920,8 +3359,8 @@
                           "id": 0,
                           "label":"color",
                           "selected": true,
-                          "value": "#FF00FF00",
-                          "selected_value": "#FF00FF00"
+                          "value": "#FF17CB21",
+                          "selected_value": "#FF17CB21"
                        }
                      ]
                   }
@@ -2999,8 +3438,8 @@
                           "id": 0,
                           "label":"color",
                           "selected": true,
-                          "value": "#008080",
-                          "selected_value": "#008080"
+                          "value": "#FF17CB21",
+                          "selected_value": "#FF17CB21"
                        }
                      ]
                   },
@@ -3011,8 +3450,8 @@
                           "id": 0,
                           "label":"color",
                           "selected": true,
-                          "value": "#008080",
-                          "selected_value": "#008080"
+                          "value": "#FF17CB21",
+                          "selected_value": "#FF17CB21"
                        }
                      ]
                   }
@@ -3250,8 +3689,8 @@
                           "id": 0,
                           "label":"Icon Color",
                           "selected": true,
-                          "value": "#FF0000FF",
-                          "selected_value": "#FF0000FF"
+                          "value": "#FF1976D2",
+                          "selected_value": "#FF1976D2"
                        }
                      ]
                   },
@@ -3262,8 +3701,8 @@
                           "id": 0,
                           "label":"Icon Color",
                           "selected": true,
-                          "value": "#FF0000FF",
-                          "selected_value": "#FF0000FF"
+                          "value": "#FF1976D2",
+                          "selected_value": "#FF1976D2"
                        }
                      ]
                   }

@@ -4,6 +4,8 @@ export 'dart:async';
 export 'dart:math';
 
 export 'package:flutter/material.dart';
+export 'package:flutter/foundation.dart';
+
 export 'package:flutter_themer/app/app.dart';
 
 export 'package:flutter_themer/constants/keys.dart';

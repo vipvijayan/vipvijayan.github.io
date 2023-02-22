@@ -28,7 +28,6 @@ class PreviewApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           showPerformanceOverlay: false,
           theme: themeData,
-          // darkTheme: themeData,
           home: const PreviewHomeScreen(),
         );
       },

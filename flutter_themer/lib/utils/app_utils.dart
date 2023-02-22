@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter_themer/exports/exports.dart';
 
 bool isDarkMode() =>
@@ -20,7 +22,7 @@ showSnackBar(String text) async {
   );
 }
 
-showToast(String text) async {
+Future<void> showToast(String text) async {
   Fluttertoast.showToast(
     msg: text,
     toastLength: Toast.LENGTH_SHORT,
@@ -31,18 +33,30 @@ showToast(String text) async {
   );
 }
 
-setWindowSize() async {
-  if (Platform.isMacOS || Platform.isWindows) {
-    WindowOptions windowOptions = const WindowOptions(
-      size: Size(1600, 1300),
-      center: true,
-      backgroundColor: Colors.transparent,
-      skipTaskbar: false,
-      titleBarStyle: TitleBarStyle.hidden,
-    );
-    windowManager.waitUntilReadyToShow(windowOptions, () async {
-      await windowManager.show();
-      await windowManager.focus();
-    });
+Future<void> setWindowSize() async {
+  var pixelRatio = window.devicePixelRatio;
+  var logicalScreenSize = window.physicalSize / pixelRatio;
+  var logicalWidth = logicalScreenSize.width;
+  var logicalHeight = logicalScreenSize.height;
+
+  WindowOptions windowOptions = WindowOptions(
+    size: Size(logicalWidth, logicalHeight),
+    center: true,
+    backgroundColor: Colors.transparent,
+    skipTaskbar: true,
+    titleBarStyle: TitleBarStyle.hidden,
+  );
+  windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.show();
+    await windowManager.focus();
+  });
+}
+
+Future<void> setWindow() async {
+  if (!kIsWeb) {
+    await windowManager.ensureInitialized();
+    if (Platform.isMacOS || Platform.isWindows) {
+      await setWindowSize();
+    }
   }
 }

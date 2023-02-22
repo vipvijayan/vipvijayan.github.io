@@ -1,5 +1,4 @@
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

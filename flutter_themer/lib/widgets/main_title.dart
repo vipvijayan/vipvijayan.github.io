@@ -21,7 +21,7 @@ class MainTitle extends StatelessWidget {
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontSize: fontSize ?? 14,
               color: txtColor,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w500,
             ),
       ),
     );

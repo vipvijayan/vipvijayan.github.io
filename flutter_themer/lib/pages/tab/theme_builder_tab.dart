@@ -110,22 +110,30 @@ class ThemeBuilderTab extends StatelessWidget {
             children: [
               if (item.title.isNotEmpty) ...[
                 const SizedBox(height: 10),
-                Text(item.title, style: Theme.of(context).textTheme.titleSmall),
+                Text(
+                  item.title,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        color: Colors.black54,
+                        fontSize: 12,
+                      ),
+                ),
               ],
               const SizedBox(height: 10),
               Container(
-                height: controlsDimen + 30,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 20,
+                ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
                   color: Colors.grey[200],
                 ),
-                child: ListView.builder(
-                  itemCount: item.subItems.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    final subItem = item.subItems[index];
-                    Widget widget = Container();
+                child: Wrap(
+                  spacing: 5,
+                  runSpacing: 20,
+                  children: item.subItems.map((subItem) {
+                    Widget widget = const SizedBox.shrink();
                     if (subItem.input == 'color') {
                       widget = _color(uiModel, subItem, dark, state);
                     }
@@ -138,20 +146,14 @@ class ThemeBuilderTab extends StatelessWidget {
                     if (subItem.input == 'number') {
                       widget = _number(context, uiModel, subItem, dark, state);
                     }
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: controlsDimen,
-                          width: 250,
-                          alignment: Alignment.centerLeft,
-                          padding: const EdgeInsets.only(right: 30),
-                          child: widget,
-                        ),
-                      ],
+                    return Container(
+                      height: controlsDimen,
+                      width: 190,
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsets.only(right: 30),
+                      child: widget,
                     );
-                  },
+                  }).toList(),
                 ),
               ),
             ],
@@ -236,7 +238,7 @@ class ThemeBuilderTab extends StatelessWidget {
           child: NumericStepButton(
             defaultCounter: double.parse(currentVal).toInt(),
             maxValue: 900,
-            minValue: 0,
+            minValue: -3,
             onDecrement: () async {
               await _decrementNumber(subItem, dark);
               unawaited(state.refreshPreview());
@@ -340,13 +342,16 @@ class ThemeBuilderTab extends StatelessWidget {
   _decrementNumber(SubItem subItem, bool dark) async {
     if (dark) {
       final curVal = int.parse(subItem.dark.value.first.value);
-      if (curVal <= 0) {
+      final minValue = int.parse(subItem.dark.value.first.minValue ?? "0");
+      if (curVal <= minValue) {
         return;
       }
       subItem.dark.value.first.value = (curVal - 1).toString();
     } else {
       final curVal = int.parse(subItem.light.value.first.value);
-      if (curVal <= 0) {
+      final minValue = int.parse(subItem.light.value.first.minValue ?? "0");
+      logD('minValue: $minValue');
+      if (curVal <= minValue) {
         return;
       }
       subItem.light.value.first.value = (curVal - 1).toString();

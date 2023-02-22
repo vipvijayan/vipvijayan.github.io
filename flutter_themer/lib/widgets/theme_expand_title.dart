@@ -27,12 +27,13 @@ class ExpandTitle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 10,
-              width: 10,
+              height: 16,
+              width: 3,
               decoration: BoxDecoration(
-                color: expanded ? Colors.teal : Colors.grey[200],
+                color: expanded ? Colors.grey[400] : Colors.grey[200],
                 border: Border.all(
-                  color: Colors.grey[200]!,
+                  color: Colors.transparent,
+                  width: 0,
                 ),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(6),

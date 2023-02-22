@@ -112,3 +112,38 @@
       ]
    }
 } 
+
+
+// child: ListView.builder(
+                //   itemCount: item.subItems.length,
+                //   scrollDirection: Axis.horizontal,
+                //   itemBuilder: (context, index) {
+                //     final subItem = item.subItems[index];
+                //     Widget widget = Container();
+                //     if (subItem.input == 'color') {
+                //       widget = _color(uiModel, subItem, dark, state);
+                //     }
+                //     if (subItem.input == 'dropdown') {
+                //       widget = _dropDown(uiModel, subItem, dark, state);
+                //     }
+                //     if (subItem.input == 'boolean') {
+                //       widget = _toggle(context, uiModel, subItem, dark, state);
+                //     }
+                //     if (subItem.input == 'number') {
+                //       widget = _number(context, uiModel, subItem, dark, state);
+                //     }
+                //     return Column(
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       crossAxisAlignment: CrossAxisAlignment.center,
+                //       children: [
+                //         Container(
+                //           height: controlsDimen,
+                //           width: 250,
+                //           alignment: Alignment.centerLeft,
+                //           padding: const EdgeInsets.only(right: 30),
+                //           child: widget,
+                //         ),
+                //       ],
+                //     );
+                //   },
+                // ),

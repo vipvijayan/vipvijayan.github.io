@@ -17,9 +17,12 @@ class PreviewHomeScreen extends StatelessWidget {
               drawer: _drawer(),
               appBar: AppBar(
                 title: const Text(previewTitle),
-                actions: const [
-                  Icon(Icons.settings),
-                  SizedBox(width: 20),
+                actions: [
+                  IconButton(
+                    onPressed: () async {},
+                    icon: const Icon(Icons.settings),
+                  ),
+                  const SizedBox(width: 20),
                 ],
                 leading: IconButton(
                   icon: const Icon(Icons.menu),
@@ -29,8 +32,8 @@ class PreviewHomeScreen extends StatelessWidget {
                 ),
                 bottom: const TabBar(
                   tabs: [
-                    Tab(text: 'Text'),
                     Tab(text: 'Buttons'),
+                    Tab(text: 'Text'),
                     Tab(text: 'Inputs'),
                     Tab(text: 'Cards'),
                     Tab(text: 'Others'),
@@ -39,8 +42,8 @@ class PreviewHomeScreen extends StatelessWidget {
               ),
               body: const TabBarView(
                 children: [
-                  DemoTab(),
                   ButtonTab(),
+                  TextTab(),
                   InputTab(),
                   CardTab(),
                   OthersTab(),
@@ -55,62 +58,74 @@ class PreviewHomeScreen extends StatelessWidget {
   }
 }
 
-class DemoTab extends StatelessWidget {
-  const DemoTab({super.key});
+class TextTab extends StatelessWidget {
+  const TextTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return ListView(
       padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Body Large',
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-          const AppDivider(),
-          Text(
-            'Body Medium',
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          const AppDivider(),
-          Text(
-            'Body Small',
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
-          const AppDivider(),
-          Text(
-            'Title Large',
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          const AppDivider(),
-          Text(
-            'Title Medium',
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          const AppDivider(),
-          Text(
-            'Title Small',
-            style: Theme.of(context).textTheme.titleSmall,
-          ),
-          const AppDivider(),
-          Text(
-            'Label Large',
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
-          const AppDivider(),
-          Text(
-            'Label Medium',
-            style: Theme.of(context).textTheme.labelMedium,
-          ),
-          const AppDivider(),
-          Text(
-            'Label Small',
-            style: Theme.of(context).textTheme.labelSmall,
-          ),
-        ],
-      ),
+      children: [
+        Text(
+          'Body Large',
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+        const AppDivider(),
+        Text(
+          'Body Medium',
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+        const AppDivider(),
+        Text(
+          'Body Small',
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
+        const AppDivider(),
+        Text(
+          'Title Large',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        const AppDivider(),
+        Text(
+          'Title Medium',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        const AppDivider(),
+        Text(
+          'Title Small',
+          style: Theme.of(context).textTheme.titleSmall,
+        ),
+        const AppDivider(),
+        Text(
+          'Label Large',
+          style: Theme.of(context).textTheme.labelLarge,
+        ),
+        const AppDivider(),
+        Text(
+          'Label Medium',
+          style: Theme.of(context).textTheme.labelMedium,
+        ),
+        const AppDivider(),
+        Text(
+          'Label Small',
+          style: Theme.of(context).textTheme.labelSmall,
+        ),
+        const AppDivider(),
+        Text(
+          'Display Small',
+          style: Theme.of(context).textTheme.displaySmall,
+        ),
+        const AppDivider(),
+        Text(
+          'Display Medium',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
+        const AppDivider(),
+        Text(
+          'Display Large',
+          style: Theme.of(context).textTheme.displayLarge,
+        ),
+      ],
     );
   }
 }
@@ -124,6 +139,8 @@ class ButtonTab extends StatefulWidget {
 
 class _ButtonTabState extends State<ButtonTab> {
   bool _switch1 = true;
+  bool _filterChipSelected = false;
+
   double _sliderVal = 0.3;
 
   // Initial Selected Value
@@ -143,9 +160,11 @@ class _ButtonTabState extends State<ButtonTab> {
     const Text('Apple'),
     const Text('Banana'),
     const Text('Orange'),
+    const Text('Mango'),
+    const Text('Kiwi'),
   ];
 
-  final List<bool> _selectedFruits = <bool>[true, false, false];
+  final List<bool> _selectedFruits = <bool>[true, false, false, false, false];
   // Toggle End
 
   @override
@@ -156,25 +175,9 @@ class _ButtonTabState extends State<ButtonTab> {
         child: const Icon(Icons.favorite),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
+        addAutomaticKeepAlives: true,
         children: [
-          TextButton(
-            onPressed: () async {
-              showToast("Hello, How are you?");
-            },
-            child: const Text('Text Button'),
-          ),
-          const AppDivider(),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () async {
-              showPreviewAlert(context);
-            },
-            child: const Text('Elevated Button Button'),
-          ),
-          const AppDivider(),
-          FilledButton(onPressed: () {}, child: const Text('Filled Button')),
-          const AppDivider(),
           ToggleButtons(
             direction: Axis.horizontal,
             onPressed: (int index) {
@@ -184,7 +187,6 @@ class _ButtonTabState extends State<ButtonTab> {
                 }
               });
             },
-            borderRadius: const BorderRadius.all(Radius.circular(6)),
             constraints: const BoxConstraints(
               minHeight: 40.0,
               minWidth: 80.0,
@@ -192,55 +194,170 @@ class _ButtonTabState extends State<ButtonTab> {
             isSelected: _selectedFruits,
             children: fruits,
           ),
-          const AppDivider(),
-          const Text('Chips'),
-          const SizedBox(height: 10),
+          const SizedBox(height: 20),
+          TextButton(
+            onPressed: () async {
+              showToast("Hello, How are you?");
+            },
+            child: const Text('Text Button'),
+          ),
+          const SizedBox(height: 20),
           Row(
-            children: const [
-              Chip(label: Text('Hello')),
-              SizedBox(width: 10),
-              Chip(
-                label: Text('Hello'),
-                deleteIcon: Icon(Icons.delete),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () async {
+                  showPreviewAlert(context);
+                },
+                child: Row(
+                  children: const [
+                    Icon(Icons.star_border),
+                    SizedBox(width: 10),
+                    Text('Elevated Button'),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () async {},
+                child: const Text('Elevated Button'),
               ),
             ],
           ),
-          const AppDivider(),
-          const Text('ButtonBar'),
-          ButtonBar(
-            alignment: MainAxisAlignment.start,
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(
+              OutlinedButton(
+                onPressed: () async {},
+                child: Row(
+                  children: const [
+                    Icon(Icons.favorite_border),
+                    SizedBox(width: 10),
+                    Text('Outlined Button'),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 10),
+              OutlinedButton(
+                onPressed: () async {},
+                child: const Text('Outlined Button'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          FilledButton(onPressed: () {}, child: const Text('Filled Button')),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FilterChip(
+                label: const Text('Sony'),
+                selected: _filterChipSelected,
+                onSelected: (value) {
+                  setState(() {
+                    _filterChipSelected = !_filterChipSelected;
+                  });
+                },
+              ),
+              const SizedBox(width: 10),
+              const Chip(label: Text('Apple')),
+              const SizedBox(width: 10),
+              const Chip(
+                label: Text('Google'),
+                deleteIcon: Icon(Icons.delete),
+              ),
+              const SizedBox(width: 10),
+              FilterChip(
+                label: const Text('Samsung'),
+                selected: _filterChipSelected,
+                onSelected: (value) {
+                  setState(() {
+                    _filterChipSelected = !_filterChipSelected;
+                  });
+                },
+              )
+            ],
+          ),
+          const SizedBox(height: 20),
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
                 child: const Text("Apple"),
                 onPressed: () {},
               ),
-              TextButton(
+              ElevatedButton(
                 child: const Text("Google"),
+                onPressed: () {},
+              ),
+              ElevatedButton(
+                child: const Text("Sony"),
+                onPressed: () {},
+              ),
+              ElevatedButton(
+                child: const Text("Nokia"),
                 onPressed: () {},
               ),
             ],
           ),
-          const AppDivider(),
-          const Text('Icon Button'),
-          IconButton(
-            onPressed: () async {},
-            icon: const Icon(Icons.info_outline),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () async {},
+                icon: const Icon(Icons.info_outline),
+              ),
+              IconButton(
+                onPressed: () async {},
+                icon: const Icon(Icons.favorite_border),
+              ),
+              IconButton(
+                onPressed: () async {},
+                icon: const Icon(Icons.star_border_outlined),
+              ),
+              IconButton(
+                onPressed: () async {},
+                icon: const Icon(Icons.alarm_add_outlined),
+              ),
+              IconButton(
+                onPressed: () async {},
+                icon: const Icon(Icons.safety_check_outlined),
+              ),
+            ],
           ),
-          const AppDivider(),
-          const Text('Radio'),
-          Radio(value: true, groupValue: true, onChanged: (val) {}),
-          const AppDivider(),
-          const Text('Switch'),
-          Switch(
-            value: _switch1,
-            onChanged: (val) {
-              setState(() {
-                _switch1 = !_switch1;
-              });
-            },
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Radio(value: true, groupValue: true, onChanged: (val) {}),
+              Radio(value: true, groupValue: false, onChanged: (val) {}),
+            ],
           ),
-          const AppDivider(),
-          const Text('Slider'),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Switch(
+                value: _switch1,
+                onChanged: (val) {
+                  setState(() {
+                    _switch1 = !_switch1;
+                  });
+                },
+              ),
+              Switch(
+                value: !_switch1,
+                onChanged: (val) {
+                  setState(() {
+                    _switch1 = !_switch1;
+                  });
+                },
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
           Slider(
             value: _sliderVal,
             onChanged: (value) {
@@ -249,12 +366,12 @@ class _ButtonTabState extends State<ButtonTab> {
               });
             },
           ),
-          const AppDivider(),
+          const SizedBox(height: 20),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Dropdown Button'),
+              const SizedBox(height: 20),
               DropdownButton(
                 value: dropdownvalue,
                 icon: const Icon(Icons.keyboard_arrow_down),
@@ -316,7 +433,7 @@ class _InputTabState extends State<InputTab> {
                 children: [
                   const Text('Text Input'),
                   TextFormField(
-                    decoration: const InputDecoration(hintText: 'name'),
+                    decoration: const InputDecoration(hintText: 'Tap Submit'),
                     validator: (text) {
                       if (text == null || text.isEmpty) {
                         return 'Text is empty';
@@ -325,35 +442,72 @@ class _InputTabState extends State<InputTab> {
                     },
                   ),
                   const SizedBox(height: 10),
-                  TextButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        //
-                      }
-                    },
-                    child: const Text('Submit'),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            //
+                          }
+                        },
+                        child: const Text('Submit'),
+                      ),
+                      const SizedBox(width: 10),
+                      ElevatedButton(
+                        onPressed: () {
+                          _formKey.currentState?.reset();
+                        },
+                        child: const Text('Clear'),
+                      ),
+                    ],
                   ),
-                  const Divider(height: 40),
+                  const SizedBox(height: 20),
                   const Text('Checkbox'),
                   const SizedBox(height: 10),
-                  Checkbox(
-                    value: _checked,
-                    onChanged: (value) {
-                      setState(() {
-                        _checked = !_checked;
-                      });
-                    },
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: _checked,
+                        onChanged: (value) {
+                          setState(() {
+                            _checked = !_checked;
+                          });
+                        },
+                      ),
+                      Text(
+                        'Flutter',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const SizedBox(width: 20),
+                      Checkbox(
+                        value: !_checked,
+                        onChanged: (value) {
+                          setState(() {
+                            _checked = !_checked;
+                          });
+                        },
+                      ),
+                      Text(
+                        'React Native',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   const ListTile(
                     title: Text('List Title'),
+                    subtitle: Text('List SubTitle'),
                     leading: Icon(Icons.alarm),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   CheckboxListTile(
                     value: true,
+                    subtitle: Text(
+                      'CheckboxListTile Subtitle',
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
                     title: Text(
-                      'Apple',
+                      'CheckboxListTile Title',
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     onChanged: (value) => {},
@@ -441,12 +595,12 @@ class OthersTab extends StatefulWidget {
 class _OthersTabState extends State<OthersTab> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      child: Column(
+    return Scaffold(
+      body: Column(
         children: [
           Expanded(
             child: ListView(
+              padding: const EdgeInsets.all(20),
               children: const [
                 SizedBox(height: 20),
                 Text('Divider'),
@@ -456,13 +610,25 @@ class _OthersTabState extends State<OthersTab> {
             ),
           ),
           BottomAppBar(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Column(
               children: [
-                Text(
-                  'Bottom navigation Bar',
-                  style: Theme.of(context).textTheme.titleMedium,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    IconButton(
+                      onPressed: () async {},
+                      icon: const Icon(Icons.menu),
+                    ),
+                    IconButton(
+                      onPressed: () async {},
+                      icon: const Icon(Icons.home),
+                    ),
+                    IconButton(
+                      onPressed: () async {},
+                      icon: const Icon(Icons.info),
+                    ),
+                  ],
                 ),
               ],
             ),

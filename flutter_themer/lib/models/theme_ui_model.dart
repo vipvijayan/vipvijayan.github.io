@@ -130,6 +130,7 @@ class Value {
     this.selected = true,
     required this.value,
     required this.selectedValue,
+    this.minValue = "0",
   });
 
   final int id;
@@ -137,6 +138,7 @@ class Value {
   bool selected;
   String value;
   String selectedValue;
+  String? minValue;
 
   factory Value.fromJson(Map<String, dynamic> json) => Value(
         id: json["id"],

@@ -100,10 +100,10 @@ Future<ThemeData> refreshThemeData(
             textBaseline: TextBaseline.alphabetic,
           ),
         ),
-        scaffoldBackgroundColor: const Color(0xff000000),
-        secondaryHeaderColor: const Color(0xff000000),
-        shadowColor: const Color(0xff00ff00),
-        splashColor: const Color(0xff00ff00),
+        // scaffoldBackgroundColor: const Color(0xff000000),
+        // secondaryHeaderColor: const Color(0xff000000),
+        // shadowColor: const Color(0xff00ff00),
+        // splashColor: const Color(0xff00ff00),
       );
     }
     return ThemeData(
@@ -297,6 +297,27 @@ Future<ThemeData> refreshThemeData(
             themeMap['key_txt_theme_label_small_letter_spacing'],
           ),
         ),
+        displayLarge: TextStyle(
+          fontSize: double.parse(themeMap['key_txt_theme_display_large_size']),
+          color: HexColor(themeMap['key_txt_theme_display_large_color']),
+          letterSpacing: double.parse(
+            themeMap['key_txt_theme_display_large_letter_spacing'],
+          ),
+        ),
+        displayMedium: TextStyle(
+          fontSize: double.parse(themeMap['key_txt_theme_display_medium_size']),
+          color: HexColor(themeMap['key_txt_theme_display_medium_color']),
+          letterSpacing: double.parse(
+            themeMap['key_txt_theme_display_medium_letter_spacing'],
+          ),
+        ),
+        displaySmall: TextStyle(
+          fontSize: double.parse(themeMap['key_txt_theme_display_small_size']),
+          color: HexColor(themeMap['key_txt_theme_display_small_color']),
+          letterSpacing: double.parse(
+            themeMap['key_txt_theme_display_small_letter_spacing'],
+          ),
+        ),
       ),
       cardTheme: CardTheme(
         color: HexColor(themeMap['key_card_background_color']),
@@ -364,17 +385,24 @@ Future<ThemeData> refreshThemeData(
         visualDensity: VisualDensity.comfortable,
       ),
       chipTheme: ChipThemeData(
-        backgroundColor: HexColor(
-          themeMap['key_chip_theme_background_color'],
+        backgroundColor: HexColor(themeMap['key_chip_theme_background_color']),
+        elevation: double.parse(themeMap['key_chip_theme_elevation']),
+        selectedColor: HexColor(
+          themeMap['key_chip_theme_selected_background_color'],
         ),
-        elevation: double.parse(
-          themeMap['key_chip_theme_elevation'],
+        labelStyle: TextStyle(
+          color: HexColor(
+            themeMap['key_chip_theme_selected_label_color'],
+          ),
         ),
       ),
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
           iconSize: MaterialStateProperty.all<double>(
             double.parse(themeMap['key_icon_btn_theme_icon_size']),
+          ),
+          iconColor: MaterialStateProperty.all<Color>(
+            HexColor(themeMap['key_icon_btn_icon_color']),
           ),
         ),
       ),
@@ -460,6 +488,10 @@ Future<ThemeData> refreshThemeData(
         borderColor: HexColor(
           themeMap['key_toggle_buttons_theme_border_color'],
         ),
+        selectedBorderColor: HexColor(
+          themeMap['key_toggle_buttons_theme_selected_border_color'],
+        ),
+        highlightColor: Colors.green,
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         foregroundColor:
