@@ -66,3 +66,5 @@ export 'package:flutter_themer/preview/utils/preview_utils/preview_utils.dart';
 
 export 'package:flutter_themer/widgets/copy_code.dart';
 export 'package:google_fonts/google_fonts.dart';
+
+export 'package:flutter/scheduler.dart' show timeDilation;

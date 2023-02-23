@@ -25,7 +25,7 @@ class ThemeAppState extends ChangeNotifier {
     );
   }
 
-  removeFromCustomColorsList(int id) async {
+  Future<void> removeFromCustomColorsList(int id) async {
     final temp = <CustomColor>[];
     temp.addAll(customColors);
     for (final c in temp) {
@@ -48,7 +48,7 @@ class ThemeAppState extends ChangeNotifier {
   }
 
   Future<void> initUsageData() async {
-    Future.delayed(const Duration(seconds: 2), () async {
+    Future.delayed(const Duration(seconds: 1), () async {
       usageHtml = await loadUsageHtml();
     });
   }
@@ -66,7 +66,7 @@ class ThemeAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  refresh() {
+  Future<void> refresh() async {
     notifyListeners();
   }
 

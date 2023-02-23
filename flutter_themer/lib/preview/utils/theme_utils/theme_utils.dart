@@ -253,11 +253,12 @@ Future<ThemeData> refreshThemeData(
         backgroundColor: HexColor(themeMap['key_app_bar_background_color']),
         foregroundColor: HexColor(themeMap['key_app_bar_foreground_color']),
         titleSpacing: double.parse(themeMap['key_app_bar_title_spacing']),
+        centerTitle: themeMap['key_center_title'],
+        toolbarHeight: double.parse(themeMap['key_app_bar_toolbar_height']),
         iconTheme: IconThemeData(
           color: HexColor(themeMap['key_app_bar_icon_color']),
           size: double.parse(themeMap['key_app_bar_icon_size']),
         ),
-        centerTitle: themeMap['key_center_title'],
         actionsIconTheme: IconThemeData(
           color: HexColor(themeMap['key_app_bar_action_icon_color']),
           size: double.parse(themeMap['key_app_bar_action_icon_size']),
@@ -266,7 +267,6 @@ Future<ThemeData> refreshThemeData(
           color: HexColor(themeMap['key_app_bar_title_color']),
           fontSize: double.parse(themeMap['key_app_bar_title_font_size']),
         ),
-        toolbarHeight: double.parse(themeMap['key_app_bar_toolbar_height']),
       ),
       textTheme: TextTheme(
         bodyLarge: TextStyle(
