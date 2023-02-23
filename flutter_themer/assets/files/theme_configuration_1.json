@@ -257,8 +257,8 @@
                           "id": 0,
                           "label":"color",
                           "selected": true,
-                          "value": "#FF1976D2",
-                          "selected_value": "#FF1976D2"
+                          "value": "#FF000000",
+                          "selected_value": "#FF000000"
                        }
                      ]
                   }
@@ -2486,8 +2486,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
                         }
                      ]
                   }
@@ -2660,8 +2660,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF000000",
-                           "selected_value":"#FF000000"
+                           "value":"#FF1A1C1E",
+                           "selected_value":"#FF1A1C1E"
                         }
                      ]
                   },
@@ -2942,8 +2942,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF093C0C",
-                           "selected_value":"#FF093C0C"
+                           "value":"#FF757575",
+                           "selected_value":"#FF757575"
                         }
                      ]
                   },
@@ -2954,8 +2954,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FF093C0C",
-                           "selected_value":"#FF093C0C"
+                           "value":"#FF2196F3",
+                           "selected_value":"#FF2196F3"
                         }
                      ]
                   }
@@ -2976,8 +2976,8 @@
                {
                   "id":1,
                   "subtitle":false,
-                  "title":"Title Color",
-                  "key":"key_list_tile_title_color",
+                  "title":"Tile Color",
+                  "key":"key_list_tile_tile_color",
                   "value_type":"string",
                   "input":"color",
                   "dark":{
@@ -2987,8 +2987,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FFC2C2C2",
-                           "selected_value":"#FFC2C2C2"
+                           "value":"#FF000000",
+                           "selected_value":"#FF000000"
                         }
                      ]
                   },
@@ -2999,8 +2999,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FFC2C2C2",
-                           "selected_value":"#FFC2C2C2"
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
                         }
                      ]
                   }
@@ -3097,6 +3097,38 @@
                            "selected":true,
                            "value":"10",
                            "selected_value":"10"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Dense",
+                  "key":"key_list_tile_dense",
+                  "value_type":"boolean",
+                  "input":"boolean",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Dense",
+                           "selected":true,
+                           "value":"true",
+                           "selected_value":"true"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Dense",
+                           "selected":true,
+                           "value":"true",
+                           "selected_value":"true"
                         }
                      ]
                   }
@@ -3516,8 +3548,8 @@
                           "id": 0,
                           "label":"color",
                           "selected": true,
-                          "value": "#FF008080",
-                          "selected_value": "#FF008080"
+                          "value": "#FF1A1C1E",
+                          "selected_value": "#FF1A1C1E"
                        }
                      ]
                   },
@@ -3528,8 +3560,8 @@
                           "id": 0,
                           "label":"color",
                           "selected": true,
-                          "value": "#FF008080",
-                          "selected_value": "#FF008080"
+                          "value": "#FF1976D2",
+                          "selected_value": "#FF1976D2"
                        }
                      ]
                   }
@@ -3612,8 +3644,8 @@
                           "id": 0,
                           "label":"Elevation",
                           "selected": true,
-                          "value": "56",
-                          "selected_value": "56"
+                          "value": "84",
+                          "selected_value": "84"
                        }
                      ]
                   },
@@ -3624,8 +3656,8 @@
                           "id": 0,
                           "label":"Elevation",
                           "selected": true,
-                          "value": "56",
-                          "selected_value": "56"
+                          "value": "84",
+                          "selected_value": "84"
                        }
                      ]
                   }

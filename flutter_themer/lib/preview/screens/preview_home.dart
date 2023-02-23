@@ -161,11 +161,12 @@ class _ButtonTabState extends State<ButtonTab> {
     const Text('Banana'),
     const Text('Orange'),
     const Text('Mango'),
-    const Text('Kiwi'),
   ];
 
-  final List<bool> _selectedFruits = <bool>[true, false, false, false, false];
+  final List<bool> _selectedFruits = <bool>[true, false, false, false];
   // Toggle End
+
+  String _company = 'apple';
 
   @override
   Widget build(BuildContext context) {
@@ -175,29 +176,31 @@ class _ButtonTabState extends State<ButtonTab> {
         child: const Icon(Icons.favorite),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
         addAutomaticKeepAlives: true,
         children: [
-          ToggleButtons(
-            direction: Axis.horizontal,
-            onPressed: (int index) {
-              setState(() {
-                for (int i = 0; i < _selectedFruits.length; i++) {
-                  _selectedFruits[i] = i == index;
-                }
-              });
-            },
-            constraints: const BoxConstraints(
-              minHeight: 40.0,
-              minWidth: 80.0,
+          Center(
+            child: ToggleButtons(
+              direction: Axis.horizontal,
+              onPressed: (int index) {
+                setState(() {
+                  for (int i = 0; i < _selectedFruits.length; i++) {
+                    _selectedFruits[i] = i == index;
+                  }
+                });
+              },
+              constraints: const BoxConstraints(
+                minHeight: 40.0,
+                minWidth: 80.0,
+              ),
+              isSelected: _selectedFruits,
+              children: fruits,
             ),
-            isSelected: _selectedFruits,
-            children: fruits,
           ),
           const SizedBox(height: 20),
           TextButton(
             onPressed: () async {
-              showToast("Hello, How are you?");
+              showToast('Hello, How are you?');
             },
             child: const Text('Text Button'),
           ),
@@ -284,20 +287,49 @@ class _ButtonTabState extends State<ButtonTab> {
             alignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                child: const Text("Apple"),
+                child: const Text('Apple'),
                 onPressed: () {},
               ),
               ElevatedButton(
-                child: const Text("Google"),
+                child: const Text('Google'),
                 onPressed: () {},
               ),
               ElevatedButton(
-                child: const Text("Sony"),
+                child: const Text('Sony'),
                 onPressed: () {},
               ),
               ElevatedButton(
-                child: const Text("Nokia"),
+                child: const Text('Nokia'),
                 onPressed: () {},
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Column(
+            children: [
+              Text(
+                'Select your company',
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              RadioListTile(
+                title: const Text('Apple'),
+                value: 'apple',
+                groupValue: _company,
+                onChanged: (value) {
+                  setState(() {
+                    _company = value.toString();
+                  });
+                },
+              ),
+              RadioListTile(
+                title: const Text('Google'),
+                value: 'google',
+                groupValue: _company,
+                onChanged: (value) {
+                  setState(() {
+                    _company = value.toString();
+                  });
+                },
               ),
             ],
           ),
@@ -305,40 +337,10 @@ class _ButtonTabState extends State<ButtonTab> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                onPressed: () async {},
-                icon: const Icon(Icons.info_outline),
+              Text(
+                _switch1 ? 'Turn Off Notifications' : 'Turn On Notifications',
+                style: Theme.of(context).textTheme.labelLarge,
               ),
-              IconButton(
-                onPressed: () async {},
-                icon: const Icon(Icons.favorite_border),
-              ),
-              IconButton(
-                onPressed: () async {},
-                icon: const Icon(Icons.star_border_outlined),
-              ),
-              IconButton(
-                onPressed: () async {},
-                icon: const Icon(Icons.alarm_add_outlined),
-              ),
-              IconButton(
-                onPressed: () async {},
-                icon: const Icon(Icons.safety_check_outlined),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Radio(value: true, groupValue: true, onChanged: (val) {}),
-              Radio(value: true, groupValue: false, onChanged: (val) {}),
-            ],
-          ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
               Switch(
                 value: _switch1,
                 onChanged: (val) {
@@ -347,29 +349,30 @@ class _ButtonTabState extends State<ButtonTab> {
                   });
                 },
               ),
-              Switch(
-                value: !_switch1,
-                onChanged: (val) {
+            ],
+          ),
+          const SizedBox(height: 20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Font Size: ${_sliderVal.toStringAsFixed(2)}',
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              Slider(
+                value: _sliderVal,
+                onChanged: (value) {
                   setState(() {
-                    _switch1 = !_switch1;
+                    _sliderVal = value;
                   });
                 },
               ),
             ],
           ),
           const SizedBox(height: 20),
-          Slider(
-            value: _sliderVal,
-            onChanged: (value) {
-              setState(() {
-                _sliderVal = value;
-              });
-            },
-          ),
-          const SizedBox(height: 20),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 20),
               DropdownButton(
@@ -431,7 +434,7 @@ class _InputTabState extends State<InputTab> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Text Input'),
+                  const Text('Text Form Field'),
                   TextFormField(
                     decoration: const InputDecoration(hintText: 'Tap Submit'),
                     validator: (text) {
@@ -462,8 +465,6 @@ class _InputTabState extends State<InputTab> {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  const Text('Checkbox'),
-                  const SizedBox(height: 10),
                   Row(
                     children: [
                       Checkbox(
@@ -493,25 +494,6 @@ class _InputTabState extends State<InputTab> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  const ListTile(
-                    title: Text('List Title'),
-                    subtitle: Text('List SubTitle'),
-                    leading: Icon(Icons.alarm),
-                  ),
-                  const SizedBox(height: 20),
-                  CheckboxListTile(
-                    value: true,
-                    subtitle: Text(
-                      'CheckboxListTile Subtitle',
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    title: Text(
-                      'CheckboxListTile Title',
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    onChanged: (value) => {},
-                  ),
                   const SizedBox(height: 10),
                 ],
               ),
@@ -528,32 +510,25 @@ class CardTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return ListView(
       padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Card(
-            child: ListTile(
-              dense: false,
-              leading: Icon(Icons.favorite_border),
-              contentPadding: EdgeInsets.all(20),
-              iconColor: Colors.white,
-              textColor: Colors.white,
-              title: Text(
-                'Hello',
-              ),
-              subtitle: Text(
-                'Flutter',
-              ),
+      children: const [
+        Card(
+          child: ListTile(
+            dense: false,
+            trailing: CircularProgressIndicator(),
+            leading: Icon(Icons.favorite_border),
+            contentPadding: EdgeInsets.all(20),
+            title: Text(
+              'Hello',
+            ),
+            subtitle: Text(
+              'Flutter',
             ),
           ),
-          SizedBox(height: 30),
-          AppDivider(),
-          SizedBox(height: 30),
-          Center(child: CircularProgressIndicator()),
-        ],
-      ),
+        ),
+        SizedBox(height: 30),
+      ],
     );
   }
 }
@@ -561,24 +536,34 @@ class CardTab extends StatelessWidget {
 Widget _drawer() {
   return Drawer(
     child: ListView(
-      padding: EdgeInsets.zero,
+      padding: const EdgeInsets.all(20),
       children: [
         const DrawerHeader(
           child: Icon(Icons.face_outlined),
         ),
-        ListTile(
-          title: const Text('Item 1'),
-          onTap: () {
-            // Update the state of the app.
-            // ...
-          },
+        const SizedBox(height: 30),
+        Row(
+          children: const [
+            Icon(Icons.favorite_border),
+            SizedBox(width: 20),
+            Text('Favorites'),
+          ],
         ),
-        ListTile(
-          title: const Text('Item 2'),
-          onTap: () {
-            // Update the state of the app.
-            // ...
-          },
+        const SizedBox(height: 30),
+        Row(
+          children: const [
+            Icon(Icons.rate_review_outlined),
+            SizedBox(width: 20),
+            Text('Rate App'),
+          ],
+        ),
+        const SizedBox(height: 30),
+        Row(
+          children: const [
+            Icon(Icons.contact_mail_outlined),
+            SizedBox(width: 20),
+            Text('Contact Us'),
+          ],
         ),
       ],
     ),
@@ -601,11 +586,28 @@ class _OthersTabState extends State<OthersTab> {
           Expanded(
             child: ListView(
               padding: const EdgeInsets.all(20),
-              children: const [
-                SizedBox(height: 20),
-                Text('Divider'),
-                SizedBox(height: 20),
-                Divider(),
+              children: [
+                const SizedBox(height: 20),
+                const Text('Divider'),
+                const SizedBox(height: 20),
+                const Divider(),
+                const SizedBox(height: 20),
+                const ListTile(
+                  title: Text('List Title'),
+                  subtitle: Text('List SubTitle'),
+                  leading: Icon(Icons.alarm),
+                ),
+                const SizedBox(height: 20),
+                CheckboxListTile(
+                  value: true,
+                  title: const Text(
+                    'Checkbox List Tile Title',
+                  ),
+                  subtitle: const Text(
+                    'Checkbox List Tile Subtitle',
+                  ),
+                  onChanged: (value) => {},
+                ),
               ],
             ),
           ),

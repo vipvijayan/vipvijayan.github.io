@@ -1,5 +1,4 @@
 import 'package:flutter_themer/exports/exports.dart';
-import 'package:flutter_themer/widgets/copy_code.dart';
 
 class GeneratedThemeScreen extends StatelessWidget {
   //
@@ -58,8 +57,9 @@ class GeneratedThemeScreen extends StatelessWidget {
                             theme: githubGistTheme,
                             padding: const EdgeInsets.all(20),
                             textStyle: const TextStyle(
-                              fontFamily: 'courier',
-                              fontSize: 14,
+                              fontFamily: 'Courier',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w900,
                             ),
                           ),
                         ),
@@ -94,7 +94,7 @@ class GeneratedThemeScreen extends StatelessWidget {
                           copyToClipboard(
                             previewAppState.customHtml,
                             callback: () {
-                              showToast('Code Copied');
+                              showSnackBar('Code Copied');
                             },
                           );
                         },

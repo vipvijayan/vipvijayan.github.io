@@ -23,7 +23,7 @@ Future<String> loadCustomColorsTxt() async {
   return await rootBundle.loadString('$filesDir/theme_my_colors.html');
 }
 
-Future<String> laodUsageHtml() async {
+Future<String> loadUsageHtml() async {
   return await rootBundle.loadString('$filesDir/usage.html');
 }
 

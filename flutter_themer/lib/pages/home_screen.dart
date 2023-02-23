@@ -1,32 +1,42 @@
 import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/widgets/app_icon.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final previewAppState = context.watch<ThemeAppState>();
+    final state = context.watch<ThemeAppState>();
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         elevation: 0,
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(width: 25),
-            const FaIcon(FontAwesomeIcons.themeisle),
-            const SizedBox(width: 30),
-            Text(
-              appTitle,
-              style: Theme.of(context).textTheme.titleLarge,
+            const AppIcon(),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Text(
+                appTitle,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.akayaTelivigala(
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+              ),
             ),
             const SizedBox(width: 30),
           ],
         ),
-        centerTitle: false,
+        centerTitle: true,
         actions: [
           IconButton(
+            tooltip: 'Reset',
             onPressed: () async {
-              previewAppState.init(refresh: true);
+              state.init(refresh: true);
             },
             icon: const Icon(Icons.refresh_outlined),
           ),
@@ -43,7 +53,8 @@ class HomeScreen extends StatelessWidget {
         children: [
           Expanded(
             child: PreviewApp(
-              themeData: previewAppState.currentTheme(),
+              themeData: state
+                  .themeParentModels[state.currentThemeTabIndex].curThemeData!,
             ),
           ),
           const Expanded(flex: 2, child: ThemeBuilderScreen()),

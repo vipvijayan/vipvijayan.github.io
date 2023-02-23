@@ -42,7 +42,7 @@ class ThemeColor extends StatelessWidget {
               ),
               const SizedBox(height: 5),
               Text(
-                colorToHex(HexColor(currentColor)),
+                '#${colorToHex(HexColor(currentColor))}',
                 style: Theme.of(context)
                     .textTheme
                     .titleSmall

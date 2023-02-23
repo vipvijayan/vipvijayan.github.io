@@ -32,6 +32,7 @@ dependencies:
 
   # Fonts
   font_awesome_flutter: ^10.4.0
+  google_fonts: ^4.0.3
   fluttertoast: ^8.2.1
 
 dev_dependencies:
@@ -41,6 +42,14 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
+
+  fonts:
+    - family: Courier
+      fonts:
+        - asset: assets/fonts/courier.ttf
+    - family: Candy_Script
+      fonts:
+        - asset: assets/fonts/candy_script.ttf
 
   uses-material-design: true
 

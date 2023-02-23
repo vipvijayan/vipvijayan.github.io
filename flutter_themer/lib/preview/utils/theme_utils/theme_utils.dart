@@ -5,7 +5,8 @@ Future<ThemeData> refreshThemeData(
   List<CustomColor> customColors,
 ) async {
   final themeMap = ThemeFileUtils.getThemeMap(themeParentModel);
-  logD(jsonEncode(themeMap));
+  // logD(jsonEncode(themeMap));
+  logD('<<<<Refreshing Theme>>>>>');
   if (ThemeIDs.basic.value == themeParentModel.id) {
     if (isDarkBrightness(themeParentModel)) {
       return ThemeData(
@@ -35,6 +36,20 @@ Future<ThemeData> refreshThemeData(
           onTertiaryContainer:
               HexColor(themeMap['key_cs_on_tertiary_container']),
           outline: HexColor(themeMap['key_cs_outline']),
+        ),
+        tabBarTheme: const TabBarTheme(
+          indicatorSize: TabBarIndicatorSize.label,
+          labelColor: Colors.white,
+          unselectedLabelColor: Colors.white,
+          indicator: ShapeDecoration(
+            shape: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 1,
+                style: BorderStyle.solid,
+              ),
+            ),
+          ),
         ),
         inputDecorationTheme: const InputDecorationTheme(
           alignLabelWithHint: false,
@@ -132,6 +147,20 @@ Future<ThemeData> refreshThemeData(
         tertiaryContainer: HexColor(themeMap['key_cs_tertiary_container']),
         onTertiaryContainer: HexColor(themeMap['key_cs_on_tertiary_container']),
         outline: HexColor(themeMap['key_cs_outline']),
+      ),
+      tabBarTheme: const TabBarTheme(
+        indicatorSize: TabBarIndicatorSize.label,
+        labelColor: Colors.white,
+        unselectedLabelColor: Colors.white,
+        indicator: ShapeDecoration(
+          shape: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 1,
+              style: BorderStyle.solid,
+            ),
+          ),
+        ),
       ),
       inputDecorationTheme: const InputDecorationTheme(
         alignLabelWithHint: false,
@@ -430,11 +459,13 @@ Future<ThemeData> refreshThemeData(
         ),
       ),
       listTileTheme: ListTileThemeData(
-        tileColor: HexColor(themeMap['key_list_tile_title_color']),
+        tileColor: HexColor(themeMap['key_list_tile_tile_color']),
         iconColor: HexColor(themeMap['key_list_tile_icon_color']),
         selectedColor: HexColor(themeMap['key_list_tile_selected_color']),
-        horizontalTitleGap:
-            double.parse(themeMap['key_list_tile_horizontal_title_gap']),
+        horizontalTitleGap: double.parse(
+          themeMap['key_list_tile_horizontal_title_gap'],
+        ),
+        dense: themeMap['key_list_tile_dense'],
       ),
       snackBarTheme: SnackBarThemeData(
         backgroundColor: HexColor(
@@ -473,6 +504,7 @@ Future<ThemeData> refreshThemeData(
           iconColor: HexColor(
             themeMap['key_dropdown_menu_theme_input_decoration_icon_color'],
           ),
+          filled: true,
         ),
       ),
       toggleButtonsTheme: ToggleButtonsThemeData(
@@ -642,19 +674,21 @@ Future<ThemeData> refreshThemeData(
         // unselectedLabelColor: HexColor(
         //   customTheme['tabbar_unselected_label_color']['value'],
         // ),
-        // indicator: ShapeDecoration(
-        //   shape: UnderlineInputBorder(
-        //     borderSide: BorderSide(
-        //       color: HexColor(
-        //         customTheme['tabbar_indicator_color']['value'],
-        //       ),
-        //       width: double.parse(
-        //         customTheme['tabbar_indicator_width']['value'] as String,
-        //       ),
-        //       style: BorderStyle.solid,
-        //     ),
-        //   ),
-        // ),
+        indicator: ShapeDecoration(
+          shape: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: HexColor(
+                themeMap['key_tabbar_indicator_color'],
+              ),
+              width: double.parse(
+                themeMap['key_tabbar_indicator_width'],
+              ),
+              style: tabBarIndicatorUnderlineBorderStyle(
+                themeMap['key_tabbar_indicator_underline_border_style'],
+              ),
+            ),
+          ),
+        ),
         // labelStyle: TextStyle(
         //   color: Colors.white,
         //   fontSize: double.parse(

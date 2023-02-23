@@ -63,3 +63,6 @@ export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:flutter_themer/preview/utils/theme_utils/theme_utils.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export 'package:flutter_themer/preview/utils/preview_utils/preview_utils.dart';
+
+export 'package:flutter_themer/widgets/copy_code.dart';
+export 'package:google_fonts/google_fonts.dart';

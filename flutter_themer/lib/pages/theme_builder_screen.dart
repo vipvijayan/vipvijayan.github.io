@@ -11,16 +11,20 @@ class ThemeBuilderScreen extends StatelessWidget {
       length: state.themeParentModels.length,
       child: Scaffold(
         appBar: TabBar(
-          onTap: (index) {
+          onTap: (index) async {
+            state.currentThemeTabIndex = index;
             state.curSelectedThemeModel = state.themeParentModels[index];
-            state.refreshPreview();
+            // state.refreshPreview();
+            state.refresh();
           },
           labelColor: Colors.black,
           tabs: state.themeParentModels.map(
             (e) {
               return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(e.title),
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  e.title,
+                ),
               );
             },
           ).toList(),
@@ -34,3 +38,39 @@ class ThemeBuilderScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+//   return Container(
+    //     color: Theme.of(context).scaffoldBackgroundColor,
+    //     child: Column(children: [
+    //       Row(
+    //         children: state.themeParentModels.map(
+    //           (e) {
+    //             return InkWell(
+    //               onTap: () async {
+    //                 state.currentThemeTabIndex = e.id;
+    //                 state.curSelectedThemeModel = state.themeParentModels[e.id];
+    //                 // state.refreshPreview();
+    //                 state.refresh();
+    //               },
+    //               child: Padding(
+    //                 padding: const EdgeInsets.all(10),
+    //                 child: Text(
+    //                   e.title,
+    //                 ),
+    //               ),
+    //             );
+    //           },
+    //         ).toList(),
+    //       ),
+    //       if (state.currentThemeTabIndex == ThemeIDs.basic.value)
+    //         Expanded(
+    //           child: ThemeBuilderTab(themeTab: state.themeParentModels.first),
+    //         ),
+    //       if (state.currentThemeTabIndex == ThemeIDs.advanced.value)
+    //         Expanded(
+    //           child: ThemeBuilderTab(themeTab: state.themeParentModels[1]),
+    //         ),
+    //     ]),
+    //   );

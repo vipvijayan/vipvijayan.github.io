@@ -13,6 +13,17 @@ class ThemeAppState extends ChangeNotifier {
     ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
   ThemeParentModel? curSelectedThemeModel;
+  int currentThemeTabIndex = 0;
+
+  final ScrollController themeUIScrollController = ScrollController();
+
+  void scrollDown() {
+    themeUIScrollController.animateTo(
+      themeUIScrollController.position.maxScrollExtent,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.fastOutSlowIn,
+    );
+  }
 
   removeFromCustomColorsList(int id) async {
     final temp = <CustomColor>[];
@@ -38,7 +49,7 @@ class ThemeAppState extends ChangeNotifier {
 
   Future<void> initUsageData() async {
     Future.delayed(const Duration(seconds: 2), () async {
-      usageHtml = await laodUsageHtml();
+      usageHtml = await loadUsageHtml();
     });
   }
 
@@ -48,7 +59,9 @@ class ThemeAppState extends ChangeNotifier {
 
   Future<void> refreshPreview() async {
     for (final tTabs in themeParentModels) {
-      tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
+      if (tTabs.id == currentThemeTabIndex) {
+        tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
+      }
     }
     notifyListeners();
   }
@@ -80,7 +93,7 @@ class ThemeAppState extends ChangeNotifier {
     darkThemeGeneratedHtml =
         darkThemeGeneratedHtml.replaceAll('lightTheme', 'darkTheme');
     themeGeneratedHtml =
-        '$lightThemeGeneratedHtml\n$darkThemeGeneratedHtml\n}\n\n// Usage\n\n$usageHtml';
+        '$lightThemeGeneratedHtml\n$darkThemeGeneratedHtml\n}\n\n// Theme Usage\n\n$usageHtml';
     if (customColors.isNotEmpty) {
       final customThemeUsage = await loadCustomThemeUsage();
       themeGeneratedHtml =

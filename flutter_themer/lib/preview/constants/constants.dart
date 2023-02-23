@@ -8,6 +8,7 @@ const defaultPickerColor = Colors.blue;
 // images
 const previewTitle = 'Preview';
 const customColorsTitle = 'Custom Colors';
+const getTheme = 'Get Theme';
 
 var scaffoldKey = GlobalKey<ScaffoldState>();
 

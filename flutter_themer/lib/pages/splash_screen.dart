@@ -1,4 +1,5 @@
 import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/widgets/app_icon.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -7,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Icon(Icons.draw_outlined, size: 60),
+        child: AppIcon(dimen: 50),
       ),
     );
   }

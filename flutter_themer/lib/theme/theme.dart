@@ -85,7 +85,7 @@ class AppTheme {
       ),
       labelStyle: const TextStyle(
         color: Colors.black,
-        // fontSize: 14,
+        fontSize: 14,
         letterSpacing: 1.2,
         fontWeight: FontWeight.bold,
         // fontFamily: Fonts.TIMES_NEW_ROMAN,
@@ -95,7 +95,7 @@ class AppTheme {
         // fontWeight: FontWeight.bold,
         letterSpacing: 1.1,
         // fontFamily: Fonts.TIMES_NEW_ROMAN,
-        fontSize: 10,
+        fontSize: 14,
       ),
     ),
     dividerTheme: const DividerThemeData(

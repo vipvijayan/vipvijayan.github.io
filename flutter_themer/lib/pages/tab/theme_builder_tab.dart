@@ -1,4 +1,5 @@
 import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/widgets/export_theme.dart';
 
 class ThemeBuilderTab extends StatelessWidget {
   //
@@ -22,6 +23,7 @@ class ThemeBuilderTab extends StatelessWidget {
           const Divider(),
           Expanded(
             child: ListView.separated(
+              controller: state.themeUIScrollController,
               addAutomaticKeepAlives: true,
               cacheExtent: 200,
               separatorBuilder: (context, index) => const SizedBox(height: 10),
@@ -83,16 +85,7 @@ class ThemeBuilderTab extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          IconButton(
-            onPressed: () async {
-              openThemeGeneratedScreen();
-              state.generateHtml();
-            },
-            icon: const FaIcon(
-              FontAwesomeIcons.fileExport,
-              color: Colors.green,
-            ),
-          )
+          const ExportTheme()
         ],
       ),
     );
@@ -148,7 +141,7 @@ class ThemeBuilderTab extends StatelessWidget {
                     }
                     return Container(
                       height: controlsDimen,
-                      width: 190,
+                      width: 230,
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsets.only(right: 30),
                       child: widget,
@@ -184,6 +177,7 @@ class ThemeBuilderTab extends StatelessWidget {
                     ),
                   );
                   state.refresh();
+                  state.scrollDown();
                 }),
                 icon: const Icon(Icons.add),
               )
