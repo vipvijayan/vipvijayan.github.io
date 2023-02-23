@@ -1,4 +1,4 @@
 const showDebugBanner = false;
 
-const appTitle = 'FLUTTER THEMER';
+const appTitle = 'Flutter Themer';
 const appVersion = 'α';

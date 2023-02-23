@@ -19,9 +19,9 @@ class MainTitle extends StatelessWidget {
       child: Text(
         title,
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontSize: fontSize ?? 14,
+              fontSize: fontSize ?? (kIsWeb ? 12 : 14),
               color: txtColor,
-              fontWeight: FontWeight.w500,
+              fontWeight: kIsWeb ? FontWeight.w900 : FontWeight.w500,
             ),
       ),
     );

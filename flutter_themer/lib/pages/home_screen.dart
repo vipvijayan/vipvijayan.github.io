@@ -22,10 +22,9 @@ class HomeScreen extends StatelessWidget {
               child: Text(
                 appTitle,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.akayaTelivigala(
-                  fontSize: 20,
-                  color: Colors.black,
-                ),
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
             ),
             const SizedBox(width: 30),

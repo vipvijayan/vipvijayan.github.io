@@ -4,10 +4,17 @@
     appBarTheme: AppBarTheme(
       elevation: 'key_app_bar_elevation',
       backgroundColor: 'key_app_bar_background_color',
+      foregroundColor: 'key_app_bar_foreground_color',
       centerTitle: 'key_center_title',
-      iconTheme: const IconThemeData(
+      titleSpacing: 'key_app_bar_title_spacing',
+      toolbarHeight: 'key_app_bar_toolbar_height',
+      actionsIconTheme: const IconThemeData(
         color: 'key_app_bar_icon_color',
         size: 'key_app_bar_icon_size',
+      ),
+      iconTheme: IconThemeData(
+        color: HexColor(themeMap['key_app_bar_icon_color']),
+        size: double.parse(themeMap['key_app_bar_icon_size']),
       ),
     ),
     textTheme: TextTheme(

@@ -47,9 +47,6 @@ flutter:
     - family: Courier
       fonts:
         - asset: assets/fonts/courier.ttf
-    - family: Candy_Script
-      fonts:
-        - asset: assets/fonts/candy_script.ttf
 
   uses-material-design: true
 

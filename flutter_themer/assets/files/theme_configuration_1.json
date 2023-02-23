@@ -86,6 +86,38 @@
                   }
                },
                {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Foreground Color",
+                  "key":"key_app_bar_foreground_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
                   "id":2,
                   "subtitle":false,
                   "title":"Elevation",
@@ -110,6 +142,70 @@
                         {
                            "id":0,
                            "label":"Elevation",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":2,
+                  "subtitle":false,
+                  "title":"Toolbar Height",
+                  "key":"key_app_bar_toolbar_height",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Toolbar Height",
+                           "selected":true,
+                           "value":"56",
+                           "selected_value":"56"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Toolbar Height",
+                           "selected":true,
+                           "value":"56",
+                           "selected_value":"56"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":2,
+                  "subtitle":false,
+                  "title":"Title Spacing",
+                  "key":"key_app_bar_title_spacing",
+                  "value_type":"string",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Title Spacing",
+                           "selected":true,
+                           "value":"0",
+                           "selected_value":"0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Title Spacing",
                            "selected":true,
                            "value":"0",
                            "selected_value":"0"
@@ -152,7 +248,7 @@
             ]
          },
          {
-            "title":"Icon Button Theme",
+            "title":"Icon",
             "sub_items":[
                {
                   "id":1,
@@ -191,6 +287,144 @@
                   "subtitle":false,
                   "title":"Size",
                   "key":"key_app_bar_icon_size",
+                  "value_type":"number",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Icon Size",
+                           "selected":true,
+                           "value":"24",
+                           "selected_value":"24"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":1,
+                           "label":"Icon Size",
+                           "selected":true,
+                           "value":"24",
+                           "selected_value":"24"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Action Icon",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_app_bar_action_icon_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_app_bar_action_icon_size",
+                  "value_type":"number",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Icon Size",
+                           "selected":true,
+                           "value":"24",
+                           "selected_value":"24"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":1,
+                           "label":"Icon Size",
+                           "selected":true,
+                           "value":"24",
+                           "selected_value":"24"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         {
+            "title":"Title Style",
+            "sub_items":[
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Color",
+                  "key":"key_app_bar_title_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFFFFFFF",
+                           "selected_value":"#FFFFFFFF"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Size",
+                  "key":"key_app_bar_title_font_size",
                   "value_type":"number",
                   "input":"number",
                   "dark":{

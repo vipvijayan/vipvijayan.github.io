@@ -251,16 +251,22 @@ Future<ThemeData> refreshThemeData(
       appBarTheme: AppBarTheme(
         elevation: double.parse(themeMap['key_app_bar_elevation']),
         backgroundColor: HexColor(themeMap['key_app_bar_background_color']),
-        centerTitle: themeMap['key_center_title'],
+        foregroundColor: HexColor(themeMap['key_app_bar_foreground_color']),
+        titleSpacing: double.parse(themeMap['key_app_bar_title_spacing']),
         iconTheme: IconThemeData(
           color: HexColor(themeMap['key_app_bar_icon_color']),
           size: double.parse(themeMap['key_app_bar_icon_size']),
         ),
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.blue,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
+        centerTitle: themeMap['key_center_title'],
+        actionsIconTheme: IconThemeData(
+          color: HexColor(themeMap['key_app_bar_action_icon_color']),
+          size: double.parse(themeMap['key_app_bar_action_icon_size']),
         ),
+        titleTextStyle: TextStyle(
+          color: HexColor(themeMap['key_app_bar_title_color']),
+          fontSize: double.parse(themeMap['key_app_bar_title_font_size']),
+        ),
+        toolbarHeight: double.parse(themeMap['key_app_bar_toolbar_height']),
       ),
       textTheme: TextTheme(
         bodyLarge: TextStyle(
