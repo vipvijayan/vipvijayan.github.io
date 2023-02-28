@@ -10,15 +10,12 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) {
-            final state = ThemeAppState();
-            state.init();
-            return state;
-          },
+          create: (_) => ThemeAppState(),
           lazy: false,
         ),
       ],
       child: MaterialApp(
+        title: appTitle,
         navigatorKey: navKey,
         debugShowCheckedModeBanner: showDebugBanner,
         showPerformanceOverlay: false,

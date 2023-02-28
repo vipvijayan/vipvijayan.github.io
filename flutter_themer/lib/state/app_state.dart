@@ -19,7 +19,9 @@ class ThemeAppState extends ChangeNotifier {
 
   Map<String, dynamic> themeUIScrollControllers = {};
 
-  // final ScrollController themeUIScrollController = ScrollController();
+  ThemeAppState() {
+    init();
+  }
 
   void scrollDown() {
     // logD(themeUIScrollControllers['${curSelectedThemeModel?.id}']);
