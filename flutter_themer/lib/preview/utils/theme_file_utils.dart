@@ -90,12 +90,12 @@ class ThemeFileUtils {
       if (dark) {
         themeHtml = themeHtml.replaceAll(
           "'extensions'",
-          "extensions: <ThemeExtension<dynamic>>[ MyColors.dark ],",
+          "extensions: <ThemeExtension<dynamic>>[ \n     MyColors.dark, \n    ],",
         );
       } else {
         themeHtml = themeHtml.replaceAll(
           "'extensions'",
-          "extensions: <ThemeExtension<dynamic>>[ MyColors.light ],",
+          "extensions: <ThemeExtension<dynamic>>[  \n     MyColors.light, \n    ],",
         );
       }
     } else {

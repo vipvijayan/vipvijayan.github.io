@@ -3233,8 +3233,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FFFFFFFF",
-                           "selected_value":"#FFFFFFFF"
+                           "value":"#FFF8F7F7",
+                           "selected_value":"#FFF8F7F7"
                         }
                      ]
                   }

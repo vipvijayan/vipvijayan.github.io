@@ -51,7 +51,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/files/
+    - assets/files/usages/
+    - assets/files/configuration/
+    - assets/files/generated/
     - assets/images/
 
  

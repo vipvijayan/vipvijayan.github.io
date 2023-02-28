@@ -23,7 +23,7 @@ class ThemeBuilderTab extends StatelessWidget {
           const Divider(),
           Expanded(
             child: ListView.separated(
-              controller: state.themeUIScrollController,
+              controller: state.scrollController(),
               addAutomaticKeepAlives: true,
               cacheExtent: 200,
               separatorBuilder: (context, index) => const SizedBox(height: 10),

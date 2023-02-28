@@ -58,7 +58,7 @@ class GeneratedThemeScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(20),
                             textStyle: const TextStyle(
                               fontFamily: 'Courier',
-                              fontSize: 16,
+                              fontSize: 14,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
@@ -108,8 +108,9 @@ class GeneratedThemeScreen extends StatelessWidget {
                           theme: githubGistTheme,
                           padding: const EdgeInsets.all(20),
                           textStyle: const TextStyle(
-                            fontFamily: 'courier',
+                            fontFamily: 'Courier',
                             fontSize: 14,
+                            fontWeight: FontWeight.w900,
                           ),
                         ),
                       ),

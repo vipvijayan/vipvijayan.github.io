@@ -3,12 +3,13 @@ import 'package:flutter_themer/exports/exports.dart';
 const filesDir = 'assets/files';
 
 Future<String> loadThemeUIModelFromFile() async {
-  return await rootBundle.loadString('$filesDir/theme_configuration.json');
+  return await rootBundle
+      .loadString('$filesDir/configuration/theme_configuration.json');
 }
 
 Future<List<ThemeUiModel>> loadThemeUIModelList(int themeId) async {
   final json = await rootBundle.loadString(
-    '$filesDir/theme_configuration_$themeId.json',
+    '$filesDir/configuration/theme_configuration_$themeId.json',
   );
   final themeModelList = themeUiModelFromJson(json);
   themeModelList.sort((a, b) => a.title.compareTo(b.title));
@@ -16,26 +17,23 @@ Future<List<ThemeUiModel>> loadThemeUIModelList(int themeId) async {
 }
 
 Future<String> loadThemeTxt(int themeId) async {
-  return await rootBundle.loadString('$filesDir/theme_generated_$themeId.html');
+  return await rootBundle.loadString(
+    '$filesDir/generated/theme_generated_$themeId.html',
+  );
 }
 
 Future<String> loadCustomColorsTxt() async {
-  return await rootBundle.loadString('$filesDir/theme_my_colors.html');
+  return await rootBundle
+      .loadString('$filesDir/generated/theme_my_colors.html');
 }
 
 Future<String> loadUsageHtml() async {
-  return await rootBundle.loadString('$filesDir/usage.html');
+  return await rootBundle.loadString('$filesDir/usages/theme_usage.html');
 }
 
 Future<String> loadCustomThemeUsage() async {
-  return await rootBundle.loadString('$filesDir/custom_theme_usage.html');
-}
-
-Future<String> loadDefaultThemeValuesFile(bool darkeMode) async {
-  final fileName =
-      darkeMode ? 'theme_default_dark.json' : 'theme_default_light.json';
-  logD('Loading file: $fileName');
-  return await rootBundle.loadString('$filesDir/$fileName');
+  return await rootBundle
+      .loadString('$filesDir/usages/custom_theme_usage.html');
 }
 
 Future<String> get _localPath async {

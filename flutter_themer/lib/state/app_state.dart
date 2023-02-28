@@ -15,14 +15,24 @@ class ThemeAppState extends ChangeNotifier {
   ThemeParentModel? curSelectedThemeModel;
   int currentThemeTabIndex = 0;
 
-  final ScrollController themeUIScrollController = ScrollController();
+  bool showingColorPicker = false;
+
+  Map<String, dynamic> themeUIScrollControllers = {};
+
+  // final ScrollController themeUIScrollController = ScrollController();
 
   void scrollDown() {
-    themeUIScrollController.animateTo(
-      themeUIScrollController.position.maxScrollExtent,
+    // logD(themeUIScrollControllers['${curSelectedThemeModel?.id}']);
+    final scroller = themeUIScrollControllers['${curSelectedThemeModel?.id}'];
+    scroller.animateTo(
+      scroller.position.maxScrollExtent,
       duration: const Duration(milliseconds: 300),
       curve: Curves.fastOutSlowIn,
     );
+  }
+
+  ScrollController scrollController() {
+    return themeUIScrollControllers['${curSelectedThemeModel?.id}'];
   }
 
   Future<void> removeFromCustomColorsList(int id) async {
@@ -35,11 +45,17 @@ class ThemeAppState extends ChangeNotifier {
     }
   }
 
+  Future<void> reset() async {
+    customColors.clear();
+    init(refresh: true);
+  }
+
   // refresh = true used to reload default configuration after the app started
   Future<void> init({bool refresh = false}) async {
     for (final tTabs in themeParentModels) {
       tTabs.themeUiModelList = await loadThemeUIModelList(tTabs.id);
       tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
+      themeUIScrollControllers['${tTabs.id}'] = ScrollController();
     }
     curSelectedThemeModel = themeParentModels.first;
     notifyListeners();

@@ -13,19 +13,30 @@ Future<void> showColorDialog(
     barrierColor: Colors.transparent,
     builder: (BuildContext context) {
       return AlertDialog(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.grey,
         titlePadding: const EdgeInsets.all(20),
-        shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
-          side: BorderSide(color: Colors.grey[300]!),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+          side: BorderSide(color: Colors.transparent),
         ),
         contentPadding: const EdgeInsets.all(30),
         elevation: 0,
-        title: Text(title),
+        title: Text(
+          title,
+          style: Theme.of(context)
+              .textTheme
+              .titleSmall
+              ?.copyWith(color: Colors.white),
+        ),
         content: SingleChildScrollView(
-          child: HueRingPicker(
+          child: ColorPicker(
             pickerAreaBorderRadius: const BorderRadius.all(Radius.circular(6)),
             pickerColor: currentColor,
+            enableAlpha: true,
+            pickerAreaHeightPercent: 0.6,
+            labelTypes: const [ColorLabelType.hsl, ColorLabelType.hsv],
+            paletteType: PaletteType.hsl,
+            displayThumbColor: true,
             onColorChanged: ((color) {
               onTap(color);
             }),

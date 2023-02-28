@@ -200,9 +200,16 @@ class _ButtonTabState extends State<ButtonTab> {
           const SizedBox(height: 20),
           TextButton(
             onPressed: () async {
-              showToast('Hello, How are you?');
+              //
             },
             child: const Text('Text Button'),
+          ),
+          const SizedBox(height: 20),
+          TextButton(
+            onPressed: () async {
+              showToast('Hello, How are you?');
+            },
+            child: const Text('Show a Snackbar'),
           ),
           const SizedBox(height: 20),
           Row(
@@ -512,22 +519,20 @@ class CardTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.all(20),
-      children: const [
+      children: [
         Card(
-          child: ListTile(
-            dense: false,
-            trailing: CircularProgressIndicator(),
-            leading: Icon(Icons.favorite_border),
-            contentPadding: EdgeInsets.all(20),
-            title: Text(
-              'Hello',
-            ),
-            subtitle: Text(
-              'Flutter',
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
+              children: const [
+                Text('Hello'),
+                const Spacer(),
+                CircularProgressIndicator(),
+              ],
             ),
           ),
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
       ],
     );
   }

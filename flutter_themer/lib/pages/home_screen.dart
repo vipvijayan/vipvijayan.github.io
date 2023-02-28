@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             tooltip: 'Reset',
             onPressed: () async {
-              state.init(refresh: true);
+              state.reset();
             },
             icon: const Icon(Icons.refresh_outlined),
           ),
@@ -56,6 +56,8 @@ class HomeScreen extends StatelessWidget {
                   .themeParentModels[state.currentThemeTabIndex].curThemeData!,
             ),
           ),
+          if (state.showingColorPicker)
+            const Expanded(flex: 2, child: ThemeBuilderScreen()),
           const Expanded(flex: 2, child: ThemeBuilderScreen()),
         ],
       ),
