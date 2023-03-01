@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "85607312637",
+    "project_id": "flutter-themer-app",
+    "storage_bucket": "flutter-themer-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85607312637:android:5507274ef465a912ae6294",
+        "android_client_info": {
+          "package_name": "com.example.flutter_themer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85607312637-6o3mh3jte08bbhflc3vj31jrg7m566bf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq26LWyYbaDZNqusoPPz_0aEjOQGY5LNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85607312637-6o3mh3jte08bbhflc3vj31jrg7m566bf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "85607312637-gc0bun037lbemhggku0br4khddde7ks4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterThemer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

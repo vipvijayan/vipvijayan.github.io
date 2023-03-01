@@ -35,6 +35,12 @@ dependencies:
   google_fonts: ^4.0.3
   fluttertoast: ^8.2.1
 
+  # Analytics
+  firebase_analytics_web: ^0.5.1+12
+  firebase_core: ^2.7.0
+  firebase_analytics: ^10.1.4
+  firebase_crashlytics: ^3.0.15
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

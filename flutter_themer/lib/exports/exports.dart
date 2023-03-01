@@ -68,3 +68,7 @@ export 'package:flutter_themer/widgets/copy_code.dart';
 export 'package:google_fonts/google_fonts.dart';
 
 export 'package:flutter/scheduler.dart' show timeDilation;
+
+export 'package:flutter_themer/firebase/firebase_utils.dart';
+export 'package:flutter_themer/pages/splash_screen.dart';
+export 'package:flutter_themer/theme/theme.dart';

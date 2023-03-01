@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_themer/exports/exports.dart';
 import 'package:flutter_themer/widgets/app_icon.dart';
 
@@ -36,6 +37,13 @@ class HomeScreen extends StatelessWidget {
             tooltip: 'Reset',
             onPressed: () async {
               state.reset();
+
+              await FirebaseAnalytics.instance.logEvent(
+                name: 'theme_reset',
+                parameters: {
+                  "content_type": "test",
+                },
+              );
             },
             icon: const Icon(Icons.refresh_outlined),
           ),
@@ -56,8 +64,6 @@ class HomeScreen extends StatelessWidget {
                   .themeParentModels[state.currentThemeTabIndex].curThemeData!,
             ),
           ),
-          if (state.showingColorPicker)
-            const Expanded(flex: 2, child: ThemeBuilderScreen()),
           const Expanded(flex: 2, child: ThemeBuilderScreen()),
         ],
       ),

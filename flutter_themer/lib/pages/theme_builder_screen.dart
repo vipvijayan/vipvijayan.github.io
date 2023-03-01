@@ -14,7 +14,6 @@ class ThemeBuilderScreen extends StatelessWidget {
           onTap: (index) async {
             state.currentThemeTabIndex = index;
             state.curSelectedThemeModel = state.themeParentModels[index];
-            // state.refreshPreview();
             state.refresh();
           },
           labelColor: Colors.black,

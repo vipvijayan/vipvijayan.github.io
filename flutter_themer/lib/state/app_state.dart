@@ -21,6 +21,7 @@ class ThemeAppState extends ChangeNotifier {
 
   ThemeAppState() {
     init();
+    initFB();
   }
 
   void scrollDown() {
@@ -50,6 +51,11 @@ class ThemeAppState extends ChangeNotifier {
   Future<void> reset() async {
     customColors.clear();
     init(refresh: true);
+  }
+
+  initFB() async {
+    await analytics.logAppOpen();
+    await analytics.setAnalyticsCollectionEnabled(true);
   }
 
   // refresh = true used to reload default configuration after the app started
