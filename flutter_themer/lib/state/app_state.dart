@@ -9,7 +9,7 @@ class ThemeAppState extends ChangeNotifier {
 
   List<CustomColor> customColors = [];
   List<ThemeParentModel> themeParentModels = [
-    ThemeParentModel(id: ThemeIDs.basic.value, title: 'Primary'),
+    ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
     ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
   ThemeParentModel? curSelectedThemeModel;
@@ -24,9 +24,17 @@ class ThemeAppState extends ChangeNotifier {
     initFB();
   }
 
-  void scrollDown() {
-    // logD(themeUIScrollControllers['${curSelectedThemeModel?.id}']);
+  Future<void> initFB() async {
+    await analytics.logAppOpen();
+    await analytics.setAnalyticsCollectionEnabled(true);
+  }
+
+  Future<void> scrollDown() async {
     final scroller = themeUIScrollControllers['${curSelectedThemeModel?.id}'];
+    if (null == scroller) {
+      logD('Scroller is Null');
+      return;
+    }
     scroller.animateTo(
       scroller.position.maxScrollExtent,
       duration: const Duration(milliseconds: 300),
@@ -34,9 +42,8 @@ class ThemeAppState extends ChangeNotifier {
     );
   }
 
-  ScrollController scrollController() {
-    return themeUIScrollControllers['${curSelectedThemeModel?.id}'];
-  }
+  ScrollController scrollController() =>
+      themeUIScrollControllers['${curSelectedThemeModel?.id}'];
 
   Future<void> removeFromCustomColorsList(int id) async {
     final temp = <CustomColor>[];
@@ -51,11 +58,6 @@ class ThemeAppState extends ChangeNotifier {
   Future<void> reset() async {
     customColors.clear();
     init(refresh: true);
-  }
-
-  initFB() async {
-    await analytics.logAppOpen();
-    await analytics.setAnalyticsCollectionEnabled(true);
   }
 
   // refresh = true used to reload default configuration after the app started
@@ -77,9 +79,8 @@ class ThemeAppState extends ChangeNotifier {
     });
   }
 
-  currentTheme() {
-    return curSelectedThemeModel?.curThemeData ?? ThemeData.light();
-  }
+  ThemeData currentTheme() =>
+      curSelectedThemeModel?.curThemeData ?? ThemeData.light();
 
   Future<void> refreshPreview() async {
     for (final tTabs in themeParentModels) {

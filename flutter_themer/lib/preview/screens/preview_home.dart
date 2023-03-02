@@ -526,7 +526,7 @@ class CardTab extends StatelessWidget {
             child: Row(
               children: const [
                 Text('Hello'),
-                const Spacer(),
+                Spacer(),
                 CircularProgressIndicator(),
               ],
             ),

@@ -32,20 +32,24 @@ class AppTheme {
       splashColor: Colors.yellow,
     ),
     appBarTheme: AppBarTheme(
-      elevation: 0,
-      backgroundColor: lightBaseColor,
-      centerTitle: true,
-      toolbarHeight: kToolbarHeight + 30,
-      iconTheme: const IconThemeData(
-        color: Colors.grey,
-        size: 18,
-      ),
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: lightBaseColor,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.dark,
-      ),
-    ),
+        elevation: 0,
+        backgroundColor: lightBaseColor,
+        centerTitle: true,
+        toolbarHeight: kToolbarHeight + 30,
+        iconTheme: const IconThemeData(
+          color: Colors.grey,
+          size: 18,
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: lightBaseColor,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.dark,
+        ),
+        titleTextStyle: const TextStyle(
+          color: Colors.black,
+          fontSize: 18.0,
+          letterSpacing: letterSpacing,
+        )),
     indicatorColor: Colors.teal,
     colorScheme: ColorScheme.light(
       primary: lightBaseColor,
@@ -65,6 +69,13 @@ class AppTheme {
       border: UnderlineInputBorder(
         borderSide: BorderSide(color: lightBaseColor),
       ),
+    ),
+    listTileTheme: const ListTileThemeData(
+      dense: false,
+      contentPadding: EdgeInsets.all(10),
+      horizontalTitleGap: 10,
+      iconColor: Colors.blue,
+      visualDensity: VisualDensity.comfortable,
     ),
     cardTheme: CardTheme(
       color: Colors.teal,

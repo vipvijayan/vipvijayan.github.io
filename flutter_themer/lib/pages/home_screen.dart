@@ -37,15 +37,27 @@ class HomeScreen extends StatelessWidget {
             tooltip: 'Reset',
             onPressed: () async {
               state.reset();
-
               await FirebaseAnalytics.instance.logEvent(
                 name: 'theme_reset',
                 parameters: {
-                  "content_type": "test",
+                  "action": "reset theme",
                 },
               );
             },
             icon: const Icon(Icons.refresh_outlined),
+          ),
+          IconButton(
+            tooltip: 'About',
+            onPressed: () async {
+              unawaited(openAboutInfoScreen());
+              await FirebaseAnalytics.instance.logEvent(
+                name: 'about',
+                parameters: {
+                  "action": "About App",
+                },
+              );
+            },
+            icon: const Icon(Icons.info_outline_rounded),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

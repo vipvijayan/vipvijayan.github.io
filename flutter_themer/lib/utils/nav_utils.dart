@@ -1,4 +1,5 @@
 import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/pages/about_info.dart';
 import 'package:flutter_themer/pages/generated_theme_screen.dart';
 
 openHome() async {
@@ -19,6 +20,15 @@ openThemeGeneratedScreen() async {
       builder: (context) {
         return const GeneratedThemeScreen();
       },
+    ),
+  );
+}
+
+Future<void> openAboutInfoScreen() async {
+  Navigator.push(
+    navKey.currentContext!,
+    MaterialPageRoute(
+      builder: (context) => const AboutInfoScreen(),
     ),
   );
 }

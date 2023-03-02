@@ -151,7 +151,7 @@ class ThemeFileUtils {
   }
 }
 
-tabBarIndicatorUnderlineBorderStyle(String borderStyle) {
+BorderStyle tabBarIndicatorUnderlineBorderStyle(String borderStyle) {
   switch (borderStyle) {
     case 'BorderStyle.solid':
       return BorderStyle.solid;
@@ -160,7 +160,7 @@ tabBarIndicatorUnderlineBorderStyle(String borderStyle) {
   }
 }
 
-tabIndicatorSize(String size) {
+TabBarIndicatorSize tabIndicatorSize(String size) {
   switch (size) {
     case 'TabBarIndicatorSize.label':
       return TabBarIndicatorSize.label;
@@ -169,13 +169,10 @@ tabIndicatorSize(String size) {
   }
 }
 
-brightnessString(bool bright) {
-  return bright ? 'Brightness.light' : 'Brightness.dark';
-}
+brightnessString(bool bright) =>
+    bright ? 'Brightness.light' : 'Brightness.dark';
 
-brightness(bool bright) {
-  return bright ? Brightness.light : Brightness.dark;
-}
+brightness(bool bright) => bright ? Brightness.light : Brightness.dark;
 
 bool isDarkBrightness(ThemeParentModel? curSelectedThemeModel) {
   if (null == curSelectedThemeModel) {
