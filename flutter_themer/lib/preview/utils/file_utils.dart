@@ -2,11 +2,6 @@ import 'package:flutter_themer/exports/exports.dart';
 
 const filesDir = 'assets/files';
 
-Future<String> loadThemeUIModelFromFile() async {
-  return await rootBundle
-      .loadString('$filesDir/configuration/theme_configuration.json');
-}
-
 Future<List<ThemeUiModel>> loadThemeUIModelList(int themeId) async {
   final json = await rootBundle.loadString(
     '$filesDir/configuration/theme_configuration_$themeId.json',

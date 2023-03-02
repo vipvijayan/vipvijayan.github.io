@@ -9,18 +9,7 @@ class GeneratedThemeScreen extends StatelessWidget {
     final previewAppState = context.watch<ThemeAppState>();
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: kToolbarHeight,
-        title: const Text('GENERATED THEME'),
-        leading: const SizedBox.shrink(),
-        actions: [
-          IconButton(
-            onPressed: () async {
-              closeScreen();
-            },
-            icon: const Icon(Icons.close),
-          ),
-          const SizedBox(width: 20),
-        ],
+        title: const Text('Generated Theme'),
       ),
       body: Container(
         padding: const EdgeInsets.all(20),

@@ -212,14 +212,16 @@ class _ButtonTabState extends State<ButtonTab> {
             child: const Text('Show a Snackbar'),
           ),
           const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Wrap(
+            runSpacing: 10,
+            alignment: WrapAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () async {
                   showPreviewAlert(context);
                 },
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Icon(Icons.star_border),
                     SizedBox(width: 10),
@@ -235,12 +237,14 @@ class _ButtonTabState extends State<ButtonTab> {
             ],
           ),
           const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Wrap(
+            runSpacing: 10,
+            alignment: WrapAlignment.center,
             children: [
               OutlinedButton(
                 onPressed: () async {},
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Icon(Icons.favorite_border),
                     SizedBox(width: 10),

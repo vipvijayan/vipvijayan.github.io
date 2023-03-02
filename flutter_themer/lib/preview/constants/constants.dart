@@ -2,8 +2,12 @@ import 'package:flutter_themer/exports/exports.dart';
 
 const themeFileName = 'theme.json';
 
+late PackageInfo packageInfo;
+
 // create some values
 const defaultPickerColor = Colors.blue;
+const supportEmail = 'flutterthemer@gmail.com';
+const githubUrl = 'https://github.com/flutterthemer/flutterthemer.github.io';
 
 // images
 const previewTitle = 'Preview';

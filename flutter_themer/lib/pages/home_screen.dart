@@ -59,13 +59,6 @@ class HomeScreen extends StatelessWidget {
             },
             icon: const Icon(Icons.info_outline_rounded),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              appVersion,
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-          ),
         ],
       ),
       body: Row(

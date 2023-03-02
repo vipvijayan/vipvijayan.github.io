@@ -22,6 +22,11 @@ class ThemeAppState extends ChangeNotifier {
   ThemeAppState() {
     init();
     initFB();
+    initSettings();
+  }
+
+  Future<void> initSettings() async {
+    packageInfo = await PackageInfo.fromPlatform();
   }
 
   Future<void> initFB() async {

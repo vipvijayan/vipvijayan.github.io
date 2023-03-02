@@ -10,12 +10,26 @@ class AboutInfoScreen extends StatelessWidget {
         title: const Text('About'),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(20),
-        children: const [
-          AppListTile(
-            icon: Icons.mail_outline,
+        padding: const EdgeInsets.all(30),
+        children: [
+          const AppListTile(
+            icon: Icons.mail,
             title: 'Contact Email',
-            subtitle: 'flutterthemer@gmail.com',
+            subtitle: supportEmail,
+            showCopy: true,
+          ),
+          const Divider(),
+          AppListTile(
+            icon: Icons.info,
+            title: 'Version',
+            subtitle: '${packageInfo.version} $appVersion',
+            showCopy: true,
+          ),
+          const Divider(),
+          const AppListTile(
+            icon: FontAwesomeIcons.github,
+            title: 'Github',
+            subtitle: githubUrl,
             showCopy: true,
           )
         ],
@@ -49,38 +63,41 @@ class AppListTile extends StatelessWidget {
         ),
         const SizedBox(width: 20),
         Expanded(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontSize: 12,
-                    color: Colors.grey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 10),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      fontSize: 12,
+                      color: Colors.grey,
+                    ),
+              ),
+              const SizedBox(height: 5),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      subtitle,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            fontSize: 18,
+                            color: Colors.blue,
+                          ),
+                    ),
                   ),
-            ),
-            const SizedBox(height: 5),
-            Row(
-              children: [
-                Text(
-                  subtitle,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        fontSize: 18,
-                        color: Colors.black87,
-                      ),
-                ),
-                const Spacer(),
-                if (showCopy)
-                  IconButton(
-                    onPressed: () async {
-                      copyToClipboard(subtitle);
-                    },
-                    icon: const Icon(Icons.copy),
-                  )
-              ],
-            )
-          ],
-        ))
+                  if (showCopy)
+                    IconButton(
+                      onPressed: () async {
+                        copyToClipboard(subtitle);
+                      },
+                      icon: const Icon(Icons.copy),
+                    )
+                ],
+              )
+            ],
+          ),
+        )
       ],
     );
   }
