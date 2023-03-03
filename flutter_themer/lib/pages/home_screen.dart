@@ -63,13 +63,17 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Row(
         children: [
-          Expanded(
-            child: PreviewApp(
-              themeData: state
-                  .themeParentModels[state.currentThemeTabIndex].curThemeData!,
+          if (null != state.curSelectedThemeModel) ...[
+            Expanded(
+              child: PreviewApp(
+                themeData: state.curSelectedThemeModel!.curThemeData!,
+              ),
             ),
-          ),
-          const Expanded(flex: 2, child: ThemeBuilderScreen()),
+            const Expanded(
+              flex: 2,
+              child: ThemeBuilderScreen(),
+            ),
+          ]
         ],
       ),
     );

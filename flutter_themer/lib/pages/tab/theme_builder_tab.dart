@@ -15,6 +15,7 @@ class ThemeBuilderTab extends StatelessWidget {
     final state = context.watch<ThemeAppState>();
     final themeModelList = themeTab.themeUiModelList;
     final dark = isDarkBrightness(themeTab);
+    logD('Tab Theme ID: ${themeTab.id}');
     return Container(
       padding: const EdgeInsets.all(20),
       child: Column(

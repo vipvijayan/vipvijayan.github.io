@@ -21,8 +21,9 @@ final random = Random();
 const controlsDimen = 60.0;
 
 enum ThemeIDs {
-  basic(0),
-  advanced(1);
+  primary(0),
+  basic(1),
+  advanced(2);
 
   const ThemeIDs(this.value);
   final int value;

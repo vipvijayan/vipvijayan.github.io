@@ -9,12 +9,11 @@ class ThemeAppState extends ChangeNotifier {
 
   List<CustomColor> customColors = [];
   List<ThemeParentModel> themeParentModels = [
+    ThemeParentModel(id: ThemeIDs.primary.value, title: 'Primary'),
     ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
     ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
   ThemeParentModel? curSelectedThemeModel;
-  int currentThemeTabIndex = 0;
-
   bool showingColorPicker = false;
 
   Map<String, dynamic> themeUIScrollControllers = {};
@@ -89,7 +88,7 @@ class ThemeAppState extends ChangeNotifier {
 
   Future<void> refreshPreview() async {
     for (final tTabs in themeParentModels) {
-      if (tTabs.id == currentThemeTabIndex) {
+      if (tTabs.id == curSelectedThemeModel?.id) {
         tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
       }
     }
