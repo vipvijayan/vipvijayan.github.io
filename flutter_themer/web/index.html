@@ -14,11 +14,25 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
+
+  <style>
+    .container {
+      width: 40px;
+      height: 40px;
+      display: inline-flex; /* Default Axis is X*/
+      justify-content: center; /* Main Axis */
+      align-items: center; /* Cross Axis */
+    }
+    .indicator{
+      width: 30vw;
+    }
+  </style>
+
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Flutter App Themer">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,7 +43,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>flutter_themer</title>
+  <title>Flutter Themer</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -39,7 +53,12 @@
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
-<body>
+<body style="overflow: hidden; align-items: center;    display:flex; flex-direction:column; justify-content:center; min-height:100vh;">
+
+  <div id="loading_indicator" class="container">
+    <img class="indicator" src="./assets/loading.gif" />
+  </div>
+
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
@@ -53,6 +72,15 @@
         return appRunner.runApp();
       });
     });
+    window.onload = function () {
+      setTimeout(function () {
+        var loadingIndicator =  document.getElementById("loading_indicator");
+        if (loadingIndicator) {
+          loadingIndicator.remove();
+        }
+      }, 10000);
+    };
   </script>
+
 </body>
 </html>

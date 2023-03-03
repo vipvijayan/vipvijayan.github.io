@@ -74,3 +74,4 @@ export 'package:flutter_themer/pages/splash_screen.dart';
 export 'package:flutter_themer/theme/theme.dart';
 
 export 'package:package_info_plus/package_info_plus.dart';
+export 'package:flutter_themer/models/about.dart';

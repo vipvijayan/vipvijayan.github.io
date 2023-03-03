@@ -31,6 +31,7 @@ class PreviewHomeScreen extends StatelessWidget {
                   },
                 ),
                 bottom: const TabBar(
+                  isScrollable: true,
                   tabs: [
                     Tab(text: 'Buttons'),
                     Tab(text: 'Text'),

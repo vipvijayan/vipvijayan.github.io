@@ -31,6 +31,11 @@ Future<String> loadCustomThemeUsage() async {
       .loadString('$filesDir/usages/custom_theme_usage.html');
 }
 
+Future<About> loadAboutInfo() async {
+  final aboutJson = await rootBundle.loadString('$filesDir/about.json');
+  return aboutFromJson(aboutJson);
+}
+
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
   return directory.path;

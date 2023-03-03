@@ -3,6 +3,7 @@ import 'package:flutter_themer/exports/exports.dart';
 const themeFileName = 'theme.json';
 
 late PackageInfo packageInfo;
+late About about;
 
 // create some values
 const defaultPickerColor = Colors.blue;

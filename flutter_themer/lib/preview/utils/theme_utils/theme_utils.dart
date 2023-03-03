@@ -7,26 +7,9 @@ Future<ThemeData> refreshThemeData(
   final themeMap = ThemeFileUtils.getThemeMap(themeParentModel);
   // logD(jsonEncode(themeMap));
   logD('<<<<Refreshing Theme>>>>> : ${themeParentModel.id}');
+  final isDarkMode = isDarkBrightness(themeParentModel);
   if (ThemeIDs.primary.value == themeParentModel.id) {
-    if (isDarkBrightness(themeParentModel)) {
-      return ThemeData(
-        primarySwatch: buildMaterialColor(themeMap['key_primary_swatch_color']),
-        tabBarTheme: const TabBarTheme(
-          indicatorSize: TabBarIndicatorSize.label,
-          labelColor: Colors.white,
-          unselectedLabelColor: Colors.white,
-          indicator: ShapeDecoration(
-            shape: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.white,
-                width: 1,
-                style: BorderStyle.solid,
-              ),
-            ),
-          ),
-        ),
-      );
-    } else {
+    if (isDarkMode) {
       return ThemeData(
         primarySwatch: buildMaterialColor(themeMap['key_primary_swatch_color']),
         tabBarTheme: const TabBarTheme(
@@ -45,9 +28,26 @@ Future<ThemeData> refreshThemeData(
         ),
       );
     }
+    return ThemeData(
+      primarySwatch: buildMaterialColor(themeMap['key_primary_swatch_color']),
+      tabBarTheme: const TabBarTheme(
+        indicatorSize: TabBarIndicatorSize.label,
+        labelColor: Colors.white,
+        unselectedLabelColor: Colors.white,
+        indicator: ShapeDecoration(
+          shape: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 1,
+              style: BorderStyle.solid,
+            ),
+          ),
+        ),
+      ),
+    );
   }
   if (ThemeIDs.basic.value == themeParentModel.id) {
-    if (isDarkBrightness(themeParentModel)) {
+    if (isDarkMode) {
       return ThemeData(
         brightness: themeParentModel.brightness,
         colorScheme: ColorScheme.dark(

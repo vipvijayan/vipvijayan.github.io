@@ -13,6 +13,7 @@ class ThemeAppState extends ChangeNotifier {
     ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
     ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
+
   ThemeParentModel? curSelectedThemeModel;
   bool showingColorPicker = false;
 
@@ -26,6 +27,16 @@ class ThemeAppState extends ChangeNotifier {
 
   Future<void> initSettings() async {
     packageInfo = await PackageInfo.fromPlatform();
+    about = await loadAboutInfo();
+    about.items.add(
+      AboutItem(
+        id: 99,
+        title: 'Version',
+        value: packageInfo.version,
+        icon: '0xe33c',
+        copyEnabled: false,
+      ),
+    );
   }
 
   Future<void> initFB() async {
