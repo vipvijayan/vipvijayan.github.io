@@ -169,6 +169,32 @@ TabBarIndicatorSize tabIndicatorSize(String size) {
   }
 }
 
+PageTransitionsBuilder pageTransitionTheme(String transition) {
+  switch (transition) {
+    case 'FadeUpwardsPageTransitionsBuilder()':
+      return const FadeUpwardsPageTransitionsBuilder();
+    case 'OpenUpwardsPageTransitionsBuilder()':
+      return const OpenUpwardsPageTransitionsBuilder();
+    case 'ZoomPageTransitionsBuilder()':
+      return const ZoomPageTransitionsBuilder();
+    default:
+      return const CupertinoPageTransitionsBuilder();
+  }
+}
+
+VisualDensity getVisualDensity(String density) {
+  switch (density) {
+    case 'VisualDensity.comfortable':
+      return VisualDensity.comfortable;
+    case 'VisualDensity.compact':
+      return VisualDensity.compact;
+    case 'VisualDensity.adaptivePlatformDensity':
+      return VisualDensity.adaptivePlatformDensity;
+    default:
+      return VisualDensity.standard;
+  }
+}
+
 brightnessString(bool bright) =>
     bright ? 'Brightness.light' : 'Brightness.dark';
 

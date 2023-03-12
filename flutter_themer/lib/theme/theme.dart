@@ -1,8 +1,9 @@
 import 'package:flutter_themer/exports/exports.dart';
 
+const fontFamily = 'Roboto_Regular';
 var darkBaseTheme = HexColor('#272727');
 var lightBaseColor = Colors.white; // HexColor('#2cccd3');
-const letterSpacing = 0.8;
+const letterSpacing = 1.2;
 const transition = PageTransitionsTheme(builders: {
   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
   TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
@@ -20,6 +21,7 @@ class AppTheme {
     pageTransitionsTheme: transition,
     splashColor: Colors.green,
     primaryColor: lightBaseColor,
+    fontFamily: fontFamily,
     primaryColorDark: lightBaseColor,
     primaryColorLight: const Color.fromARGB(255, 59, 243, 157),
     scaffoldBackgroundColor: lightBaseColor,
@@ -32,24 +34,25 @@ class AppTheme {
       splashColor: Colors.yellow,
     ),
     appBarTheme: AppBarTheme(
-        elevation: 0,
-        backgroundColor: lightBaseColor,
-        centerTitle: true,
-        toolbarHeight: kToolbarHeight + 30,
-        iconTheme: const IconThemeData(
-          color: Colors.grey,
-          size: 18,
-        ),
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: lightBaseColor,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        titleTextStyle: const TextStyle(
-          color: Colors.black,
-          fontSize: 18.0,
-          letterSpacing: letterSpacing,
-        )),
+      elevation: 0,
+      backgroundColor: lightBaseColor,
+      centerTitle: true,
+      toolbarHeight: kToolbarHeight + 30,
+      iconTheme: const IconThemeData(
+        color: Colors.grey,
+        size: 18,
+      ),
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: lightBaseColor,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.dark,
+      ),
+      titleTextStyle: const TextStyle(
+        color: Colors.black,
+        fontSize: 18.0,
+        letterSpacing: letterSpacing,
+      ),
+    ),
     indicatorColor: Colors.teal,
     colorScheme: ColorScheme.light(
       primary: lightBaseColor,
@@ -99,13 +102,13 @@ class AppTheme {
         fontSize: 14,
         letterSpacing: 1.2,
         fontWeight: FontWeight.bold,
-        // fontFamily: Fonts.TIMES_NEW_ROMAN,
+        fontFamily: fontFamily,
       ),
       unselectedLabelStyle: const TextStyle(
         color: Colors.black,
         // fontWeight: FontWeight.bold,
         letterSpacing: 1.1,
-        // fontFamily: Fonts.TIMES_NEW_ROMAN,
+        fontFamily: fontFamily,
         fontSize: 14,
       ),
     ),

@@ -12,8 +12,10 @@ class SubTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style:
-          Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
+      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+            color: Colors.grey,
+            fontSize: titleFontSize - 2,
+          ),
     );
   }
 }

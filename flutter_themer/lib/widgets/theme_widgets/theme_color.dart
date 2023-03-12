@@ -35,10 +35,10 @@ class ThemeColor extends StatelessWidget {
               Text(
                 subItem.title,
                 maxLines: 2,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(fontSize: 12),
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontSize: titleFontSize - 2,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
               const SizedBox(height: 5),
               Text(

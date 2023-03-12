@@ -201,7 +201,12 @@ class _ButtonTabState extends State<ButtonTab> {
           const SizedBox(height: 20),
           TextButton(
             onPressed: () async {
-              //
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NewDemoScreen(),
+                ),
+              );
             },
             child: const Text('Text Button'),
           ),
@@ -296,21 +301,21 @@ class _ButtonTabState extends State<ButtonTab> {
           ),
           const SizedBox(height: 20),
           ButtonBar(
-            alignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              ElevatedButton(
+              TextButton(
                 child: const Text('Apple'),
                 onPressed: () {},
               ),
-              ElevatedButton(
+              TextButton(
                 child: const Text('Google'),
                 onPressed: () {},
               ),
-              ElevatedButton(
+              TextButton(
                 child: const Text('Sony'),
                 onPressed: () {},
               ),
-              ElevatedButton(
+              TextButton(
                 child: const Text('Nokia'),
                 onPressed: () {},
               ),
@@ -646,6 +651,23 @@ class _OthersTabState extends State<OthersTab> {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class NewDemoScreen extends StatelessWidget {
+  const NewDemoScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: const Center(
+        child: Text(
+          'Screen to Demo Page Transition\nTap Back button to go back.',
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

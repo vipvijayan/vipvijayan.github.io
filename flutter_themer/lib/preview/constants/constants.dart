@@ -6,6 +6,9 @@ late PackageInfo packageInfo;
 late About about;
 
 // create some values
+const propertyWidth = 240.0;
+const controlsDimen = 60.0;
+const titleFontSize = 14.0;
 const defaultPickerColor = Colors.blue;
 const supportEmail = 'flutterthemer@gmail.com';
 const githubUrl = 'https://github.com/flutterthemer/flutterthemer.github.io';
@@ -18,8 +21,6 @@ const getTheme = 'Get Theme';
 var scaffoldKey = GlobalKey<ScaffoldState>();
 
 final random = Random();
-
-const controlsDimen = 60.0;
 
 enum ThemeIDs {
   primary(0),

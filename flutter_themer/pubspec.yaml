@@ -56,6 +56,21 @@ flutter:
     - family: Courier
       fonts:
         - asset: assets/fonts/courier.ttf
+    - family: Roboto_Regular
+      fonts:
+        - asset: assets/fonts/Roboto_Regular.ttf
+    - family: Andalus
+      fonts:
+        - asset: assets/fonts/andalus.ttf
+    - family: TimesNewRoman
+      fonts:
+        - asset: assets/fonts/times_new_roman.ttf
+    - family: Quicksand_Regular
+      fonts:
+        - asset: assets/fonts/quicksand_regular.otf
+    - family: Montserrat_Alternates_Regular
+      fonts:
+        - asset: assets/fonts/montserrat_alternates_regular.otf
 
   uses-material-design: true
 

@@ -192,6 +192,15 @@
       buttonMinWidth: 'key_btn_bar_theme_btn_min_width',
       buttonAlignedDropdown:'key_btn_bar_theme_btn_aligned_dropdown',
     ),
+    visualDensity: 'key_visual_density',
+    pageTransitionsTheme: PageTransitionsTheme(builders: {
+      TargetPlatform.android: 'key_page_transitions_android_theme',
+      TargetPlatform.iOS: 'key_page_transitions_ios_theme',
+      TargetPlatform.macOS: 'key_page_transitions_mac_os_theme',
+      TargetPlatform.fuchsia: 'key_page_transitions_fuschia_theme',
+      TargetPlatform.windows: 'key_page_transitions_windows_theme',
+      TargetPlatform.linux: 'key_page_transitions_linux_theme',      
+    }),
   );
 
   

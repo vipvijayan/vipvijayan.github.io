@@ -16,17 +16,20 @@ class ThemeUiModel {
     required this.title,
     required this.items,
     this.expanded = false,
+    this.excludeSort = false,
   });
 
   final int id;
   final String title;
   bool expanded;
+  final bool excludeSort;
   final List<Item> items;
 
   factory ThemeUiModel.fromJson(Map<String, dynamic> json) => ThemeUiModel(
         id: json["id"],
         title: json["title"],
         expanded: json["expanded"],
+        excludeSort: json["exclude_sort"] ?? false,
         items: List<Item>.from(json["items"].map((x) => Item.fromJson(x))),
       );
 
@@ -34,6 +37,7 @@ class ThemeUiModel {
         "id": id,
         "title": title,
         "expanded": expanded,
+        "exclude_sort": excludeSort,
         "items": List<dynamic>.from(items.map((x) => x.toJson())),
       };
 }

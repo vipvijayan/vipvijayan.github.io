@@ -37,6 +37,7 @@ class ThemeAppState extends ChangeNotifier {
         copyEnabled: false,
       ),
     );
+    initUsageData();
   }
 
   Future<void> initFB() async {
@@ -84,13 +85,16 @@ class ThemeAppState extends ChangeNotifier {
     }
     curSelectedThemeModel = themeParentModels.first;
     notifyListeners();
-    if (!refresh) openHome();
-    initUsageData();
+    if (!refresh) {
+      openHome();
+      return;
+    }
   }
 
   Future<void> initUsageData() async {
     Future.delayed(const Duration(seconds: 1), () async {
       usageHtml = await loadUsageHtml();
+      logD(usageHtml);
     });
   }
 

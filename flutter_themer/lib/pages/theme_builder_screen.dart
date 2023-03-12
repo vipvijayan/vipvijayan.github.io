@@ -12,7 +12,6 @@ class ThemeBuilderScreen extends StatelessWidget {
       child: Scaffold(
         appBar: TabBar(
           onTap: (index) async {
-            // state.currentThemeTabIndex = index;
             state.curSelectedThemeModel = state.themeParentModels[index];
             state.refresh();
           },
@@ -29,6 +28,7 @@ class ThemeBuilderScreen extends StatelessWidget {
           ).toList(),
         ),
         body: TabBarView(
+          physics: const NeverScrollableScrollPhysics(),
           children: state.themeParentModels.map((e) {
             return ThemeBuilderTab(themeTab: e);
           }).toList(),

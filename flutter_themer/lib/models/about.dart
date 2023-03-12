@@ -2,7 +2,6 @@
 //
 //     final about = aboutFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 About aboutFromJson(String str) => About.fromJson(json.decode(str));

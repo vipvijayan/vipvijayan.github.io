@@ -7,7 +7,12 @@ Future<List<ThemeUiModel>> loadThemeUIModelList(int themeId) async {
     '$filesDir/configuration/theme_configuration_$themeId.json',
   );
   final themeModelList = themeUiModelFromJson(json);
-  themeModelList.sort((a, b) => a.title.compareTo(b.title));
+  themeModelList.sort((a, b) {
+    if (a.excludeSort || b.excludeSort) {
+      return 0;
+    }
+    return a.title.compareTo(b.title);
+  });
   return themeModelList;
 }
 

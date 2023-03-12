@@ -132,7 +132,8 @@ class ThemeBuilderTab extends StatelessWidget {
                       widget = _color(uiModel, subItem, dark, state);
                     }
                     if (subItem.input == 'dropdown') {
-                      widget = _dropDown(uiModel, subItem, dark, state);
+                      widget =
+                          _dropDown(context, uiModel, subItem, dark, state);
                     }
                     if (subItem.input == 'boolean') {
                       widget = _toggle(context, uiModel, subItem, dark, state);
@@ -142,7 +143,7 @@ class ThemeBuilderTab extends StatelessWidget {
                     }
                     return Container(
                       height: controlsDimen,
-                      width: 230,
+                      width: propertyWidth,
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsets.only(right: 30),
                       child: widget,
@@ -166,7 +167,7 @@ class ThemeBuilderTab extends StatelessWidget {
             children: [
               const MainTitle(
                 title: customColorsTitle,
-                fontSize: 18,
+                fontSize: titleFontSize,
               ),
               const Spacer(),
               IconButton(
@@ -226,7 +227,10 @@ class ThemeBuilderTab extends StatelessWidget {
         Text(
           subItem.title,
           maxLines: 1,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 12),
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontSize: titleFontSize - 2,
+                fontWeight: FontWeight.bold,
+              ),
         ),
         const SizedBox(height: 5),
         Expanded(
@@ -262,7 +266,10 @@ class ThemeBuilderTab extends StatelessWidget {
       children: [
         Text(
           subItem.title,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 12),
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontSize: titleFontSize - 2,
+                fontWeight: FontWeight.bold,
+              ),
         ),
         const SizedBox(height: 5),
         const Spacer(),
@@ -280,6 +287,7 @@ class ThemeBuilderTab extends StatelessWidget {
   }
 
   Column _dropDown(
+    BuildContext context,
     ThemeUiModel uiModel,
     SubItem subItem,
     bool dark,
@@ -292,12 +300,19 @@ class ThemeBuilderTab extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SubTitle(title: subItem.title),
+        Text(
+          subItem.title,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontSize: titleFontSize - 2,
+                fontWeight: FontWeight.bold,
+              ),
+        ),
         const SizedBox(height: 5),
         DropdownButton<Value>(
           isDense: true,
           value: currentVal,
           items: _dropDownItems(
+            context,
             list,
             dark,
           ),
@@ -314,11 +329,17 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  _dropDownItems(List<Value> items, bool dark) {
+  _dropDownItems(BuildContext context, List<Value> items, bool dark) {
     List<DropdownMenuItem<Value>> dropdownItems = items.map((e) {
       return DropdownMenuItem<Value>(
         value: e,
-        child: Text(e.label),
+        child: Text(
+          e.label,
+          style: Theme.of(context)
+              .textTheme
+              .bodySmall
+              ?.copyWith(fontSize: titleFontSize - 4),
+        ),
       );
     }).toList();
     return dropdownItems;
