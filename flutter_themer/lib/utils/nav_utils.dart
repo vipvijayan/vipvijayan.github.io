@@ -1,6 +1,4 @@
-import 'package:flutter_themer/exports/exports.dart';
-import 'package:flutter_themer/pages/about_info.dart';
-import 'package:flutter_themer/pages/generated_theme_screen.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 openHome() async {
   Navigator.pushReplacement(

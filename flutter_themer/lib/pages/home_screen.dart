@@ -1,6 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 import 'package:flutter_themer/widgets/app_icon.dart';
+import 'package:flutter_themer/widgets/loading.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,14 +20,12 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(width: 25),
             const AppIcon(),
             const SizedBox(width: 20),
-            Expanded(
-              child: Text(
-                appTitle,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
+            Text(
+              appTitle,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             const SizedBox(width: 30),
           ],
@@ -37,12 +36,7 @@ class HomeScreen extends StatelessWidget {
             tooltip: 'Reset',
             onPressed: () async {
               state.reset();
-              await FirebaseAnalytics.instance.logEvent(
-                name: 'theme_reset',
-                parameters: {
-                  "action": "reset theme",
-                },
-              );
+              fbLogEvent(name: 'theme_reset');
             },
             icon: const Icon(Icons.refresh_outlined),
           ),
@@ -50,12 +44,8 @@ class HomeScreen extends StatelessWidget {
             tooltip: 'About',
             onPressed: () async {
               unawaited(openAboutInfoScreen());
-              await FirebaseAnalytics.instance.logEvent(
-                name: 'about',
-                parameters: {
-                  "action": "About App",
-                },
-              );
+              unawaited(fbLogEvent(name: 'about'));
+              await FirebaseAnalytics.instance.logEvent(name: 'about');
             },
             icon: const Icon(Icons.info_outline_rounded),
           ),
@@ -63,6 +53,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Row(
         children: [
+          Loading(loading: state.appLoading),
           if (null != state.curSelectedThemeModel) ...[
             Expanded(
               child: PreviewApp(

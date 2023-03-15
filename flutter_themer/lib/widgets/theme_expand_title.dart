@@ -1,4 +1,4 @@
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 class ExpandTitle extends StatelessWidget {
   const ExpandTitle({
@@ -15,9 +15,9 @@ class ExpandTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      radius: 6,
+      radius: 3,
       customBorder: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(3),
       ),
       onTap: onPressed,
       child: Padding(

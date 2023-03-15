@@ -1,9 +1,11 @@
-import 'package:flutter_themer/exports/exports.dart';
+// ignore_for_file: avoid_positional_boolean_parameters
+
+import 'package:flutter_themer/utils/exports.dart';
 
 class ThemeFileUtils {
   static Map<String, dynamic> getThemeMap(ThemeParentModel themeParentModel) {
-    Map<String, dynamic> map = <String, dynamic>{};
-    bool dark = isDarkBrightness(themeParentModel);
+    final map = <String, dynamic>{};
+    final dark = isDarkBrightness(themeParentModel);
     for (final themeUIModel in themeParentModel.themeUiModelList) {
       final items = themeUIModel.items;
       for (final item in items) {
@@ -195,10 +197,11 @@ VisualDensity getVisualDensity(String density) {
   }
 }
 
-brightnessString(bool bright) =>
+String brightnessString(bool bright) =>
     bright ? 'Brightness.light' : 'Brightness.dark';
 
-brightness(bool bright) => bright ? Brightness.light : Brightness.dark;
+Brightness brightness(bool bright) =>
+    bright ? Brightness.light : Brightness.dark;
 
 bool isDarkBrightness(ThemeParentModel? curSelectedThemeModel) {
   if (null == curSelectedThemeModel) {

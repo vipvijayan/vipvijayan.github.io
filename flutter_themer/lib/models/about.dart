@@ -33,6 +33,13 @@ class AboutItem {
     required this.icon,
     required this.copyEnabled,
   });
+  factory AboutItem.fromJson(Map<String, dynamic> json) => AboutItem(
+        id: json['id'] as int,
+        title: json['title'] as String,
+        value: json['value'] as String,
+        icon: json['icon'] as String,
+        copyEnabled: json['copy_enabled'] as bool,
+      );
 
   final int id;
   final String title;
@@ -40,19 +47,11 @@ class AboutItem {
   final String icon;
   final bool copyEnabled;
 
-  factory AboutItem.fromJson(Map<String, dynamic> json) => AboutItem(
-        id: json["id"],
-        title: json["title"],
-        value: json["value"],
-        icon: json["icon"],
-        copyEnabled: json["copy_enabled"],
-      );
-
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "title": title,
-        "value": value,
-        "icon": icon,
-        "copy_enabled": copyEnabled,
+        'id': id,
+        'title': title,
+        'value': value,
+        'icon': icon,
+        'copy_enabled': copyEnabled,
       };
 }

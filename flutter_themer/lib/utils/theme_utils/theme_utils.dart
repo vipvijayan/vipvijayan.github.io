@@ -1,4 +1,4 @@
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 Future<ThemeData> refreshThemeData(
   ThemeParentModel themeParentModel,
@@ -11,7 +11,8 @@ Future<ThemeData> refreshThemeData(
   if (ThemeIDs.primary.value == themeParentModel.id) {
     if (isDarkMode) {
       return ThemeData(
-        primarySwatch: buildMaterialColor(themeMap['key_primary_swatch_color']),
+        primarySwatch:
+            buildMaterialColor(themeMap['key_primary_swatch_color'] as String),
         tabBarTheme: const TabBarTheme(
           indicatorSize: TabBarIndicatorSize.label,
           labelColor: Colors.white,
@@ -29,7 +30,8 @@ Future<ThemeData> refreshThemeData(
       );
     }
     return ThemeData(
-      primarySwatch: buildMaterialColor(themeMap['key_primary_swatch_color']),
+      primarySwatch:
+          buildMaterialColor(themeMap['key_primary_swatch_color'] as String),
       tabBarTheme: const TabBarTheme(
         indicatorSize: TabBarIndicatorSize.label,
         labelColor: Colors.white,
@@ -51,30 +53,38 @@ Future<ThemeData> refreshThemeData(
       return ThemeData(
         brightness: themeParentModel.brightness,
         colorScheme: ColorScheme.dark(
-          primary: HexColor(themeMap['key_cs_primary']),
-          onPrimary: HexColor(themeMap['key_cs_on_primary']),
-          primaryContainer: HexColor(themeMap['key_cs_primary_container']),
-          onPrimaryContainer: HexColor(themeMap['key_cs_on_primary_container']),
-          secondary: HexColor(themeMap['key_cs_secondary']),
-          onSecondary: HexColor(themeMap['key_cs_on_secondary']),
-          secondaryContainer: HexColor(themeMap['key_cs_secondary_container']),
+          primary: HexColor(themeMap['key_cs_primary'] as String),
+          onPrimary: HexColor(themeMap['key_cs_on_primary'] as String),
+          primaryContainer:
+              HexColor(themeMap['key_cs_primary_container'] as String),
+          onPrimaryContainer:
+              HexColor(themeMap['key_cs_on_primary_container'] as String),
+          secondary: HexColor(themeMap['key_cs_secondary'] as String),
+          onSecondary: HexColor(themeMap['key_cs_on_secondary'] as String),
+          secondaryContainer:
+              HexColor(themeMap['key_cs_secondary_container'] as String),
           onSecondaryContainer:
-              HexColor(themeMap['key_cs_on_secondary_container']),
-          surface: HexColor(themeMap['key_cs_surface']),
-          onSurface: HexColor(themeMap['key_cs_on_surface']),
-          surfaceTint: HexColor(themeMap['key_cs_surface_tint']),
-          surfaceVariant: HexColor(themeMap['key_cs_surface_variant']),
-          onSurfaceVariant: HexColor(themeMap['key_cs_on_surface_variant']),
-          error: HexColor(themeMap['key_cs_error']),
-          onError: HexColor(themeMap['key_cs_on_error']),
-          errorContainer: HexColor(themeMap['key_cs_error_container']),
-          onErrorContainer: HexColor(themeMap['key_cs_on_error_container']),
-          tertiary: HexColor(themeMap['key_cs_tertiary']),
-          onTertiary: HexColor(themeMap['key_cs_on_tertiary']),
-          tertiaryContainer: HexColor(themeMap['key_cs_tertiary_container']),
+              HexColor(themeMap['key_cs_on_secondary_container'] as String),
+          surface: HexColor(themeMap['key_cs_surface'] as String),
+          onSurface: HexColor(themeMap['key_cs_on_surface'] as String),
+          surfaceTint: HexColor(themeMap['key_cs_surface_tint'] as String),
+          surfaceVariant:
+              HexColor(themeMap['key_cs_surface_variant'] as String),
+          onSurfaceVariant:
+              HexColor(themeMap['key_cs_on_surface_variant'] as String),
+          error: HexColor(themeMap['key_cs_error'] as String),
+          onError: HexColor(themeMap['key_cs_on_error'] as String),
+          errorContainer:
+              HexColor(themeMap['key_cs_error_container'] as String),
+          onErrorContainer:
+              HexColor(themeMap['key_cs_on_error_container'] as String),
+          tertiary: HexColor(themeMap['key_cs_tertiary'] as String),
+          onTertiary: HexColor(themeMap['key_cs_on_tertiary'] as String),
+          tertiaryContainer:
+              HexColor(themeMap['key_cs_tertiary_container'] as String),
           onTertiaryContainer:
-              HexColor(themeMap['key_cs_on_tertiary_container']),
-          outline: HexColor(themeMap['key_cs_outline']),
+              HexColor(themeMap['key_cs_on_tertiary_container'] as String),
+          outline: HexColor(themeMap['key_cs_outline'] as String),
         ),
         tabBarTheme: const TabBarTheme(
           indicatorSize: TabBarIndicatorSize.label,
@@ -84,27 +94,16 @@ Future<ThemeData> refreshThemeData(
             shape: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.white,
-                width: 1,
-                style: BorderStyle.solid,
               ),
             ),
           ),
-        ),
-        inputDecorationTheme: const InputDecorationTheme(
-          alignLabelWithHint: false,
-          filled: false,
-          floatingLabelAlignment: FloatingLabelAlignment.start,
-          isCollapsed: false,
-          isDense: false,
-          floatingLabelBehavior: FloatingLabelBehavior.auto,
         ),
         primaryTextTheme: const TextTheme(
           bodyLarge: TextStyle(
             color: Colors.white,
             decoration: TextDecoration.none,
             fontWeight: FontWeight.w400,
-            fontSize: 16.0,
-            inherit: true,
+            fontSize: 16,
             letterSpacing: 0.5,
             textBaseline: TextBaseline.alphabetic,
           ),
@@ -112,8 +111,7 @@ Future<ThemeData> refreshThemeData(
             color: Colors.white,
             decoration: TextDecoration.none,
             fontWeight: FontWeight.w400,
-            fontSize: 14.0,
-            inherit: true,
+            fontSize: 14,
             letterSpacing: 0.5,
             textBaseline: TextBaseline.alphabetic,
           ),
@@ -121,8 +119,7 @@ Future<ThemeData> refreshThemeData(
             color: Colors.white,
             decoration: TextDecoration.none,
             fontWeight: FontWeight.w400,
-            fontSize: 12.0,
-            inherit: true,
+            fontSize: 12,
             letterSpacing: 0.5,
             textBaseline: TextBaseline.alphabetic,
           ),
@@ -130,8 +127,7 @@ Future<ThemeData> refreshThemeData(
             color: Colors.white,
             decoration: TextDecoration.none,
             fontWeight: FontWeight.w500,
-            fontSize: 20.0,
-            inherit: true,
+            fontSize: 20,
             letterSpacing: 0.5,
             textBaseline: TextBaseline.alphabetic,
           ),
@@ -139,8 +135,7 @@ Future<ThemeData> refreshThemeData(
             color: Colors.white,
             decoration: TextDecoration.none,
             fontWeight: FontWeight.w500,
-            fontSize: 16.0,
-            inherit: true,
+            fontSize: 16,
             letterSpacing: 0.5,
             textBaseline: TextBaseline.alphabetic,
           ),
@@ -148,8 +143,7 @@ Future<ThemeData> refreshThemeData(
             color: Colors.white,
             decoration: TextDecoration.none,
             fontWeight: FontWeight.w500,
-            fontSize: 14.0,
-            inherit: true,
+            fontSize: 14,
             letterSpacing: 0.5,
             textBaseline: TextBaseline.alphabetic,
           ),
@@ -163,29 +157,36 @@ Future<ThemeData> refreshThemeData(
     return ThemeData(
       brightness: themeParentModel.brightness,
       colorScheme: ColorScheme.light(
-        primary: HexColor(themeMap['key_cs_primary']),
-        onPrimary: HexColor(themeMap['key_cs_on_primary']),
-        primaryContainer: HexColor(themeMap['key_cs_primary_container']),
-        onPrimaryContainer: HexColor(themeMap['key_cs_on_primary_container']),
-        secondary: HexColor(themeMap['key_cs_secondary']),
-        onSecondary: HexColor(themeMap['key_cs_on_secondary']),
-        secondaryContainer: HexColor(themeMap['key_cs_secondary_container']),
+        primary: HexColor(themeMap['key_cs_primary'] as String),
+        onPrimary: HexColor(themeMap['key_cs_on_primary'] as String),
+        primaryContainer:
+            HexColor(themeMap['key_cs_primary_container'] as String),
+        onPrimaryContainer:
+            HexColor(themeMap['key_cs_on_primary_container'] as String),
+        secondary: HexColor(themeMap['key_cs_secondary'] as String),
+        onSecondary: HexColor(themeMap['key_cs_on_secondary'] as String),
+        secondaryContainer:
+            HexColor(themeMap['key_cs_secondary_container'] as String),
         onSecondaryContainer:
-            HexColor(themeMap['key_cs_on_secondary_container']),
-        surface: HexColor(themeMap['key_cs_surface']),
-        onSurface: HexColor(themeMap['key_cs_on_surface']),
-        surfaceTint: HexColor(themeMap['key_cs_surface_tint']),
-        surfaceVariant: HexColor(themeMap['key_cs_surface_variant']),
-        onSurfaceVariant: HexColor(themeMap['key_cs_on_surface_variant']),
-        error: HexColor(themeMap['key_cs_error']),
-        onError: HexColor(themeMap['key_cs_on_error']),
-        errorContainer: HexColor(themeMap['key_cs_error_container']),
-        onErrorContainer: HexColor(themeMap['key_cs_on_error_container']),
-        tertiary: HexColor(themeMap['key_cs_tertiary']),
-        onTertiary: HexColor(themeMap['key_cs_on_tertiary']),
-        tertiaryContainer: HexColor(themeMap['key_cs_tertiary_container']),
-        onTertiaryContainer: HexColor(themeMap['key_cs_on_tertiary_container']),
-        outline: HexColor(themeMap['key_cs_outline']),
+            HexColor(themeMap['key_cs_on_secondary_container'] as String),
+        surface: HexColor(themeMap['key_cs_surface'] as String),
+        onSurface: HexColor(themeMap['key_cs_on_surface'] as String),
+        surfaceTint: HexColor(themeMap['key_cs_surface_tint'] as String),
+        surfaceVariant: HexColor(themeMap['key_cs_surface_variant'] as String),
+        onSurfaceVariant:
+            HexColor(themeMap['key_cs_on_surface_variant'] as String),
+        error: HexColor(themeMap['key_cs_error'] as String),
+        onError: HexColor(themeMap['key_cs_on_error'] as String),
+        errorContainer: HexColor(themeMap['key_cs_error_container'] as String),
+        onErrorContainer:
+            HexColor(themeMap['key_cs_on_error_container'] as String),
+        tertiary: HexColor(themeMap['key_cs_tertiary'] as String),
+        onTertiary: HexColor(themeMap['key_cs_on_tertiary'] as String),
+        tertiaryContainer:
+            HexColor(themeMap['key_cs_tertiary_container'] as String),
+        onTertiaryContainer:
+            HexColor(themeMap['key_cs_on_tertiary_container'] as String),
+        outline: HexColor(themeMap['key_cs_outline'] as String),
       ),
       tabBarTheme: const TabBarTheme(
         indicatorSize: TabBarIndicatorSize.label,
@@ -274,22 +275,22 @@ Future<ThemeData> refreshThemeData(
 
   final transition = PageTransitionsTheme(builders: {
     TargetPlatform.android: pageTransitionTheme(
-      themeMap['key_page_transitions_android_theme'],
+      themeMap['key_page_transitions_android_theme'] as String,
     ),
     TargetPlatform.iOS: pageTransitionTheme(
-      themeMap['key_page_transitions_ios_theme'],
+      themeMap['key_page_transitions_ios_theme'] as String,
     ),
     TargetPlatform.macOS: pageTransitionTheme(
-      themeMap['key_page_transitions_mac_os_theme'],
+      themeMap['key_page_transitions_mac_os_theme'] as String,
     ),
     TargetPlatform.fuchsia: pageTransitionTheme(
-      themeMap['key_page_transitions_fuschia_theme'],
+      themeMap['key_page_transitions_fuschia_theme'] as String,
     ),
     TargetPlatform.windows: pageTransitionTheme(
-      themeMap['key_page_transitions_windows_theme'],
+      themeMap['key_page_transitions_windows_theme'] as String,
     ),
     TargetPlatform.linux: pageTransitionTheme(
-      themeMap['key_page_transitions_linux_theme'],
+      themeMap['key_page_transitions_linux_theme'] as String,
     ),
   });
 
@@ -646,22 +647,22 @@ Future<ThemeData> refreshThemeData(
 }
 
 MaterialColor buildMaterialColor(String hexCode) {
-  Color color = HexColor(hexCode);
-  List strengths = <double>[.05];
-  Map<int, Color> swatch = {};
-  final int r = color.red, g = color.green, b = color.blue;
+  final color = HexColor(hexCode);
+  final strengths = <double>[.05];
+  final swatch = <int, Color>{};
+  final r = color.red, g = color.green, b = color.blue;
 
-  for (int i = 1; i < 10; i++) {
+  for (var i = 1; i < 10; i++) {
     strengths.add(0.1 * i);
   }
-  strengths.forEach((strength) {
-    final double ds = 0.5 - strength;
-    swatch[(strength * 1000).round()] = Color.fromRGBO(
+  for (var q = 0; q < strengths.length; q++) {
+    final ds = 0.5 - strengths[q];
+    swatch[(strengths[q] * 1000).round()] = Color.fromRGBO(
       r + ((ds < 0 ? r : (255 - r)) * ds).round(),
       g + ((ds < 0 ? g : (255 - g)) * ds).round(),
       b + ((ds < 0 ? b : (255 - b)) * ds).round(),
       1,
     );
-  });
+  }
   return MaterialColor(color.value, swatch);
 }

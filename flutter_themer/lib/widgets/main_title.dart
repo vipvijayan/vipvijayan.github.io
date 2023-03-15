@@ -1,4 +1,4 @@
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 class MainTitle extends StatelessWidget {
   const MainTitle({
@@ -21,7 +21,7 @@ class MainTitle extends StatelessWidget {
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontSize: fontSize ?? titleFontSize,
               color: txtColor,
-              fontWeight: kIsWeb ? FontWeight.w900 : FontWeight.w500,
+              fontWeight: kIsWeb ? FontWeight.w900 : FontWeight.w600,
             ),
       ),
     );

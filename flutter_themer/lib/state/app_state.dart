@@ -1,4 +1,4 @@
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 class ThemeAppState extends ChangeNotifier {
   //
@@ -15,7 +15,7 @@ class ThemeAppState extends ChangeNotifier {
   ];
 
   ThemeParentModel? curSelectedThemeModel;
-  bool showingColorPicker = false;
+  bool appLoading = false;
 
   Map<String, dynamic> themeUIScrollControllers = {};
 
@@ -37,7 +37,7 @@ class ThemeAppState extends ChangeNotifier {
         copyEnabled: false,
       ),
     );
-    initUsageData();
+    unawaited(initUsageData());
   }
 
   Future<void> initFB() async {
@@ -58,7 +58,7 @@ class ThemeAppState extends ChangeNotifier {
     );
   }
 
-  ScrollController scrollController() =>
+  ScrollController? scrollController() =>
       themeUIScrollControllers['${curSelectedThemeModel?.id}'];
 
   Future<void> removeFromCustomColorsList(int id) async {
@@ -73,18 +73,25 @@ class ThemeAppState extends ChangeNotifier {
 
   Future<void> reset() async {
     customColors.clear();
-    init(refresh: true);
+    unawaited(init(refresh: true));
+  }
+
+  Future<void> setAppLoading(bool loading) async {
+    appLoading = loading;
+    notifyListeners();
   }
 
   // refresh = true used to reload default configuration after the app started
   Future<void> init({bool refresh = false}) async {
+    unawaited(setAppLoading(true));
     for (final tTabs in themeParentModels) {
-      tTabs.themeUiModelList = await loadThemeUIModelList(tTabs.id);
-      tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
+      tTabs
+        ..themeUiModelList = await loadThemeUIModelList(tTabs.id)
+        ..curThemeData = await refreshThemeData(tTabs, customColors);
       themeUIScrollControllers['${tTabs.id}'] = ScrollController();
     }
     curSelectedThemeModel = themeParentModels.first;
-    notifyListeners();
+    unawaited(setAppLoading(false));
     if (!refresh) {
       openHome();
       return;
@@ -118,13 +125,13 @@ class ThemeAppState extends ChangeNotifier {
     if (null == curSelectedThemeModel) {
       return;
     }
-    String lightThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
+    var lightThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
       curSelectedThemeModel!.themeUiModelList,
       customColors.isNotEmpty,
       themeId: curSelectedThemeModel!.id,
       dark: false,
     );
-    String darkThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
+    var darkThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
       curSelectedThemeModel!.themeUiModelList,
       customColors.isNotEmpty,
       themeId: curSelectedThemeModel!.id,

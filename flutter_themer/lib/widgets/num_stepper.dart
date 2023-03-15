@@ -21,7 +21,7 @@ class NumericStepButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(3),
         color: Colors.grey[50],
       ),
       child: Row(

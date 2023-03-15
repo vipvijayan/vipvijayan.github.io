@@ -1,4 +1,4 @@
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 import 'package:flutter_themer/widgets/export_theme.dart';
 
 class ThemeBuilderTab extends StatelessWidget {
@@ -80,6 +80,9 @@ class ThemeBuilderTab extends StatelessWidget {
                         on ? Brightness.light : Brightness.dark;
                     state.refresh();
                     state.refreshPreview();
+                    fbLogEvent(
+                      name: 'Brightness: ${state.curSelectedThemeModel?.id}',
+                    );
                   },
                 ),
               ],
@@ -92,8 +95,12 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  _mainUI(BuildContext context, ThemeUiModel uiModel, bool dark,
-      ThemeAppState state) {
+  Widget _mainUI(
+    BuildContext context,
+    ThemeUiModel uiModel,
+    bool dark,
+    ThemeAppState state,
+  ) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(30, 5, 20, 0),
       child: Column(
@@ -121,7 +128,7 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.grey[200],
+                  color: Colors.grey[100],
                 ),
                 child: Wrap(
                   spacing: 5,
@@ -158,7 +165,7 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  _customUI(ThemeAppState state) {
+  Column _customUI(ThemeAppState state) {
     return Column(
       children: [
         Padding(
@@ -171,16 +178,16 @@ class ThemeBuilderTab extends StatelessWidget {
               ),
               const Spacer(),
               IconButton(
-                onPressed: (() async {
+                onPressed: () async {
                   state.customColors.add(
                     CustomColor(
                       id: random.nextInt(50),
                       name: '',
                     ),
                   );
-                  state.refresh();
-                  state.scrollDown();
-                }),
+                  unawaited(state.refresh());
+                  unawaited(state.scrollDown());
+                },
                 icon: const Icon(Icons.add),
               )
             ],
@@ -262,7 +269,6 @@ class ThemeBuilderTab extends StatelessWidget {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           subItem.title,
@@ -329,8 +335,9 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  _dropDownItems(BuildContext context, List<Value> items, bool dark) {
-    List<DropdownMenuItem<Value>> dropdownItems = items.map((e) {
+  List<DropdownMenuItem<Value>> _dropDownItems(
+      BuildContext context, List<Value> items, bool dark) {
+    final dropdownItems = items.map((e) {
       return DropdownMenuItem<Value>(
         value: e,
         child: Text(
@@ -345,7 +352,7 @@ class ThemeBuilderTab extends StatelessWidget {
     return dropdownItems;
   }
 
-  _incrementNumber(SubItem subItem, bool dark) async {
+  Future<void> _incrementNumber(SubItem subItem, bool dark) async {
     if (dark) {
       subItem.dark.value.first.value =
           (int.parse(subItem.dark.value.first.value) + 1).toString();
@@ -355,7 +362,7 @@ class ThemeBuilderTab extends StatelessWidget {
     }
   }
 
-  _decrementNumber(SubItem subItem, bool dark) async {
+  Future<void> _decrementNumber(SubItem subItem, bool dark) async {
     if (dark) {
       final curVal = int.parse(subItem.dark.value.first.value);
       final minValue = int.parse(subItem.dark.value.first.minValue ?? "0");
@@ -374,7 +381,7 @@ class ThemeBuilderTab extends StatelessWidget {
     }
   }
 
-  _updateColor(SubItem subItem, Color color, bool dark) async {
+  Future<void> _updateColor(SubItem subItem, Color color, bool dark) async {
     if (dark) {
       subItem.dark.value.first.value = colorHex(color);
     } else {
@@ -382,7 +389,8 @@ class ThemeBuilderTab extends StatelessWidget {
     }
   }
 
-  _updateDropDown(List<Value> list, Value? selectedValue, bool dark) async {
+  Future<void> _updateDropDown(
+      List<Value> list, Value? selectedValue, bool dark) async {
     if (null == selectedValue) {
       return;
     }
@@ -391,7 +399,7 @@ class ThemeBuilderTab extends StatelessWidget {
     }
   }
 
-  _updateBoolean(SubItem subItem, bool val, bool dark) async {
+  Future<void> _updateBoolean(SubItem subItem, bool val, bool dark) async {
     if (dark) {
       subItem.dark.value.first.value = val.toString();
     } else {

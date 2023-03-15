@@ -1,9 +1,9 @@
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 const fontFamily = 'Roboto_Regular';
 var darkBaseTheme = HexColor('#272727');
 var lightBaseColor = Colors.white; // HexColor('#2cccd3');
-const letterSpacing = 1.2;
+const letterSpacing = 1.0;
 const transition = PageTransitionsTheme(builders: {
   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
   TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
@@ -135,6 +135,11 @@ class AppTheme {
       ),
       bodySmall: const TextStyle(
         color: Colors.black,
+        fontSize: 18.0,
+        letterSpacing: letterSpacing,
+      ),
+      titleLarge: const TextStyle(
+        color: Colors.grey,
         fontSize: 18.0,
         letterSpacing: letterSpacing,
       ),

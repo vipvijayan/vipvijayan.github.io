@@ -1,4 +1,4 @@
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 class ThemeBuilderScreen extends StatelessWidget {
   //
@@ -14,18 +14,10 @@ class ThemeBuilderScreen extends StatelessWidget {
           onTap: (index) async {
             state.curSelectedThemeModel = state.themeParentModels[index];
             state.refresh();
+            fbLogEvent(name: 'Selected: ${state.curSelectedThemeModel?.title}');
           },
           labelColor: Colors.black,
-          tabs: state.themeParentModels.map(
-            (e) {
-              return Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  e.title,
-                ),
-              );
-            },
-          ).toList(),
+          tabs: state.themeParentModels.map((e) => _tabTitle(e.title)).toList(),
         ),
         body: TabBarView(
           physics: const NeverScrollableScrollPhysics(),
@@ -36,40 +28,11 @@ class ThemeBuilderScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _tabTitle(String title) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Text(title),
+    );
+  }
 }
-
-
-
-//   return Container(
-    //     color: Theme.of(context).scaffoldBackgroundColor,
-    //     child: Column(children: [
-    //       Row(
-    //         children: state.themeParentModels.map(
-    //           (e) {
-    //             return InkWell(
-    //               onTap: () async {
-    //                 state.currentThemeTabIndex = e.id;
-    //                 state.curSelectedThemeModel = state.themeParentModels[e.id];
-    //                 // state.refreshPreview();
-    //                 state.refresh();
-    //               },
-    //               child: Padding(
-    //                 padding: const EdgeInsets.all(10),
-    //                 child: Text(
-    //                   e.title,
-    //                 ),
-    //               ),
-    //             );
-    //           },
-    //         ).toList(),
-    //       ),
-    //       if (state.currentThemeTabIndex == ThemeIDs.basic.value)
-    //         Expanded(
-    //           child: ThemeBuilderTab(themeTab: state.themeParentModels.first),
-    //         ),
-    //       if (state.currentThemeTabIndex == ThemeIDs.advanced.value)
-    //         Expanded(
-    //           child: ThemeBuilderTab(themeTab: state.themeParentModels[1]),
-    //         ),
-    //     ]),
-    //   );

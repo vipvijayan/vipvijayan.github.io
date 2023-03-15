@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 bool isDarkMode() =>
     SchedulerBinding.instance.platformDispatcher.platformBrightness ==
@@ -59,4 +59,65 @@ Future<void> setWindow() async {
       await setWindowSize();
     }
   }
+}
+
+String colorHex(Color color) => '#${color.value.toRadixString(16)}';
+
+Future<void> showColorDialog(
+  BuildContext context, {
+  required String title,
+  Color currentColor = defaultPickerColor,
+  required Function(Color color) onTap,
+}) async {
+  showDialog(
+    context: context,
+    barrierColor: Colors.transparent,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: Colors.grey,
+        titlePadding: const EdgeInsets.all(20),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+          side: BorderSide(color: Colors.transparent),
+        ),
+        contentPadding: const EdgeInsets.all(30),
+        elevation: 0,
+        title: Text(
+          title,
+          style: Theme.of(context)
+              .textTheme
+              .titleSmall
+              ?.copyWith(color: Colors.white),
+        ),
+        content: SingleChildScrollView(
+          child: ColorPicker(
+            pickerAreaBorderRadius: const BorderRadius.all(Radius.circular(6)),
+            pickerColor: currentColor,
+            enableAlpha: true,
+            pickerAreaHeightPercent: 0.6,
+            labelTypes: const [ColorLabelType.hsl, ColorLabelType.hsv],
+            paletteType: PaletteType.hsl,
+            displayThumbColor: true,
+            onColorChanged: ((color) {
+              onTap(color);
+            }),
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: Text(
+              'DONE',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }

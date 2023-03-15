@@ -1,4 +1,4 @@
-import 'package:flutter_themer/exports/exports.dart';
+import 'package:flutter_themer/utils/exports.dart';
 
 class ThemeToggler extends StatelessWidget {
   const ThemeToggler({super.key});
