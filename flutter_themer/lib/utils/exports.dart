@@ -20,7 +20,7 @@ export 'package:flutter_themer/preview/screens/preview_home.dart';
 export 'package:flutter_themer/state/app_state.dart';
 export 'package:provider/provider.dart';
 
-export 'package:flutter_themer/preview/constants/constants.dart';
+export 'package:flutter_themer/utils/constants/constants.dart';
 export 'package:path_provider/path_provider.dart';
 
 export 'package:flutter_themer/pages/theme_builder_screen.dart';
@@ -75,3 +75,8 @@ export 'package:flutter_themer/models/about.dart';
 export 'package:flutter_themer/utils/my_custom_theme.dart';
 export 'package:flutter_themer/pages/about_info_screen.dart';
 export 'package:flutter_themer/pages/generated_theme_screen.dart';
+
+export 'package:flutter_themer/widgets/app_icon.dart';
+export 'package:flutter_themer/widgets/loading.dart';
+export 'package:firebase_analytics/firebase_analytics.dart';
+export 'package:flutter_themer/widgets/app_main_title.dart';

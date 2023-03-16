@@ -9,11 +9,13 @@ class AppIcon extends StatelessWidget {
   final double dimen;
   @override
   Widget build(BuildContext context) {
-    return SizedBox.square(
-      dimension: dimen,
-      child: Image.asset(
-        'assets/images/favicon.png',
-        filterQuality: FilterQuality.high,
+    return Center(
+      child: SizedBox.square(
+        dimension: dimen,
+        child: Image.asset(
+          'assets/images/favicon.png',
+          filterQuality: FilterQuality.high,
+        ),
       ),
     );
   }

@@ -4,17 +4,17 @@ import 'package:flutter_themer/utils/exports.dart';
 class MyColors extends ThemeExtension<MyColors> {
   //
   const MyColors({
-    required this.listTitleColor,
+    required this.success,
   });
 
-  final Color? listTitleColor;
+  final Color? success;
 
   @override
   ThemeExtension<MyColors> copyWith({
     Color? listTitleColor,
   }) {
     return MyColors(
-      listTitleColor: listTitleColor ?? this.listTitleColor,
+      success: listTitleColor ?? this.success,
     );
   }
 
@@ -24,9 +24,9 @@ class MyColors extends ThemeExtension<MyColors> {
       return this;
     }
     return MyColors(
-      listTitleColor: Color.lerp(
-        listTitleColor,
-        other.listTitleColor,
+      success: Color.lerp(
+        success,
+        other.success,
         t,
       ),
     );
@@ -34,14 +34,14 @@ class MyColors extends ThemeExtension<MyColors> {
 
   @override
   String toString() {
-    return 'MyColors(listTitleColor: $listTitleColor)';
+    return 'MyColors(success: $success)';
   }
 
   static var light = const MyColors(
-    listTitleColor: Colors.black,
+    success: Colors.green,
   );
 
   static var dark = const MyColors(
-    listTitleColor: Colors.white,
+    success: Colors.green,
   );
 }

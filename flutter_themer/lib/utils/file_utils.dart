@@ -44,7 +44,7 @@ Future<String> loadCustomThemeUsage() async {
 }
 
 Future<About> loadAboutInfo() async {
-  final aboutJson = await rootBundle.loadString('$filesDir/about.json');
+  final aboutJson = await rootBundle.loadString('$filesDir/app/about.json');
   return aboutFromJson(aboutJson);
 }
 

@@ -15,7 +15,7 @@ class AboutInfoScreen extends StatelessWidget {
           return AppListTile(
             title: e.title,
             subtitle: e.value,
-            icon: IconData(int.parse(e.icon), fontFamily: 'MaterialIcons'),
+            icon: materialIcon(e.icon),
             showCopy: e.copyEnabled,
           );
         }).toList(),

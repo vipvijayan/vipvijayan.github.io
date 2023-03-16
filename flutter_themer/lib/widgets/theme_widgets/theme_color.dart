@@ -36,8 +36,9 @@ class ThemeColor extends StatelessWidget {
                 subItem.title,
                 maxLines: 2,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: titleFontSize - 2,
+                      fontSize: titleFontSize,
                       fontWeight: FontWeight.bold,
+                      color: Colors.black87,
                     ),
               ),
               const SizedBox(height: 5),
@@ -46,7 +47,7 @@ class ThemeColor extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .titleSmall
-                    ?.copyWith(color: Colors.grey, fontSize: 10),
+                    ?.copyWith(color: Colors.grey, fontSize: titleFontSize),
               ),
             ],
           ),

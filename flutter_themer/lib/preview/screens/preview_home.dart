@@ -37,7 +37,7 @@ class PreviewHomeScreen extends StatelessWidget {
                     Tab(text: 'Text'),
                     Tab(text: 'Inputs'),
                     Tab(text: 'Cards'),
-                    Tab(text: 'Others'),
+                    Tab(text: 'List'),
                   ],
                 ),
               ),
@@ -47,7 +47,7 @@ class PreviewHomeScreen extends StatelessWidget {
                   TextTab(),
                   InputTab(),
                   CardTab(),
-                  OthersTab(),
+                  ListTab(),
                 ],
               ),
             ),
@@ -141,20 +141,6 @@ class ButtonTab extends StatefulWidget {
 class _ButtonTabState extends State<ButtonTab> {
   bool _switch1 = true;
   bool _filterChipSelected = false;
-
-  double _sliderVal = 0.3;
-
-  // Initial Selected Value
-  String dropdownvalue = 'Apple';
-
-  // List of items in our dropdown menu
-  var items = [
-    'Apple',
-    'Google',
-    'Samsung',
-    'Nokia',
-    'Sony',
-  ];
 
   // Toggle Start
   List<Widget> fruits = <Widget>[
@@ -369,46 +355,6 @@ class _ButtonTabState extends State<ButtonTab> {
             ],
           ),
           const SizedBox(height: 20),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Font Size: ${_sliderVal.toStringAsFixed(2)}',
-                style: Theme.of(context).textTheme.labelLarge,
-              ),
-              Slider(
-                value: _sliderVal,
-                onChanged: (value) {
-                  setState(() {
-                    _sliderVal = value;
-                  });
-                },
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 20),
-              DropdownButton(
-                value: dropdownvalue,
-                icon: const Icon(Icons.keyboard_arrow_down),
-                items: items.map((String items) {
-                  return DropdownMenuItem(
-                    value: items,
-                    child: Text(items),
-                  );
-                }).toList(),
-                onChanged: (String? newValue) {
-                  setState(() {
-                    dropdownvalue = newValue!;
-                  });
-                },
-              ),
-            ],
-          ),
         ],
       ),
     );
@@ -432,6 +378,20 @@ class _InputTabState extends State<InputTab> {
   final _formKey = GlobalKey<FormState>();
 
   bool _checked = false;
+
+  double _sliderVal = 0.3;
+
+  // Initial Selected Value
+  String dropdownvalue = 'Apple';
+
+  // List of items in our dropdown menu
+  var items = [
+    'Apple',
+    'Google',
+    'Samsung',
+    'Nokia',
+    'Sony',
+  ];
 
   @override
   void initState() {
@@ -511,7 +471,53 @@ class _InputTabState extends State<InputTab> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Slider: ${_sliderVal.toStringAsFixed(2)}',
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                      Slider(
+                        value: _sliderVal,
+                        onChanged: (value) {
+                          setState(() {
+                            _sliderVal = value;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 20),
+                      DropdownButton(
+                        value: dropdownvalue,
+                        icon: Icon(
+                          Icons.keyboard_arrow_down,
+                          color: Theme.of(context)
+                              .dropdownMenuTheme
+                              .inputDecorationTheme
+                              ?.iconColor,
+                        ),
+                        items: items.map((String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(items),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownvalue = newValue!;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -585,45 +591,54 @@ Widget _drawer() {
   );
 }
 
-class OthersTab extends StatefulWidget {
-  const OthersTab({super.key});
+class ListTab extends StatefulWidget {
+  const ListTab({super.key});
 
   @override
-  State<OthersTab> createState() => _OthersTabState();
+  State<ListTab> createState() => _ListTabState();
 }
 
-class _OthersTabState extends State<OthersTab> {
+class _ListTabState extends State<ListTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
           Expanded(
-            child: ListView(
-              padding: const EdgeInsets.all(20),
-              children: [
-                const SizedBox(height: 20),
-                const Text('Divider'),
-                const SizedBox(height: 20),
-                const Divider(),
-                const SizedBox(height: 20),
-                const ListTile(
-                  title: Text('List Title'),
-                  subtitle: Text('List SubTitle'),
-                  leading: Icon(Icons.alarm),
-                ),
-                const SizedBox(height: 20),
-                CheckboxListTile(
-                  value: true,
-                  title: const Text(
-                    'Checkbox List Tile Title',
+            child: ListView.separated(
+              padding: const EdgeInsets.all(10),
+              itemBuilder: (context, index) {
+                final selected = index == 3;
+                if (index == 0) {
+                  return CheckboxListTile(
+                    value: true,
+                    title: const Text(
+                      'Checkbox List Tile Title',
+                    ),
+                    subtitle: const Text(
+                      'Checkbox List Tile Subtitle',
+                    ),
+                    onChanged: (value) => {},
+                  );
+                }
+                return ListTile(
+                  title: Text('Title $index'),
+                  subtitle: Row(
+                    children: [
+                      Text('SubTitle $index'),
+                      const Spacer(),
+                      Text('${selected ? "[Selected]" : ""}'),
+                    ],
                   ),
-                  subtitle: const Text(
-                    'Checkbox List Tile Subtitle',
-                  ),
-                  onChanged: (value) => {},
-                ),
-              ],
+                  leading: Icon(Icons.call),
+                  selected: selected,
+                  onTap: () {
+                    //
+                  },
+                );
+              },
+              separatorBuilder: (context, index) => const Divider(),
+              itemCount: 12,
             ),
           ),
           BottomAppBar(

@@ -1,4 +1,2 @@
 const showDebugBanner = false;
-
-const appTitle = 'Flutter Themer';
-const appVersion = 'α';
+const appTimeDilation = 2.0;

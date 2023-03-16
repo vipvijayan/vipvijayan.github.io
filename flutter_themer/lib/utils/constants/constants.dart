@@ -1,5 +1,7 @@
 import 'package:flutter_themer/utils/exports.dart';
 
+const appTitle = 'Flutter Themer';
+const appVersion = 'α';
 const themeFileName = 'theme.json';
 
 late PackageInfo packageInfo;
@@ -10,13 +12,12 @@ const propertyWidth = 240.0;
 const controlsDimen = 60.0;
 const titleFontSize = 14.0;
 const defaultPickerColor = Colors.blue;
-const supportEmail = 'flutterthemer@gmail.com';
-const githubUrl = 'https://github.com/flutterthemer/flutterthemer.github.io';
 
 // images
 const previewTitle = 'Preview';
 const customColorsTitle = 'Custom Colors';
 const getTheme = 'Get Theme';
+const codeCopied = 'Code Copied';
 
 var scaffoldKey = GlobalKey<ScaffoldState>();
 

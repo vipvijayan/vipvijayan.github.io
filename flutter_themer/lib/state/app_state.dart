@@ -14,9 +14,12 @@ class ThemeAppState extends ChangeNotifier {
     ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
   ];
 
-  ThemeParentModel? curSelectedThemeModel;
+  late ThemeParentModel curSelectedThemeModel;
+  int initialTabIndex = 0;
+  int curSelectedThemeIndex = 0;
   bool appLoading = false;
 
+  late TabController tabController;
   Map<String, dynamic> themeUIScrollControllers = {};
 
   ThemeAppState() {
@@ -32,7 +35,7 @@ class ThemeAppState extends ChangeNotifier {
       AboutItem(
         id: 99,
         title: 'Version',
-        value: packageInfo.version,
+        value: '${packageInfo.version} (${packageInfo.buildNumber})',
         icon: '0xe33c',
         copyEnabled: false,
       ),
@@ -46,7 +49,7 @@ class ThemeAppState extends ChangeNotifier {
   }
 
   Future<void> scrollDown() async {
-    final scroller = themeUIScrollControllers['${curSelectedThemeModel?.id}'];
+    final scroller = themeUIScrollControllers['${curSelectedThemeModel.id}'];
     if (null == scroller) {
       logD('Scroller is Null');
       return;
@@ -59,7 +62,7 @@ class ThemeAppState extends ChangeNotifier {
   }
 
   ScrollController? scrollController() =>
-      themeUIScrollControllers['${curSelectedThemeModel?.id}'];
+      themeUIScrollControllers['${curSelectedThemeModel.id}'];
 
   Future<void> removeFromCustomColorsList(int id) async {
     final temp = <CustomColor>[];
@@ -106,11 +109,11 @@ class ThemeAppState extends ChangeNotifier {
   }
 
   ThemeData currentTheme() =>
-      curSelectedThemeModel?.curThemeData ?? ThemeData.light();
+      curSelectedThemeModel.curThemeData ?? ThemeData.light();
 
   Future<void> refreshPreview() async {
     for (final tTabs in themeParentModels) {
-      if (tTabs.id == curSelectedThemeModel?.id) {
+      if (tTabs.id == curSelectedThemeModel.id) {
         tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
       }
     }
@@ -122,23 +125,19 @@ class ThemeAppState extends ChangeNotifier {
   }
 
   Future<void> generateHtml() async {
-    if (null == curSelectedThemeModel) {
-      return;
-    }
     var lightThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
-      curSelectedThemeModel!.themeUiModelList,
+      curSelectedThemeModel.themeUiModelList,
       customColors.isNotEmpty,
-      themeId: curSelectedThemeModel!.id,
+      themeId: curSelectedThemeModel.id,
       dark: false,
     );
     var darkThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
-      curSelectedThemeModel!.themeUiModelList,
+      curSelectedThemeModel.themeUiModelList,
       customColors.isNotEmpty,
-      themeId: curSelectedThemeModel!.id,
+      themeId: curSelectedThemeModel.id,
       dark: true,
     );
     customHtml = await ThemeFileUtils.generateCustomThemeTxt(customColors);
-
     lightThemeGeneratedHtml =
         "import 'package:flutter/material.dart';\n\nclass AppTheme { \n\n  AppTheme._();\n\n$lightThemeGeneratedHtml";
     darkThemeGeneratedHtml =

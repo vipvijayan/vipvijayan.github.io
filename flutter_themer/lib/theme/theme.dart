@@ -86,8 +86,8 @@ class AppTheme {
     ),
     tabBarTheme: TabBarTheme(
       indicatorSize: TabBarIndicatorSize.label,
-      unselectedLabelColor: Colors.black.withOpacity(0.9),
-      labelColor: Colors.green,
+      // unselectedLabelColor: Colors.black.withOpacity(0.9),
+      // labelColor: Colors.blue,
       indicator: const ShapeDecoration(
         shape: UnderlineInputBorder(
           borderSide: BorderSide(
@@ -98,16 +98,14 @@ class AppTheme {
         ),
       ),
       labelStyle: const TextStyle(
-        color: Colors.black,
-        fontSize: 14,
-        letterSpacing: 1.2,
+        fontSize: 16,
+        letterSpacing: letterSpacing,
         fontWeight: FontWeight.bold,
         fontFamily: fontFamily,
       ),
       unselectedLabelStyle: const TextStyle(
-        color: Colors.black,
         // fontWeight: FontWeight.bold,
-        letterSpacing: 1.1,
+        letterSpacing: letterSpacing,
         fontFamily: fontFamily,
         fontSize: 14,
       ),
@@ -154,6 +152,9 @@ class AppTheme {
         letterSpacing: letterSpacing,
       ),
     ),
+    extensions: <ThemeExtension<dynamic>>[
+      MyColors.light,
+    ],
   );
 
   static final ThemeData darkTheme = ThemeData(

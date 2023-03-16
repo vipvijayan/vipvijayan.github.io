@@ -6,16 +6,22 @@ class ExportTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<ThemeAppState>();
-    return TextButton(
+    final myColors = Theme.of(context).extension<MyColors>()!;
+    return OutlinedButton.icon(
       onPressed: () async {
         openThemeGeneratedScreen();
         state.generateHtml();
       },
-      child: Text(
+      icon: Icon(
+        Icons.generating_tokens_outlined,
+        color: myColors.success,
+      ),
+      label: Text(
         getTheme,
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontSize: titleFontSize,
               fontWeight: kIsWeb ? FontWeight.w900 : FontWeight.w600,
+              color: myColors.success,
             ),
       ),
     );

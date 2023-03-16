@@ -81,7 +81,7 @@ class ThemeBuilderTab extends StatelessWidget {
                     state.refresh();
                     state.refreshPreview();
                     fbLogEvent(
-                      name: 'Brightness: ${state.curSelectedThemeModel?.id}',
+                      name: 'Brightness: ${state.curSelectedThemeModel.id}',
                     );
                   },
                 ),

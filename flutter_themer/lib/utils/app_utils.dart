@@ -6,7 +6,7 @@ bool isDarkMode() =>
     SchedulerBinding.instance.platformDispatcher.platformBrightness ==
     Brightness.dark;
 
-copyToClipboard(String text, {VoidCallback? callback}) async {
+Future<void> copyToClipboard(String text, {VoidCallback? callback}) async {
   await Clipboard.setData(ClipboardData(text: text));
   callback?.call();
 }
@@ -121,3 +121,6 @@ Future<void> showColorDialog(
     },
   );
 }
+
+materialIcon(String iconHex) =>
+    IconData(int.parse(iconHex), fontFamily: 'MaterialIcons');

@@ -529,7 +529,7 @@ Future<ThemeData> refreshThemeData(
     listTileTheme: ListTileThemeData(
       tileColor: HexColor(themeMap['key_list_tile_tile_color']),
       iconColor: HexColor(themeMap['key_list_tile_icon_color']),
-      selectedColor: HexColor(themeMap['key_list_tile_selected_color']),
+      selectedTileColor: HexColor(themeMap['key_list_tile_selected_color']),
       horizontalTitleGap: double.parse(
         themeMap['key_list_tile_horizontal_title_gap'],
       ),
@@ -640,6 +640,8 @@ Future<ThemeData> refreshThemeData(
       buttonAlignedDropdown: themeMap['key_btn_bar_theme_btn_aligned_dropdown'],
     ),
     visualDensity: getVisualDensity(themeMap['key_visual_density']),
+    unselectedWidgetColor: HexColor(themeMap['key_unselected_widget_color']),
+    dialogBackgroundColor: HexColor(themeMap['key_dialog_background_color']),
     extensions: <ThemeExtension<dynamic>>[
       MyColors.light,
     ],
