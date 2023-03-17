@@ -39,21 +39,26 @@ class ThemeBuilderTab extends StatelessWidget {
                   );
                 }
                 final uiModel = themeModelList[index];
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (uiModel.title.trim().isNotEmpty)
-                      ExpandTitle(
-                        title: uiModel.title,
-                        expanded: uiModel.expanded,
-                        onPressed: () async {
-                          uiModel.expanded = !uiModel.expanded;
-                          state.refresh();
-                        },
-                      ),
-                    if (uiModel.expanded)
-                      _mainUI(context, uiModel, dark, state),
-                  ],
+                return Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (uiModel.title.trim().isNotEmpty)
+                        ExpandTitle(
+                          title: uiModel.title,
+                          expanded: uiModel.expanded,
+                          onPressed: () async {
+                            uiModel.expanded = !uiModel.expanded;
+                            state.refresh();
+                          },
+                        ),
+                      if (uiModel.expanded)
+                        _mainUI(context, uiModel, dark, state),
+                    ],
+                  ),
                 );
               },
             ),
@@ -102,7 +107,7 @@ class ThemeBuilderTab extends StatelessWidget {
     ThemeAppState state,
   ) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(30, 5, 20, 0),
+      padding: const EdgeInsets.fromLTRB(30, 10, 20, 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: uiModel.items.map((item) {
@@ -115,7 +120,7 @@ class ThemeBuilderTab extends StatelessWidget {
                   item.title,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         color: Colors.black54,
-                        fontSize: 12,
+                        fontSize: titleFontSize,
                       ),
                 ),
               ],
@@ -128,11 +133,11 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.grey[100],
+                  color: Colors.grey.shade100,
                 ),
                 child: Wrap(
-                  spacing: 5,
-                  runSpacing: 20,
+                  spacing: 30,
+                  runSpacing: 30,
                   children: item.subItems.map((subItem) {
                     Widget widget = const SizedBox.shrink();
                     if (subItem.input == 'color') {
@@ -152,7 +157,7 @@ class ThemeBuilderTab extends StatelessWidget {
                       height: controlsDimen,
                       width: propertyWidth,
                       alignment: Alignment.centerLeft,
-                      padding: const EdgeInsets.only(right: 30),
+                      padding: const EdgeInsets.only(right: 30, left: 0),
                       child: widget,
                     );
                   }).toList(),
@@ -234,10 +239,7 @@ class ThemeBuilderTab extends StatelessWidget {
         Text(
           subItem.title,
           maxLines: 1,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontSize: titleFontSize - 2,
-                fontWeight: FontWeight.bold,
-              ),
+          style: subtitleStyle(context),
         ),
         const SizedBox(height: 5),
         Expanded(
@@ -272,10 +274,7 @@ class ThemeBuilderTab extends StatelessWidget {
       children: [
         Text(
           subItem.title,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontSize: titleFontSize - 2,
-                fontWeight: FontWeight.bold,
-              ),
+          style: subtitleStyle(context),
         ),
         const SizedBox(height: 5),
         const Spacer(),
@@ -308,10 +307,7 @@ class ThemeBuilderTab extends StatelessWidget {
       children: [
         Text(
           subItem.title,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontSize: titleFontSize - 2,
-                fontWeight: FontWeight.bold,
-              ),
+          style: subtitleStyle(context),
         ),
         const SizedBox(height: 5),
         DropdownButton<Value>(

@@ -162,6 +162,15 @@ BorderStyle tabBarIndicatorUnderlineBorderStyle(String borderStyle) {
   }
 }
 
+SystemUiOverlayStyle systemOverlayStyle(String style) {
+  switch (style) {
+    case 'dark':
+      return SystemUiOverlayStyle.dark;
+    default:
+      return SystemUiOverlayStyle.light;
+  }
+}
+
 TabBarIndicatorSize tabIndicatorSize(String size) {
   switch (size) {
     case 'TabBarIndicatorSize.label':

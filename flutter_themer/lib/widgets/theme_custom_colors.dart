@@ -39,10 +39,12 @@ class ThemeCustomColorsUI extends StatelessWidget {
                     color: curColor,
                     onTap: (Color color) {
                       if (dark) {
-                        customColor.darkModeColorCode = colorHex(color);
+                        customColor.darkModeColorCode =
+                            colorHex(color).replaceAll('#', '');
                         return;
                       }
-                      customColor.lightModeColorCode = colorHex(color);
+                      customColor.lightModeColorCode =
+                          colorHex(color).replaceAll('#', '');
                       previewAppState.refresh();
                     },
                   ),

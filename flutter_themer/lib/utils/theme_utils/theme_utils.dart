@@ -294,6 +294,7 @@ Future<ThemeData> refreshThemeData(
     ),
   });
 
+  // Advanced
   return ThemeData(
     // useMaterial3: true,
     pageTransitionsTheme: transition,
@@ -310,6 +311,9 @@ Future<ThemeData> refreshThemeData(
       floatingLabelBehavior: FloatingLabelBehavior.auto,
     ),
     appBarTheme: AppBarTheme(
+      systemOverlayStyle: systemOverlayStyle(
+        themeMap['key_appbar_system_overlay_style'],
+      ),
       elevation: double.parse(themeMap['key_app_bar_elevation']),
       backgroundColor: HexColor(themeMap['key_app_bar_background_color']),
       foregroundColor: HexColor(themeMap['key_app_bar_foreground_color']),

@@ -81,9 +81,9 @@ class AppTheme {
       visualDensity: VisualDensity.comfortable,
     ),
     cardTheme: CardTheme(
-      color: Colors.teal,
-      shadowColor: lightBaseColor,
-    ),
+        // color: Colors.teal,
+        // shadowColor: lightBaseColor,
+        ),
     tabBarTheme: TabBarTheme(
       indicatorSize: TabBarIndicatorSize.label,
       // unselectedLabelColor: Colors.black.withOpacity(0.9),
@@ -228,9 +228,9 @@ class AppTheme {
     ),
     indicatorColor: Colors.white.withOpacity(0.3),
     cardTheme: CardTheme(
-      color: Colors.black,
-      shadowColor: HexColor('#808088'),
-    ),
+        // color: Colors.black,
+        // shadowColor: HexColor('#808088'),
+        ),
     dividerTheme: const DividerThemeData(
       indent: 15,
       endIndent: 0,

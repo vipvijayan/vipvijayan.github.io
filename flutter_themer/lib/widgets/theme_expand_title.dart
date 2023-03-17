@@ -44,8 +44,8 @@ class ExpandTitle extends StatelessWidget {
             Expanded(
               child: MainTitle(
                 title: title,
-                fontSize: titleFontSize,
-                txtColor: expanded ? Colors.teal : Colors.black,
+                fontSize: titleFontSize + 2,
+                txtColor: expanded ? Colors.blue : Colors.black,
               ),
             ),
             Icon(

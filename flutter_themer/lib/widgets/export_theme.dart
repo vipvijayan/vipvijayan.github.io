@@ -13,8 +13,9 @@ class ExportTheme extends StatelessWidget {
         state.generateHtml();
       },
       icon: Icon(
-        Icons.generating_tokens_outlined,
+        FontAwesomeIcons.bucket,
         color: myColors.success,
+        size: titleFontSize,
       ),
       label: Text(
         getTheme,

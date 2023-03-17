@@ -9,7 +9,7 @@ late About about;
 
 // create some values
 const propertyWidth = 240.0;
-const controlsDimen = 60.0;
+const controlsDimen = 50.0;
 const titleFontSize = 14.0;
 const defaultPickerColor = Colors.blue;
 
