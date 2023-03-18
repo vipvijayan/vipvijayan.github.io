@@ -289,14 +289,14 @@
                      "value":[
                         {
                            "id":0,
-                           "label":"dark",
+                           "label":"Dark",
                            "selected":false,
                            "value":"SystemUiOverlayStyle.dark",
                            "selected_value":"SystemUiOverlayStyle.dark"
                         },
                         {
                            "id":1,
-                           "label":"light",
+                           "label":"Light",
                            "selected":true,
                            "value":"SystemUiOverlayStyle.light",
                            "selected_value":"SystemUiOverlayStyle.light"
@@ -308,14 +308,14 @@
                      "value":[
                         {
                            "id":0,
-                           "label":"dark",
+                           "label":"Dark",
                            "selected":true,
                            "value":"SystemUiOverlayStyle.dark",
                            "selected_value":"SystemUiOverlayStyle.dark"
                         },
                         {
                            "id":1,
-                           "label":"light",
+                           "label":"Light",
                            "selected":false,
                            "value":"SystemUiOverlayStyle.light",
                            "selected_value":"SystemUiOverlayStyle.light"

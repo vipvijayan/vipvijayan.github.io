@@ -138,9 +138,9 @@ class ThemeFileUtils {
       str555 +=
           '$space ${cColor.name}: Color.lerp(${cColor.name}, other.${cColor.name},t),$newLine';
       str444 +=
-          "$space ${cColor.name}: Color(0x${cColor.lightModeColorCode}),$newLine";
+          "$space ${cColor.name}: Color(0x${cColor.lightModeColorCode.replaceAll('#', '')}),$newLine";
       str333 +=
-          "$space ${cColor.name}: Color(0x${cColor.darkModeColorCode}),$newLine";
+          "$space ${cColor.name}: Color(0x${cColor.darkModeColorCode.replaceAll('#', '')}),$newLine";
     }
     themeHtml = themeHtml.replaceAll('9999999999', str999);
     themeHtml = themeHtml.replaceAll('8888888888', str888);

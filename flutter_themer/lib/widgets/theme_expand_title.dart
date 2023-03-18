@@ -21,22 +21,22 @@ class ExpandTitle extends StatelessWidget {
       ),
       onTap: onPressed,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               height: 16,
-              width: 3,
+              width: 16,
               decoration: BoxDecoration(
-                color: expanded ? Colors.grey[400] : Colors.grey[200],
+                color: expanded ? Colors.blue[400] : Colors.grey[200],
                 border: Border.all(
                   color: Colors.transparent,
                   width: 0,
                 ),
                 borderRadius: const BorderRadius.all(
-                  Radius.circular(6),
+                  Radius.circular(3),
                 ),
               ),
             ),

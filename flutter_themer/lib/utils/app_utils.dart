@@ -129,6 +129,6 @@ subtitleStyle(BuildContext context) {
   return Theme.of(context).textTheme.titleLarge?.copyWith(
         fontSize: titleFontSize,
         fontWeight: FontWeight.bold,
-        color: Colors.black,
+        color: Colors.black54,
       );
 }

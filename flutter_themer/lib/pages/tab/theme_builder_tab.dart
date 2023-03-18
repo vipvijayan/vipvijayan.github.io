@@ -40,8 +40,9 @@ class ThemeBuilderTab extends StatelessWidget {
                 }
                 final uiModel = themeModelList[index];
                 return Card(
+                  elevation: 2,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(3),
+                    borderRadius: BorderRadius.circular(6),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,7 +108,7 @@ class ThemeBuilderTab extends StatelessWidget {
     ThemeAppState state,
   ) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(30, 10, 20, 20),
+      padding: const EdgeInsets.fromLTRB(30, 10, 20, 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: uiModel.items.map((item) {
@@ -133,7 +134,8 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.grey.shade100,
+                  color: HexColor('33D3D3D3'),
+                  border: Border.all(color: HexColor('33D3D3D3')),
                 ),
                 child: Wrap(
                   spacing: 30,

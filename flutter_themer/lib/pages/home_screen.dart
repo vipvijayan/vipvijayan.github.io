@@ -47,11 +47,12 @@ class HomeScreen extends StatelessWidget {
       IconButton(
         tooltip: 'Reset',
         onPressed: () async {
+          state.curSelectedThemeIndex = 0;
           state.curSelectedThemeModel =
               state.themeParentModels[state.initialTabIndex];
           state.tabController.animateTo(state.initialTabIndex);
           state.reset();
-          fbLogEvent(name: 'theme_reset');
+          unawaited(fbLogEvent(name: 'theme_reset'));
         },
         icon: Icon(
           Icons.refresh_outlined,
@@ -63,7 +64,6 @@ class HomeScreen extends StatelessWidget {
         onPressed: () async {
           unawaited(openAboutInfoScreen());
           unawaited(fbLogEvent(name: 'about'));
-          await FirebaseAnalytics.instance.logEvent(name: 'about');
         },
         icon: Icon(
           Icons.info_outline_rounded,
