@@ -21,7 +21,8 @@ class ThemeBuilderTab extends StatelessWidget {
       child: Column(
         children: [
           _mainHeader(state),
-          const Divider(),
+          // const Divider(),
+          const SizedBox(height: 5),
           Expanded(
             child: ListView.separated(
               controller: state.scrollController(),
@@ -39,10 +40,18 @@ class ThemeBuilderTab extends StatelessWidget {
                   );
                 }
                 final uiModel = themeModelList[index];
-                return Card(
-                  elevation: 2,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(6),
+                return Container(
+                  // elevation: 1,
+                  // shape: RoundedRectangleBorder(
+                  //   borderRadius: BorderRadius.circular(6),
+                  // ),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey.shade100,
+                    ),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(6),
+                    ),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,8 +143,8 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: HexColor('33D3D3D3'),
-                  border: Border.all(color: HexColor('33D3D3D3')),
+                  color: Colors.grey.shade100,
+                  border: Border.all(color: Colors.grey.shade100),
                 ),
                 child: Wrap(
                   spacing: 30,

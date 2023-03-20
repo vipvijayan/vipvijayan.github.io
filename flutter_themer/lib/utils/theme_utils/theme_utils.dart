@@ -7,9 +7,9 @@ Future<ThemeData> refreshThemeData(
   final themeMap = ThemeFileUtils.getThemeMap(themeParentModel);
   // logD(jsonEncode(themeMap));
   logD('<<<<Refreshing Theme>>>>> : ${themeParentModel.id}');
-  final isDarkMode = isDarkBrightness(themeParentModel);
+  final dark = isDarkBrightness(themeParentModel);
   if (ThemeIDs.primary.value == themeParentModel.id) {
-    if (isDarkMode) {
+    if (dark) {
       return ThemeData(
         primarySwatch:
             buildMaterialColor(themeMap['key_primary_swatch_color'] as String),
@@ -49,7 +49,7 @@ Future<ThemeData> refreshThemeData(
     );
   }
   if (ThemeIDs.basic.value == themeParentModel.id) {
-    if (isDarkMode) {
+    if (dark) {
       return ThemeData(
         brightness: themeParentModel.brightness,
         colorScheme: ColorScheme.dark(
@@ -294,6 +294,8 @@ Future<ThemeData> refreshThemeData(
     ),
   });
 
+  var colorScheme = _getColorSchemeForAdvanced(themeMap, dark);
+
   // Advanced
   return ThemeData(
     // useMaterial3: true,
@@ -301,6 +303,9 @@ Future<ThemeData> refreshThemeData(
     brightness: themeParentModel.brightness,
     scaffoldBackgroundColor: HexColor(
       themeMap['key_scaffold_background_color'],
+    ),
+    colorScheme: colorScheme.copyWith(
+      brightness: themeParentModel.brightness,
     ),
     inputDecorationTheme: const InputDecorationTheme(
       alignLabelWithHint: false,
@@ -671,4 +676,71 @@ MaterialColor buildMaterialColor(String hexCode) {
     );
   }
   return MaterialColor(color.value, swatch);
+}
+
+ColorScheme _getColorSchemeForAdvanced(
+    Map<String, dynamic> themeMap, bool isDarkMode) {
+  if (isDarkMode) {
+    return ColorScheme.light(
+      primary: HexColor(themeMap['key_cs_primary'] as String),
+      onPrimary: HexColor(themeMap['key_cs_on_primary'] as String),
+      primaryContainer:
+          HexColor(themeMap['key_cs_primary_container'] as String),
+      onPrimaryContainer:
+          HexColor(themeMap['key_cs_on_primary_container'] as String),
+      secondary: HexColor(themeMap['key_cs_secondary'] as String),
+      onSecondary: HexColor(themeMap['key_cs_on_secondary'] as String),
+      secondaryContainer:
+          HexColor(themeMap['key_cs_secondary_container'] as String),
+      onSecondaryContainer:
+          HexColor(themeMap['key_cs_on_secondary_container'] as String),
+      surface: HexColor(themeMap['key_cs_surface'] as String),
+      onSurface: HexColor(themeMap['key_cs_on_surface'] as String),
+      surfaceTint: HexColor(themeMap['key_cs_surface_tint'] as String),
+      surfaceVariant: HexColor(themeMap['key_cs_surface_variant'] as String),
+      onSurfaceVariant:
+          HexColor(themeMap['key_cs_on_surface_variant'] as String),
+      error: HexColor(themeMap['key_cs_error'] as String),
+      onError: HexColor(themeMap['key_cs_on_error'] as String),
+      errorContainer: HexColor(themeMap['key_cs_error_container'] as String),
+      onErrorContainer:
+          HexColor(themeMap['key_cs_on_error_container'] as String),
+      tertiary: HexColor(themeMap['key_cs_tertiary'] as String),
+      onTertiary: HexColor(themeMap['key_cs_on_tertiary'] as String),
+      tertiaryContainer:
+          HexColor(themeMap['key_cs_tertiary_container'] as String),
+      onTertiaryContainer:
+          HexColor(themeMap['key_cs_on_tertiary_container'] as String),
+      outline: HexColor(themeMap['key_cs_outline'] as String),
+    );
+  }
+  return ColorScheme.dark(
+    primary: HexColor(themeMap['key_cs_primary'] as String),
+    onPrimary: HexColor(themeMap['key_cs_on_primary'] as String),
+    primaryContainer: HexColor(themeMap['key_cs_primary_container'] as String),
+    onPrimaryContainer:
+        HexColor(themeMap['key_cs_on_primary_container'] as String),
+    secondary: HexColor(themeMap['key_cs_secondary'] as String),
+    onSecondary: HexColor(themeMap['key_cs_on_secondary'] as String),
+    secondaryContainer:
+        HexColor(themeMap['key_cs_secondary_container'] as String),
+    onSecondaryContainer:
+        HexColor(themeMap['key_cs_on_secondary_container'] as String),
+    surface: HexColor(themeMap['key_cs_surface'] as String),
+    onSurface: HexColor(themeMap['key_cs_on_surface'] as String),
+    surfaceTint: HexColor(themeMap['key_cs_surface_tint'] as String),
+    surfaceVariant: HexColor(themeMap['key_cs_surface_variant'] as String),
+    onSurfaceVariant: HexColor(themeMap['key_cs_on_surface_variant'] as String),
+    error: HexColor(themeMap['key_cs_error'] as String),
+    onError: HexColor(themeMap['key_cs_on_error'] as String),
+    errorContainer: HexColor(themeMap['key_cs_error_container'] as String),
+    onErrorContainer: HexColor(themeMap['key_cs_on_error_container'] as String),
+    tertiary: HexColor(themeMap['key_cs_tertiary'] as String),
+    onTertiary: HexColor(themeMap['key_cs_on_tertiary'] as String),
+    tertiaryContainer:
+        HexColor(themeMap['key_cs_tertiary_container'] as String),
+    onTertiaryContainer:
+        HexColor(themeMap['key_cs_on_tertiary_container'] as String),
+    outline: HexColor(themeMap['key_cs_outline'] as String),
+  );
 }

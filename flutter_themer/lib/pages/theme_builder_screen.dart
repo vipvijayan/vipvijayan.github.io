@@ -38,7 +38,6 @@ class _ThemeBuilderScreenState extends State<ThemeBuilderScreen>
             state.refresh();
             fbLogEvent(name: 'Selected: ${state.curSelectedThemeModel.title}');
           },
-          labelColor: Colors.black,
           tabs: state.themeParentModels
               .map((e) => _tabTitle(e.title.toUpperCase()))
               .toList(),
