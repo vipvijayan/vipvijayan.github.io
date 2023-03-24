@@ -21,7 +21,6 @@ class ThemeBuilderTab extends StatelessWidget {
       child: Column(
         children: [
           _mainHeader(state),
-          // const Divider(),
           const SizedBox(height: 5),
           Expanded(
             child: ListView.separated(

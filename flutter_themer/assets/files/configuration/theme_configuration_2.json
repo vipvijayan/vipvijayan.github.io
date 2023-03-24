@@ -2550,7 +2550,39 @@
                   }
                },
                {
-                  "id":1,
+                  "id":2,
+                  "subtitle":false,
+                  "title":"Background Color",
+                  "key":"key_icon_btn_icon_background_color",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#00000000",
+                          "selected_value": "#00000000"
+                       }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[ 
+                       {
+                          "id": 0,
+                          "label":"color",
+                          "selected": true,
+                          "value": "#00000000",
+                          "selected_value": "#00000000"
+                       }
+                     ]
+                  }
+               },
+               {
+                  "id":3,
                   "subtitle":false,
                   "title":"Size",
                   "key":"key_icon_btn_theme_icon_size",
@@ -3363,8 +3395,8 @@
                            "id":0,
                            "label":"color",
                            "selected":true,
-                           "value":"#FFF1EFEF",
-                           "selected_value":"#FFF1EFEF"
+                           "value":"#A7221D1D",
+                           "selected_value":"#A7221D1D"
                         }
                      ]
                   },

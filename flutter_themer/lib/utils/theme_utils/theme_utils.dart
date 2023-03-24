@@ -470,14 +470,10 @@ Future<ThemeData> refreshThemeData(
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         foregroundColor: MaterialStateProperty.all<Color>(
-          HexColor(
-            themeMap['key_txt_btn_foreground_color'],
-          ),
+          HexColor(themeMap['key_txt_btn_foreground_color']),
         ),
         backgroundColor: MaterialStateProperty.all<Color>(
-          HexColor(
-            themeMap['key_txt_btn_background_color'],
-          ),
+          HexColor(themeMap['key_txt_btn_background_color']),
         ),
       ),
     ),
@@ -506,6 +502,9 @@ Future<ThemeData> refreshThemeData(
       style: ButtonStyle(
         iconSize: MaterialStateProperty.all<double>(
           double.parse(themeMap['key_icon_btn_theme_icon_size']),
+        ),
+        backgroundColor: MaterialStateProperty.all<Color>(
+          HexColor(themeMap['key_icon_btn_icon_background_color']),
         ),
         iconColor: MaterialStateProperty.all<Color>(
           HexColor(themeMap['key_icon_btn_icon_color']),
