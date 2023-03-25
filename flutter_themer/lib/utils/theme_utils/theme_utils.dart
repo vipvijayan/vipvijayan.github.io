@@ -523,6 +523,9 @@ Future<ThemeData> refreshThemeData(
       fillColor: MaterialStateProperty.all<Color>(
         HexColor(themeMap['key_radio_theme_fill_color']),
       ),
+      overlayColor: MaterialStateProperty.all<Color>(
+        HexColor(themeMap['key_radio_theme_overlay_color']),
+      ),
     ),
     switchTheme: SwitchThemeData(
       trackColor: MaterialStateProperty.all<Color>(
