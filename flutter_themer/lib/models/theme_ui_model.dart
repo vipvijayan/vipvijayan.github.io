@@ -47,11 +47,22 @@ class Item {
   final String title;
   final List<SubItem> subItems;
 
-  factory Item.fromJson(Map<String, dynamic> json) => Item(
+  factory Item.fromJson(Map<String, dynamic> json) {
+    try {
+      return Item(
         title: json['title'],
         subItems: List<SubItem>.from(
-            json['sub_items'].map((x) => SubItem.fromJson(x))),
+          json['sub_items'].map(
+            (x) => SubItem.fromJson(x),
+          ),
+        ),
       );
+    } catch (e) {
+      print(json);
+      print(e);
+      return Item(subItems: [], title: '');
+    }
+  }
 
   Map<String, dynamic> toJson() => {
         'title': title,

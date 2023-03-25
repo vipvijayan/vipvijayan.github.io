@@ -281,6 +281,7 @@ class ThemeBuilderTab extends StatelessWidget {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           subItem.title,

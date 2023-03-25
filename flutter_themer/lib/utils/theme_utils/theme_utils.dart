@@ -307,13 +307,18 @@ Future<ThemeData> refreshThemeData(
     colorScheme: colorScheme.copyWith(
       brightness: themeParentModel.brightness,
     ),
-    inputDecorationTheme: const InputDecorationTheme(
-      alignLabelWithHint: false,
-      filled: false,
-      floatingLabelAlignment: FloatingLabelAlignment.start,
-      isCollapsed: false,
-      isDense: false,
-      floatingLabelBehavior: FloatingLabelBehavior.auto,
+    inputDecorationTheme: InputDecorationTheme(
+      alignLabelWithHint:
+          themeMap['key_input_decoration_align_label_with_hint'],
+      filled: themeMap['key_input_decoration_filled'],
+      floatingLabelAlignment: inputDecFloatingLabelAlignment(
+        themeMap['key_input_decoration_floating_label_alignment'],
+      ),
+      isCollapsed: themeMap['key_input_decoration_collapsed'],
+      isDense: themeMap['key_input_decoration_dense'],
+      floatingLabelBehavior: inputDecFloatingLabelBehavior(
+        themeMap['key_input_decoration_floating_label_behaviour'],
+      ),
     ),
     appBarTheme: AppBarTheme(
       systemOverlayStyle: systemOverlayStyle(

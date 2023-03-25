@@ -12,13 +12,12 @@ class PreviewApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return DevicePreview(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      // data: const DevicePreviewData(
-      //   settings: DevicePreviewSettingsData(
-      //     backgroundTheme: DevicePreviewBackgroundThemeData.light,
-      //     toolbarTheme: DevicePreviewToolBarThemeData.light,
-      //     toolbarPosition: DevicePreviewToolBarPositionData.top,
-      //   ),
-      // ),
+      data: const DevicePreviewData(
+        settings: DevicePreviewSettingsData(
+          toolbarTheme: DevicePreviewToolBarThemeData.light,
+          toolbarPosition: DevicePreviewToolBarPositionData.bottom,
+        ),
+      ),
       builder: (context) {
         return MaterialApp(
           useInheritedMediaQuery: true,

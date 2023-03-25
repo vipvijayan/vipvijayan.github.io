@@ -171,6 +171,26 @@ SystemUiOverlayStyle systemOverlayStyle(String style) {
   }
 }
 
+FloatingLabelAlignment inputDecFloatingLabelAlignment(String style) {
+  switch (style) {
+    case 'center':
+      return FloatingLabelAlignment.center;
+    default:
+      return FloatingLabelAlignment.start;
+  }
+}
+
+FloatingLabelBehavior inputDecFloatingLabelBehavior(String style) {
+  switch (style) {
+    case 'always':
+      return FloatingLabelBehavior.always;
+    case 'never':
+      return FloatingLabelBehavior.never;
+    default:
+      return FloatingLabelBehavior.auto;
+  }
+}
+
 TabBarIndicatorSize tabIndicatorSize(String size) {
   switch (size) {
     case 'TabBarIndicatorSize.label':
