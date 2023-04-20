@@ -11,11 +11,15 @@ class PreviewApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DevicePreview(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Colors.white,
+      storage: DevicePreviewStorage.none(),
       data: const DevicePreviewData(
+        isDarkMode: false,
+        boldText: false,
         settings: DevicePreviewSettingsData(
           toolbarTheme: DevicePreviewToolBarThemeData.light,
           toolbarPosition: DevicePreviewToolBarPositionData.bottom,
+          backgroundTheme: DevicePreviewBackgroundThemeData.light,
         ),
       ),
       builder: (context) {
@@ -27,7 +31,6 @@ class PreviewApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           showPerformanceOverlay: false,
           theme: themeData,
-          // darkTheme: themeData,
           home: const PreviewHomeScreen(),
         );
       },

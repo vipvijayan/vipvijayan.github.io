@@ -24,13 +24,16 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                  child: PreviewApp(
-                    themeData: state.curSelectedThemeModel.curThemeData!,
+                SizedBox(
+                  width: 690,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    child: PreviewApp(
+                      themeData: state.curSelectedThemeModel.curThemeData!,
+                    ),
                   ),
                 ),
                 const Expanded(
-                  flex: 2,
                   child: ThemeBuilderScreen(),
                 ),
               ],
