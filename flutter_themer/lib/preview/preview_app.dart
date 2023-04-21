@@ -10,9 +10,10 @@ class PreviewApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<ThemeAppState>();
     return DevicePreview(
       backgroundColor: Colors.white,
-      storage: DevicePreviewStorage.none(),
+      isToolbarVisible: state.showPreviewToolbar,
       data: const DevicePreviewData(
         isDarkMode: false,
         boldText: false,

@@ -3,6 +3,7 @@ import 'package:flutter_themer/utils/exports.dart';
 class ThemeAppState extends ChangeNotifier {
   //
   bool appDarkTheme = false;
+  bool showPreviewToolbar = false;
   String themeGeneratedHtml = '';
   String usageHtml = '';
   String customHtml = '';

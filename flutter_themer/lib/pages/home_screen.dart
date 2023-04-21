@@ -6,9 +6,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: AppMainTitle(),
+        title: const AppMainTitle(),
         actions: _actionWidgets(context),
       ),
       body: _homeBody(context),
@@ -24,28 +24,40 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                const Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 40, right: 10),
-                    child: ThemeBuilderScreen(),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(50, 30, 30, 30),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 4.5,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                      child: PreviewApp(
-                        themeData: state.curSelectedThemeModel.curThemeData!,
-                      ),
-                    ),
-                  ),
-                ),
+                _previewFragment(state),
+                _themeBuilderFragment(),
               ],
             ),
           ),
       ],
+    );
+  }
+
+  Widget _themeBuilderFragment() {
+    return const Expanded(
+      flex: 3,
+      child: Padding(
+        padding: EdgeInsets.only(left: 20, right: 10),
+        child: ThemeBuilderScreen(),
+      ),
+    );
+  }
+
+  Widget _previewFragment(ThemeAppState state) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(40, 10, 10, 10),
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              child: PreviewApp(
+                themeData: state.curSelectedThemeModel.curThemeData!,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -54,9 +66,19 @@ class HomeScreen extends StatelessWidget {
     final myColors = Theme.of(context).extension<MyColors>()!;
     return [
       IconButton(
+        tooltip: 'Show/Hide Preview Settings',
+        icon: Icon(Icons.settings),
+        onPressed: () async {
+          state.showPreviewToolbar = !state.showPreviewToolbar;
+          state.refresh();
+          unawaited(fbLogEvent(name: 'preview_settings'));
+        },
+      ),
+      IconButton(
         tooltip: 'Reset',
         onPressed: () async {
-          state.curSelectedThemeIndex = 0;
+          state.curSelectedThemeIndex = state.initialTabIndex;
+          state.showPreviewToolbar = false;
           state.curSelectedThemeModel =
               state.themeParentModels[state.initialTabIndex];
           state.tabController.animateTo(state.initialTabIndex);
