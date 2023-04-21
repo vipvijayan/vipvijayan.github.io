@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter_themer/utils/exports.dart';
 
 bool isDarkMode() =>
@@ -11,7 +10,7 @@ Future<void> copyToClipboard(String text, {VoidCallback? callback}) async {
   callback?.call();
 }
 
-showSnackBar(String text) async {
+Future<void> showSnackBar(String text) async {
   ScaffoldMessenger.of(navKey.currentContext!).showSnackBar(
     SnackBar(
       content: Text(
@@ -60,6 +59,8 @@ Future<void> setWindow() async {
     }
   }
 }
+
+isDesktopOrWeb() {}
 
 String colorHex(Color color) => '#${color.value.toRadixString(16)}';
 

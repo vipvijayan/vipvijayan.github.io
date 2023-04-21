@@ -24,17 +24,23 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                SizedBox(
-                  width: 690,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    child: PreviewApp(
-                      themeData: state.curSelectedThemeModel.curThemeData!,
-                    ),
+                const Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 40, right: 10),
+                    child: ThemeBuilderScreen(),
                   ),
                 ),
-                const Expanded(
-                  child: ThemeBuilderScreen(),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(50, 30, 30, 30),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width / 5,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      child: PreviewApp(
+                        themeData: state.curSelectedThemeModel.curThemeData!,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

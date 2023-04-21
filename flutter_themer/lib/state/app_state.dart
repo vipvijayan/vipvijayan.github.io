@@ -11,7 +11,7 @@ class ThemeAppState extends ChangeNotifier {
   List<ThemeParentModel> themeParentModels = [
     ThemeParentModel(id: ThemeIDs.primary.value, title: 'Primary'),
     ThemeParentModel(id: ThemeIDs.basic.value, title: 'Basic'),
-    ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Custom'),
+    ThemeParentModel(id: ThemeIDs.advanced.value, title: 'Advanced'),
   ];
 
   late ThemeParentModel curSelectedThemeModel;
