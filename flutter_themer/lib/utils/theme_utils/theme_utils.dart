@@ -590,6 +590,14 @@ Future<ThemeData> refreshThemeData(
         filled: true,
       ),
     ),
+    badgeTheme: BadgeThemeData(
+      backgroundColor: HexColor(
+        themeMap['key_bagde_background_color'],
+      ),
+      textColor: HexColor(
+        themeMap['key_bagde_text_color'],
+      ),
+    ),
     toggleButtonsTheme: ToggleButtonsThemeData(
       fillColor: HexColor(
         themeMap['key_toggle_buttons_theme_fill_color'],

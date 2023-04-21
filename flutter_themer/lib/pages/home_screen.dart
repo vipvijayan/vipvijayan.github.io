@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.fromLTRB(50, 30, 30, 30),
                   child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 5,
+                    width: MediaQuery.of(context).size.width / 4.5,
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       child: PreviewApp(

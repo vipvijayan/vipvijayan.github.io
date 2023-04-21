@@ -549,6 +549,12 @@ class CardTab extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 30),
+        Text('Badge'),
+        const SizedBox(height: 10),
+        Badge(
+          child: Icon(Icons.shopping_cart),
+          label: Text("3"),
+        )
       ],
     );
   }
