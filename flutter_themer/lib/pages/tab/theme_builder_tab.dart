@@ -259,14 +259,22 @@ class ThemeBuilderTab extends StatelessWidget {
         const SizedBox(height: 5),
         Expanded(
           child: NumericStepButton(
-            defaultCounter: double.parse(currentVal).toInt(),
+            defaultCounter: double.parse(currentVal),
             maxValue: 900,
             minValue: -3,
             onDecrement: () async {
               await _decrementNumber(subItem, dark);
               unawaited(state.refreshPreview());
             },
-            onIncrement: () async {
+            onDecrementPoint1: () async {
+              await _decrementPoint1(subItem, dark);
+              unawaited(state.refreshPreview());
+            },
+            onIncrementPoint1: () async {
+              await _incrementPoint1(subItem, dark);
+              unawaited(state.refreshPreview());
+            },
+            onIncrement1: () async {
               await _incrementNumber(subItem, dark);
               unawaited(state.refreshPreview());
             },
@@ -367,29 +375,59 @@ class ThemeBuilderTab extends StatelessWidget {
   Future<void> _incrementNumber(SubItem subItem, bool dark) async {
     if (dark) {
       subItem.dark.value.first.value =
-          (int.parse(subItem.dark.value.first.value) + 1).toString();
+          (double.parse(subItem.dark.value.first.value) + 1).toString();
     } else {
       subItem.light.value.first.value =
-          (int.parse(subItem.light.value.first.value) + 1).toString();
+          (double.parse(subItem.light.value.first.value) + 1).toString();
+    }
+  }
+
+  Future<void> _incrementPoint1(SubItem subItem, bool dark) async {
+    if (dark) {
+      subItem.dark.value.first.value =
+          (double.parse(subItem.dark.value.first.value) + 0.1).toString();
+    } else {
+      subItem.light.value.first.value =
+          (double.parse(subItem.light.value.first.value) + 0.1).toString();
     }
   }
 
   Future<void> _decrementNumber(SubItem subItem, bool dark) async {
     if (dark) {
-      final curVal = int.parse(subItem.dark.value.first.value);
-      final minValue = int.parse(subItem.dark.value.first.minValue ?? "0");
-      if (curVal <= minValue) {
+      final curVal = double.parse(subItem.dark.value.first.value);
+      final minValue = double.parse(subItem.dark.value.first.minValue ?? "0");
+      if (curVal <= minValue || (curVal - 1) < minValue) {
         return;
       }
       subItem.dark.value.first.value = (curVal - 1).toString();
     } else {
-      final curVal = int.parse(subItem.light.value.first.value);
-      final minValue = int.parse(subItem.light.value.first.minValue ?? "0");
+      final curVal = double.parse(subItem.light.value.first.value);
+      final minValue = double.parse(subItem.light.value.first.minValue ?? "0");
       logD('minValue: $minValue');
-      if (curVal <= minValue) {
+      if (curVal <= minValue || (curVal - 1) < minValue) {
         return;
       }
       subItem.light.value.first.value = (curVal - 1).toString();
+    }
+  }
+
+  Future<void> _decrementPoint1(SubItem subItem, bool dark) async {
+    if (dark) {
+      final curVal = double.parse(subItem.dark.value.first.value);
+      final minValue = double.parse(subItem.dark.value.first.minValue ?? "0.0");
+      if (curVal <= minValue || (curVal - 0.1) < minValue) {
+        return;
+      }
+      subItem.dark.value.first.value = (curVal - 0.1).toString();
+    } else {
+      final curVal = double.parse(subItem.light.value.first.value);
+      final minValue =
+          double.parse(subItem.light.value.first.minValue ?? "0.0");
+      logD('minValue: $minValue');
+      if (curVal <= minValue || (curVal - 0.1) < minValue) {
+        return;
+      }
+      subItem.light.value.first.value = (curVal - 0.1).toString();
     }
   }
 
