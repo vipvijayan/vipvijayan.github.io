@@ -456,21 +456,6 @@ Future<ThemeData> refreshThemeData(
           ),
         ),
       ),
-      // labelStyle: TextStyle(
-      //   color: Colors.white,
-      //   fontSize: double.parse(
-      //     customTheme['tabbar_label_font_size']['value'] as String,
-      //   ),
-      //   letterSpacing: 1.2,
-      //   fontWeight: FontWeight.bold,
-      // ),
-      // unselectedLabelStyle: TextStyle(
-      //   color: Colors.white,
-      //   letterSpacing: 1.1,
-      //   fontSize: double.parse(
-      //     customTheme['tabbar_unselected_label_font_size']['value'] as String,
-      //   ),
-      // ),
     ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(

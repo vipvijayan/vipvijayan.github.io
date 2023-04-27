@@ -15,72 +15,87 @@ class GeneratedThemeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         color: Theme.of(context).appBarTheme.backgroundColor,
         child: SingleChildScrollView(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Column(
             children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              if (previewAppState.codeGenerating) const Loading(),
+              if (!previewAppState.codeGenerating)
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CopyCode(
-                      onPressed: () async {
-                        unawaited(_copy(previewAppState.themeGeneratedHtml));
-                      },
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          CopyCode(
+                            onPressed: () async {
+                              unawaited(
+                                  _copy(previewAppState.themeGeneratedHtml));
+                              unawaited(fbLogEvent(
+                                name: 'theme_copied',
+                                parameters: {'type': 'theme'},
+                              ));
+                            },
+                          ),
+                          const SizedBox(height: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: HighlightView(
+                                  previewAppState.themeGeneratedHtml,
+                                  language: 'dart',
+                                  theme: githubGistTheme,
+                                  padding: const EdgeInsets.all(20),
+                                  textStyle: const TextStyle(
+                                    fontFamily: 'Courier',
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                    const SizedBox(height: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: HighlightView(
-                            previewAppState.themeGeneratedHtml,
-                            language: 'dart',
-                            theme: githubGistTheme,
-                            padding: const EdgeInsets.all(20),
-                            textStyle: const TextStyle(
-                              fontFamily: 'Courier',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w900,
+                    const SizedBox(width: 10),
+                    if (previewAppState.customHtml.isNotEmpty)
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            CopyCode(
+                              onPressed: () async {
+                                unawaited(_copy(previewAppState.customHtml));
+                                unawaited(fbLogEvent(
+                                  name: 'theme_copied',
+                                  parameters: {'type': 'custom'},
+                                ));
+                              },
                             ),
-                          ),
+                            const SizedBox(height: 10),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: HighlightView(
+                                previewAppState.customHtml,
+                                language: 'dart',
+                                theme: githubGistTheme,
+                                padding: const EdgeInsets.all(20),
+                                textStyle: const TextStyle(
+                                  fontFamily: 'Courier',
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
                   ],
-                ),
-              ),
-              const SizedBox(width: 10),
-              if (previewAppState.customHtml.isNotEmpty)
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CopyCode(
-                        onPressed: () async {
-                          unawaited(_copy(previewAppState.customHtml));
-                        },
-                      ),
-                      const SizedBox(height: 10),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: HighlightView(
-                          previewAppState.customHtml,
-                          language: 'dart',
-                          theme: githubGistTheme,
-                          padding: const EdgeInsets.all(20),
-                          textStyle: const TextStyle(
-                            fontFamily: 'Courier',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
             ],
           ),

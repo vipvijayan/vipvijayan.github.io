@@ -7,6 +7,7 @@ class ThemeAppState extends ChangeNotifier {
   String themeGeneratedHtml = '';
   String usageHtml = '';
   String customHtml = '';
+  String updatesHtml = '';
 
   List<CustomColor> customColors = [];
   List<ThemeParentModel> themeParentModels = [
@@ -19,6 +20,7 @@ class ThemeAppState extends ChangeNotifier {
   int initialTabIndex = 0;
   int curSelectedThemeIndex = 0;
   bool appLoading = false;
+  bool codeGenerating = false;
 
   late TabController tabController;
   Map<String, dynamic> themeUIScrollControllers = {};
@@ -30,23 +32,10 @@ class ThemeAppState extends ChangeNotifier {
   }
 
   Future<void> initSettings() async {
-    packageInfo = await PackageInfo.fromPlatform();
-    about = await loadAboutInfo();
-    about.items.add(
-      AboutItem(
-        id: 99,
-        title: 'Version',
-        value: '${packageInfo.version} (${packageInfo.buildNumber})',
-        icon: '0xe33c',
-        copyEnabled: false,
-      ),
-    );
-    unawaited(initUsageData());
-  }
-
-  Future<void> initFB() async {
-    await analytics.logAppOpen();
-    await analytics.setAnalyticsCollectionEnabled(true);
+    Future.delayed(const Duration(seconds: 2), () async {
+      unawaited(initAboutInfo());
+      unawaited(initUsageData());
+    });
   }
 
   Future<void> scrollDown() async {
@@ -125,7 +114,13 @@ class ThemeAppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> setCodeGenerating(bool loading) async {
+    codeGenerating = loading;
+    notifyListeners();
+  }
+
   Future<void> generateHtml() async {
+    setCodeGenerating(true);
     var lightThemeGeneratedHtml = await ThemeFileUtils.generateThemeTxt(
       curSelectedThemeModel.themeUiModelList,
       customColors.isNotEmpty,
@@ -150,6 +145,11 @@ class ThemeAppState extends ChangeNotifier {
       themeGeneratedHtml =
           '$themeGeneratedHtml\n\n// Custom Colors Usage\n\n$customThemeUsage';
     }
-    notifyListeners();
+    setCodeGenerating(false);
+  }
+
+  Future<void> showUpdatesHtmlDialog() async {
+    updatesHtml = await loadUpdatesInfoHtml();
+    unawaited(showUpdatesModalBottomSheet(updatesHtml));
   }
 }

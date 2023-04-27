@@ -27,20 +27,7 @@ class ExpandTitle extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              height: 16,
-              width: 16,
-              decoration: BoxDecoration(
-                color: expanded ? Colors.blue.shade400 : Colors.grey.shade200,
-                border: Border.all(
-                  color: Colors.transparent,
-                  width: 0,
-                ),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(8),
-                ),
-              ),
-            ),
+            BulletIcon(expanded: expanded),
             const SizedBox(width: 15),
             Expanded(
               child: MainTitle(

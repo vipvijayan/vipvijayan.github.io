@@ -31,6 +31,10 @@ Future<String> loadThemeTxt(int themeId) async {
   );
 }
 
+Future<String> loadUpdatesInfoHtml() async {
+  return rootBundle.loadString('$filesDir/app/updates.html');
+}
+
 Future<String> loadCustomColorsTxt() async {
   return rootBundle.loadString('$filesDir/generated/theme_my_colors.html');
 }

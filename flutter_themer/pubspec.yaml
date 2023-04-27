@@ -3,7 +3,7 @@ description: Flutter App Themer.
 
 publish_to: 'none' 
 
-version: 1.0.0+3
+version: 1.0.0+4
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
@@ -14,12 +14,14 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
+  # State
   provider: ^6.0.5
   path_provider: ^2.0.14
   
   # Log
   logger: ^1.1.0
 
+  # App Window Manager 
   window_manager: ^0.3.0
 
   # Preview 
@@ -43,6 +45,11 @@ dependencies:
 
   # Package Info
   package_info_plus: ^3.1.0
+
+  # Html
+  flutter_widget_from_html: ^0.10.0
+
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:

@@ -1,21 +1,26 @@
 import 'dart:ui';
 import 'package:flutter_themer/utils/exports.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 bool isDarkMode() =>
     SchedulerBinding.instance.platformDispatcher.platformBrightness ==
     Brightness.dark;
 
-Future<void> copyToClipboard(String text, {VoidCallback? callback}) async {
+Future<void> copyToClipboard(String? text, {VoidCallback? callback}) async {
+  if (null == text) {
+    return;
+  }
   await Clipboard.setData(ClipboardData(text: text));
   callback?.call();
 }
 
 Future<void> showSnackBar(String text) async {
-  ScaffoldMessenger.of(navKey.currentContext!).showSnackBar(
+  ScaffoldMessenger.of(mainNavKey.currentContext!).showSnackBar(
     SnackBar(
       content: Text(
         text,
-        style: Theme.of(navKey.currentContext!).textTheme.bodyLarge,
+        style: Theme.of(mainNavKey.currentContext!).textTheme.bodyLarge,
       ),
     ),
   );
@@ -132,4 +137,48 @@ subtitleStyle(BuildContext context) {
         fontWeight: FontWeight.bold,
         color: Colors.black54,
       );
+}
+
+Future<void> showUpdatesModalBottomSheet(String updatesHtml) async {
+  showModalBottomSheet<void>(
+    context: mainNavKey.currentContext!,
+    builder: (context) {
+      return Padding(
+        padding: const EdgeInsets.all(30),
+        child: HtmlWidget(updatesHtml),
+      );
+    },
+  );
+}
+
+Future<void> openUrl(String? url) async {
+  if (url == null || url.isEmpty) {
+    logD('No Url to Open');
+    return;
+  }
+  if (!await launchUrl(Uri.parse(url))) {
+    throw Exception('Could not launch $url');
+  }
+}
+
+Future<void> initFB() async {
+  await analytics.logAppOpen();
+  await analytics.setAnalyticsCollectionEnabled(true);
+}
+
+Future<void> initAboutInfo() async {
+  packageInfo = await PackageInfo.fromPlatform();
+  about = await loadAboutInfo();
+  about.items.add(versionMenuItem());
+}
+
+versionMenuItem() {
+  return AboutItem(
+    id: 99,
+    title: versionTitle,
+    subtitle: '${packageInfo.version} (${packageInfo.buildNumber})',
+    icon: versionIcon,
+    copyEnabled: false,
+    tooltipMessage: 'App Version Info',
+  );
 }

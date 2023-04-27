@@ -2,7 +2,7 @@ import 'package:flutter_themer/utils/exports.dart';
 
 openHome() async {
   Navigator.pushReplacement(
-    navKey.currentContext!,
+    mainNavKey.currentContext!,
     MaterialPageRoute(
       builder: (context) {
         return const HomeScreen();
@@ -13,7 +13,7 @@ openHome() async {
 
 openThemeGeneratedScreen() async {
   Navigator.push(
-    navKey.currentContext!,
+    mainNavKey.currentContext!,
     MaterialPageRoute(
       builder: (context) {
         return const GeneratedThemeScreen();
@@ -24,7 +24,7 @@ openThemeGeneratedScreen() async {
 
 Future<void> openAboutInfoScreen() async {
   Navigator.push(
-    navKey.currentContext!,
+    mainNavKey.currentContext!,
     MaterialPageRoute(
       builder: (context) => const AboutInfoScreen(),
     ),
@@ -32,5 +32,5 @@ Future<void> openAboutInfoScreen() async {
 }
 
 closeScreen() {
-  Navigator.pop(navKey.currentContext!);
+  Navigator.pop(mainNavKey.currentContext!);
 }

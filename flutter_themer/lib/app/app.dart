@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       ],
       child: MaterialApp(
         title: appTitle,
-        navigatorKey: navKey,
+        navigatorKey: mainNavKey,
         navigatorObservers: <NavigatorObserver>[observer],
         debugShowCheckedModeBanner: showDebugBanner,
         showPerformanceOverlay: false,

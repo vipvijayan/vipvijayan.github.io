@@ -1,4 +1,4 @@
 import 'package:flutter_themer/utils/exports.dart';
 
-GlobalKey<NavigatorState> navKey = GlobalKey();
+GlobalKey<NavigatorState> mainNavKey = GlobalKey();
 GlobalKey<NavigatorState> navAppPreviewKey = GlobalKey();

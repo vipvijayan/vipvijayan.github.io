@@ -3,6 +3,11 @@ import 'package:flutter_themer/utils/exports.dart';
 const appTitle = 'Flutter Themer';
 const appVersion = 'α';
 const themeFileName = 'theme.json';
+const appAboutInfoId = 100;
+
+// Version Menu Icon
+const versionTitle = 'Version';
+const versionIcon = '0xf270';
 
 late PackageInfo packageInfo;
 late About about;

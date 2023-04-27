@@ -1,4 +1,5 @@
 import 'package:flutter_themer/utils/exports.dart';
+import 'package:flutter_themer/widgets/bullet.dart';
 import 'package:flutter_themer/widgets/export_theme.dart';
 
 class ThemeBuilderTab extends StatelessWidget {
@@ -15,7 +16,6 @@ class ThemeBuilderTab extends StatelessWidget {
     final state = context.watch<ThemeAppState>();
     final themeModelList = themeTab.themeUiModelList;
     final dark = isDarkBrightness(themeTab);
-    logD('Tab Theme ID: ${themeTab.id}');
     return Container(
       padding: const EdgeInsets.all(20),
       child: Column(
@@ -31,12 +31,7 @@ class ThemeBuilderTab extends StatelessWidget {
               itemCount: themeModelList.length + 1,
               itemBuilder: (context, index) {
                 if (index == themeModelList.length) {
-                  return Column(
-                    children: [
-                      const Divider(height: 20, thickness: 0.1),
-                      _customUI(state),
-                    ],
-                  );
+                  return _customUI(state);
                 }
                 final uiModel = themeModelList[index];
                 return Container(
@@ -180,37 +175,47 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  Column _customUI(ThemeAppState state) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-          child: Row(
-            children: [
-              const MainTitle(
-                title: customColorsTitle,
-                fontSize: titleFontSize,
-              ),
-              const Spacer(),
-              IconButton(
-                onPressed: () async {
-                  state.customColors.add(
-                    CustomColor(
-                      id: random.nextInt(50),
-                      name: '',
+  Container _customUI(ThemeAppState state) {
+    return Container(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
+            child: Row(
+              children: [
+                Row(
+                  children: [
+                    const SizedBox(width: 3),
+                    BulletIcon(expanded: true),
+                    const SizedBox(width: 15),
+                    const MainTitle(
+                      title: customColorsTitle,
+                      fontSize: titleFontSize + 5,
+                      txtColor: Colors.green,
                     ),
-                  );
-                  unawaited(state.refresh());
-                  unawaited(state.scrollDown());
-                },
-                icon: const Icon(Icons.add),
-              )
-            ],
+                  ],
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () async {
+                    state.customColors.add(
+                      CustomColor(
+                        id: random.nextInt(50),
+                        name: '',
+                      ),
+                    );
+                    unawaited(state.refresh());
+                    unawaited(state.scrollDown());
+                  },
+                  icon: const Icon(Icons.add),
+                )
+              ],
+            ),
           ),
-        ),
-        const SizedBox(height: 20),
-        const ThemeCustomColorsUI(),
-      ],
+          const SizedBox(height: 20),
+          const ThemeCustomColorsUI(),
+        ],
+      ),
     );
   }
 
