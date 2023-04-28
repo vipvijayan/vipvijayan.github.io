@@ -1,5 +1,4 @@
 import 'package:flutter_themer/utils/exports.dart';
-import 'package:flutter_themer/widgets/bullet.dart';
 import 'package:flutter_themer/widgets/export_theme.dart';
 
 class ThemeBuilderTab extends StatelessWidget {
@@ -294,14 +293,14 @@ class ThemeBuilderTab extends StatelessWidget {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           subItem.title,
           style: subtitleStyle(context),
         ),
         const SizedBox(height: 5),
-        const Spacer(),
         Expanded(
           child: CupertinoSwitch(
             value: currentVal.parseBool(),
@@ -386,10 +385,10 @@ class ThemeBuilderTab extends StatelessWidget {
     if (dark) {
       subItem.dark.value.first.value =
           (double.parse(subItem.dark.value.first.value) + 0.1).toString();
-    } else {
-      subItem.light.value.first.value =
-          (double.parse(subItem.light.value.first.value) + 0.1).toString();
+      return;
     }
+    subItem.light.value.first.value =
+        (double.parse(subItem.light.value.first.value) + 0.1).toString();
   }
 
   Future<void> _decrementNumber(SubItem subItem, bool dark) async {
@@ -400,43 +399,42 @@ class ThemeBuilderTab extends StatelessWidget {
         return;
       }
       subItem.dark.value.first.value = (curVal - 1).toString();
-    } else {
-      final curVal = double.parse(subItem.light.value.first.value);
-      final minValue = double.parse(subItem.light.value.first.minValue ?? "0");
-      logD('minValue: $minValue');
-      if (curVal <= minValue || (curVal - 1) < minValue) {
-        return;
-      }
-      subItem.light.value.first.value = (curVal - 1).toString();
+      return;
     }
+    final curVal = double.parse(subItem.light.value.first.value);
+    final minValue = double.parse(subItem.light.value.first.minValue ?? "0");
+    logD('minValue: $minValue');
+    if (curVal <= minValue || (curVal - 1) < minValue) {
+      return;
+    }
+    subItem.light.value.first.value = (curVal - 1).toString();
   }
 
   Future<void> _decrementPoint1(SubItem subItem, bool dark) async {
     if (dark) {
       final curVal = double.parse(subItem.dark.value.first.value);
-      final minValue = double.parse(subItem.dark.value.first.minValue ?? "0.0");
+      final minValue = double.parse(subItem.dark.value.first.minValue ?? "0.1");
       if (curVal <= minValue || (curVal - 0.1) < minValue) {
         return;
       }
       subItem.dark.value.first.value = (curVal - 0.1).toString();
-    } else {
-      final curVal = double.parse(subItem.light.value.first.value);
-      final minValue =
-          double.parse(subItem.light.value.first.minValue ?? "0.0");
-      logD('minValue: $minValue');
-      if (curVal <= minValue || (curVal - 0.1) < minValue) {
-        return;
-      }
-      subItem.light.value.first.value = (curVal - 0.1).toString();
+      return;
     }
+    final curVal = double.parse(subItem.light.value.first.value);
+    final minValue = double.parse(subItem.light.value.first.minValue ?? "0.1");
+    logD('minValue: $minValue');
+    if (curVal <= minValue || (curVal - 0.1) < minValue) {
+      return;
+    }
+    subItem.light.value.first.value = (curVal - 0.1).toString();
   }
 
   Future<void> _updateColor(SubItem subItem, Color color, bool dark) async {
     if (dark) {
       subItem.dark.value.first.value = colorHex(color);
-    } else {
-      subItem.light.value.first.value = colorHex(color);
+      return;
     }
+    subItem.light.value.first.value = colorHex(color);
   }
 
   Future<void> _updateDropDown(
@@ -452,8 +450,8 @@ class ThemeBuilderTab extends StatelessWidget {
   Future<void> _updateBoolean(SubItem subItem, bool val, bool dark) async {
     if (dark) {
       subItem.dark.value.first.value = val.toString();
-    } else {
-      subItem.light.value.first.value = val.toString();
+      return;
     }
+    subItem.light.value.first.value = val.toString();
   }
 }

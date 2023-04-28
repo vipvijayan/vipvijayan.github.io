@@ -66,22 +66,13 @@ class HomeScreen extends StatelessWidget {
     final myColors = Theme.of(context).extension<MyColors>()!;
     return [
       IconButton(
-        tooltip: 'Show/Hide Preview Settings',
-        icon: Icon(Icons.settings),
-        onPressed: () async {
-          state.showPreviewToolbar = !state.showPreviewToolbar;
-          state.refresh();
-          unawaited(fbLogEvent(name: 'preview_settings'));
-        },
-      ),
-      IconButton(
         tooltip: 'Reset',
         onPressed: () async {
+          state.tabController.animateTo(state.initialTabIndex);
           state.curSelectedThemeIndex = state.initialTabIndex;
           state.showPreviewToolbar = false;
           state.curSelectedThemeModel =
               state.themeParentModels[state.initialTabIndex];
-          state.tabController.animateTo(state.initialTabIndex);
           state.reset();
           unawaited(fbLogEvent(name: 'theme_reset'));
         },
@@ -89,6 +80,15 @@ class HomeScreen extends StatelessWidget {
           Icons.refresh_outlined,
           color: Theme.of(context).colorScheme.error,
         ),
+      ),
+      IconButton(
+        tooltip: 'Show/Hide Preview Settings',
+        icon: const Icon(Icons.settings),
+        onPressed: () async {
+          state.showPreviewToolbar = !state.showPreviewToolbar;
+          state.refresh();
+          unawaited(fbLogEvent(name: 'preview_settings'));
+        },
       ),
       IconButton(
         tooltip: 'About',

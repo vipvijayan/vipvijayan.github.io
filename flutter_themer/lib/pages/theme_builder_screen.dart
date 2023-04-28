@@ -16,7 +16,6 @@ class _ThemeBuilderScreenState extends State<ThemeBuilderScreen>
     state.tabController = TabController(
       length: state.themeParentModels.length,
       vsync: this,
-      initialIndex: state.initialTabIndex,
     );
   }
 
@@ -27,9 +26,9 @@ class _ThemeBuilderScreenState extends State<ThemeBuilderScreen>
       length: state.themeParentModels.length,
       child: Scaffold(
         appBar: TabBar(
+          controller: state.tabController,
           onTap: (index) async {
             if (state.curSelectedThemeIndex == index) {
-              logD('No Tab Refresh');
               return;
             }
             state.curSelectedThemeIndex = index;
@@ -44,7 +43,7 @@ class _ThemeBuilderScreenState extends State<ThemeBuilderScreen>
         ),
         body: TabBarView(
           controller: state.tabController,
-          physics: const NeverScrollableScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           children: state.themeParentModels
               .map((e) => ThemeBuilderTab(themeTab: e))
               .toList(),

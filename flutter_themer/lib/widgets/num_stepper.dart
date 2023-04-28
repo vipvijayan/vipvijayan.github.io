@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_themer/utils/app_utils.dart';
 
 class NumericStepButton extends StatelessWidget {
   final double minValue;
@@ -22,8 +23,11 @@ class NumericStepButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final vertical = 4.0;
+    final horizontal = 5.0;
     return Container(
       padding: EdgeInsets.zero,
+      height: 60,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3),
         color: Colors.grey[50],
@@ -33,71 +37,78 @@ class NumericStepButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            icon: const Icon(
-              Icons.remove,
-              color: Colors.red,
+            icon: Icon(
+              materialIcon('0xf735'),
+              color: Colors.green,
             ),
-            padding: const EdgeInsets.symmetric(
-              vertical: 4.0,
-              horizontal: 18.0,
+            padding: EdgeInsets.symmetric(
+              vertical: vertical,
+              horizontal: horizontal,
             ),
             iconSize: 20.0,
             color: Theme.of(context).primaryColor,
-            onPressed: () {
+            onPressed: () async {
               onDecrement();
             },
           ),
+          _vDivider(),
           IconButton(
             icon: const Icon(
               Icons.remove,
-              color: Colors.red,
+              color: Colors.grey,
             ),
-            padding: const EdgeInsets.symmetric(
-              vertical: 4.0,
-              horizontal: 18.0,
+            padding: EdgeInsets.symmetric(
+              vertical: vertical,
+              horizontal: horizontal,
             ),
             iconSize: 20.0,
             color: Theme.of(context).primaryColor,
-            onPressed: () {
+            onPressed: () async {
               onDecrementPoint1();
             },
           ),
-          Text(
-            defaultCounter.toStringAsFixed(1),
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 18.0,
-              fontWeight: FontWeight.w500,
+          _vDivider(),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+            child: Text(
+              defaultCounter.toStringAsFixed(1),
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.black45,
+                fontSize: 20.0,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
+          _vDivider(),
           IconButton(
             icon: const Icon(
               Icons.add,
-              color: Colors.green,
+              color: Colors.grey,
             ),
-            padding: const EdgeInsets.symmetric(
-              vertical: 4.0,
-              horizontal: 18.0,
+            padding: EdgeInsets.symmetric(
+              vertical: vertical,
+              horizontal: horizontal,
             ),
             iconSize: 20.0,
             color: Theme.of(context).primaryColor,
-            onPressed: () {
+            onPressed: () async {
               onIncrementPoint1();
             },
           ),
+          _vDivider(),
           IconButton(
-            icon: const Icon(
-              Icons.add,
+            icon: Icon(
+              materialIcon('0xf734'),
               color: Colors.green,
             ),
-            padding: const EdgeInsets.symmetric(
-              vertical: 4.0,
-              horizontal: 18.0,
+            padding: EdgeInsets.symmetric(
+              vertical: vertical,
+              horizontal: horizontal,
             ),
             iconSize: 20.0,
             color: Theme.of(context).primaryColor,
-            onPressed: () {
+            onPressed: () async {
               onIncrement1();
             },
           ),
@@ -105,4 +116,9 @@ class NumericStepButton extends StatelessWidget {
       ),
     );
   }
+
+  Widget _vDivider() => const VerticalDivider(
+        indent: 10,
+        endIndent: 10,
+      );
 }

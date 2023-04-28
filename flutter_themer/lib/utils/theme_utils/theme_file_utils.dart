@@ -18,8 +18,10 @@ class ThemeFileUtils {
           }
           if (subItem.input == 'number') {
             map[subItem.key] = dark
-                ? subItem.dark.value.first.value
-                : subItem.light.value.first.value;
+                ? double.parse(subItem.dark.value.first.value)
+                    .toStringAsFixed(1)
+                : double.parse(subItem.light.value.first.value)
+                    .toStringAsFixed(1);
           }
           if (subItem.input == 'boolean') {
             map[subItem.key] = (dark
@@ -59,8 +61,10 @@ class ThemeFileUtils {
           }
           if (subItem.input == 'number') {
             val = dark
-                ? subItem.dark.value.first.value
-                : subItem.light.value.first.value;
+                ? double.parse(subItem.dark.value.first.value)
+                    .toStringAsFixed(1)
+                : double.parse(subItem.light.value.first.value)
+                    .toStringAsFixed(1);
           }
           if (subItem.input == 'boolean') {
             val = dark

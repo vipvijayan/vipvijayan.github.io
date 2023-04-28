@@ -13,8 +13,8 @@ late PackageInfo packageInfo;
 late About about;
 
 // create some values
-const propertyWidth = 300.0;
-const controlsDimen = 50.0;
+const propertyWidth = 330.0;
+const controlsDimen = 70.0;
 const titleFontSize = 14.0;
 const defaultPickerColor = Colors.blue;
 
