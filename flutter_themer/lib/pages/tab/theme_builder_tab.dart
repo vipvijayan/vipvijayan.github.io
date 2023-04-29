@@ -251,10 +251,16 @@ class ThemeBuilderTab extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          subItem.title,
-          maxLines: 1,
-          style: subtitleStyle(context),
+        Tooltip(
+          message: subItem.tooltip ?? '',
+          showDuration: Duration(seconds: null == subItem.tooltip ? 0 : 1),
+          preferBelow: false,
+          enableFeedback: true,
+          child: Text(
+            subItem.title,
+            maxLines: 1,
+            style: subtitleStyle(context),
+          ),
         ),
         const SizedBox(height: 5),
         Expanded(

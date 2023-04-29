@@ -391,6 +391,72 @@
                         }
                      ]
                   }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Opacity",
+                  "key":"key_app_bar_icon_opacity",
+                  "tooltip": "Value in range 0.0 - 0.1",
+                  "value_type":"number",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Opacity (.0 - .1)",
+                           "selected":true,
+                           "value":"1.0",
+                           "selected_value":"1.0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":1,
+                           "label":"Opacity (.0 - .1)",
+                           "selected":true,
+                           "value":"1.0",
+                           "selected_value":"1.0"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Fill",
+                  "key":"key_app_bar_icon_fill",
+                  "tooltip": "Value in range 0.0 - 0.1",
+                  "value_type":"number",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Fill",
+                           "selected":true,
+                           "value":"1.0",
+                           "selected_value":"1.0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":1,
+                           "label":"Fill",
+                           "selected":true,
+                           "value":"1.0",
+                           "selected_value":"1.0"
+                        }
+                     ]
+                  }
                }
             ]
          },
@@ -460,6 +526,72 @@
                         }
                      ]
                   }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Opacity",
+                  "key":"key_app_bar_action_icon_opacity",
+                  "tooltip": "Value in range 0.0 - 0.1",
+                  "value_type":"number",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Opacity (.0 - .1)",
+                           "selected":true,
+                           "value":"1.0",
+                           "selected_value":"1.0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":1,
+                           "label":"Opacity (.0 - .1)",
+                           "selected":true,
+                           "value":"1.0",
+                           "selected_value":"1.0"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Fill",
+                  "key":"key_app_bar_action_icon_fill",
+                  "tooltip": "Value in range 0.0 - 0.1",
+                  "value_type":"number",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Fill",
+                           "selected":true,
+                           "value":"1.0",
+                           "selected_value":"1.0"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":1,
+                           "label":"Fill",
+                           "selected":true,
+                           "value":"1.0",
+                           "selected_value":"1.0"
+                        }
+                     ]
+                  }
                }
             ]
          },
@@ -526,6 +658,38 @@
                            "selected":true,
                            "value":"24",
                            "selected_value":"24"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Height",
+                  "key":"key_app_bar_title_font_height",
+                  "value_type":"number",
+                  "input":"number",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"Height",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":1,
+                           "label":"Height",
+                           "selected":true,
+                           "value":"1",
+                           "selected_value":"1"
                         }
                      ]
                   }

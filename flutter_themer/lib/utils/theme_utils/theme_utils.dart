@@ -333,14 +333,19 @@ Future<ThemeData> refreshThemeData(
       iconTheme: IconThemeData(
         color: HexColor(themeMap['key_app_bar_icon_color']),
         size: double.parse(themeMap['key_app_bar_icon_size']),
+        opacity: double.parse(themeMap['key_app_bar_icon_opacity']),
+        fill: double.parse(themeMap['key_app_bar_icon_fill']),
       ),
       actionsIconTheme: IconThemeData(
         color: HexColor(themeMap['key_app_bar_action_icon_color']),
         size: double.parse(themeMap['key_app_bar_action_icon_size']),
+        opacity: double.parse(themeMap['key_app_bar_action_icon_opacity']),
+        fill: double.parse(themeMap['key_app_bar_action_icon_fill']),
       ),
       titleTextStyle: TextStyle(
         color: HexColor(themeMap['key_app_bar_title_color']),
         fontSize: double.parse(themeMap['key_app_bar_title_font_size']),
+        height: double.parse(themeMap['key_app_bar_title_font_height']),
       ),
       shadowColor: HexColor(themeMap['key_app_bar_shadow_color']),
     ),

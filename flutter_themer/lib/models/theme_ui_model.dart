@@ -80,6 +80,7 @@ class SubItem {
     required this.input,
     required this.dark,
     required this.light,
+    this.tooltip = '',
   });
 
   final int id;
@@ -90,12 +91,14 @@ class SubItem {
   final String input;
   final Dark dark;
   final Dark light;
+  final String? tooltip;
 
   factory SubItem.fromJson(Map<String, dynamic> json) => SubItem(
         id: json['id'],
         subtitle: json['subtitle'],
         title: json['title'],
         key: json['key'],
+        tooltip: json['tooltip'],
         valueType: json['value_type'],
         input: json['input'],
         dark: Dark.fromJson(json['dark']),
@@ -107,6 +110,7 @@ class SubItem {
         'subtitle': subtitle,
         'title': title,
         'key': key,
+        'tooltip': tooltip,
         'value_type': valueType,
         'input': input,
         'dark': dark.toJson(),
