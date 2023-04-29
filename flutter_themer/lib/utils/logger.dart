@@ -6,3 +6,7 @@ var logger = Logger();
 logD(String message) {
   if (kDebugMode) logger.d(message);
 }
+
+logE(String message) {
+  if (kDebugMode) logger.e(message);
+}

@@ -4,6 +4,7 @@ const appTitle = 'Flutter Themer';
 const appVersion = 'α';
 const themeFileName = 'theme.json';
 const appAboutInfoId = 100;
+const inputMaxValue = 99999.0;
 
 // Version Menu Icon
 const versionTitle = 'Version';

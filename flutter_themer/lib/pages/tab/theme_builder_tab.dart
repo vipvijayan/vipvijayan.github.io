@@ -1,5 +1,6 @@
 import 'package:flutter_themer/utils/exports.dart';
 import 'package:flutter_themer/widgets/export_theme.dart';
+import 'package:flutter_themer/widgets/number_tf.dart';
 
 class ThemeBuilderTab extends StatelessWidget {
   //
@@ -136,7 +137,7 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.grey.shade100,
+                  color: Colors.grey.shade50,
                   border: Border.all(color: Colors.grey.shade100),
                 ),
                 child: Wrap(
@@ -257,25 +258,13 @@ class ThemeBuilderTab extends StatelessWidget {
         ),
         const SizedBox(height: 5),
         Expanded(
-          child: NumericStepButton(
-            defaultCounter: double.parse(currentVal),
-            maxValue: 900,
-            minValue: -3,
-            onDecrement: () async {
-              await _decrementNumber(subItem, dark);
-              unawaited(state.refreshPreview());
-            },
-            onDecrementPoint1: () async {
-              await _decrementPoint1(subItem, dark);
-              unawaited(state.refreshPreview());
-            },
-            onIncrementPoint1: () async {
-              await _incrementPoint1(subItem, dark);
-              unawaited(state.refreshPreview());
-            },
-            onIncrement1: () async {
-              await _incrementNumber(subItem, dark);
-              unawaited(state.refreshPreview());
+          child: NumberTF(
+            initialValue: currentVal,
+            onChange: (val) async {
+              unawaited(
+                handleInput(
+                    inputVal: val, subItem: subItem, dark: dark, state: state),
+              );
             },
           ),
         ),
@@ -293,7 +282,7 @@ class ThemeBuilderTab extends StatelessWidget {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
@@ -332,21 +321,13 @@ class ThemeBuilderTab extends StatelessWidget {
           subItem.title,
           style: subtitleStyle(context),
         ),
-        const SizedBox(height: 5),
+        const Spacer(),
         DropdownButton<Value>(
           isDense: true,
           value: currentVal,
-          items: _dropDownItems(
-            context,
-            list,
-            dark,
-          ),
+          items: _dropDownItems(context, list, dark),
           onChanged: (Value? value) async {
-            await _updateDropDown(
-              list,
-              value,
-              dark,
-            );
+            await _updateDropDown(list, value, dark);
             unawaited(state.refreshPreview());
           },
         ),
@@ -364,69 +345,11 @@ class ThemeBuilderTab extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .bodySmall
-              ?.copyWith(fontSize: titleFontSize - 4),
+              ?.copyWith(fontSize: titleFontSize - 2),
         ),
       );
     }).toList();
     return dropdownItems;
-  }
-
-  Future<void> _incrementNumber(SubItem subItem, bool dark) async {
-    if (dark) {
-      subItem.dark.value.first.value =
-          (double.parse(subItem.dark.value.first.value) + 1).toString();
-    } else {
-      subItem.light.value.first.value =
-          (double.parse(subItem.light.value.first.value) + 1).toString();
-    }
-  }
-
-  Future<void> _incrementPoint1(SubItem subItem, bool dark) async {
-    if (dark) {
-      subItem.dark.value.first.value =
-          (double.parse(subItem.dark.value.first.value) + 0.1).toString();
-      return;
-    }
-    subItem.light.value.first.value =
-        (double.parse(subItem.light.value.first.value) + 0.1).toString();
-  }
-
-  Future<void> _decrementNumber(SubItem subItem, bool dark) async {
-    if (dark) {
-      final curVal = double.parse(subItem.dark.value.first.value);
-      final minValue = double.parse(subItem.dark.value.first.minValue ?? "0");
-      if (curVal <= minValue || (curVal - 1) < minValue) {
-        return;
-      }
-      subItem.dark.value.first.value = (curVal - 1).toString();
-      return;
-    }
-    final curVal = double.parse(subItem.light.value.first.value);
-    final minValue = double.parse(subItem.light.value.first.minValue ?? "0");
-    logD('minValue: $minValue');
-    if (curVal <= minValue || (curVal - 1) < minValue) {
-      return;
-    }
-    subItem.light.value.first.value = (curVal - 1).toString();
-  }
-
-  Future<void> _decrementPoint1(SubItem subItem, bool dark) async {
-    if (dark) {
-      final curVal = double.parse(subItem.dark.value.first.value);
-      final minValue = double.parse(subItem.dark.value.first.minValue ?? "0.1");
-      if (curVal <= minValue || (curVal - 0.1) < minValue) {
-        return;
-      }
-      subItem.dark.value.first.value = (curVal - 0.1).toString();
-      return;
-    }
-    final curVal = double.parse(subItem.light.value.first.value);
-    final minValue = double.parse(subItem.light.value.first.minValue ?? "0.1");
-    logD('minValue: $minValue');
-    if (curVal <= minValue || (curVal - 0.1) < minValue) {
-      return;
-    }
-    subItem.light.value.first.value = (curVal - 0.1).toString();
   }
 
   Future<void> _updateColor(SubItem subItem, Color color, bool dark) async {
@@ -439,11 +362,10 @@ class ThemeBuilderTab extends StatelessWidget {
 
   Future<void> _updateDropDown(
       List<Value> list, Value? selectedValue, bool dark) async {
-    if (null == selectedValue) {
-      return;
-    }
-    for (var e in list) {
-      e.selected = e.id == selectedValue.id;
+    if (null != selectedValue) {
+      for (var e in list) {
+        e.selected = e.id == selectedValue.id;
+      }
     }
   }
 

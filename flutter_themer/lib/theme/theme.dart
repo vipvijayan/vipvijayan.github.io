@@ -33,6 +33,9 @@ class AppTheme {
       focusColor: Colors.tealAccent,
       splashColor: Colors.yellow,
     ),
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: Colors.greenAccent,
+    ),
     appBarTheme: AppBarTheme(
       elevation: 0,
       backgroundColor: lightBaseColor,
@@ -97,6 +100,7 @@ class AppTheme {
           ),
         ),
       ),
+
       labelStyle: const TextStyle(
         fontSize: 16,
         letterSpacing: letterSpacing,

@@ -7,6 +7,38 @@ bool isDarkMode() =>
     SchedulerBinding.instance.platformDispatcher.platformBrightness ==
     Brightness.dark;
 
+Future<void> handleInput({
+  required String? inputVal,
+  required SubItem subItem,
+  required bool dark,
+  required ThemeAppState state,
+}) async {
+  try {
+    if (inputVal == null || inputVal.trim().isEmpty) {
+      inputVal = '0';
+    }
+    if (inputVal.trim().endsWith('.')) {
+      logE('Invalid Input');
+      return;
+    }
+    logD(inputVal);
+    final value = double.parse(inputVal);
+    if (value > inputMaxValue) {
+      showSnackBar('Value greater than $inputMaxValue not allowed');
+      return;
+    }
+    hideSnackBar();
+    if (dark) {
+      subItem.dark.value.first.value = inputVal;
+    } else {
+      subItem.light.value.first.value = inputVal;
+    }
+    state.refreshPreview();
+  } catch (e) {
+    logE(e.toString());
+  }
+}
+
 Future<void> copyToClipboard(String? text, {VoidCallback? callback}) async {
   if (null == text) {
     return;
@@ -24,6 +56,10 @@ Future<void> showSnackBar(String text) async {
       ),
     ),
   );
+}
+
+Future<void> hideSnackBar() async {
+  ScaffoldMessenger.of(mainNavKey.currentContext!).hideCurrentSnackBar();
 }
 
 Future<void> showToast(String text) async {
