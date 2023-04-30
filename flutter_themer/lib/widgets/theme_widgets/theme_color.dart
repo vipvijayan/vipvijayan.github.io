@@ -37,7 +37,7 @@ class ThemeColor extends StatelessWidget {
                 maxLines: 2,
                 style: subtitleStyle(context),
               ),
-              const SizedBox(height: 3),
+              const SizedBox(height: 5),
               Text(
                 '#${colorToHex(HexColor(currentColor))}',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(

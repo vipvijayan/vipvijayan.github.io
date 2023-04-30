@@ -31,7 +31,7 @@ class ThemeBuilderTab extends StatelessWidget {
               itemCount: themeModelList.length + 1,
               itemBuilder: (context, index) {
                 if (index == themeModelList.length) {
-                  return _customUI(state);
+                  return _customUI(context, state);
                 }
                 final uiModel = themeModelList[index];
                 return Container(
@@ -56,7 +56,7 @@ class ThemeBuilderTab extends StatelessWidget {
                           expanded: uiModel.expanded,
                           onPressed: () async {
                             uiModel.expanded = !uiModel.expanded;
-                            state.refresh();
+                            unawaited(state.refresh());
                           },
                         ),
                       if (uiModel.expanded)
@@ -87,11 +87,10 @@ class ThemeBuilderTab extends StatelessWidget {
                   onChanged: (on) {
                     themeTab.brightness =
                         on ? Brightness.light : Brightness.dark;
-                    state.refresh();
-                    state.refreshPreview();
+                    unawaited(state.refresh());
+                    unawaited(state.refreshPreview());
                     fbLogEvent(
-                      name: 'Brightness: ${state.curSelectedThemeModel.id}',
-                    );
+                        name: 'Brightness: ${state.curSelectedThemeModel.id}');
                   },
                 ),
               ],
@@ -175,23 +174,31 @@ class ThemeBuilderTab extends StatelessWidget {
     );
   }
 
-  Container _customUI(ThemeAppState state) {
+  Container _customUI(BuildContext context, ThemeAppState state) {
     return Container(
+      padding: EdgeInsets.only(bottom: state.customColors.length > 0 ? 20 : 0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(6),
+        color: Colors.grey.shade50,
+        border: Border.all(color: Colors.grey.shade100),
+      ),
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
             child: Row(
               children: [
                 Row(
                   children: [
-                    const SizedBox(width: 3),
-                    BulletIcon(expanded: true),
+                    // const SizedBox(width: 3),
+                    // BulletIcon(expanded: true),
                     const SizedBox(width: 15),
-                    const MainTitle(
+                    MainTitle(
                       title: customColorsTitle,
-                      fontSize: titleFontSize + 5,
-                      txtColor: Colors.green,
+                      fontSize: titleFontSize + 2,
+                      txtColor: state.customColors.length > 0
+                          ? Colors.blue
+                          : Colors.black,
                     ),
                   ],
                 ),
@@ -212,7 +219,7 @@ class ThemeBuilderTab extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           const ThemeCustomColorsUI(),
         ],
       ),
@@ -247,34 +254,39 @@ class ThemeBuilderTab extends StatelessWidget {
   ) {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Tooltip(
-          message: subItem.tooltip ?? '',
-          showDuration: Duration(seconds: null == subItem.tooltip ? 0 : 1),
-          preferBelow: false,
-          enableFeedback: true,
-          child: Text(
-            subItem.title,
-            maxLines: 1,
-            style: subtitleStyle(context),
+    return SizedBox(
+      height: controlsDimen - 20,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Tooltip(
+            message: subItem.tooltip ?? '',
+            showDuration: Duration(seconds: null == subItem.tooltip ? 0 : 1),
+            preferBelow: false,
+            enableFeedback: true,
+            child: Text(
+              subItem.title,
+              maxLines: 1,
+              style: subtitleStyle(context),
+            ),
           ),
-        ),
-        const SizedBox(height: 5),
-        Expanded(
-          child: NumberTF(
-            initialValue: currentVal,
-            onChange: (val) async {
-              unawaited(
-                handleInput(
-                    inputVal: val, subItem: subItem, dark: dark, state: state),
-              );
-            },
+          Expanded(
+            child: NumberTF(
+              initialValue: currentVal,
+              onChange: (val) async {
+                unawaited(
+                  handleInput(
+                      inputVal: val,
+                      subItem: subItem,
+                      dark: dark,
+                      state: state),
+                );
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -287,29 +299,32 @@ class ThemeBuilderTab extends StatelessWidget {
   ) {
     final currentVal =
         dark ? subItem.dark.value.first.value : subItem.light.value.first.value;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          subItem.title,
-          style: subtitleStyle(context),
-        ),
-        const SizedBox(height: 5),
-        Expanded(
-          child: CupertinoSwitch(
-            value: currentVal.parseBool(),
-            onChanged: (bool val) async {
-              await _updateBoolean(subItem, val, dark);
-              unawaited(state.refreshPreview());
-            },
+    return SizedBox(
+      height: controlsDimen - 20,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            subItem.title,
+            style: subtitleStyle(context),
           ),
-        ),
-      ],
+          const SizedBox(height: 5),
+          Expanded(
+            child: CupertinoSwitch(
+              value: currentVal.parseBool(),
+              onChanged: (bool val) async {
+                await _updateBoolean(subItem, val, dark);
+                unawaited(state.refreshPreview());
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 
-  Column _dropDown(
+  Widget _dropDown(
     BuildContext context,
     ThemeUiModel uiModel,
     SubItem subItem,
@@ -320,24 +335,27 @@ class ThemeBuilderTab extends StatelessWidget {
     final currentVal = list.firstWhere(
       (element) => element.selected,
     );
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          subItem.title,
-          style: subtitleStyle(context),
-        ),
-        const Spacer(),
-        DropdownButton<Value>(
-          isDense: true,
-          value: currentVal,
-          items: _dropDownItems(context, list, dark),
-          onChanged: (Value? value) async {
-            await _updateDropDown(list, value, dark);
-            unawaited(state.refreshPreview());
-          },
-        ),
-      ],
+    return SizedBox(
+      height: controlsDimen - 20,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            subItem.title,
+            style: subtitleStyle(context),
+          ),
+          const Spacer(),
+          DropdownButton<Value>(
+            isDense: true,
+            value: currentVal,
+            items: _dropDownItems(context, list, dark),
+            onChanged: (Value? value) async {
+              await _updateDropDown(list, value, dark);
+              unawaited(state.refreshPreview());
+            },
+          ),
+        ],
+      ),
     );
   }
 
@@ -352,6 +370,7 @@ class ThemeBuilderTab extends StatelessWidget {
               .textTheme
               .bodySmall
               ?.copyWith(fontSize: titleFontSize - 2),
+          maxLines: 2,
         ),
       );
     }).toList();

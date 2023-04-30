@@ -11,6 +11,7 @@ Future<ThemeData> refreshThemeData(
   if (ThemeIDs.primary.value == themeParentModel.id) {
     if (dark) {
       return ThemeData(
+        useMaterial3: themeMap['key_use_material_3'],
         primarySwatch:
             buildMaterialColor(themeMap['key_primary_swatch_color'] as String),
         tabBarTheme: const TabBarTheme(
@@ -30,6 +31,7 @@ Future<ThemeData> refreshThemeData(
       );
     }
     return ThemeData(
+      useMaterial3: themeMap['key_use_material_3'],
       primarySwatch:
           buildMaterialColor(themeMap['key_primary_swatch_color'] as String),
       tabBarTheme: const TabBarTheme(
@@ -51,6 +53,7 @@ Future<ThemeData> refreshThemeData(
   if (ThemeIDs.basic.value == themeParentModel.id) {
     if (dark) {
       return ThemeData(
+        useMaterial3: themeMap['key_use_material_3'],
         brightness: themeParentModel.brightness,
         colorScheme: ColorScheme.dark(
           primary: HexColor(themeMap['key_cs_primary'] as String),
@@ -155,6 +158,7 @@ Future<ThemeData> refreshThemeData(
       );
     }
     return ThemeData(
+      useMaterial3: themeMap['key_use_material_3'],
       brightness: themeParentModel.brightness,
       colorScheme: ColorScheme.light(
         primary: HexColor(themeMap['key_cs_primary'] as String),
@@ -298,7 +302,7 @@ Future<ThemeData> refreshThemeData(
 
   // Advanced
   return ThemeData(
-    // useMaterial3: true,
+    useMaterial3: themeMap['key_use_material_3'],
     pageTransitionsTheme: transition,
     brightness: themeParentModel.brightness,
     scaffoldBackgroundColor: HexColor(
