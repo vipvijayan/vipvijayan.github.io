@@ -26,7 +26,7 @@ class NumberTF extends StatelessWidget {
         ],
         decoration: InputDecoration(
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey.shade300),
+            borderSide: BorderSide(color: Colors.grey.shade100),
           ),
         ),
       ),

@@ -81,3 +81,4 @@ export 'package:flutter_themer/widgets/loading.dart';
 export 'package:firebase_analytics/firebase_analytics.dart';
 export 'package:flutter_themer/widgets/app_main_title.dart';
 export 'package:flutter_themer/widgets/bullet.dart';
+export 'package:flutter_themer/widgets/export_theme.dart';

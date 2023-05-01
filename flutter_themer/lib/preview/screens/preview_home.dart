@@ -6,53 +6,54 @@ class PreviewHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<ThemeAppState>();
     return Column(
       children: [
-        Expanded(
-          child: DefaultTabController(
-            length: 5,
-            initialIndex: 0,
-            child: Scaffold(
-              key: scaffoldKey,
-              drawer: _drawer(),
-              appBar: AppBar(
-                title: const Text(previewTitle),
-                actions: [
-                  IconButton(
-                    onPressed: () async {},
-                    icon: const Icon(Icons.settings),
+        if (!state.previewLoading)
+          Expanded(
+            child: DefaultTabController(
+              length: 5,
+              child: Scaffold(
+                key: scaffoldKey,
+                drawer: _drawer(),
+                appBar: AppBar(
+                  title: const Text(previewTitle),
+                  actions: [
+                    IconButton(
+                      onPressed: () async {},
+                      icon: const Icon(Icons.settings),
+                    ),
+                    const SizedBox(width: 20),
+                  ],
+                  leading: IconButton(
+                    icon: const Icon(Icons.menu),
+                    onPressed: () async {
+                      scaffoldKey.currentState?.openDrawer();
+                    },
                   ),
-                  const SizedBox(width: 20),
-                ],
-                leading: IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () async {
-                    scaffoldKey.currentState?.openDrawer();
-                  },
+                  bottom: const TabBar(
+                    isScrollable: true,
+                    tabs: [
+                      Tab(text: 'Buttons'),
+                      Tab(text: 'Text'),
+                      Tab(text: 'Inputs'),
+                      Tab(text: 'Cards'),
+                      Tab(text: 'List'),
+                    ],
+                  ),
                 ),
-                bottom: const TabBar(
-                  isScrollable: true,
-                  tabs: [
-                    Tab(text: 'Buttons'),
-                    Tab(text: 'Text'),
-                    Tab(text: 'Inputs'),
-                    Tab(text: 'Cards'),
-                    Tab(text: 'List'),
+                body: const TabBarView(
+                  children: [
+                    ButtonTab(),
+                    TextTab(),
+                    InputTab(),
+                    CardTab(),
+                    ListTab(),
                   ],
                 ),
               ),
-              body: const TabBarView(
-                children: [
-                  ButtonTab(),
-                  TextTab(),
-                  InputTab(),
-                  CardTab(),
-                  ListTab(),
-                ],
-              ),
             ),
           ),
-        ),
         const SizedBox(height: 20),
       ],
     );

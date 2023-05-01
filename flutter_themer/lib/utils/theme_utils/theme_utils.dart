@@ -5,51 +5,22 @@ Future<ThemeData> refreshThemeData(
   List<CustomColor> customColors,
 ) async {
   final themeMap = ThemeFileUtils.getThemeMap(themeParentModel);
-  // logD(jsonEncode(themeMap));
-  logD('<<<<Refreshing Theme>>>>> : ${themeParentModel.id}');
   final dark = isDarkBrightness(themeParentModel);
+
+  // PRIMARY
   if (ThemeIDs.primary.value == themeParentModel.id) {
     if (dark) {
       return ThemeData(
         useMaterial3: themeMap['key_use_material_3'],
-        primarySwatch:
-            buildMaterialColor(themeMap['key_primary_swatch_color'] as String),
-        tabBarTheme: const TabBarTheme(
-          indicatorSize: TabBarIndicatorSize.label,
-          labelColor: Colors.white,
-          unselectedLabelColor: Colors.white,
-          indicator: ShapeDecoration(
-            shape: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.white,
-                width: 1,
-                style: BorderStyle.solid,
-              ),
-            ),
-          ),
-        ),
+        primarySwatch: buildMaterialColor(themeMap['key_primary_swatch_color']),
       );
     }
     return ThemeData(
       useMaterial3: themeMap['key_use_material_3'],
-      primarySwatch:
-          buildMaterialColor(themeMap['key_primary_swatch_color'] as String),
-      tabBarTheme: const TabBarTheme(
-        indicatorSize: TabBarIndicatorSize.label,
-        labelColor: Colors.white,
-        unselectedLabelColor: Colors.white,
-        indicator: ShapeDecoration(
-          shape: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-              width: 1,
-              style: BorderStyle.solid,
-            ),
-          ),
-        ),
-      ),
+      primarySwatch: buildMaterialColor(themeMap['key_primary_swatch_color']),
     );
   }
+  // BASIC
   if (ThemeIDs.basic.value == themeParentModel.id) {
     if (dark) {
       return ThemeData(
@@ -89,68 +60,68 @@ Future<ThemeData> refreshThemeData(
               HexColor(themeMap['key_cs_on_tertiary_container'] as String),
           outline: HexColor(themeMap['key_cs_outline'] as String),
         ),
-        tabBarTheme: const TabBarTheme(
-          indicatorSize: TabBarIndicatorSize.label,
-          labelColor: Colors.white,
-          unselectedLabelColor: Colors.white,
-          indicator: ShapeDecoration(
-            shape: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
-        primaryTextTheme: const TextTheme(
-          bodyLarge: TextStyle(
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontWeight: FontWeight.w400,
-            fontSize: 16,
-            letterSpacing: 0.5,
-            textBaseline: TextBaseline.alphabetic,
-          ),
-          bodyMedium: TextStyle(
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontWeight: FontWeight.w400,
-            fontSize: 14,
-            letterSpacing: 0.5,
-            textBaseline: TextBaseline.alphabetic,
-          ),
-          bodySmall: TextStyle(
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontWeight: FontWeight.w400,
-            fontSize: 12,
-            letterSpacing: 0.5,
-            textBaseline: TextBaseline.alphabetic,
-          ),
-          titleLarge: TextStyle(
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontWeight: FontWeight.w500,
-            fontSize: 20,
-            letterSpacing: 0.5,
-            textBaseline: TextBaseline.alphabetic,
-          ),
-          titleMedium: TextStyle(
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontWeight: FontWeight.w500,
-            fontSize: 16,
-            letterSpacing: 0.5,
-            textBaseline: TextBaseline.alphabetic,
-          ),
-          titleSmall: TextStyle(
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontWeight: FontWeight.w500,
-            fontSize: 14,
-            letterSpacing: 0.5,
-            textBaseline: TextBaseline.alphabetic,
-          ),
-        ),
+        // tabBarTheme: const TabBarTheme(
+        //   indicatorSize: TabBarIndicatorSize.label,
+        //   labelColor: Colors.white,
+        //   unselectedLabelColor: Colors.white,
+        //   indicator: ShapeDecoration(
+        //     shape: UnderlineInputBorder(
+        //       borderSide: BorderSide(
+        //         color: Colors.white,
+        //       ),
+        //     ),
+        //   ),
+        // ),
+        // primaryTextTheme: const TextTheme(
+        //   bodyLarge: TextStyle(
+        //     color: Colors.white,
+        //     decoration: TextDecoration.none,
+        //     fontWeight: FontWeight.w400,
+        //     fontSize: 16,
+        //     letterSpacing: 0.5,
+        //     textBaseline: TextBaseline.alphabetic,
+        //   ),
+        //   bodyMedium: TextStyle(
+        //     color: Colors.white,
+        //     decoration: TextDecoration.none,
+        //     fontWeight: FontWeight.w400,
+        //     fontSize: 14,
+        //     letterSpacing: 0.5,
+        //     textBaseline: TextBaseline.alphabetic,
+        //   ),
+        //   bodySmall: TextStyle(
+        //     color: Colors.white,
+        //     decoration: TextDecoration.none,
+        //     fontWeight: FontWeight.w400,
+        //     fontSize: 12,
+        //     letterSpacing: 0.5,
+        //     textBaseline: TextBaseline.alphabetic,
+        //   ),
+        //   titleLarge: TextStyle(
+        //     color: Colors.white,
+        //     decoration: TextDecoration.none,
+        //     fontWeight: FontWeight.w500,
+        //     fontSize: 20,
+        //     letterSpacing: 0.5,
+        //     textBaseline: TextBaseline.alphabetic,
+        //   ),
+        //   titleMedium: TextStyle(
+        //     color: Colors.white,
+        //     decoration: TextDecoration.none,
+        //     fontWeight: FontWeight.w500,
+        //     fontSize: 16,
+        //     letterSpacing: 0.5,
+        //     textBaseline: TextBaseline.alphabetic,
+        //   ),
+        //   titleSmall: TextStyle(
+        //     color: Colors.white,
+        //     decoration: TextDecoration.none,
+        //     fontWeight: FontWeight.w500,
+        //     fontSize: 14,
+        //     letterSpacing: 0.5,
+        //     textBaseline: TextBaseline.alphabetic,
+        //   ),
+        // ),
         // scaffoldBackgroundColor: const Color(0xff000000),
         // secondaryHeaderColor: const Color(0xff000000),
         // shadowColor: const Color(0xff00ff00),
@@ -192,90 +163,92 @@ Future<ThemeData> refreshThemeData(
             HexColor(themeMap['key_cs_on_tertiary_container'] as String),
         outline: HexColor(themeMap['key_cs_outline'] as String),
       ),
-      tabBarTheme: const TabBarTheme(
-        indicatorSize: TabBarIndicatorSize.label,
-        labelColor: Colors.white,
-        unselectedLabelColor: Colors.white,
-        indicator: ShapeDecoration(
-          shape: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-              width: 1,
-              style: BorderStyle.solid,
-            ),
-          ),
-        ),
-      ),
-      inputDecorationTheme: const InputDecorationTheme(
-        alignLabelWithHint: false,
-        filled: false,
-        floatingLabelAlignment: FloatingLabelAlignment.start,
-        isCollapsed: false,
-        isDense: false,
-        floatingLabelBehavior: FloatingLabelBehavior.auto,
-      ),
-      primaryTextTheme: const TextTheme(
-        bodyLarge: TextStyle(
-          color: Colors.white,
-          decoration: TextDecoration.none,
-          fontWeight: FontWeight.w400,
-          fontSize: 16.0,
-          inherit: true,
-          letterSpacing: 0.5,
-          textBaseline: TextBaseline.alphabetic,
-        ),
-        bodyMedium: TextStyle(
-          color: Colors.white,
-          decoration: TextDecoration.none,
-          fontWeight: FontWeight.w400,
-          fontSize: 14.0,
-          inherit: true,
-          letterSpacing: 0.5,
-          textBaseline: TextBaseline.alphabetic,
-        ),
-        bodySmall: TextStyle(
-          color: Colors.white,
-          decoration: TextDecoration.none,
-          fontWeight: FontWeight.w400,
-          fontSize: 12.0,
-          inherit: true,
-          letterSpacing: 0.5,
-          textBaseline: TextBaseline.alphabetic,
-        ),
-        titleLarge: TextStyle(
-          color: Colors.white,
-          decoration: TextDecoration.none,
-          fontWeight: FontWeight.w500,
-          fontSize: 20.0,
-          inherit: true,
-          letterSpacing: 0.5,
-          textBaseline: TextBaseline.alphabetic,
-        ),
-        titleMedium: TextStyle(
-          color: Colors.white,
-          decoration: TextDecoration.none,
-          fontWeight: FontWeight.w500,
-          fontSize: 16.0,
-          inherit: true,
-          letterSpacing: 0.5,
-          textBaseline: TextBaseline.alphabetic,
-        ),
-        titleSmall: TextStyle(
-          color: Colors.white,
-          decoration: TextDecoration.none,
-          fontWeight: FontWeight.w500,
-          fontSize: 14.0,
-          inherit: true,
-          letterSpacing: 0.5,
-          textBaseline: TextBaseline.alphabetic,
-        ),
-      ),
-      scaffoldBackgroundColor: const Color(0xfffdfcff),
-      secondaryHeaderColor: const Color(0xffe3f2fd),
-      shadowColor: const Color(0xff000000),
-      splashColor: const Color(0x66c8c8c8),
+      // tabBarTheme: const TabBarTheme(
+      //   indicatorSize: TabBarIndicatorSize.label,
+      //   labelColor: Colors.white,
+      //   unselectedLabelColor: Colors.white,
+      //   indicator: ShapeDecoration(
+      //     shape: UnderlineInputBorder(
+      //       borderSide: BorderSide(
+      //         color: Colors.white,
+      //         width: 1,
+      //         style: BorderStyle.solid,
+      //       ),
+      //     ),
+      //   ),
+      // ),
+      // inputDecorationTheme: const InputDecorationTheme(
+      //   alignLabelWithHint: false,
+      //   filled: false,
+      //   floatingLabelAlignment: FloatingLabelAlignment.start,
+      //   isCollapsed: false,
+      //   isDense: false,
+      //   floatingLabelBehavior: FloatingLabelBehavior.auto,
+      // ),
+      // primaryTextTheme: const TextTheme(
+      //   bodyLarge: TextStyle(
+      //     color: Colors.white,
+      //     decoration: TextDecoration.none,
+      //     fontWeight: FontWeight.w400,
+      //     fontSize: 16.0,
+      //     inherit: true,
+      //     letterSpacing: 0.5,
+      //     textBaseline: TextBaseline.alphabetic,
+      //   ),
+      //   bodyMedium: TextStyle(
+      //     color: Colors.white,
+      //     decoration: TextDecoration.none,
+      //     fontWeight: FontWeight.w400,
+      //     fontSize: 14.0,
+      //     inherit: true,
+      //     letterSpacing: 0.5,
+      //     textBaseline: TextBaseline.alphabetic,
+      //   ),
+      //   bodySmall: TextStyle(
+      //     color: Colors.white,
+      //     decoration: TextDecoration.none,
+      //     fontWeight: FontWeight.w400,
+      //     fontSize: 12.0,
+      //     inherit: true,
+      //     letterSpacing: 0.5,
+      //     textBaseline: TextBaseline.alphabetic,
+      //   ),
+      //   titleLarge: TextStyle(
+      //     color: Colors.white,
+      //     decoration: TextDecoration.none,
+      //     fontWeight: FontWeight.w500,
+      //     fontSize: 20.0,
+      //     inherit: true,
+      //     letterSpacing: 0.5,
+      //     textBaseline: TextBaseline.alphabetic,
+      //   ),
+      //   titleMedium: TextStyle(
+      //     color: Colors.white,
+      //     decoration: TextDecoration.none,
+      //     fontWeight: FontWeight.w500,
+      //     fontSize: 16.0,
+      //     inherit: true,
+      //     letterSpacing: 0.5,
+      //     textBaseline: TextBaseline.alphabetic,
+      //   ),
+      //   titleSmall: TextStyle(
+      //     color: Colors.white,
+      //     decoration: TextDecoration.none,
+      //     fontWeight: FontWeight.w500,
+      //     fontSize: 14.0,
+      //     inherit: true,
+      //     letterSpacing: 0.5,
+      //     textBaseline: TextBaseline.alphabetic,
+      //   ),
+      // ),
+      // scaffoldBackgroundColor: const Color(0xfffdfcff),
+      // secondaryHeaderColor: const Color(0xffe3f2fd),
+      // shadowColor: const Color(0xff000000),
+      // splashColor: const Color(0x66c8c8c8),
     );
   }
+
+  // ADVANCED
 
   final transition = PageTransitionsTheme(builders: {
     TargetPlatform.android: pageTransitionTheme(
@@ -300,7 +273,6 @@ Future<ThemeData> refreshThemeData(
 
   var colorScheme = _getColorSchemeForAdvanced(themeMap, dark);
 
-  // Advanced
   return ThemeData(
     useMaterial3: themeMap['key_use_material_3'],
     pageTransitionsTheme: transition,

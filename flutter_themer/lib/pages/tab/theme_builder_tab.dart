@@ -77,7 +77,7 @@ class ThemeBuilderTab extends StatelessWidget {
       height: 80,
       child: Row(
         children: [
-          Flexible(
+          Expanded(
             child: Row(
               children: [
                 const MainTitle(title: 'Brightness'),
@@ -96,8 +96,6 @@ class ThemeBuilderTab extends StatelessWidget {
               ],
             ),
           ),
-          const Spacer(),
-          const ExportTheme()
         ],
       ),
     );
@@ -348,6 +346,7 @@ class ThemeBuilderTab extends StatelessWidget {
           DropdownButton<Value>(
             isDense: true,
             value: currentVal,
+            underline: const SizedBox.shrink(),
             items: _dropDownItems(context, list, dark),
             onChanged: (Value? value) async {
               await _updateDropDown(list, value, dark);

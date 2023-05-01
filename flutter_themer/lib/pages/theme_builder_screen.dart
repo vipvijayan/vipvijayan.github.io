@@ -31,11 +31,14 @@ class _ThemeBuilderScreenState extends State<ThemeBuilderScreen>
             if (state.curSelectedThemeIndex == index) {
               return;
             }
+            state.previewLoading = true;
             state.curSelectedThemeIndex = index;
-            state.curSelectedThemeModel = state.themeParentModels[index];
             state.tabController.animateTo(index);
-            state.refresh();
-            fbLogEvent(name: 'Selected: ${state.curSelectedThemeModel.title}');
+            state.curSelectedThemeModel = state.themeParentModels[index];
+            unawaited(state.refresh());
+            state.previewLoading = false;
+            unawaited(fbLogEvent(
+                name: 'Selected: ${state.curSelectedThemeModel.title}'));
           },
           tabs: state.themeParentModels
               .map((e) => _tabTitle(e.title.toUpperCase()))

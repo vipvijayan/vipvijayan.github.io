@@ -54,69 +54,63 @@ class AppListTile extends StatelessWidget {
       onTap: () async {
         action?.call();
       },
-      child: Tooltip(
-        message: aboutItem.tooltipMessage,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5),
-          child: Row(
-            children: [
-              const SizedBox(width: 10),
-              // https://api.flutter.dev/flutter/material/Icons-class.html
-              Icon(
-                materialIcon(aboutItem.icon),
-                size: 20,
-              ),
-              const SizedBox(width: 25),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 10),
-                    Text(
-                      aboutItem.title,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            fontSize: 12,
-                            color: Colors.grey,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 5),
+        child: Row(
+          children: [
+            const SizedBox(width: 10),
+            // https://api.flutter.dev/flutter/material/Icons-class.html
+            Icon(
+              materialIcon(aboutItem.icon),
+              size: 20,
+            ),
+            const SizedBox(width: 25),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 10),
+                  Text(
+                    aboutItem.title,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                  ),
+                  if (null != aboutItem.subtitle &&
+                      aboutItem.subtitle!.isNotEmpty) ...[
+                    const SizedBox(height: 5),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            aboutItem.subtitle ?? '',
+                            style:
+                                Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      fontSize: 14,
+                                      color: Colors.blue,
+                                    ),
                           ),
+                        ),
+                        if (aboutItem.copyEnabled)
+                          IconButton(
+                            padding: EdgeInsets.zero,
+                            tooltip: 'copy',
+                            iconSize: 20,
+                            onPressed: () async {
+                              copyToClipboard(aboutItem.subtitle);
+                              unawaited(showSnackBar('Copied'));
+                            },
+                            icon: const Icon(Icons.copy),
+                          ),
+                        if (!aboutItem.copyEnabled) const SizedBox(height: 40),
+                      ],
                     ),
-                    if (null != aboutItem.subtitle &&
-                        aboutItem.subtitle!.isNotEmpty) ...[
-                      const SizedBox(height: 5),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              aboutItem.subtitle ?? '',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
-                                    fontSize: 14,
-                                    color: Colors.blue,
-                                  ),
-                            ),
-                          ),
-                          if (aboutItem.copyEnabled)
-                            IconButton(
-                              padding: EdgeInsets.zero,
-                              tooltip: 'copy',
-                              iconSize: 20,
-                              onPressed: () async {
-                                copyToClipboard(aboutItem.subtitle);
-                                unawaited(showSnackBar('Copied'));
-                              },
-                              icon: const Icon(Icons.copy),
-                            ),
-                          if (!aboutItem.copyEnabled)
-                            const SizedBox(height: 40),
-                        ],
-                      ),
-                    ],
                   ],
-                ),
-              )
-            ],
-          ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

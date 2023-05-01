@@ -14,6 +14,7 @@ late PackageInfo packageInfo;
 late About about;
 
 // create some values
+const appbarIconSize = 25.0;
 const propertyWidth = 250.0;
 const controlsDimen = 70.0;
 const titleFontSize = 14.0;

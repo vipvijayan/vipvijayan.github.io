@@ -65,7 +65,10 @@ class HomeScreen extends StatelessWidget {
     final state = context.watch<ThemeAppState>();
     final myColors = Theme.of(context).extension<MyColors>()!;
     return [
+      const ExportTheme(),
+      const SizedBox(width: 20),
       IconButton(
+        iconSize: appbarIconSize,
         tooltip: 'Reset',
         onPressed: () async {
           state.tabController.animateTo(state.initialTabIndex);
@@ -81,7 +84,9 @@ class HomeScreen extends StatelessWidget {
           color: Theme.of(context).colorScheme.error,
         ),
       ),
+      const SizedBox(width: 20),
       IconButton(
+        iconSize: appbarIconSize,
         tooltip: 'Show/Hide Preview Settings',
         icon: const Icon(Icons.settings),
         onPressed: () async {
@@ -90,8 +95,10 @@ class HomeScreen extends StatelessWidget {
           unawaited(fbLogEvent(name: 'preview_settings'));
         },
       ),
+      const SizedBox(width: 20),
       IconButton(
         tooltip: 'About',
+        iconSize: appbarIconSize,
         onPressed: () async {
           unawaited(openAboutInfoScreen());
           unawaited(fbLogEvent(name: 'about'));

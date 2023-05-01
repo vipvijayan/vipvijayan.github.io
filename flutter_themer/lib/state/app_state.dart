@@ -2,6 +2,7 @@ import 'package:flutter_themer/utils/exports.dart';
 
 class ThemeAppState extends ChangeNotifier {
   //
+  bool previewLoading = false;
   bool appDarkTheme = false;
   bool showPreviewToolbar = false;
   String themeGeneratedHtml = '';
@@ -92,10 +93,7 @@ class ThemeAppState extends ChangeNotifier {
   }
 
   Future<void> initUsageData() async {
-    Future.delayed(const Duration(seconds: 1), () async {
-      usageHtml = await loadUsageHtml();
-      logD(usageHtml);
-    });
+    usageHtml = await loadUsageHtml();
   }
 
   ThemeData currentTheme() =>

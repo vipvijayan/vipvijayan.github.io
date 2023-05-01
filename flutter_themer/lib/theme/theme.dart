@@ -108,7 +108,6 @@ class AppTheme {
         fontFamily: fontFamily,
       ),
       unselectedLabelStyle: const TextStyle(
-        // fontWeight: FontWeight.bold,
         letterSpacing: letterSpacing,
         fontFamily: fontFamily,
         fontSize: 14,
