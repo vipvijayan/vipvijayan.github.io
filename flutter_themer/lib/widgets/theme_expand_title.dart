@@ -32,7 +32,7 @@ class ExpandTitle extends StatelessWidget {
             Expanded(
               child: MainTitle(
                 title: title,
-                fontSize: titleFontSize + 2,
+                fontSize: titleFontSize + (expanded ? 4 : 2),
                 txtColor: expanded ? Colors.blue : Colors.black,
               ),
             ),
@@ -40,6 +40,7 @@ class ExpandTitle extends StatelessWidget {
               expanded
                   ? Icons.keyboard_arrow_up_rounded
                   : Icons.keyboard_arrow_down_rounded,
+              color: expanded ? Colors.blue : Colors.black54,
             ),
           ],
         ),

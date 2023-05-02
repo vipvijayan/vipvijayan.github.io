@@ -5,6 +5,7 @@ class ThemeAppState extends ChangeNotifier {
   bool previewLoading = false;
   bool appDarkTheme = false;
   bool showPreviewToolbar = false;
+  bool settingsOpen = false;
   String themeGeneratedHtml = '';
   String usageHtml = '';
   String customHtml = '';
@@ -66,8 +67,18 @@ class ThemeAppState extends ChangeNotifier {
   }
 
   Future<void> reset() async {
+    tabController.animateTo(initialTabIndex);
+    curSelectedThemeModel = themeParentModels[initialTabIndex];
+    curSelectedThemeIndex = initialTabIndex;
+    showPreviewToolbar = false;
+    settingsOpen = false;
     customColors.clear();
     unawaited(init(refresh: true));
+  }
+
+  Future<void> togglePreviewSettings() async {
+    showPreviewToolbar = !showPreviewToolbar;
+    notifyListeners();
   }
 
   Future<void> setAppLoading(bool loading) async {
@@ -149,5 +160,10 @@ class ThemeAppState extends ChangeNotifier {
   Future<void> showUpdatesHtmlDialog() async {
     updatesHtml = await loadUpdatesInfoHtml();
     unawaited(showUpdatesModalBottomSheet(updatesHtml));
+  }
+
+  Future<void> openSettings() async {
+    settingsOpen = !settingsOpen;
+    notifyListeners();
   }
 }

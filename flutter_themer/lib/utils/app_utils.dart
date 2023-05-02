@@ -167,7 +167,7 @@ Future<void> showColorDialog(
 materialIcon(String iconHex) =>
     IconData(int.parse(iconHex), fontFamily: 'MaterialIcons');
 
-subtitleStyle(BuildContext context) {
+TextStyle? subtitleStyle(BuildContext context) {
   return Theme.of(context).textTheme.titleLarge?.copyWith(
         fontSize: titleFontSize,
         fontWeight: FontWeight.bold,

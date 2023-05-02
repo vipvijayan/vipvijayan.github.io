@@ -1,5 +1,15 @@
 import 'package:flutter_themer/utils/exports.dart';
 
+void setErrorBuilder() {
+  ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
+    return Scaffold(
+      body: Center(
+        child: Text("Unexpected error. See console for details."),
+      ),
+    );
+  };
+}
+
 class App extends StatelessWidget {
   const App({super.key});
 

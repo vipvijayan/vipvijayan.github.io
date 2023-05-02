@@ -33,7 +33,7 @@ class ColorSelector extends StatelessWidget {
             height: controlsDimen - 20,
             width: controlsDimen - 20,
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black87, width: 0.1),
+              border: Border.all(color: Colors.black87, width: 0.2),
               borderRadius: BorderRadius.circular(6),
               color: color,
             ),

@@ -116,12 +116,13 @@ class ThemeBuilderTab extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (item.title.isNotEmpty) ...[
-                const SizedBox(height: 10),
+                const SizedBox(height: 30),
                 Text(
                   item.title,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: Colors.black54,
+                        color: Colors.black87,
                         fontSize: titleFontSize,
+                        fontWeight: FontWeight.bold,
                       ),
                 ),
               ],
@@ -134,8 +135,8 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.grey.shade50,
-                  border: Border.all(color: Colors.grey.shade100),
+                  color: Colors.teal.shade50.withOpacity(0.3),
+                  border: Border.all(color: Colors.teal.shade50, width: 0.5),
                 ),
                 child: Wrap(
                   spacing: 30,

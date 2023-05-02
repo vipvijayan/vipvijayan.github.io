@@ -25,7 +25,8 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: [
                 _previewFragment(state),
-                _themeBuilderFragment(),
+                _themeBuilderFragment(state),
+                if (state.settingsOpen) Expanded(child: AboutInfoScreen()),
               ],
             ),
           ),
@@ -33,10 +34,10 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _themeBuilderFragment() {
-    return const Expanded(
-      flex: 3,
-      child: Padding(
+  Widget _themeBuilderFragment(ThemeAppState state) {
+    return Expanded(
+      flex: state.settingsOpen ? 2 : 3,
+      child: const Padding(
         padding: EdgeInsets.only(left: 20, right: 10),
         child: ThemeBuilderScreen(),
       ),
@@ -71,12 +72,7 @@ class HomeScreen extends StatelessWidget {
         iconSize: appbarIconSize,
         tooltip: 'Reset',
         onPressed: () async {
-          state.tabController.animateTo(state.initialTabIndex);
-          state.curSelectedThemeIndex = state.initialTabIndex;
-          state.showPreviewToolbar = false;
-          state.curSelectedThemeModel =
-              state.themeParentModels[state.initialTabIndex];
-          state.reset();
+          unawaited(state.reset());
           unawaited(fbLogEvent(name: 'theme_reset'));
         },
         icon: Icon(
@@ -90,8 +86,7 @@ class HomeScreen extends StatelessWidget {
         tooltip: 'Show/Hide Preview Settings',
         icon: const Icon(Icons.settings),
         onPressed: () async {
-          state.showPreviewToolbar = !state.showPreviewToolbar;
-          state.refresh();
+          unawaited(state.togglePreviewSettings());
           unawaited(fbLogEvent(name: 'preview_settings'));
         },
       ),
@@ -100,7 +95,7 @@ class HomeScreen extends StatelessWidget {
         tooltip: 'About',
         iconSize: appbarIconSize,
         onPressed: () async {
-          unawaited(openAboutInfoScreen());
+          unawaited(state.openSettings());
           unawaited(fbLogEvent(name: 'about'));
         },
         icon: Icon(

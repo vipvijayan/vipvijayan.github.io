@@ -13,7 +13,7 @@ class NumberTF extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: propertyWidth - 30,
+      width: propertyWidth / 2,
       child: TextFormField(
         initialValue: initialValue,
         onChanged: (value) => onChange(value),
