@@ -198,11 +198,12 @@ class _ButtonTabState extends State<ButtonTab> {
             child: const Text('Text Button'),
           ),
           const SizedBox(height: 20),
-          TextButton(
+          TextButton.icon(
+            icon: Icon(Icons.show_chart),
             onPressed: () async {
               showToast('Hello, How are you?');
             },
-            child: const Text('Show a Snackbar'),
+            label: const Text('Show a Snackbar'),
           ),
           const SizedBox(height: 20),
           Wrap(

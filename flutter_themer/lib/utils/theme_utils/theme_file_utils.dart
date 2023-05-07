@@ -157,6 +157,29 @@ class ThemeFileUtils {
   }
 }
 
+Alignment textButtonAlignment(String alignment) {
+  switch (alignment) {
+    case 'Alignment.topLeft':
+      return Alignment.topLeft;
+    case 'Alignment.topCenter':
+      return Alignment.topCenter;
+    case 'Alignment.topRight':
+      return Alignment.topRight;
+    case 'Alignment.bottomLeft':
+      return Alignment.bottomLeft;
+    case 'Alignment.bottomCenter':
+      return Alignment.bottomCenter;
+    case 'Alignment.bottomRight':
+      return Alignment.bottomRight;
+    case 'Alignment.centerLeft':
+      return Alignment.centerLeft;
+    case 'Alignment.centerRight':
+      return Alignment.centerRight;
+    default:
+      return Alignment.center;
+  }
+}
+
 BorderStyle tabBarIndicatorUnderlineBorderStyle(String borderStyle) {
   switch (borderStyle) {
     case 'BorderStyle.solid':

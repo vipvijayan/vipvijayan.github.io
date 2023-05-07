@@ -282,6 +282,21 @@ Future<ThemeData> refreshThemeData(
         backgroundColor: MaterialStateProperty.all<Color>(
           HexColor(themeMap['key_txt_btn_background_color']),
         ),
+        overlayColor: MaterialStateProperty.all<Color>(
+          HexColor(themeMap['key_txt_btn_overlay_color']),
+        ),
+        elevation: MaterialStateProperty.all<double>(
+          double.parse(themeMap['key_txt_btn_elevation']),
+        ),
+        iconSize: MaterialStateProperty.all<double>(
+          double.parse(themeMap['key_txt_btn_icon_size']),
+        ),
+        iconColor: MaterialStateProperty.all<Color>(
+          HexColor(themeMap['key_txt_btn_icon_color']),
+        ),
+        alignment: textButtonAlignment(
+          themeMap['key_txt_btn_alignment'],
+        ),
       ),
     ),
     checkboxTheme: CheckboxThemeData(

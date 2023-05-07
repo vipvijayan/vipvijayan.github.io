@@ -135,7 +135,7 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.teal.shade50.withOpacity(0.3),
+                  color: Colors.grey.shade50.withOpacity(0.3),
                   border: Border.all(color: Colors.teal.shade50, width: 0.5),
                 ),
                 child: Wrap(
@@ -344,15 +344,18 @@ class ThemeBuilderTab extends StatelessWidget {
             style: subtitleStyle(context),
           ),
           const Spacer(),
-          DropdownButton<Value>(
-            isDense: true,
-            value: currentVal,
-            underline: const SizedBox.shrink(),
-            items: _dropDownItems(context, list, dark),
-            onChanged: (Value? value) async {
-              await _updateDropDown(list, value, dark);
-              unawaited(state.refreshPreview());
-            },
+          Container(
+            decoration: BoxDecoration(color: Colors.white),
+            child: DropdownButton<Value>(
+              isDense: true,
+              value: currentVal,
+              underline: const SizedBox.shrink(),
+              items: _dropDownItems(context, list, dark),
+              onChanged: (Value? value) async {
+                await _updateDropDown(list, value, dark);
+                unawaited(state.refreshPreview());
+              },
+            ),
           ),
         ],
       ),
