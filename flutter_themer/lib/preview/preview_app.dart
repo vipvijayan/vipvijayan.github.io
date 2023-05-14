@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter_themer/utils/exports.dart';
 
 class PreviewApp extends StatelessWidget {

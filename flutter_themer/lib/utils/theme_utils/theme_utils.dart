@@ -110,9 +110,52 @@ Future<ThemeData> refreshThemeData(
 
   var colorScheme = _getColorSchemeForAdvanced(themeMap, dark);
 
+  print(themeMap['key_bottom_nav_bar_selected_icon_text_color']);
+  print(themeMap['key_bottom_nav_bar_unselected_icon_text_color']);
   return ThemeData(
     pageTransitionsTheme: transition,
     brightness: themeParentModel.brightness,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: HexColor(
+        themeMap['key_bottom_nav_bar_background_color'],
+      ),
+      selectedItemColor: HexColor(
+        themeMap['key_bottom_nav_bar_selected_item_color'],
+      ),
+      showSelectedLabels: themeMap['key_bottom_nav_bar_show_selected_labels'],
+      showUnselectedLabels:
+          themeMap['key_bottom_nav_bar_show_unselected_labels'],
+      unselectedItemColor: HexColor(
+        themeMap['key_bottom_nav_bar_unselected_item_color'],
+      ),
+      selectedLabelStyle: TextStyle(
+        color: HexColor(
+          themeMap['key_bottom_nav_bar_selected_icon_text_color'],
+        ),
+      ),
+      unselectedLabelStyle: TextStyle(
+        color: HexColor(
+          themeMap['key_bottom_nav_bar_unselected_icon_text_color'],
+        ),
+      ),
+      selectedIconTheme: IconThemeData(
+        color: HexColor(
+          themeMap['key_bottom_nav_bar_selected_icon_color'],
+        ),
+        size: double.parse(
+          themeMap['key_bottom_nav_bar_selected_icon_size'],
+        ),
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: HexColor(
+          themeMap['key_bottom_nav_bar_unselected_icon_color'],
+        ),
+        size: double.parse(
+          themeMap['key_bottom_nav_bar_unselected_icon_size'],
+        ),
+      ),
+      elevation: double.parse(themeMap['key_bottom_nav_bar_elevation']),
+    ),
     scaffoldBackgroundColor: HexColor(
       themeMap['key_scaffold_background_color'],
     ),

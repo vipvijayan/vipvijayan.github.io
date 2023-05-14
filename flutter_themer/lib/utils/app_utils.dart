@@ -179,7 +179,7 @@ Future<void> showUpdatesModalBottomSheet(String updatesHtml) async {
   showModalBottomSheet<void>(
     context: mainNavKey.currentContext!,
     builder: (context) {
-      return Padding(
+      return SingleChildScrollView(
         padding: const EdgeInsets.all(30),
         child: HtmlWidget(updatesHtml),
       );

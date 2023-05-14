@@ -227,6 +227,15 @@ TabBarIndicatorSize tabIndicatorSize(String size) {
   }
 }
 
+BottomNavigationBarType bottomNavType(String type) {
+  switch (type) {
+    case 'shifting':
+      return BottomNavigationBarType.shifting;
+    default:
+      return BottomNavigationBarType.fixed;
+  }
+}
+
 PageTransitionsBuilder pageTransitionTheme(String transition) {
   switch (transition) {
     case 'FadeUpwardsPageTransitionsBuilder()':

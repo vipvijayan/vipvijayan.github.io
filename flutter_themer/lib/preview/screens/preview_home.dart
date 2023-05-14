@@ -1,3 +1,4 @@
+import 'package:flutter_themer/utils/constants/preview_configs.dart';
 import 'package:flutter_themer/utils/exports.dart';
 
 class PreviewHomeScreen extends StatelessWidget {
@@ -9,10 +10,11 @@ class PreviewHomeScreen extends StatelessWidget {
     final state = context.watch<ThemeAppState>();
     return Column(
       children: [
+        if (state.previewLoading) const Loading(),
         if (!state.previewLoading)
           Expanded(
             child: DefaultTabController(
-              length: 5,
+              length: 6,
               child: Scaffold(
                 key: scaffoldKey,
                 drawer: _drawer(),
@@ -33,29 +35,65 @@ class PreviewHomeScreen extends StatelessWidget {
                   ),
                   bottom: const TabBar(
                     isScrollable: true,
-                    tabs: [
-                      Tab(text: 'Buttons'),
-                      Tab(text: 'Text'),
-                      Tab(text: 'Inputs'),
-                      Tab(text: 'Cards'),
-                      Tab(text: 'List'),
-                    ],
+                    tabs: previewTabs,
                   ),
                 ),
-                body: const TabBarView(
-                  children: [
-                    ButtonTab(),
-                    TextTab(),
-                    InputTab(),
-                    CardTab(),
-                    ListTab(),
-                  ],
-                ),
+                body: const TabBarView(children: previewTabsChildren),
               ),
             ),
           ),
         const SizedBox(height: 20),
       ],
+    );
+  }
+}
+
+class BottomNavigationTab extends StatefulWidget {
+  const BottomNavigationTab({super.key});
+
+  @override
+  State<BottomNavigationTab> createState() => _BottomNavigationTabState();
+}
+
+class _BottomNavigationTabState extends State<BottomNavigationTab> {
+  int _selectedIndex = 0;
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text('Home', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Search', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Profile',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
