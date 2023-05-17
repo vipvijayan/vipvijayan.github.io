@@ -250,7 +250,7 @@ class _ButtonTabState extends State<ButtonTab> {
             children: [
               ElevatedButton(
                 onPressed: () async {
-                  showPreviewAlert(context);
+                  PreviewUtils.showPreviewAlert(context);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -286,8 +286,10 @@ class _ButtonTabState extends State<ButtonTab> {
               ),
               const SizedBox(width: 10),
               OutlinedButton(
-                onPressed: () async {},
-                child: const Text('Outlined Button'),
+                onPressed: () async {
+                  PreviewUtils.showPreviewDatePicker(context);
+                },
+                child: const Text('Show Date Picker'),
               ),
             ],
           ),

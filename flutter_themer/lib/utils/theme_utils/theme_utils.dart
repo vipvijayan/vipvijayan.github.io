@@ -26,6 +26,7 @@ Future<ThemeData> refreshThemeData(
   if (ThemeIDs.basic.value == themeParentModel.id) {
     if (dark) {
       return ThemeData(
+        useMaterial3: themeMap['key_use_material_3'],
         brightness: themeParentModel.brightness,
         colorScheme: ColorScheme.dark(
           primary: HexColor(themeMap['key_cs_primary']),
@@ -56,6 +57,7 @@ Future<ThemeData> refreshThemeData(
       );
     }
     return ThemeData(
+      useMaterial3: themeMap['key_use_material_3'],
       brightness: themeParentModel.brightness,
       colorScheme: ColorScheme.light(
         primary: HexColor(themeMap['key_cs_primary']),
@@ -110,9 +112,8 @@ Future<ThemeData> refreshThemeData(
 
   var colorScheme = _getColorSchemeForAdvanced(themeMap, dark);
 
-  print(themeMap['key_bottom_nav_bar_selected_icon_text_color']);
-  print(themeMap['key_bottom_nav_bar_unselected_icon_text_color']);
   return ThemeData(
+    useMaterial3: themeMap['key_use_material_3'],
     pageTransitionsTheme: transition,
     brightness: themeParentModel.brightness,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -378,6 +379,15 @@ Future<ThemeData> refreshThemeData(
     ),
     iconTheme: IconThemeData(
       color: HexColor(themeMap['key_icon_theme_icon_color']),
+    ),
+    datePickerTheme: DatePickerThemeData(
+      backgroundColor: HexColor(themeMap['key_date_picker_background_color']),
+      headerBackgroundColor: HexColor(
+        themeMap['key_date_picker_header_background_color'],
+      ),
+      rangePickerBackgroundColor: HexColor(
+        themeMap['key_date_picker_range_picker_background_color'],
+      ),
     ),
     radioTheme: RadioThemeData(
       fillColor: MaterialStateProperty.all<Color>(

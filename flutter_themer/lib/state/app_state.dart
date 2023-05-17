@@ -111,12 +111,16 @@ class ThemeAppState extends ChangeNotifier {
       curSelectedThemeModel.curThemeData ?? ThemeData.light();
 
   Future<void> refreshPreview() async {
-    for (final tTabs in themeParentModels) {
-      if (tTabs.id == curSelectedThemeModel.id) {
-        tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
-      }
-    }
-    notifyListeners();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      Future.delayed(const Duration(milliseconds: 300), () async {
+        for (final tTabs in themeParentModels) {
+          if (tTabs.id == curSelectedThemeModel.id) {
+            tTabs.curThemeData = await refreshThemeData(tTabs, customColors);
+          }
+        }
+        notifyListeners();
+      });
+    });
   }
 
   Future<void> refresh() async {
