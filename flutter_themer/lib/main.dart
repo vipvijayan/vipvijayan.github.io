@@ -6,6 +6,5 @@ void main() async {
   timeDilation = appTimeDilation;
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await setWindow();
   runApp(const App());
 }

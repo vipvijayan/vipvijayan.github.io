@@ -28,8 +28,18 @@ class App extends StatelessWidget {
         navigatorObservers: <NavigatorObserver>[observer],
         debugShowCheckedModeBanner: showDebugBanner,
         showPerformanceOverlay: false,
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.lightTheme,
+        // darkTheme: ThemeData.dark().copyWith(
+        //   extensions: <ThemeExtension<dynamic>>[
+        //     MyColors.light,
+        //   ],
+        // ),
+        theme: ThemeData.light().copyWith(
+          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+          useMaterial3: true,
+          extensions: <ThemeExtension<dynamic>>[
+            MyColors.light,
+          ],
+        ),
         home: const SplashScreen(),
       ),
     );

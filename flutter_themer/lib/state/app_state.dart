@@ -2,6 +2,7 @@ import 'package:flutter_themer/utils/exports.dart';
 
 class ThemeAppState extends ChangeNotifier {
   //
+  bool curThemeLight = false;
   bool previewLoading = false;
   bool appDarkTheme = false;
   bool showPreviewToolbar = false;
@@ -101,6 +102,7 @@ class ThemeAppState extends ChangeNotifier {
       openHome();
       return;
     }
+    notifyListeners();
   }
 
   Future<void> initUsageData() async {

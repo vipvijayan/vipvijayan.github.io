@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter_themer/utils/exports.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -71,34 +70,6 @@ Future<void> showToast(String text) async {
     textColor: Colors.white,
     fontSize: 16.0,
   );
-}
-
-Future<void> setWindowSize() async {
-  var pixelRatio = window.devicePixelRatio;
-  var logicalScreenSize = window.physicalSize / pixelRatio;
-  var logicalWidth = logicalScreenSize.width;
-  var logicalHeight = logicalScreenSize.height;
-
-  WindowOptions windowOptions = WindowOptions(
-    size: Size(logicalWidth, logicalHeight),
-    center: true,
-    backgroundColor: Colors.transparent,
-    skipTaskbar: true,
-    titleBarStyle: TitleBarStyle.hidden,
-  );
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
-    await windowManager.focus();
-  });
-}
-
-Future<void> setWindow() async {
-  if (!kIsWeb) {
-    await windowManager.ensureInitialized();
-    if (Platform.isMacOS || Platform.isWindows) {
-      await setWindowSize();
-    }
-  }
 }
 
 isDesktopOrWeb() {}

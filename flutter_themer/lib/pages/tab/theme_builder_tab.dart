@@ -1,5 +1,4 @@
 import 'package:flutter_themer/utils/exports.dart';
-import 'package:flutter_themer/widgets/export_theme.dart';
 import 'package:flutter_themer/widgets/number_tf.dart';
 
 class ThemeBuilderTab extends StatelessWidget {
@@ -18,6 +17,7 @@ class ThemeBuilderTab extends StatelessWidget {
     final dark = isDarkBrightness(themeTab);
     return Container(
       padding: const EdgeInsets.all(20),
+      color: Colors.white,
       child: Column(
         children: [
           _mainHeader(state),
@@ -107,7 +107,8 @@ class ThemeBuilderTab extends StatelessWidget {
     bool dark,
     ThemeAppState state,
   ) {
-    return Padding(
+    return Container(
+      color: Colors.white,
       padding: const EdgeInsets.fromLTRB(30, 10, 20, 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -68,6 +68,17 @@ class HomeScreen extends StatelessWidget {
     return [
       const ExportTheme(),
       const SizedBox(width: 20),
+      // IconButton(
+      //   iconSize: appbarIconSize,
+      //   tooltip: 'Theme',
+      //   onPressed: () async {
+      //     unawaited(fbLogEvent(name: 'app_theme'));
+      //   },
+      //   icon: Icon(
+      //     Icons.brightness_2,
+      //     color: Theme.of(context).colorScheme.error,
+      //   ),
+      // ),
       IconButton(
         iconSize: appbarIconSize,
         tooltip: 'Reset',
