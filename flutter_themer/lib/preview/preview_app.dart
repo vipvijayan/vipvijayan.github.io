@@ -11,15 +11,15 @@ class PreviewApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<ThemeAppState>();
     return DevicePreview(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.background,
       isToolbarVisible: state.showPreviewToolbar,
       data: const DevicePreviewData(
         isDarkMode: false,
         boldText: false,
         settings: DevicePreviewSettingsData(
-          toolbarTheme: DevicePreviewToolBarThemeData.light,
+          // toolbarTheme: DevicePreviewToolBarThemeData.light,
           toolbarPosition: DevicePreviewToolBarPositionData.bottom,
-          backgroundTheme: DevicePreviewBackgroundThemeData.light,
+          // backgroundTheme: DevicePreviewBackgroundThemeData.light,
         ),
       ),
       builder: (context) {

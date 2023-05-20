@@ -28,14 +28,27 @@ class App extends StatelessWidget {
         navigatorObservers: <NavigatorObserver>[observer],
         debugShowCheckedModeBanner: showDebugBanner,
         showPerformanceOverlay: false,
-        // darkTheme: ThemeData.dark().copyWith(
-        //   extensions: <ThemeExtension<dynamic>>[
-        //     MyColors.light,
-        //   ],
-        // ),
-        theme: ThemeData.light().copyWith(
-          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        darkTheme: ThemeData.dark().copyWith(
           useMaterial3: true,
+          scaffoldBackgroundColor: Colors.black,
+          colorScheme: ColorScheme.dark().copyWith(background: Colors.black),
+          appBarTheme: AppBarTheme(
+            elevation: 0,
+            toolbarHeight: kToolbarHeight + 10,
+          ),
+          extensions: <ThemeExtension<dynamic>>[
+            MyColors.dark,
+          ],
+        ),
+        themeMode: ThemeMode.system,
+        theme: ThemeData.light().copyWith(
+          useMaterial3: true,
+          scaffoldBackgroundColor: Colors.white,
+          colorScheme: ColorScheme.light().copyWith(background: Colors.white),
+          appBarTheme: AppBarTheme(
+            elevation: 0,
+            toolbarHeight: kToolbarHeight + 10,
+          ),
           extensions: <ThemeExtension<dynamic>>[
             MyColors.light,
           ],

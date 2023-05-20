@@ -16,7 +16,6 @@ class ThemeCustomColorsUI extends StatelessWidget {
               : customColor.lightModeColorCode);
           return Container(
             padding: const EdgeInsets.fromLTRB(40, 25, 20, 0),
-            color: Colors.white,
             child: Row(
               children: [
                 Expanded(

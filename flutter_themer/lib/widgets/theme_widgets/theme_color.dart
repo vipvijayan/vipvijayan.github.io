@@ -40,10 +40,8 @@ class ThemeColor extends StatelessWidget {
               const SizedBox(height: 5),
               Text(
                 '#${colorToHex(HexColor(currentColor))}',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: titleFontSize - 3,
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: subtitleStyle(context)
+                    ?.copyWith(fontSize: titleFontSize - 3),
               ),
             ],
           ),

@@ -17,7 +17,6 @@ class ThemeBuilderTab extends StatelessWidget {
     final dark = isDarkBrightness(themeTab);
     return Container(
       padding: const EdgeInsets.all(20),
-      color: Colors.white,
       child: Column(
         children: [
           _mainHeader(state),
@@ -41,7 +40,7 @@ class ThemeBuilderTab extends StatelessWidget {
                   // ),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.grey.shade100,
+                      color: Theme.of(context).primaryColor.withOpacity(1.0),
                     ),
                     borderRadius: BorderRadius.all(
                       Radius.circular(6),
@@ -108,7 +107,6 @@ class ThemeBuilderTab extends StatelessWidget {
     ThemeAppState state,
   ) {
     return Container(
-      color: Colors.white,
       padding: const EdgeInsets.fromLTRB(30, 10, 20, 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +119,6 @@ class ThemeBuilderTab extends StatelessWidget {
                 Text(
                   item.title,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: Colors.black87,
                         fontSize: titleFontSize,
                         fontWeight: FontWeight.bold,
                       ),
@@ -136,8 +133,9 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.grey.shade50.withOpacity(0.3),
-                  border: Border.all(color: Colors.teal.shade50, width: 0.5),
+                  color: Theme.of(context).primaryColor.withOpacity(0.3),
+                  border: Border.all(
+                      color: Theme.of(context).primaryColor, width: 0.5),
                 ),
                 child: Wrap(
                   spacing: 30,
@@ -179,8 +177,10 @@ class ThemeBuilderTab extends StatelessWidget {
       padding: EdgeInsets.only(bottom: state.customColors.length > 0 ? 20 : 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
-        color: Colors.grey.shade50,
-        border: Border.all(color: Colors.grey.shade100),
+        // color: Theme.of(context).,
+        border: Border.all(
+          color: Theme.of(context).primaryColor.withOpacity(1.0),
+        ),
       ),
       child: Column(
         children: [
@@ -196,9 +196,6 @@ class ThemeBuilderTab extends StatelessWidget {
                     MainTitle(
                       title: customColorsTitle,
                       fontSize: titleFontSize + 2,
-                      txtColor: state.customColors.length > 0
-                          ? Colors.blue
-                          : Colors.black,
                     ),
                   ],
                 ),

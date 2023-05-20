@@ -67,7 +67,6 @@ Future<void> showToast(String text) async {
     toastLength: Toast.LENGTH_SHORT,
     gravity: ToastGravity.CENTER,
     timeInSecForIosWeb: 1,
-    textColor: Colors.white,
     fontSize: 16.0,
   );
 }
@@ -107,9 +106,10 @@ Future<void> showColorDialog(
             pickerAreaBorderRadius: const BorderRadius.all(Radius.circular(6)),
             pickerColor: currentColor,
             enableAlpha: true,
+            hexInputBar: true,
             pickerAreaHeightPercent: 0.6,
             labelTypes: const [ColorLabelType.hsl, ColorLabelType.hsv],
-            paletteType: PaletteType.hsl,
+            paletteType: PaletteType.hsv,
             displayThumbColor: true,
             onColorChanged: ((color) {
               onTap(color);
@@ -142,7 +142,7 @@ TextStyle? subtitleStyle(BuildContext context) {
   return Theme.of(context).textTheme.titleLarge?.copyWith(
         fontSize: titleFontSize,
         fontWeight: FontWeight.bold,
-        color: Colors.black54,
+        color: Theme.of(context).textTheme.titleLarge?.color?.withOpacity(0.6),
       );
 }
 

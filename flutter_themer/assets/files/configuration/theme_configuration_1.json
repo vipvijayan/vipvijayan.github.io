@@ -11,7 +11,7 @@
                {
                   "id":1,
                   "subtitle":false,
-                  "title":"Seed Color",
+                  "title":"Seed",
                   "key":"color_scheme_seed",
                   "value_type":"string",
                   "input":"color",
@@ -88,7 +88,7 @@
                {
                   "id":0,
                   "subtitle":false,
-                  "title":"Primary Color",
+                  "title":"Primary",
                   "key":"key_cs_primary",
                   "value_type":"string",
                   "input":"color",
@@ -120,7 +120,7 @@
                {
                   "id":1,
                   "subtitle":false,
-                  "title":"On Primary Color",
+                  "title":"On Primary",
                   "key":"key_cs_on_primary",
                   "value_type":"string",
                   "input":"color",
@@ -212,7 +212,39 @@
                         }
                      ]
                   }
-               }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Inverse Primary",
+                  "key":"key_cs_inverse_primary",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFD1E4FF",
+                           "selected_value":"#FFD1E4FF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF001D36",
+                           "selected_value":"#FF001D36"
+                        }
+                     ]
+                  }
+               }             
             ]
          },
          {
@@ -221,7 +253,7 @@
                {
                   "id":0,
                   "subtitle":false,
-                  "title":"Secondary Color",
+                  "title":"Secondary",
                   "key":"key_cs_secondary",
                   "value_type":"string",
                   "input":"color",
@@ -253,7 +285,7 @@
                {
                   "id":1,
                   "subtitle":false,
-                  "title":"On Secondary Color",
+                  "title":"On Secondary",
                   "key":"key_cs_on_secondary",
                   "value_type":"string",
                   "input":"color",
@@ -620,7 +652,7 @@
                {
                   "id":0,
                   "subtitle":false,
-                  "title":"Surface Color",
+                  "title":"Surface",
                   "key":"key_cs_surface",
                   "value_type":"string",
                   "input":"color",
@@ -652,7 +684,7 @@
                {
                   "id":1,
                   "subtitle":false,
-                  "title":"On Surface Color",
+                  "title":"On Surface",
                   "key":"key_cs_on_surface",
                   "value_type":"string",
                   "input":"color",
@@ -808,6 +840,38 @@
                         }
                      ]
                   }
+               },
+               {
+                  "id":1,
+                  "subtitle":false,
+                  "title":"Inverse Surface",
+                  "key":"key_cs_on_inverse_surface",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FFD1E4FF",
+                           "selected_value":"#FFD1E4FF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF001D36",
+                           "selected_value":"#FF001D36"
+                        }
+                     ]
+                  }
                }
             ]
          },
@@ -817,7 +881,7 @@
                {
                   "id":0,
                   "subtitle":false,
-                  "title":"Outline Color",
+                  "title":"Outline",
                   "key":"key_cs_outline",
                   "value_type":"string",
                   "input":"color",
@@ -849,8 +913,72 @@
                {
                   "id":0,
                   "subtitle":false,
-                  "title":"Shadow Color",
+                  "title":"Shadow",
                   "key":"key_cs_shadow",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF9ECAFF",
+                           "selected_value":"#FF9ECAFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Scrim",
+                  "key":"key_cs_scrim",
+                  "value_type":"string",
+                  "input":"color",
+                  "dark":{
+                     "id":0,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF9ECAFF",
+                           "selected_value":"#FF9ECAFF"
+                        }
+                     ]
+                  },
+                  "light":{
+                     "id":1,
+                     "value":[
+                        {
+                           "id":0,
+                           "label":"color",
+                           "selected":true,
+                           "value":"#FF1976D2",
+                           "selected_value":"#FF1976D2"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "id":0,
+                  "subtitle":false,
+                  "title":"Outline Variant",
+                  "key":"key_cs_outline_variant",
                   "value_type":"string",
                   "input":"color",
                   "dark":{
@@ -886,7 +1014,7 @@
                {
                   "id":0,
                   "subtitle":false,
-                  "title":"Background Color",
+                  "title":"Background",
                   "key":"key_cs_background_color",
                   "value_type":"string",
                   "input":"color",
@@ -918,7 +1046,7 @@
                {
                   "id":1,
                   "subtitle":false,
-                  "title":"On Background Color",
+                  "title":"On Background",
                   "key":"key_cs_on_background_color",
                   "value_type":"string",
                   "input":"color",

@@ -6,7 +6,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const AppMainTitle(),
         actions: _actionWidgets(context),
@@ -38,7 +37,7 @@ class HomeScreen extends StatelessWidget {
     return Expanded(
       flex: state.settingsOpen ? 2 : 3,
       child: const Padding(
-        padding: EdgeInsets.only(left: 20, right: 10),
+        padding: EdgeInsets.only(left: 20, right: 10, top: 20),
         child: ThemeBuilderScreen(),
       ),
     );
@@ -47,16 +46,12 @@ class HomeScreen extends StatelessWidget {
   Widget _previewFragment(ThemeAppState state) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(40, 10, 10, 10),
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              child: PreviewApp(
-                themeData: state.curSelectedThemeModel.curThemeData!,
-              ),
-            ),
-          ],
+        padding: const EdgeInsets.fromLTRB(40, 20, 10, 10),
+        child: ClipRRect(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          child: PreviewApp(
+            themeData: state.curSelectedThemeModel.curThemeData!,
+          ),
         ),
       ),
     );
@@ -80,7 +75,6 @@ class HomeScreen extends StatelessWidget {
       //   ),
       // ),
       IconButton(
-        iconSize: appbarIconSize,
         tooltip: 'Reset',
         onPressed: () async {
           unawaited(state.reset());
@@ -93,9 +87,11 @@ class HomeScreen extends StatelessWidget {
       ),
       const SizedBox(width: 20),
       IconButton(
-        iconSize: appbarIconSize,
         tooltip: 'Show/Hide Preview Settings',
-        icon: const Icon(Icons.settings),
+        icon: Icon(
+          Icons.settings,
+          color: Theme.of(context).colorScheme.tertiary,
+        ),
         onPressed: () async {
           unawaited(state.togglePreviewSettings());
           unawaited(fbLogEvent(name: 'preview_settings'));
@@ -104,16 +100,17 @@ class HomeScreen extends StatelessWidget {
       const SizedBox(width: 20),
       IconButton(
         tooltip: 'About',
-        iconSize: appbarIconSize,
         onPressed: () async {
           unawaited(state.openSettings());
           unawaited(fbLogEvent(name: 'about'));
         },
         icon: Icon(
           Icons.info_outline_rounded,
-          color: myColors.success,
+          color: Theme.of(context).colorScheme.secondary,
         ),
       ),
+      const SizedBox(width: 20),
+      Tooltip(message: 'Alpha Version', child: Text(appVersion)),
       const SizedBox(width: 20),
     ];
   }

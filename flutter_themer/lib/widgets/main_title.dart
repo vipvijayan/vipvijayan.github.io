@@ -5,12 +5,12 @@ class MainTitle extends StatelessWidget {
     super.key,
     required this.title,
     this.fontSize,
-    this.txtColor = Colors.black,
+    this.txtColor,
   });
 
   final String title;
   final double? fontSize;
-  final Color txtColor;
+  final Color? txtColor;
 
   @override
   Widget build(BuildContext context) {

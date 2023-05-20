@@ -72,7 +72,9 @@ class ThemeAppState extends ChangeNotifier {
     curSelectedThemeModel = themeParentModels[initialTabIndex];
     curSelectedThemeIndex = initialTabIndex;
     showPreviewToolbar = false;
+    curBasicSeedColor = null;
     settingsOpen = false;
+    appReset = true;
     customColors.clear();
     unawaited(init(refresh: true));
   }
@@ -89,6 +91,7 @@ class ThemeAppState extends ChangeNotifier {
 
   // refresh = true used to reload default configuration after the app started
   Future<void> init({bool refresh = false}) async {
+    appReset = true;
     unawaited(setAppLoading(true));
     for (final tTabs in themeParentModels) {
       tTabs
@@ -98,6 +101,7 @@ class ThemeAppState extends ChangeNotifier {
     }
     curSelectedThemeModel = themeParentModels.first;
     unawaited(setAppLoading(false));
+    appReset = true;
     if (!refresh) {
       openHome();
       return;

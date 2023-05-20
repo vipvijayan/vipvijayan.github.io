@@ -3,6 +3,7 @@ import 'package:flutter_themer/utils/exports.dart';
 Future<Map<String, dynamic>> generateColorScheme(Color seedColor) async {
   ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: seedColor);
   Map<String, dynamic> map = {};
+  map['color_scheme_seed'] = colorHex(seedColor);
   map['key_cs_background_color'] = colorHex(colorScheme.background);
   map['key_cs_on_background_color'] = colorHex(colorScheme.onBackground);
   map['key_cs_primary'] = colorHex(colorScheme.primary);
@@ -29,8 +30,12 @@ Future<Map<String, dynamic>> generateColorScheme(Color seedColor) async {
   map['key_cs_on_tertiary_container'] =
       colorHex(colorScheme.onTertiaryContainer);
   map['key_cs_outline'] = colorHex(colorScheme.outline);
-  map['key_cs_inverse_surface'] = colorHex(colorScheme.inverseSurface);
   map['key_cs_shadow'] = colorHex(colorScheme.shadow);
+  map['key_cs_inverse_primary'] = colorHex(colorScheme.inversePrimary);
+  map['key_cs_inverse_surface'] = colorHex(colorScheme.inverseSurface);
+  map['key_cs_on_inverse_surface'] = colorHex(colorScheme.onInverseSurface);
+  map['key_cs_outline_variant'] = colorHex(colorScheme.outlineVariant);
+  map['key_cs_scrim'] = colorHex(colorScheme.scrim);
   return map;
 }
 

@@ -2,12 +2,35 @@ import 'package:flutter_themer/utils/exports.dart';
 import 'package:flutter_themer/utils/theme_utils/m3_utils.dart';
 
 String? curBasicSeedColor;
+bool appReset = false;
+
+_refreshThemeModelForUI(
+  ThemeParentModel themeParentModel,
+  Map<String, dynamic> newMap,
+  bool darkMode,
+) async {
+  for (final themeUIModel in themeParentModel.themeUiModelList) {
+    final items = themeUIModel.items;
+    for (final item in items) {
+      final subItems = item.subItems;
+      for (final subItem in subItems) {
+        if (subItem.input == 'color') {
+          if (subItem.key != 'color_scheme_seed') {
+            if (!darkMode)
+              subItem.light.value.first.value = newMap[subItem.key];
+            if (darkMode) subItem.dark.value.first.value = newMap[subItem.key];
+          }
+        }
+      }
+    }
+  }
+}
 
 Future<ThemeData> refreshThemeData(
   ThemeParentModel themeParentModel,
   List<CustomColor> customColors,
 ) async {
-  final themeMap = ThemeFileUtils.getThemeMap(themeParentModel);
+  Map<String, dynamic> themeMap = ThemeFileUtils.getThemeMap(themeParentModel);
   final dark = isDarkBrightness(themeParentModel);
 
   // PRIMARY
@@ -28,7 +51,6 @@ Future<ThemeData> refreshThemeData(
   // BASIC
   if (ThemeIDs.basic.value == themeParentModel.id) {
     Map<String, dynamic>? newMap;
-    bool hasNewMap = false;
     if (null == curBasicSeedColor) {
       curBasicSeedColor = themeMap['color_scheme_seed'];
     }
@@ -36,37 +58,30 @@ Future<ThemeData> refreshThemeData(
     if (null != curBasicSeedColor &&
         themeMap['color_scheme_seed'] != curBasicSeedColor) {
       curBasicSeedColor = themeMap['color_scheme_seed'];
-      newMap = {};
       newMap = await generateColorScheme(HexColor(curBasicSeedColor!));
-      logD('NewColorMap: $newMap');
-      themeMap['key_cs_primary'] = newMap['key_cs_primary'];
-      logD('CurColorMap: $themeMap');
-
-      final dark = isDarkBrightness(themeParentModel);
-      for (final themeUIModel in themeParentModel.themeUiModelList) {
-        final items = themeUIModel.items;
-        for (final item in items) {
-          final subItems = item.subItems;
-          for (final subItem in subItems) {
-            if (subItem.input == 'color') {
-              print(subItem.key);
-              if (subItem.key != 'color_scheme_seed') {
-                if (!dark)
-                  subItem.light.value.first.value = newMap[subItem.key];
-                if (dark) subItem.dark.value.first.value = newMap[subItem.key];
-              }
-            }
-          }
-        }
-      }
+      final darkMode = isDarkBrightness(themeParentModel);
+      await _refreshThemeModelForUI(themeParentModel, newMap, darkMode);
     }
-    hasNewMap = newMap != null;
+
+    if (appReset) {
+      themeMap = await generateColorScheme(HexColor(curBasicSeedColor!));
+      final darkMode = isDarkBrightness(themeParentModel);
+      await _refreshThemeModelForUI(themeParentModel, themeMap, darkMode);
+      appReset = false;
+    }
+
     final seedColor = HexColor(themeMap['color_scheme_seed']);
     return ThemeData(
       useMaterial3: themeMap['key_use_material_3'],
       colorScheme: ColorScheme.fromSeed(
         seedColor: seedColor,
         brightness: themeParentModel.brightness,
+        scrim: HexColor(themeMap['key_cs_scrim']),
+        inversePrimary: HexColor(themeMap['key_cs_inverse_primary']),
+        inverseSurface: HexColor(themeMap['key_cs_inverse_surface']),
+        onInverseSurface: HexColor(themeMap['key_cs_on_inverse_surface']),
+        outlineVariant: HexColor(themeMap['key_cs_outline_variant']),
+        shadow: HexColor(themeMap['key_cs_shadow']),
         background: HexColor(themeMap['key_cs_background_color']),
         onBackground: HexColor(themeMap['key_cs_on_background_color']),
         primary: HexColor(themeMap['key_cs_primary']),
@@ -94,35 +109,6 @@ Future<ThemeData> refreshThemeData(
         outline: HexColor(themeMap['key_cs_outline']),
       ),
     );
-    // return ThemeData(
-    //   useMaterial3: themeMap['key_use_material_3'],
-    //   brightness: themeParentModel.brightness,
-    //   colorScheme: ColorScheme.light(
-    //     primary: HexColor(themeMap['key_cs_primary']),
-    //     onPrimary: HexColor(themeMap['key_cs_on_primary']),
-    //     primaryContainer: HexColor(themeMap['key_cs_primary_container']),
-    //     onPrimaryContainer: HexColor(themeMap['key_cs_on_primary_container']),
-    //     secondary: HexColor(themeMap['key_cs_secondary']),
-    //     onSecondary: HexColor(themeMap['key_cs_on_secondary']),
-    //     secondaryContainer: HexColor(themeMap['key_cs_secondary_container']),
-    //     onSecondaryContainer:
-    //         HexColor(themeMap['key_cs_on_secondary_container']),
-    //     surface: HexColor(themeMap['key_cs_surface']),
-    //     onSurface: HexColor(themeMap['key_cs_on_surface']),
-    //     surfaceTint: HexColor(themeMap['key_cs_surface_tint']),
-    //     surfaceVariant: HexColor(themeMap['key_cs_surface_variant']),
-    //     onSurfaceVariant: HexColor(themeMap['key_cs_on_surface_variant']),
-    //     error: HexColor(themeMap['key_cs_error']),
-    //     onError: HexColor(themeMap['key_cs_on_error']),
-    //     errorContainer: HexColor(themeMap['key_cs_error_container']),
-    //     onErrorContainer: HexColor(themeMap['key_cs_on_error_container']),
-    //     tertiary: HexColor(themeMap['key_cs_tertiary']),
-    //     onTertiary: HexColor(themeMap['key_cs_on_tertiary']),
-    //     tertiaryContainer: HexColor(themeMap['key_cs_tertiary_container']),
-    //     onTertiaryContainer: HexColor(themeMap['key_cs_on_tertiary_container']),
-    //     outline: HexColor(themeMap['key_cs_outline']),
-    //   ),
-    // );
   }
 
   // ADVANCED
