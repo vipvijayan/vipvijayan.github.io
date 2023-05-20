@@ -1,3 +1,4 @@
+import 'package:flutter_themer/state/theme_changer.dart';
 import 'package:flutter_themer/utils/exports.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -60,21 +61,21 @@ class HomeScreen extends StatelessWidget {
   List<Widget> _actionWidgets(BuildContext context) {
     final state = context.watch<ThemeAppState>();
     return [
+      IconButton(
+        tooltip: 'Theme',
+        onPressed: () async {
+          appLightTheme = !appLightTheme;
+          AppBuilder.of(context)?.rebuild();
+          unawaited(fbLogEvent(name: 'app_theme'));
+        },
+        icon: Icon(
+          Icons.brightness_2,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+      ),
+      const SizedBox(width: 20),
       const ExportTheme(),
       const SizedBox(width: 20),
-      // IconButton(
-      //   iconSize: appbarIconSize,
-      //   tooltip: 'Theme',
-      //   onPressed: () async {
-      //     appDarkTheme = !appDarkTheme;
-      //     state.refresh();
-      //     unawaited(fbLogEvent(name: 'app_theme'));
-      //   },
-      //   icon: Icon(
-      //     Icons.brightness_2,
-      //     color: Theme.of(context).colorScheme.error,
-      //   ),
-      // ),
       IconButton(
         tooltip: 'Reset',
         onPressed: () async {

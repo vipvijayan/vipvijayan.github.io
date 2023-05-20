@@ -1,7 +1,10 @@
 import 'package:flutter_themer/utils/exports.dart';
 
+var appLightTheme = false;
+
 class ThemeAppState extends ChangeNotifier {
   //
+  bool appDarkMode = false;
   bool previewLoading = false;
   bool showPreviewToolbar = false;
   bool settingsOpen = false;

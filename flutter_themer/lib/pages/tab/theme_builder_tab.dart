@@ -34,13 +34,12 @@ class ThemeBuilderTab extends StatelessWidget {
                 }
                 final uiModel = themeModelList[index];
                 return Container(
-                  // elevation: 1,
-                  // shape: RoundedRectangleBorder(
-                  //   borderRadius: BorderRadius.circular(6),
-                  // ),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Theme.of(context).primaryColor.withOpacity(1.0),
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary
+                          .withOpacity(0.3),
                     ),
                     borderRadius: BorderRadius.all(
                       Radius.circular(6),
@@ -133,9 +132,14 @@ class ThemeBuilderTab extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Theme.of(context).primaryColor.withOpacity(0.3),
+                  color:
+                      Theme.of(context).colorScheme.primary.withOpacity(0.05),
                   border: Border.all(
-                      color: Theme.of(context).primaryColor, width: 0.5),
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary
+                          .withOpacity(0.2),
+                      width: 0.5),
                 ),
                 child: Wrap(
                   spacing: 30,
@@ -177,10 +181,10 @@ class ThemeBuilderTab extends StatelessWidget {
       padding: EdgeInsets.only(bottom: state.customColors.length > 0 ? 20 : 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
-        // color: Theme.of(context).,
+        color: Theme.of(context).colorScheme.primary.withOpacity(0.05),
         border: Border.all(
-          color: Theme.of(context).primaryColor.withOpacity(1.0),
-        ),
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+            width: 0.5),
       ),
       child: Column(
         children: [

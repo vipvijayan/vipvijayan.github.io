@@ -5,6 +5,6 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.white, child: AppIcon(dimen: 50));
+    return Container(child: AppIcon(dimen: 50));
   }
 }

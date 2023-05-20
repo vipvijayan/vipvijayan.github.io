@@ -1,3 +1,4 @@
+import 'package:flutter_themer/state/theme_changer.dart';
 import 'package:flutter_themer/utils/exports.dart';
 
 void setErrorBuilder() {
@@ -22,39 +23,17 @@ class App extends StatelessWidget {
           lazy: false,
         ),
       ],
-      child: MaterialApp(
-        title: appTitle,
-        navigatorKey: mainNavKey,
-        navigatorObservers: <NavigatorObserver>[observer],
-        debugShowCheckedModeBanner: showDebugBanner,
-        showPerformanceOverlay: false,
-        darkTheme: ThemeData.dark().copyWith(
-          useMaterial3: true,
-          scaffoldBackgroundColor: Colors.black,
-          colorScheme: ColorScheme.dark().copyWith(background: Colors.black),
-          appBarTheme: AppBarTheme(
-            elevation: 0,
-            toolbarHeight: kToolbarHeight + 10,
-          ),
-          extensions: <ThemeExtension<dynamic>>[
-            MyColors.dark,
-          ],
-        ),
-        themeMode: ThemeMode.system,
-        theme: ThemeData.light().copyWith(
-          useMaterial3: true,
-          scaffoldBackgroundColor: Colors.white,
-          colorScheme: ColorScheme.light().copyWith(background: Colors.white),
-          appBarTheme: AppBarTheme(
-            elevation: 0,
-            toolbarHeight: kToolbarHeight + 10,
-          ),
-          extensions: <ThemeExtension<dynamic>>[
-            MyColors.light,
-          ],
-        ),
-        home: const SplashScreen(),
-      ),
+      child: AppBuilder(builder: (context) {
+        return MaterialApp(
+          title: appTitle,
+          navigatorKey: mainNavKey,
+          navigatorObservers: <NavigatorObserver>[observer],
+          debugShowCheckedModeBanner: showDebugBanner,
+          showPerformanceOverlay: false,
+          theme: appLightTheme ? lightTheme : darkTheme,
+          home: const SplashScreen(),
+        );
+      }),
     );
   }
 }
