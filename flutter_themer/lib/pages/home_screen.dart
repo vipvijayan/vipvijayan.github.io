@@ -59,7 +59,6 @@ class HomeScreen extends StatelessWidget {
 
   List<Widget> _actionWidgets(BuildContext context) {
     final state = context.watch<ThemeAppState>();
-    final myColors = Theme.of(context).extension<MyColors>()!;
     return [
       const ExportTheme(),
       const SizedBox(width: 20),
@@ -67,6 +66,8 @@ class HomeScreen extends StatelessWidget {
       //   iconSize: appbarIconSize,
       //   tooltip: 'Theme',
       //   onPressed: () async {
+      //     appDarkTheme = !appDarkTheme;
+      //     state.refresh();
       //     unawaited(fbLogEvent(name: 'app_theme'));
       //   },
       //   icon: Icon(

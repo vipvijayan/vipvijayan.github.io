@@ -343,7 +343,8 @@ class ThemeBuilderTab extends StatelessWidget {
           ),
           const Spacer(),
           Container(
-            decoration: BoxDecoration(color: Colors.white),
+            decoration:
+                BoxDecoration(color: Theme.of(context).colorScheme.background),
             child: DropdownButton<Value>(
               isDense: true,
               value: currentVal,
