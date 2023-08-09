@@ -25,6 +25,8 @@ const previewTitle = 'Preview';
 const customColorsTitle = 'Custom Colors';
 const getTheme = 'Get Theme';
 const codeCopied = 'Code Copied';
+const platformInfo =
+    'Experience the Full Splendor of Flutter Themer on Desktops and the Web!';
 
 var scaffoldKey = GlobalKey<ScaffoldState>();
 

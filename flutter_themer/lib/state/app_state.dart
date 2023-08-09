@@ -29,6 +29,8 @@ class ThemeAppState extends ChangeNotifier {
   late TabController tabController;
   Map<String, dynamic> themeUIScrollControllers = {};
 
+  var isMobile = false;
+
   ThemeAppState() {
     init();
     initFB();
@@ -37,6 +39,7 @@ class ThemeAppState extends ChangeNotifier {
 
   Future<void> initSettings() async {
     Future.delayed(const Duration(seconds: 2), () async {
+      isMobile = await Platform.isAndroid || Platform.isIOS;
       unawaited(initAboutInfo());
       unawaited(initUsageData());
     });
@@ -107,6 +110,7 @@ class ThemeAppState extends ChangeNotifier {
       openHome();
       return;
     }
+
     notifyListeners();
   }
 

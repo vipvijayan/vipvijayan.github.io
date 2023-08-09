@@ -1,5 +1,6 @@
 import 'package:flutter_themer/state/theme_changer.dart';
 import 'package:flutter_themer/utils/exports.dart';
+import 'package:flutter_themer/widgets/platform_info_banner.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,6 +20,7 @@ class HomeScreen extends StatelessWidget {
     final state = context.watch<ThemeAppState>();
     return Column(
       children: [
+        const PlatFormInfoBanner(),
         Loading(loading: state.appLoading),
         if (!state.appLoading)
           Expanded(
