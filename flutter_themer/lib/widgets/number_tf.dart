@@ -25,6 +25,7 @@ class NumberTF extends StatelessWidget {
           FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,1}')),
         ],
         decoration: InputDecoration(
+          contentPadding: const EdgeInsets.only(bottom: 15),
           enabledBorder: UnderlineInputBorder(
             borderSide:
                 BorderSide(color: Theme.of(context).colorScheme.background),

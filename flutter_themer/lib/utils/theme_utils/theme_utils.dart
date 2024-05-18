@@ -207,6 +207,7 @@ Future<ThemeData> refreshThemeData(
       elevation: double.parse(themeMap['key_app_bar_elevation']),
       backgroundColor: HexColor(themeMap['key_app_bar_background_color']),
       foregroundColor: HexColor(themeMap['key_app_bar_foreground_color']),
+      surfaceTintColor: HexColor(themeMap['key_app_bar_surface_tint_color']),
       titleSpacing: double.parse(themeMap['key_app_bar_title_spacing']),
       centerTitle: themeMap['key_center_title'],
       toolbarHeight: double.parse(themeMap['key_app_bar_toolbar_height']),
