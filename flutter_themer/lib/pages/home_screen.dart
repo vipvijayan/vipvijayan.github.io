@@ -7,12 +7,22 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<ThemeAppState>();
     return Scaffold(
+      key: state.homeScaffoldKey,
+      onEndDrawerChanged: (isOpened) {
+        state.appInfoOpen = isOpened;
+      },
+      endDrawer: Drawer(
+        width: MediaQuery.sizeOf(context).width / 3,
+        child: AboutInfoScreen(),
+      ),
       appBar: AppBar(
         title: const AppMainTitle(),
+        toolbarHeight: kToolbarHeight + 30,
         actions: _actionWidgets(context),
       ),
-      body: _homeBody(context),
+      body: SafeArea(child: _homeBody(context)),
     );
   }
 
@@ -26,9 +36,12 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                _previewFragment(state),
-                _themeBuilderFragment(state),
-                if (state.settingsOpen) Expanded(child: AboutInfoScreen()),
+                Expanded(
+                  child: PreviewApp(
+                    themeData: state.curSelectedThemeModel.curThemeData!,
+                  ),
+                ),
+                Expanded(flex: 2, child: ThemeBuilderScreen()),
               ],
             ),
           ),
@@ -36,63 +49,61 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _themeBuilderFragment(ThemeAppState state) {
-    return Expanded(
-      flex: state.settingsOpen ? 2 : 3,
-      child: const Padding(
-        padding: EdgeInsets.only(left: 20, right: 10, top: 20),
-        child: ThemeBuilderScreen(),
-      ),
-    );
-  }
-
-  Widget _previewFragment(ThemeAppState state) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(40, 20, 10, 10),
-        child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          child: PreviewApp(
-            themeData: state.curSelectedThemeModel.curThemeData!,
-          ),
-        ),
-      ),
-    );
-  }
-
   List<Widget> _actionWidgets(BuildContext context) {
     final state = context.watch<ThemeAppState>();
+    final myColors = Theme.of(context).extension<MyColors>()!;
+    final btnShape = RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16),
+      side: BorderSide(
+        color: Colors.grey,
+        width: 0.5,
+      ),
+    );
     return [
-      IconButton(
-        tooltip: 'Theme',
+      ActionChip(
+        label: const Text('Theme'),
+        shape: btnShape,
+        avatar: Icon(
+          Icons.brightness_2,
+          color: Theme.of(context).colorScheme.primary,
+        ),
         onPressed: () async {
           appLightTheme = !appLightTheme;
           AppBuilder.of(context)?.rebuild();
           unawaited(fbLogEvent(name: 'app_theme'));
         },
-        icon: Icon(
-          Icons.brightness_2,
-          color: Theme.of(context).colorScheme.primary,
-        ),
       ),
       const SizedBox(width: 20),
-      const ExportTheme(),
+      ActionChip(
+        label: const Text('Generate Theme'),
+        shape: btnShape,
+        avatar: Icon(
+          Icons.color_lens,
+          color: myColors.success,
+        ),
+        onPressed: () async {
+          openThemeGeneratedScreen();
+          state.generateHtml();
+        },
+      ),
       const SizedBox(width: 20),
-      IconButton(
-        tooltip: 'Reset',
+      ActionChip(
+        label: const Text('Reset'),
+        shape: btnShape,
+        avatar: Icon(
+          Icons.refresh_outlined,
+          color: Theme.of(context).colorScheme.error,
+        ),
         onPressed: () async {
           unawaited(state.reset());
           unawaited(fbLogEvent(name: 'theme_reset'));
         },
-        icon: Icon(
-          Icons.refresh_outlined,
-          color: Theme.of(context).colorScheme.error,
-        ),
       ),
       const SizedBox(width: 20),
-      IconButton(
-        tooltip: 'Show/Hide Preview Settings',
-        icon: Icon(
+      ActionChip(
+        label: const Text('Settings'),
+        shape: btnShape,
+        avatar: Icon(
           Icons.settings,
           color: Theme.of(context).colorScheme.tertiary,
         ),
@@ -102,16 +113,21 @@ class HomeScreen extends StatelessWidget {
         },
       ),
       const SizedBox(width: 20),
-      IconButton(
-        tooltip: 'About',
-        onPressed: () async {
-          unawaited(state.openSettings());
-          unawaited(fbLogEvent(name: 'about'));
-        },
-        icon: Icon(
+      ActionChip(
+        label: const Text('About'),
+        shape: btnShape,
+        avatar: Icon(
           Icons.info_outline_rounded,
           color: Theme.of(context).colorScheme.secondary,
         ),
+        onPressed: () async {
+          if (state.appInfoOpen) {
+            await state.closeSettingsDrawer();
+          } else {
+            await state.openSettingsDrawer();
+          }
+          unawaited(fbLogEvent(name: 'about'));
+        },
       ),
       const SizedBox(width: 20),
       Tooltip(message: 'Alpha Version', child: Text(appVersion)),

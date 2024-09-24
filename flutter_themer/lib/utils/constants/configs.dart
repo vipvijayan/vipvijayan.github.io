@@ -1,2 +1,2 @@
 const showDebugBanner = false;
-const appTimeDilation = 2.0;
+const appTimeDilation = 1.0;

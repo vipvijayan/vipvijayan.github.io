@@ -6,22 +6,35 @@ class AboutInfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<ThemeAppState>();
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('About'),
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(30),
-        children: about.items.map((e) {
-          return AppListTile(
-            aboutItem: e,
-            action: () async {
-              unawaited(_menuAction(state, e));
-              unawaited(fbLogEvent(name: 'about_${e.title}'));
+    return Column(
+      children: [
+        const SizedBox(height: 30),
+        Text(
+          'About',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        const SizedBox(height: 30),
+        const Divider(),
+        Expanded(
+          child: ListView.separated(
+            padding: const EdgeInsets.all(30),
+            itemCount: about.items.length,
+            itemBuilder: (context, index) {
+              final e = about.items[index];
+              return AppListTile(
+                aboutItem: e,
+                action: () async {
+                  unawaited(_menuAction(state, e));
+                  unawaited(fbLogEvent(name: 'about_${e.title}'));
+                },
+              );
             },
-          );
-        }).toList(),
-      ),
+            separatorBuilder: (context, index) {
+              return const SizedBox(height: 20);
+            },
+          ),
+        ),
+      ],
     );
   }
 
@@ -48,71 +61,56 @@ class AppListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      radius: 6,
-      borderRadius: BorderRadius.all(Radius.circular(6)),
-      onTap: () async {
-        action?.call();
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5),
-        child: Row(
-          children: [
-            const SizedBox(width: 10),
-            // https://api.flutter.dev/flutter/material/Icons-class.html
-            Icon(
-              materialIcon(aboutItem.icon),
-              size: 20,
-            ),
-            const SizedBox(width: 25),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 10),
-                  Text(
-                    aboutItem.title,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 12,
-                          color: Colors.grey,
-                        ),
-                  ),
-                  if (null != aboutItem.subtitle &&
-                      aboutItem.subtitle!.isNotEmpty) ...[
-                    const SizedBox(height: 5),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            aboutItem.subtitle ?? '',
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      fontSize: 14,
-                                      color: Colors.blue,
-                                    ),
-                          ),
-                        ),
-                        if (aboutItem.copyEnabled)
-                          IconButton(
-                            padding: EdgeInsets.zero,
-                            tooltip: 'copy',
-                            iconSize: 20,
-                            onPressed: () async {
-                              copyToClipboard(aboutItem.subtitle);
-                              unawaited(showSnackBar('Copied'));
-                            },
-                            icon: const Icon(Icons.copy),
-                          ),
-                        if (!aboutItem.copyEnabled) const SizedBox(height: 40),
-                      ],
-                    ),
-                  ],
-                ],
-              ),
-            )
-          ],
-        ),
+    return ListTile(
+      onTap: action,
+      leading: Icon(
+        materialIcon(aboutItem.icon),
+        size: 40,
       ),
+      minLeadingWidth: 60,
+      title: Text(
+        aboutItem.title,
+        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              fontSize: 16,
+              color: Colors.grey,
+            ),
+      ),
+      subtitle: aboutItem.subtitle != null && aboutItem.subtitle!.isNotEmpty
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 5),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        aboutItem.subtitle ?? '',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              fontSize: 18,
+                              color: Colors.blue,
+                            ),
+                      ),
+                    ),
+                    if (aboutItem.copyEnabled)
+                      IconButton(
+                        padding: EdgeInsets.zero,
+                        tooltip: 'Copy',
+                        iconSize: 20,
+                        onPressed: () async {
+                          copyToClipboard(aboutItem.subtitle);
+                          unawaited(showSnackBar('Copied'));
+                        },
+                        icon: const Icon(Icons.copy),
+                      ),
+                  ],
+                ),
+              ],
+            )
+          : null,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(6),
+      ),
+      tileColor: Colors.transparent,
     );
   }
 }

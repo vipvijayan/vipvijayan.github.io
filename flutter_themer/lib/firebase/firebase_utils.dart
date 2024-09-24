@@ -7,7 +7,7 @@ FirebaseAnalyticsObserver observer =
     FirebaseAnalyticsObserver(analytics: analytics);
 
 Future<void> fbLogEvent(
-    {required String name, Map<String, dynamic>? parameters}) async {
+    {required String name, Map<String, Object>? parameters}) async {
   logD('Logging Event: $name, $parameters');
   if (null == parameters) {
     await FirebaseAnalytics.instance.logEvent(name: name.toLowerCase());

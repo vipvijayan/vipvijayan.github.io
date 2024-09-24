@@ -8,6 +8,7 @@ class ThemeAppState extends ChangeNotifier {
   bool previewLoading = false;
   bool showPreviewToolbar = false;
   bool settingsOpen = false;
+  bool appInfoOpen = false;
   String themeGeneratedHtml = '';
   String usageHtml = '';
   String customHtml = '';
@@ -28,6 +29,7 @@ class ThemeAppState extends ChangeNotifier {
 
   late TabController tabController;
   Map<String, dynamic> themeUIScrollControllers = {};
+  final GlobalKey<ScaffoldState> homeScaffoldKey = GlobalKey<ScaffoldState>();
 
   var isMobile = false;
 
@@ -35,6 +37,14 @@ class ThemeAppState extends ChangeNotifier {
     init();
     initFB();
     initSettings();
+  }
+
+  Future<void> openSettingsDrawer() async {
+    homeScaffoldKey.currentState!.openEndDrawer();
+  }
+
+  Future<void> closeSettingsDrawer() async {
+    homeScaffoldKey.currentState!.closeEndDrawer();
   }
 
   Future<void> initSettings() async {

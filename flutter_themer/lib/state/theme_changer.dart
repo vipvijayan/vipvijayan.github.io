@@ -29,14 +29,18 @@ class AppBuilderState extends State<AppBuilder> {
 }
 
 final lightTheme = ThemeData.light().copyWith(
-  useMaterial3: true,
   scaffoldBackgroundColor: Colors.white,
-  primaryColor: Colors.white,
-  colorScheme: ColorScheme.light()
-      .copyWith(primary: Colors.greenAccent, background: Colors.white),
+  colorScheme: ColorScheme.light().copyWith(
+    primary: Colors.greenAccent,
+    surface: Colors.white,
+  ),
   appBarTheme: AppBarTheme(
     elevation: 0,
     toolbarHeight: kToolbarHeight + 10,
+  ),
+  tabBarTheme: TabBarTheme(
+    indicatorSize: TabBarIndicatorSize.label,
+    dividerColor: Colors.transparent,
   ),
   extensions: <ThemeExtension<dynamic>>[
     MyColors.light,
@@ -44,13 +48,18 @@ final lightTheme = ThemeData.light().copyWith(
 );
 
 final darkTheme = ThemeData.dark().copyWith(
-  useMaterial3: true,
   scaffoldBackgroundColor: Colors.black,
-  colorScheme: ColorScheme.dark()
-      .copyWith(primary: Colors.grey, background: Colors.black),
+  colorScheme: ColorScheme.dark().copyWith(
+    primary: Colors.grey,
+    surface: Colors.black,
+  ),
   appBarTheme: AppBarTheme(
     elevation: 0,
     toolbarHeight: kToolbarHeight + 10,
+  ),
+  tabBarTheme: TabBarTheme(
+    indicatorSize: TabBarIndicatorSize.label,
+    dividerColor: Colors.transparent,
   ),
   extensions: <ThemeExtension<dynamic>>[
     MyColors.dark,
