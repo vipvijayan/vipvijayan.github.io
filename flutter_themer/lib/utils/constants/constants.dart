@@ -40,3 +40,8 @@ enum ThemeIDs {
   const ThemeIDs(this.value);
   final int value;
 }
+
+final actionBtnShape = RoundedRectangleBorder(
+  borderRadius: BorderRadius.circular(16),
+  side: BorderSide(color: Colors.grey, width: 0.5),
+);

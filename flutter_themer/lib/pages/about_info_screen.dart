@@ -65,7 +65,8 @@ class AppListTile extends StatelessWidget {
       onTap: action,
       leading: Icon(
         materialIcon(aboutItem.icon),
-        size: 40,
+        size: 30,
+        color: Colors.grey,
       ),
       minLeadingWidth: 60,
       title: Text(
@@ -87,7 +88,6 @@ class AppListTile extends StatelessWidget {
                         aboutItem.subtitle ?? '',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               fontSize: 18,
-                              color: Colors.blue,
                             ),
                       ),
                     ),
@@ -95,6 +95,7 @@ class AppListTile extends StatelessWidget {
                       IconButton(
                         padding: EdgeInsets.zero,
                         tooltip: 'Copy',
+                        color: Colors.grey,
                         iconSize: 20,
                         onPressed: () async {
                           copyToClipboard(aboutItem.subtitle);

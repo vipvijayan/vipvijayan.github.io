@@ -10,19 +10,11 @@ class CopyCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const Text('COPY CODE'),
-        IconButton(
-          onPressed: () async {
-            onPressed();
-          },
-          icon: const Icon(
-            Icons.copy,
-            color: Colors.green,
-          ),
-        ),
-      ],
+    return ActionChip(
+      label: const Text('COPY CODE'),
+      shape: actionBtnShape,
+      avatar: Icon(Icons.copy, color: Colors.green),
+      onPressed: onPressed,
     );
   }
 }

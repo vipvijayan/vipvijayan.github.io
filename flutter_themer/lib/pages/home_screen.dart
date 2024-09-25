@@ -52,17 +52,11 @@ class HomeScreen extends StatelessWidget {
   List<Widget> _actionWidgets(BuildContext context) {
     final state = context.watch<ThemeAppState>();
     final myColors = Theme.of(context).extension<MyColors>()!;
-    final btnShape = RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(16),
-      side: BorderSide(
-        color: Colors.grey,
-        width: 0.5,
-      ),
-    );
+
     return [
       ActionChip(
         label: const Text('Theme'),
-        shape: btnShape,
+        shape: actionBtnShape,
         avatar: Icon(
           Icons.brightness_2,
           color: Theme.of(context).colorScheme.primary,
@@ -76,7 +70,7 @@ class HomeScreen extends StatelessWidget {
       const SizedBox(width: 20),
       ActionChip(
         label: const Text('Generate Theme'),
-        shape: btnShape,
+        shape: actionBtnShape,
         avatar: Icon(
           Icons.color_lens,
           color: myColors.success,
@@ -89,7 +83,7 @@ class HomeScreen extends StatelessWidget {
       const SizedBox(width: 20),
       ActionChip(
         label: const Text('Reset'),
-        shape: btnShape,
+        shape: actionBtnShape,
         avatar: Icon(
           Icons.refresh_outlined,
           color: Theme.of(context).colorScheme.error,
@@ -101,8 +95,8 @@ class HomeScreen extends StatelessWidget {
       ),
       const SizedBox(width: 20),
       ActionChip(
-        label: const Text('Settings'),
-        shape: btnShape,
+        label: const Text('Preview Settings'),
+        shape: actionBtnShape,
         avatar: Icon(
           Icons.settings,
           color: Theme.of(context).colorScheme.tertiary,
@@ -115,7 +109,7 @@ class HomeScreen extends StatelessWidget {
       const SizedBox(width: 20),
       ActionChip(
         label: const Text('About'),
-        shape: btnShape,
+        shape: actionBtnShape,
         avatar: Icon(
           Icons.info_outline_rounded,
           color: Theme.of(context).colorScheme.secondary,

@@ -33,7 +33,8 @@ class GeneratedThemeScreen extends StatelessWidget {
                           CopyCode(
                             onPressed: () async {
                               unawaited(
-                                  _copy(previewAppState.themeGeneratedHtml));
+                                _copy(previewAppState.themeGeneratedHtml),
+                              );
                               unawaited(fbLogEvent(
                                 name: 'theme_copied',
                                 parameters: {'type': 'theme'},

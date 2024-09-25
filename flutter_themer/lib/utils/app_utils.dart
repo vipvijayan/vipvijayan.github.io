@@ -2,10 +2,6 @@ import 'package:flutter_themer/utils/exports.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-bool isDarkMode() =>
-    SchedulerBinding.instance.platformDispatcher.platformBrightness ==
-    Brightness.dark;
-
 Future<void> handleInput({
   required String? inputVal,
   required SubItem subItem,
@@ -71,8 +67,6 @@ Future<void> showToast(String text) async {
   );
 }
 
-isDesktopOrWeb() {}
-
 String colorHex(Color color) => '#${color.value.toRadixString(16)}';
 
 Future<void> showColorDialog(
@@ -135,8 +129,10 @@ Future<void> showColorDialog(
   );
 }
 
-materialIcon(String iconHex) =>
-    IconData(int.parse(iconHex), fontFamily: 'MaterialIcons');
+materialIcon(String iconHex) => IconData(
+      int.parse(iconHex),
+      fontFamily: 'MaterialIcons',
+    );
 
 TextStyle? subtitleStyle(BuildContext context) {
   return Theme.of(context).textTheme.titleLarge?.copyWith(
