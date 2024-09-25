@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     final state = context.watch<ThemeAppState>();
     return Scaffold(
       key: state.homeScaffoldKey,
-      onEndDrawerChanged: (isOpened) {
+      onEndDrawerChanged: (isOpened) async {
         state.appInfoOpen = isOpened;
       },
       endDrawer: Drawer(
@@ -20,39 +20,35 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const AppMainTitle(),
         toolbarHeight: kToolbarHeight + 30,
-        actions: _actionWidgets(context),
+        actions: _actionWidgets(context, state),
       ),
-      body: SafeArea(child: _homeBody(context)),
-    );
-  }
-
-  Widget _homeBody(BuildContext context) {
-    final state = context.watch<ThemeAppState>();
-    return Column(
-      children: [
-        const PlatFormInfoBanner(),
-        Loading(loading: state.appLoading),
-        if (!state.appLoading)
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: PreviewApp(
-                    themeData: state.curSelectedThemeModel.curThemeData!,
-                  ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const PlatFormInfoBanner(),
+            Loading(loading: state.appLoading),
+            if (!state.appLoading) ...[
+              Expanded(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: PreviewApp(
+                        themeData: state.curSelectedThemeModel.curThemeData!,
+                      ),
+                    ),
+                    Expanded(flex: 2, child: ThemeBuilderScreen()),
+                  ],
                 ),
-                Expanded(flex: 2, child: ThemeBuilderScreen()),
-              ],
-            ),
-          ),
-      ],
+              ),
+            ],
+          ],
+        ),
+      ),
     );
   }
 
-  List<Widget> _actionWidgets(BuildContext context) {
-    final state = context.watch<ThemeAppState>();
+  List<Widget> _actionWidgets(BuildContext context, ThemeAppState state) {
     final myColors = Theme.of(context).extension<MyColors>()!;
-
     return [
       ActionChip(
         label: const Text('Theme'),

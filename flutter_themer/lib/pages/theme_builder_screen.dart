@@ -28,17 +28,24 @@ class _ThemeBuilderScreenState extends State<ThemeBuilderScreen>
         appBar: TabBar(
           controller: state.tabController,
           onTap: (index) async {
-            if (state.curSelectedThemeIndex == index) {
-              return;
-            }
-            state.previewLoading = true;
-            state.curSelectedThemeIndex = index;
-            state.tabController.animateTo(index);
-            state.curSelectedThemeModel = state.themeParentModels[index];
-            unawaited(state.refresh());
-            state.previewLoading = false;
-            unawaited(fbLogEvent(
-                name: 'Selected: ${state.curSelectedThemeModel.title}'));
+            WidgetsBinding.instance.addPostFrameCallback(
+              (_) async {
+                if (state.curSelectedThemeIndex == index) {
+                  return;
+                }
+                state.previewLoading = true;
+                state.curSelectedThemeIndex = index;
+                state.tabController.animateTo(index);
+                state.curSelectedThemeModel = state.themeParentModels[index];
+                unawaited(state.refresh());
+                state.previewLoading = false;
+                unawaited(
+                  fbLogEvent(
+                    name: 'Selected: ${state.curSelectedThemeModel.title}',
+                  ),
+                );
+              },
+            );
           },
           tabs: state.themeParentModels
               .map((e) => _tabTitle(e.title.toUpperCase()))
@@ -56,10 +63,7 @@ class _ThemeBuilderScreenState extends State<ThemeBuilderScreen>
   }
 
   Widget _tabTitle(String title) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Text(title),
-    );
+    return Padding(padding: const EdgeInsets.all(10), child: Text(title));
   }
 
   @override
