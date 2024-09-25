@@ -28,6 +28,8 @@ const codeCopied = 'Code Copied';
 const platformInfo =
     'Experience the Full Splendor of Flutter Themer on Desktops and the Web!';
 
+const logoPath = 'assets/images/favicon.png';
+
 var scaffoldKey = GlobalKey<ScaffoldState>();
 
 final random = Random();

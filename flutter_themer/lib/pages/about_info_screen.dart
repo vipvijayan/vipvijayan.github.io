@@ -34,6 +34,9 @@ class AboutInfoScreen extends StatelessWidget {
             },
           ),
         ),
+        const SizedBox(height: 20),
+        const AppIcon(dimen: 90),
+        const SizedBox(height: 20),
       ],
     );
   }
