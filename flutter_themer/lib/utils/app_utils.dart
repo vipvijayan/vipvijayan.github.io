@@ -1,4 +1,5 @@
 import 'package:flutter_themer/utils/exports.dart';
+import 'package:flutter_themer/widgets/app_use_info.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -149,6 +150,18 @@ Future<void> showUpdatesModalBottomSheet(String updatesHtml) async {
       return SingleChildScrollView(
         padding: const EdgeInsets.all(30),
         child: HtmlWidget(updatesHtml),
+      );
+    },
+  );
+}
+
+Future<void> showQuickTutorial() async {
+  showModalBottomSheet<void>(
+    context: mainNavKey.currentContext!,
+    builder: (context) {
+      return SingleChildScrollView(
+        padding: const EdgeInsets.all(30),
+        child: AppUseInfo(),
       );
     },
   );

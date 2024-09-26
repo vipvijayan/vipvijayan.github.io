@@ -2,10 +2,33 @@ import 'package:flutter_themer/utils/exports.dart';
 
 const filesDir = 'assets/files';
 
+// Future<List<ThemeUiModel>> loadThemeUIModelList(int themeId) async {
+//   final json = await rootBundle.loadString(
+//     '$filesDir/configuration/theme_configuration_$themeId.json',
+//   );
+//   final themeModelList = themeUiModelFromJson(json);
+//   themeModelList.sort((a, b) {
+//     if (a.excludeSort == null || b.excludeSort == null) {
+//       return 0;
+//     }
+//     final aSort = a.excludeSort ?? false;
+//     final bSort = b.excludeSort ?? false;
+//     if (aSort || bSort) {
+//       return 0;
+//     }
+//     return a.title.compareTo(b.title);
+//   });
+//   return themeModelList;
+// }
+
 Future<List<ThemeUiModel>> loadThemeUIModelList(int themeId) async {
-  final json = await rootBundle.loadString(
-    '$filesDir/configuration/theme_configuration_$themeId.json',
-  );
+  final json = await rootBundle
+      .loadString('$filesDir/configuration/theme_configuration_$themeId.json');
+
+  return await compute(_parseAndSortThemeUIModels, json);
+}
+
+List<ThemeUiModel> _parseAndSortThemeUIModels(String json) {
   final themeModelList = themeUiModelFromJson(json);
   themeModelList.sort((a, b) {
     if (a.excludeSort == null || b.excludeSort == null) {
@@ -67,10 +90,35 @@ Future<File> saveTheme(Map<String, dynamic> themeMap) async {
   return file.writeAsString(jsonEncode(themeMap));
 }
 
+// Future<String?> readTheme() async {
+//   try {
+//     final file = await _localFile;
+//     final contents = await file.readAsString();
+//     return jsonDecode(contents) as String;
+//   } catch (e) {
+//     return null;
+//   }
+// }
+
+// Refactored method using isolate (compute)
 Future<String?> readTheme() async {
   try {
     final file = await _localFile;
-    final contents = await file.readAsString();
+    final filePath = file.path;
+
+    // Use compute to read the file and decode JSON in an isolate
+    return await compute(_readAndDecodeFile, filePath);
+  } catch (e) {
+    return null;
+  }
+}
+
+// Function to run in the isolate
+String? _readAndDecodeFile(String filePath) {
+  try {
+    final file = File(filePath);
+    final contents =
+        file.readAsStringSync(); // Synchronously read the file in the isolate
     return jsonDecode(contents) as String;
   } catch (e) {
     return null;

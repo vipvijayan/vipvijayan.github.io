@@ -42,12 +42,16 @@ class AboutInfoScreen extends StatelessWidget {
   }
 
   Future<void> _menuAction(ThemeAppState state, AboutItem about) async {
+    closeScreen();
     if (about.link != null && about.link == true) {
       unawaited(openUrl(about.url));
       return;
     }
     if (about.id == appAboutInfoId) {
       return state.showUpdatesHtmlDialog();
+    }
+    if (about.id == appQuickTutorial) {
+      return state.showQuickTutorialDialog();
     }
   }
 }

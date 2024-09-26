@@ -51,21 +51,7 @@ class HomeScreen extends StatelessWidget {
     final myColors = Theme.of(context).extension<MyColors>()!;
     return [
       ActionChip(
-        label: const Text('Theme'),
-        shape: actionBtnShape,
-        avatar: Icon(
-          Icons.brightness_2,
-          color: Theme.of(context).colorScheme.primary,
-        ),
-        onPressed: () async {
-          appLightTheme = !appLightTheme;
-          AppBuilder.of(context)?.rebuild();
-          unawaited(fbLogEvent(name: 'app_theme'));
-        },
-      ),
-      const SizedBox(width: 20),
-      ActionChip(
-        label: const Text('Generate Theme'),
+        label: const Text('Generate theme'),
         shape: actionBtnShape,
         avatar: Icon(
           Icons.color_lens,
@@ -91,7 +77,7 @@ class HomeScreen extends StatelessWidget {
       ),
       const SizedBox(width: 20),
       ActionChip(
-        label: const Text('Preview Settings'),
+        label: const Text('Preview settings'),
         shape: actionBtnShape,
         avatar: Icon(
           Icons.settings,
@@ -100,6 +86,20 @@ class HomeScreen extends StatelessWidget {
         onPressed: () async {
           unawaited(state.togglePreviewSettings());
           unawaited(fbLogEvent(name: 'preview_settings'));
+        },
+      ),
+      const SizedBox(width: 20),
+      ActionChip(
+        label: const Text('Switch app theme'),
+        shape: actionBtnShape,
+        avatar: Icon(
+          Icons.brightness_2,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        onPressed: () async {
+          appLightTheme = !appLightTheme;
+          AppBuilder.of(context)?.rebuild();
+          unawaited(fbLogEvent(name: 'app_theme'));
         },
       ),
       const SizedBox(width: 20),
@@ -119,8 +119,6 @@ class HomeScreen extends StatelessWidget {
           unawaited(fbLogEvent(name: 'about'));
         },
       ),
-      const SizedBox(width: 20),
-      Tooltip(message: 'Alpha Version', child: Text(appVersion)),
       const SizedBox(width: 20),
     ];
   }

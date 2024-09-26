@@ -1,4 +1,5 @@
 import 'package:flutter_themer/utils/exports.dart';
+import 'package:flutter_themer/utils/preferences.dart';
 
 var appLightTheme = false;
 
@@ -49,10 +50,21 @@ class ThemeAppState extends ChangeNotifier {
 
   Future<void> initSettings() async {
     Future.delayed(const Duration(seconds: 2), () async {
-      isMobile = await Platform.isAndroid || Platform.isIOS;
+      if (!kIsWeb) {
+        isMobile = Platform.isAndroid || Platform.isIOS;
+      }
       unawaited(initAboutInfo());
       unawaited(initUsageData());
+      unawaited(checkAndShowQuickTutorialDialog());
     });
+  }
+
+  Future<void> checkAndShowQuickTutorialDialog() async {
+    final hasSeen = await Preferences.hasSeenQuickTutorial();
+    if (!hasSeen) {
+      showQuickTutorialDialog();
+      Preferences.setSeenQuickTutorial();
+    }
   }
 
   Future<void> scrollDown() async {
@@ -185,6 +197,10 @@ class ThemeAppState extends ChangeNotifier {
   Future<void> showUpdatesHtmlDialog() async {
     updatesHtml = await loadUpdatesInfoHtml();
     unawaited(showUpdatesModalBottomSheet(updatesHtml));
+  }
+
+  Future<void> showQuickTutorialDialog() async {
+    unawaited(showQuickTutorial());
   }
 
   Future<void> openSettings() async {
