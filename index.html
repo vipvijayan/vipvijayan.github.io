@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfbfe" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212" />
+  <meta name="description" content="Vipin Vijayan Nair — AI Engineer & Lead Software Engineer with 16+ years building production LLM systems (RAG, Agents, LangGraph, MCP) and iOS/Android/React Native apps used by millions. Staff Design Engineer at Visa." />
+  <meta name="keywords" content="Vipin Vijayan Nair, Mobile Developer, iOS, Android, React Native, Flutter, AI Engineer, LLM, RAG, LangGraph, LangChain, OpenAI, Python, FastAPI, Kubernetes, Docker, Software Engineer, Austin TX" />
+  <meta name="author" content="Vipin Vijayan Nair" />
+  <script>
+    // Apply theme pre-paint to match system preference (also sets data-theme attribute).
+    // CSS uses @media (prefers-color-scheme: dark) — this script just adds a data-theme
+    // attribute for any future manual toggle and ensures color-scheme is set on <html>.
+    (function () {
+      try {
+        var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vipin Vijayan Nair — Mobile & AI Engineer" />
+  <meta property="og:description" content="AI Engineer & Lead Software Engineer — 16+ years. Production LLM systems (RAG, Agents, LangGraph, MCP) and iOS/Android/React Native apps used by millions. Staff Design Engineer at Visa." />
+  <meta property="og:type" content="website" />
+
+  <title>Vipin Vijayan Nair — Mobile & AI Engineer | iOS, Android, React Native, LLM/RAG</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link active">Home</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#ai" class="nav__link">AI Engineering</a></li>
+          <li><a href="#learning" class="nav__link">Learning</a></li>
+          <li><a href="#certification" class="nav__link">Certification</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <a href="Vipin_Resume.pdf" class="btn btn--outline btn--sm" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Resume
+        </a>
+      </div>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="status-dot"></span>
+            <span>Open to opportunities</span>
+          </div>
+
+          <h1 class="hero__title">
+            Hi, I'm <span class="text-gradient">Vipin Vijayan Nair</span>
+            <br />
+            <span class="hero__role" id="typed">Mobile &amp; AI Engineer</span>
+          </h1>
+
+          <p class="hero__description">
+            <strong>AI Engineer &amp; Lead Software Engineer</strong> with <strong><span id="years-experience">16+</span> years</strong> building production-grade software — from <strong>multi-agent LLM systems</strong> with RAG, LangGraph, and MCP, to <strong>native &amp; cross-platform mobile apps</strong> shipped to millions. Currently a <strong>Staff Design Engineer at Visa</strong>, where I combine deep AI engineering with mobile expertise to build intelligent, scalable products.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">
+              View My Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__number" id="years-experience-stat">16+</div>
+              <div class="stat__label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">10+</div>
+              <div class="stat__label">Apps Shipped</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">14</div>
+              <div class="stat__label">AI Modules Completed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="phone-mockup">
+            <div class="phone">
+              <div class="phone__notch"></div>
+              <div class="phone__screen">
+                <div class="phone__app">
+                  <div class="app__header">
+                    <div class="app__avatar">VV</div>
+                    <div>
+                      <div class="app__name">Vipin.dev</div>
+                      <div class="app__status">Online</div>
+                    </div>
+                  </div>
+                  <div class="app__code">
+                    <div class="code-line"><span class="code-keyword">class</span> <span class="code-class">Engineer</span> {</div>
+                    <div class="code-line indent"><span class="code-prop">mobile</span>: [<span class="code-string">'Swift'</span>, <span class="code-string">'Kotlin'</span>, <span class="code-string">'RN'</span>],</div>
+                    <div class="code-line indent"><span class="code-prop">ai</span>: [<span class="code-string">'RAG'</span>, <span class="code-string">'Agents'</span>, <span class="code-string">'LangGraph'</span>],</div>
+                    <div class="code-line indent"><span class="code-prop">llm_stack</span>: [<span class="code-string">'OpenAI'</span>, <span class="code-string">'Qdrant'</span>],</div>
+                    <div class="code-line indent"><span class="code-prop">apps_shipped</span>: <span class="code-number">10</span>+</div>
+                    <div class="code-line">}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="floating-tag tag-1">📱 iOS</div>
+            <div class="floating-tag tag-2">🤖 AI/LLM</div>
+            <div class="floating-tag tag-3">⚛️ React Native</div>
+            <div class="floating-tag tag-4">🧠 LangGraph</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Certification Section -->
+    <section class="certification section" id="certification">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">AI Certification</span>
+          <h2 class="section__title">AI Makerspace Engineering Bootcamp</h2>
+          <p class="section__subtitle">Completed the 14-module AI Engineering Bootcamp and earned the certification.</p>
+        </div>
+
+        <div class="cert__card">
+          <div class="cert__image-link" aria-label="AI Makerspace certificate image">
+            <img src="aimakerspace_cert.jpeg" alt="AI Makerspace AI Engineering Bootcamp Certificate" class="cert__image" loading="lazy" />
+          </div>
+          <div class="cert__content">
+            <div class="cert__badge">🏆 Certified</div>
+            <h3>AI Engineering Bootcamp</h3>
+            <p class="cert__issuer">AI Makerspace · Cohort 8 · Fall 2025</p>
+            <a href="https://aimakerspace.io/" target="_blank" rel="noopener" class="cert__link">aimakerspace.io →</a>
+            <ul class="cert__highlights">
+              <li><strong>School Assistant</strong> demo — an AI-powered chat app for parents to ask natural language questions about school events and programs.</li>
+              <li>Multi-source retrieval across <strong>local files, Gmail, and web search</strong> using a multi-agent workflow.</li>
+              <li>Built with <strong>OpenAI GPT-4, FastAPI, React, Qdrant, LangGraph, and RAGAS</strong>; deployed on Railway and Vercel.</li>
+            </ul>
+            <a href="https://aimakerspace.io/" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Visit AI Makerspace →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">About Me</span>
+          <h2 class="section__title">Engineering mobile experiences that matter</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__content">
+            <p class="about__text">
+              I'm an <strong>AI Engineer &amp; Staff Design Engineer at Visa</strong> with <span id="years-experience-about">16+</span> years of experience.
+              I build <strong>production LLM systems</strong> first — multi-agent RAG, LangGraph, MCP, OpenAI,
+              embeddings, retrieval, evaluation, guardrails, and deployment — and I pair that with deep
+              mobile leadership across native iOS, Android, and React Native apps used by millions.
+            </p>
+            <p class="about__text">
+              Highlights include a <strong>School Events RAG</strong> capstone (FastAPI + React + Qdrant + Tavily + Gmail MCP),
+              an <strong>OpenAI chat app</strong>, and retail mobile platforms serving <strong>720K+ shoppers monthly</strong>
+              across <strong>420+ store locations</strong>. I lead teams, ship clean systems, and focus on
+              practical impact.
+            </p>
+
+            <div class="about__info">
+              <div class="info-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div>
+                  <div class="info-label">Location</div>
+                  <div class="info-value">Austin, Texas, US</div>
+                </div>
+              </div>
+              <div class="info-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <div>
+                  <div class="info-label">Experience</div>
+                  <div class="info-value"><span id="years-experience-info">16+</span> years in Software &amp; AI Engineering</div>
+                </div>
+              </div>
+              <div class="info-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <div>
+                  <div class="info-label">Visa</div>
+                  <div class="info-value">H1B</div>
+                </div>
+              </div>
+              <div class="info-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <div>
+                  <div class="info-label">Focus</div>
+                  <div class="info-value">Mobile &amp; AI Engineering</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__highlights">
+            <div class="highlight-card">
+              <div class="highlight-card__icon">🏆</div>
+              <h3>Production at Scale</h3>
+              <p>Apps used by 720K+ shoppers monthly across 420+ retail locations.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-card__icon">🚀</div>
+              <h3>Full Lifecycle</h3>
+              <p>From concept and architecture to App Store launch and production support.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-card__icon">👥</div>
+              <h3>Team Leadership</h3>
+              <p>Led offshore engineering teams across multiple time zones.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-card__icon">🧠</div>
+              <h3>AI Engineering</h3>
+              <p>Completed the AI Makerspace Bootcamp — RAG, LangGraph agents, MCP, evaluation &amp; guardrails.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-card__icon">🎯</div>
+              <h3>Quality First</h3>
+              <p>Strong focus on performance, accessibility, and clean architecture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Technical Skills</span>
+          <h2 class="section__title">A versatile mobile engineering toolkit</h2>
+          <p class="section__subtitle">Proficient across the entire mobile development ecosystem — from native to cross-platform.</p>
+        </div>
+
+        <div class="skills__grid">
+          <div class="skill-category">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">📱</div>
+              <h3>Mobile Platforms</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">iOS</span>
+              <span class="skill-tag">Android</span>
+              <span class="skill-tag">Windows Phone</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">⚛️</div>
+              <h3>Cross-Platform</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">React Native</span>
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">Kony</span>
+              <span class="skill-tag">Titanium</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">💻</div>
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Swift</span>
+              <span class="skill-tag">Objective-C</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Kotlin</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Dart</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">PHP</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">🌐</div>
+              <h3>Web &amp; Frontend</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">jQuery</span>
+              <span class="skill-tag">AngularJS</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">🗄️</div>
+              <h3>Databases &amp; Storage</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">Room DB</span>
+              <span class="skill-tag">Core Data</span>
+              <span class="skill-tag">NSUserDefaults</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">🛠️</div>
+              <h3>Tools &amp; DevOps</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Xcode</span>
+              <span class="skill-tag">Android Studio</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">Fastlane</span>
+              <span class="skill-tag">CI/CD</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">🔌</div>
+              <h3>APIs &amp; Integrations</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">JSON</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">Bluetooth LE</span>
+              <span class="skill-tag">In-App Purchases</span>
+              <span class="skill-tag">Push Notifications</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">🎮</div>
+              <h3>Specialized</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">AR/VR (Cardboard, Oculus)</span>
+              <span class="skill-tag">Game Dev (Cocos2D, Corona)</span>
+              <span class="skill-tag">Android NDK</span>
+              <span class="skill-tag">Biometrics</span>
+              <span class="skill-tag">Kony Certified</span>
+            </div>
+          </div>
+
+          <div class="skill-category skill-category--featured">
+            <div class="skill-category__header">
+              <div class="skill-category__icon">🧠</div>
+              <h3>AI Engineering <span class="skill-badge">New</span></h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">OpenAI API</span>
+              <span class="skill-tag">LangChain</span>
+              <span class="skill-tag">LangGraph</span>
+              <span class="skill-tag">OpenAI Agents SDK</span>
+              <span class="skill-tag">RAG (Retrieval-Augmented Generation)</span>
+              <span class="skill-tag">Multi-Agent Systems</span>
+              <span class="skill-tag">MCP (Model Context Protocol)</span>
+              <span class="skill-tag">Qdrant (Vector DB)</span>
+              <span class="skill-tag">Tavily Search</span>
+              <span class="skill-tag">RAGAS (Evaluation)</span>
+              <span class="skill-tag">LangSmith (Observability)</span>
+              <span class="skill-tag">Synthetic Data Generation</span>
+              <span class="skill-tag">Guardrails &amp; Safety</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Ollama (Local LLMs)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Career Journey</span>
+          <h2 class="section__title">Professional Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+            </div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Staff Design Engineer</h3>
+                  <p class="timeline__company">Visa USA Inc</p>
+                </div>
+                <span class="timeline__date">Feb 2022 — Present</span>
+              </div>
+              <p class="timeline__location">Austin, TX, USA</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+            </div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Lead II Software Engineer</h3>
+                  <p class="timeline__company">UST Global Inc</p>
+                </div>
+                <span class="timeline__date">Feb 2018 — Present</span>
+              </div>
+              <p class="timeline__location">Quincy, MA, USA</p>
+              <ul class="timeline__list">
+                <li>Lead engineer for iOS, Android, and React Native retail applications used by <strong>720K+ shoppers monthly</strong> across <strong>420+ Stop &amp; Shop locations</strong>.</li>
+                <li>Built native and cross-platform mobile applications with scanner, Bluetooth, and electronic self-checkout features.</li>
+                <li>Implemented <strong>biometric authentication</strong>, Wi-Fi auto-connect native modules, and location-based services.</li>
+                <li>Set up CI/CD pipelines with GitHub, Jenkins, and Fastlane for fast, reliable releases.</li>
+                <li>Provided technical leadership and production support for retail client engagements.</li>
+              </ul>
+              <div class="timeline__tags">
+                <span>iOS</span>
+                <span>Android</span>
+                <span>React Native</span>
+                <span>BLE</span>
+                <span>CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+            </div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Sr Software Developer</h3>
+                  <p class="timeline__company">UST Global Inc</p>
+                </div>
+                <span class="timeline__date">Sept 2013 — Jan 2018</span>
+              </div>
+              <p class="timeline__location">Technopark, India</p>
+              <ul class="timeline__list">
+                <li>Developed mobile projects across <strong>Android, iOS, Kony, and Titanium</strong> for multiple enterprise clients.</li>
+                <li>Built <strong>Michigan University VR apps</strong> using Google Cardboard and Oculus SDKs (Android NDK, C++).</li>
+                <li>Created <strong>InjoyGiving</strong> — a cross-platform gifting app for iOS and Android with QR-code redemption.</li>
+                <li>Built the <strong>Anthem Healthcare</strong> cross-platform payer app on Kony supporting millions of users.</li>
+              </ul>
+              <div class="timeline__tags">
+                <span>Android</span>
+                <span>iOS</span>
+                <span>Kony</span>
+                <span>Titanium</span>
+                <span>VR/AR</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+            </div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Software Engineer</h3>
+                  <p class="timeline__company">Network Systems &amp; Technologies (P) Ltd</p>
+                </div>
+                <span class="timeline__date">July 2013 — Aug 2013</span>
+              </div>
+              <p class="timeline__location">Technopark, India</p>
+              <ul class="timeline__list">
+                <li>Built Android applications integrated with Toshiba medical devices.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+            </div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Software Engineer — Android</h3>
+                  <p class="timeline__company">Zayan Infotech India (P) Ltd</p>
+                </div>
+                <span class="timeline__date">July 2012 — May 2013</span>
+              </div>
+              <p class="timeline__location">Technopark, India</p>
+              <ul class="timeline__list">
+                <li>Built <strong>English Grammar</strong> — the <strong>#1 education app</strong> on the Play Store in 2013.</li>
+                <li>Developed a range of educational applications from concept to launch.</li>
+                <li>Improved app stability by analyzing user behavior and crash reports.</li>
+              </ul>
+              <div class="timeline__tags">
+                <span>Android</span>
+                <span>Education</span>
+                <span>Top-Ranked</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+            </div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Manager — Smart Phone Apps</h3>
+                  <p class="timeline__company">Schogini Systems (P) Ltd</p>
+                </div>
+                <span class="timeline__date">May 2010 — July 2012</span>
+              </div>
+              <p class="timeline__location">Technopark, India — Client: iGenApps</p>
+              <ul class="timeline__list">
+                <li>Built <strong>iGenApps</strong> — a no-code mobile app/website builder used by thousands.</li>
+                <li>Developed from scratch in Titanium, then ported to native Android and iOS.</li>
+                <li>Implemented Maps, SMS, Phone, Twitter, Facebook, In-App Purchase, and Push Notifications.</li>
+                <li>Led game development using Cocos2D, Box2D, and Corona across Android and iOS.</li>
+              </ul>
+              <div class="timeline__tags">
+                <span>Titanium</span>
+                <span>Leadership</span>
+                <span>Game Dev</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Projects Section -->
+    <section class="projects section" id="ai">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">AI Engineering</span>
+          <h2 class="section__title">Building with LLMs, RAG &amp; Agents</h2>
+          <p class="section__subtitle">Projects from the AI Makerspace Bootcamp — prototyping to production.</p>
+        </div>
+
+        <div class="projects__grid">
+          <article class="project-card project-card--featured">
+            <div class="project-card__visual project-card__visual--ai-rag">
+              <div class="ai-rag-mock">
+                <div class="rag-query">
+                  <span class="rag-icon">💬</span>
+                  <span>Find karate classes for kids</span>
+                </div>
+                <div class="rag-flow">
+                  <div class="rag-node rag-node--query">Query</div>
+                  <div class="rag-arrow">→</div>
+                  <div class="rag-node rag-node--agent">LangGraph<br/>Agent</div>
+                  <div class="rag-arrow">→</div>
+                  <div class="rag-node rag-node--local">Qdrant</div>
+                </div>
+                <div class="rag-flow rag-flow--alt">
+                  <div class="rag-node rag-node--web">Tavily</div>
+                  <div class="rag-arrow">→</div>
+                  <div class="rag-node rag-node--answer">Answer</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag tag--featured">Featured</span>
+                <span class="tag tag--ai">AI/RAG</span>
+                <span class="tag">LangGraph</span>
+                <span class="tag">Multi-Agent</span>
+                <span class="tag">MCP</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">React</span>
+              </div>
+              <h3>School Events RAG — Multi-Agent Capstone</h3>
+              <p>
+                Production-style RAG application that helps parents find school events and programs
+                via natural-language questions. A <strong>multi-agent system</strong> orchestrated by
+                <strong>LangGraph</strong> routes queries between a local Qdrant vector store of school
+                data and the live web (Tavily) with fallback logic.
+              </p>
+              <ul class="project-card__features">
+                <li>RecursiveCharacterTextSplitter (1000/200 chunks) — improved recall by 2× over full-doc indexing</li>
+                <li>Multi-agent orchestration: LocalEvents agent + WebSearch agent with LangGraph routing</li>
+                <li>Gmail MCP integration — searches parent's Gmail for school emails via Model Context Protocol</li>
+                <li>FastAPI backend + React frontend, deployable to Railway &amp; Vercel</li>
+                <li>Designed for production: env-driven config, OAuth, deployment scripts, Docker support</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="https://github.com/vipvijayan/learn_ai" target="_blank" rel="noopener" class="link-arrow">GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__visual project-card__visual--ai-chat">
+              <div class="ai-chat-mock">
+                <div class="chat-bubble chat-bubble--user">Explain quantum entanglement in 3 lines</div>
+                <div class="chat-bubble chat-bubble--bot">
+                  <span class="typing-dot"></span>
+                  <span class="typing-dot"></span>
+                  <span class="typing-dot"></span>
+                </div>
+                <div class="chat-bubble chat-bubble--bot chat-bubble--full">
+                  Two particles become linked so measuring one instantly determines the state of the other, regardless of distance — Einstein called it "spooky action at a distance."
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag tag--ai">LLM App</span>
+                <span class="tag">React</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag">Vercel</span>
+              </div>
+              <h3>Vibe-Coded LLM Chat App</h3>
+              <p>
+                My first LLM-powered application — built end-to-end using AI-assisted development
+                ("vibe coding") in Cursor. React frontend + FastAPI backend proxying
+                <strong>OpenAI gpt-4.1-mini</strong>, deployed to <strong>Vercel</strong>. The
+                capstone of the AI Engineer Challenge intro course.
+              </p>
+              <div class="project-card__links">
+                <a href="https://github.com/vipvijayan/The-AI-Engineer-Challenge" target="_blank" rel="noopener" class="link-arrow">GitHub →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Learning / Course Modules Section -->
+    <section class="learning section" id="learning">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">AI Engineering Bootcamp</span>
+          <h2 class="section__title">14 modules — from prototyping to production</h2>
+          <p class="section__subtitle">Completed the AI Makerspace AI Engineering Bootcamp (Fall 2025 cohort).</p>
+        </div>
+
+        <div class="learning__grid">
+          <div class="learning__track">
+            <h3 class="learning__track-title">🧱 Foundations</h3>
+            <ul class="learning__list">
+              <li><strong>Prototyping Best Practices &amp; Vibe Coding</strong> — AI-assisted dev workflow</li>
+              <li><strong>Embeddings &amp; RAG</strong> — vector representations &amp; retrieval</li>
+              <li><strong>End-to-End RAG</strong> — first production-shaped RAG pipeline</li>
+            </ul>
+          </div>
+
+          <div class="learning__track">
+            <h3 class="learning__track-title">🏭 Production RAG</h3>
+            <ul class="learning__list">
+              <li><strong>LCEL &amp; LangGraph</strong> with LangChain-powered RAG</li>
+              <li><strong>Ollama</strong> — running local open-source LLMs</li>
+              <li><strong>Synthetic Data Generation</strong> + LangSmith tracing</li>
+              <li><strong>RAGAS</strong> — evaluating RAG &amp; agent quality</li>
+              <li><strong>Advanced Retrieval</strong> — re-ranking &amp; smarter pipelines</li>
+            </ul>
+          </div>
+
+          <div class="learning__track">
+            <h3 class="learning__track-title">🤖 Agents</h3>
+            <ul class="learning__list">
+              <li><strong>First Agent with LangGraph</strong> — stateful agentic flows</li>
+              <li><strong>Multi-Agent Systems</strong> — agent orchestration &amp; handoffs</li>
+              <li><strong>OpenAI Agents SDK</strong> — official agents framework</li>
+              <li><strong>Open Deep Research</strong> — deep-research agent patterns</li>
+            </ul>
+          </div>
+
+          <div class="learning__track">
+            <h3 class="learning__track-title">🚀 Production &amp; Protocols</h3>
+            <ul class="learning__list">
+              <li><strong>MCP (Model Context Protocol)</strong> — Gmail &amp; tool integration</li>
+              <li><strong>LangGraph Platform</strong> — deployment &amp; scaling</li>
+              <li><strong>Production RAG &amp; Guardrails</strong> — safety, monitoring, reliability</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="learning__skills">
+          <h3 class="learning__skills-title">🔑 Key Skills Acquired</h3>
+          <ul class="learning__skills-list">
+            <li>
+              <strong>Embeddings &amp; vector stores</strong>
+              <span>Built, tuned, and persisted embeddings for semantic search.</span>
+            </li>
+            <li>
+              <strong>End-to-end RAG pipelines</strong>
+              <span>Architected document ingestion, retrieval, and generation flows.</span>
+            </li>
+            <li>
+              <strong>Advanced retrieval techniques</strong>
+              <span>Dense, sparse, and hybrid search; chunking; reranking; and Maximum Marginal Relevance (MMR) for relevance/latency trade-offs.</span>
+            </li>
+            <li>
+              <strong>Multi-agent orchestration</strong>
+              <span>Designed and orchestrated multi-agent workflows with LangGraph.</span>
+            </li>
+            <li>
+              <strong>Agent integrations</strong>
+              <span>Implemented agent patterns and pipelines using LangChain and the OpenAI Agents SDK.</span>
+            </li>
+            <li>
+              <strong>Synthetic data &amp; knowledge graphs</strong>
+              <span>Generated synthetic datasets and structured knowledge for training and testing.</span>
+            </li>
+            <li>
+              <strong>Evaluation &amp; observability</strong>
+              <span>Instrumented experiments and evaluated agents/RAG with LangSmith and RAGas.</span>
+            </li>
+            <li>
+              <strong>Production RAG patterns</strong>
+              <span>Designed deployment-ready architectures addressing scaling, caching, and monitoring.</span>
+            </li>
+            <li>
+              <strong>Guardrails &amp; safety</strong>
+              <span>Implemented policies, filtering, and runtime controls for safer, auditable model behavior.</span>
+            </li>
+            <li>
+              <strong>Performance &amp; caching</strong>
+              <span>Applied caching strategies and response-time tuning for production performance.</span>
+            </li>
+            <li>
+              <strong>Local model testing</strong>
+              <span>Validated models and workflows locally using Ollama.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="learning__capstone">
+          <div class="capstone__icon">🏆</div>
+          <div class="capstone__content">
+            <h3>Capstone: School Events Multi-Agent RAG</h3>
+            <p>
+              End-to-end project combining <strong>RAG</strong>, <strong>multi-agent orchestration with
+              LangGraph</strong>, <strong>MCP-driven Gmail integration</strong>, FastAPI backend, and a
+              React frontend — shipped with Railway + Vercel deployment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Featured Work</span>
+          <h2 class="section__title">Projects &amp; Impact</h2>
+          <p class="section__subtitle">A selection of apps I've designed, built, and shipped to production.</p>
+        </div>
+
+        <div class="projects__grid">
+          <article class="project-card project-card--featured">
+            <div class="project-card__visual project-card__visual--retail">
+              <div class="phone-mini">
+                <div class="phone-mini__screen">
+                  <div class="mini-app">
+                    <div class="mini-header">🛒 ScanIT</div>
+                    <div class="mini-row"><span>Apples</span><span>$4.99</span></div>
+                    <div class="mini-row"><span>Bread</span><span>$3.49</span></div>
+                    <div class="mini-row"><span>Milk</span><span>$5.99</span></div>
+                    <div class="mini-total"><span>Total</span><span>$14.47</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag tag--featured">Featured</span>
+                <span class="tag">iOS</span>
+                <span class="tag">Android</span>
+                <span class="tag">React Native</span>
+              </div>
+              <h3>Stop &amp; Shop ScanIT</h3>
+              <p>
+                Retail mobile and handheld app for in-store shopping — scan items, track a budget,
+                and electronically self-checkout. Deployed across <strong>420+ Ahold banners</strong>
+                in the US with <strong>720K+ shopping trips per month</strong>.
+              </p>
+              <ul class="project-card__features">
+                <li>Bluetooth Low Energy scanner integration</li>
+                <li>Biometric authentication for wallet</li>
+                <li>Native Wi-Fi auto-connect modules</li>
+                <li>Constant socket connection for in-store devices</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="https://play.google.com/store/apps/details?id=com.modivmedia.scanitss" target="_blank" rel="noopener" class="link-arrow">Play Store →</a>
+                <a href="https://apps.apple.com/us/app/stop-shop-scan-it-mobile/id426163468" target="_blank" rel="noopener" class="link-arrow">App Store →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__visual project-card__visual--coupons">
+              <div class="coupon-stack">
+                <div class="coupon">🎫 20% OFF</div>
+                <div class="coupon">🎫 $5 OFF</div>
+                <div class="coupon">🎫 BOGO</div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">React Native</span>
+                <span class="tag">Native Modules</span>
+              </div>
+              <h3>Stop &amp; Shop Mobile App</h3>
+              <p>
+                Coupon and rewards app where shoppers save money by applying digital coupons
+                directly to their loyalty card. Built on React Native with custom native modules.
+              </p>
+              <div class="project-card__links">
+                <a href="https://play.google.com/store/apps/details?id=com.stopandshop.mobile.droid" target="_blank" rel="noopener" class="link-arrow">Play Store →</a>
+                <a href="https://itunes.apple.com/gb/app/stop-shop/id423801622?mt=8" target="_blank" rel="noopener" class="link-arrow">App Store →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__visual project-card__visual--vr">
+              <div class="vr-scene">
+                <div class="vr-eye vr-eye--left"></div>
+                <div class="vr-eye vr-eye--right"></div>
+                <div class="vr-icon">🥽</div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">Android NDK</span>
+                <span class="tag">C++</span>
+                <span class="tag">VR</span>
+              </div>
+              <h3>Michigan University VR Apps</h3>
+              <p>
+                Virtual reality apps built for the University of Michigan using Google Cardboard
+                and Samsung Gear VR with Oculus SDK. C++ and Android NDK used for low-level VR rendering.
+              </p>
+              <div class="project-card__links">
+                <a href="https://play.google.com/store/apps/details?id=com.MichiganVR" target="_blank" rel="noopener" class="link-arrow">Play Store →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__visual project-card__visual--health">
+              <div class="health-card">
+                <div class="health-pulse"></div>
+                <div class="health-line">❤️ Healthcare</div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">Kony</span>
+                <span class="tag">Cross-Platform</span>
+              </div>
+              <h3>Anthem Healthcare Payer</h3>
+              <p>
+                Cross-platform healthcare services app for WellPoint (Anthem), one of the largest
+                US health insurers. Built on Kony for both iOS and Android.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__visual project-card__visual--gift">
+              <div class="gift-box">🎁</div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">iOS</span>
+                <span class="tag">Android</span>
+              </div>
+              <h3>InjoyGiving</h3>
+              <p>
+                Dubai-based unique gifting platform that lets users send personalized gifts
+                anywhere in the world. Each gift generates a unique QR code redeemable at vendors.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__visual project-card__visual--grammar">
+              <div class="grammar-card">
+                <div class="book">📚</div>
+                <div class="rank">#1</div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">Android</span>
+                <span class="tag tag--success">Top-Ranked</span>
+              </div>
+              <h3>English Grammar</h3>
+              <p>
+                Hit the <strong>#1 Education App</strong> on the Google Play Store in 2013.
+                Helped thousands of students learn English grammar through interactive practice.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__visual project-card__visual--igen">
+              <div class="igen-logo">📲</div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">Titanium</span>
+                <span class="tag">Cross-Platform</span>
+              </div>
+              <h3>iGenApps — App Builder</h3>
+              <p>
+                No-code mobile app/website builder that lets users create apps and websites
+                from their smartphone — no programming required.
+              </p>
+              <div class="project-card__links">
+                <a href="https://en.wikipedia.org/wiki/IGenApps" target="_blank" rel="noopener" class="link-arrow">Wikipedia →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="contact__card">
+          <div class="contact__content">
+            <span class="section__eyebrow">Let's Connect</span>
+            <h2 class="contact__title">Looking for an AI-first engineer who ships?</h2>
+            <p class="contact__description">
+              I'm always interested in new challenges — whether it's leading a mobile team,
+              architecting a greenfield app, or scaling an existing product. Let's talk.
+            </p>
+
+            <div class="contact__buttons">
+              <a href="mailto:nair.vijayan.vipin@gmail.com" class="btn btn--primary btn--lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9 2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                nair.vijayan.vipin@gmail.com
+              </a>
+              <a href="tel:+13392358886" class="btn btn--ghost btn--lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +1 (339) 235-8886
+              </a>
+            </div>
+
+            <div class="contact__socials">
+              <a href="https://www.linkedin.com/in/vipin-v-nair-25554258/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+              </a>
+              <a href="https://github.com/vipvijayan" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="https://vipinvijayannair.medium.com/" target="_blank" rel="noopener" class="social-link" aria-label="Medium">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.86 0-3.38-2.88-3.38-6.42s1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+              </a>
+              <a href="https://www.hackerrank.com/VipinVijayan" target="_blank" rel="noopener" class="social-link" aria-label="HackerRank">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1.42 0 2.58 1.16 2.58 2.58v6.84h6.84c1.42 0 2.58 1.16 2.58 2.58s-1.16 2.58-2.58 2.58h-6.84v6.84c0 1.42-1.16 2.58-2.58 2.58s-2.58-1.16-2.58-2.58v-6.84H2.58C1.16 14.58 0 13.42 0 12s1.16-2.58 2.58-2.58h6.84V2.58C9.42 1.16 10.58 0 12 0z"/></svg>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <p class="footer__copy">
+        © <span id="year"></span> Vipin Vijayan Nair. Built with care.
+      </p>
+      <p class="footer__credit">Designed &amp; engineered for impact.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
