@@ -1,0 +1,21 @@
+# Portfolio projects directory (extracted from WhatsApp images)
+portfolio_projects/
+
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

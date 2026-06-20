@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "title": "Vipin Vijayan Nair — Mobile Engineer | iOS, Android, React Native",
+    "description": "AI Engineer & Lead Software Engineer — 16+ years. Production LLM systems (RAG, Agents, LangGraph, MCP) and iOS/Android/React Native apps used by millions. Staff Design Engineer at Visa.",
+    "keywords": "Vipin Vijayan Nair, Mobile Developer, iOS, Android, React Native, Flutter, AI Engineer, LLM, RAG, LangGraph, LangChain, OpenAI, Python, FastAPI, Kubernetes, Docker, Software Engineer, Austin TX"
+  },
+  "hero": {
+    "name": "Vipin Vijayan Nair",
+    "roles": [
+      "Mobile Software Engineer",
+      "Lead Mobile Engineer",
+      "AI Engineer (LLMs & RAG)",
+      "Lead Software Engineer"
+    ],
+    "description": "AI Engineer & Lead Software Engineer with {yearsExperience} years building production-grade software — from multi-agent LLM systems with RAG, LangGraph, and MCP, to native & cross-platform mobile apps shipped to millions. Currently a Staff Design Engineer at Visa, where I combine deep AI engineering with mobile expertise to build intelligent, scalable products.",
+    "yearsExperience": 16,
+    "appsShipped": 10,
+    "aiModulesCompleted": 14
+  },
+  "about": {
+    "location": "Quincy, MA and Austin, Texas, US",
+    "visa": "H1B",
+    "focus": "AI and Mobile Engineering",
+    "paragraphs": [
+      "I'm an AI Engineer & Staff Design Engineer at Visa with {yearsExperience} years of experience. I build production LLM systems first — multi-agent RAG, LangGraph, MCP, OpenAI, embeddings, retrieval, evaluation, guardrails, and deployment — and I pair that with deep mobile leadership across native iOS, Android, and React Native apps used by millions.",
+      "Highlights include retail mobile platforms serving 720K+ shoppers monthly across 420+ store locations, plus leadership across teams, product launches, production support, and AI adoption."
+    ],
+    "highlights": [
+      { "icon": "🏆", "title": "Production at Scale", "text": "Apps used by 720K+ shoppers monthly across 420+ retail locations." },
+      { "icon": "🚀", "title": "Full Lifecycle", "text": "From concept and architecture to App Store launch and production support." },
+      { "icon": "👥", "title": "Team Leadership", "text": "Led offshore engineering teams across multiple time zones." },
+      { "icon": "🧠", "title": "AI Engineering", "text": "Completed the AI Makerspace Bootcamp — RAG, LangGraph agents, MCP, evaluation & guardrails." },
+      { "icon": "🎯", "title": "Quality First", "text": "Strong focus on performance, accessibility, and clean architecture." }
+    ]
+  },
+  "certification": {
+    "title": "AI Makerspace Engineering Bootcamp",
+    "subtitle": "Completed the 14-module AI Engineering Bootcamp and earned the certification.",
+    "image": "certifications/ai-makerspace-cert.jpeg",
+    "imageAlt": "AI Makerspace AI Engineering Bootcamp Certificate",
+    "badge": "🏆 Certified",
+    "heading": "AI Engineering Bootcamp",
+    "issuer": "AI Makerspace · Cohort 8 · Fall 2025",
+    "link": "https://aimakerspace.io/",
+    "linkText": "aimakerspace.io →",
+    "highlights": [
+      "<strong>School Assistant</strong> demo — an AI-powered chat app for parents to ask natural language questions about school events and programs.",
+      "Multi-source retrieval across <strong>local files, Gmail, and web search</strong> using a multi-agent workflow.",
+      "Built with <strong>OpenAI GPT-4, FastAPI, React, Qdrant, LangGraph, and RAGAS</strong>; deployed on Railway and Vercel."
+    ]
+  },
+  "skills": {
+    "ai": {
+      "subheader": "AI",
+      "subheaderText": "Models, orchestration, retrieval, evaluation, and production AI systems.",
+      "categories": [
+        {
+          "icon": "🧠",
+          "title": "AI Engineering",
+          "badge": "New",
+          "featured": true,
+          "tags": ["Python", "OpenAI API", "LangChain", "LangGraph", "OpenAI Agents SDK", "RAG (Retrieval-Augmented Generation)", "Multi-Agent Systems", "MCP (Model Context Protocol)", "Qdrant (Vector DB)", "Tavily Search", "RAGAS (Evaluation)", "LangSmith (Observability)", "Synthetic Data Generation", "Guardrails & Safety", "FastAPI", "Docker", "Kubernetes", "Ollama (Local LLMs)"]
+        }
+      ]
+    },
+    "mobile": {
+      "subheader": "Mobile",
+      "subheaderText": "Platforms, languages, tooling, and integrations used to ship mobile products.",
+      "categories": [
+        { "icon": "📱", "title": "Mobile Platforms", "tags": ["iOS", "Android", "Windows Phone"] },
+        { "icon": "⚛️", "title": "Cross-Platform", "tags": ["React Native", "Flutter", "Kony", "Titanium"] },
+        { "icon": "💻", "title": "Languages", "tags": ["Swift", "Objective-C", "Java", "Kotlin", "JavaScript", "TypeScript", "Dart", "C++", "PHP"] },
+        { "icon": "🌐", "title": "Web & Frontend", "tags": ["HTML5", "CSS3", "Bootstrap", "jQuery", "AngularJS"] },
+        { "icon": "🗄️", "title": "Databases & Storage", "tags": ["MySQL", "SQLite", "Room DB", "Core Data", "NSUserDefaults"] },
+        { "icon": "🛠️", "title": "Tools & DevOps", "tags": ["Xcode", "Android Studio", "Git", "Jenkins", "Fastlane", "CI/CD"] },
+        { "icon": "🔌", "title": "APIs & Integrations", "tags": ["REST APIs", "JSON", "Firebase", "Bluetooth LE", "In-App Purchases", "Push Notifications"] },
+        { "icon": "🎮", "title": "Specialized", "tags": ["AR/VR (Cardboard, Oculus)", "Game Dev (Cocos2D, Corona)", "Android NDK", "Biometrics", "Kony Certified"] }
+      ]
+    }
+  },
+  "experience": [
+    {
+      "role": "Staff Design Engineer",
+      "company": "Visa USA Inc",
+      "location": "Austin, TX, USA",
+      "period": "Feb 2022 — Present",
+      "items": [],
+      "tags": []
+    },
+    {
+      "role": "Lead II Software Engineer",
+      "company": "UST Global Inc",
+      "location": "Quincy, MA, USA",
+      "period": "Feb 2018 — Present",
+      "items": [
+        "Lead engineer for iOS, Android, and React Native retail applications used by <strong>720K+ shoppers monthly</strong> across <strong>420+ Stop & Shop locations</strong>.",
+        "Built native and cross-platform mobile applications with scanner, Bluetooth, and electronic self-checkout features.",
+        "Implemented <strong>biometric authentication</strong>, Wi-Fi auto-connect native modules, and location-based services.",
+        "Set up CI/CD pipelines with GitHub, Jenkins, and Fastlane for fast, reliable releases.",
+        "Provided technical leadership and production support for retail client engagements."
+      ],
+      "tags": ["iOS", "Android", "React Native", "BLE", "CI/CD"]
+    },
+    {
+      "role": "Sr Software Developer",
+      "company": "UST Global Inc",
+      "location": "Technopark, India",
+      "period": "Sept 2013 — Jan 2018",
+      "items": [
+        "Developed mobile projects across <strong>Android, iOS, Kony, and Titanium</strong> for multiple enterprise clients.",
+        "Built <strong>Michigan University VR apps</strong> using Google Cardboard and Oculus SDKs (Android NDK, C++).",
+        "Created <strong>InjoyGiving</strong> — a cross-platform gifting app for iOS and Android with QR-code redemption.",
+        "Built the <strong>Anthem Healthcare</strong> cross-platform payer app on Kony supporting millions of users."
+      ],
+      "tags": ["Android", "iOS", "Kony", "Titanium", "VR/AR"]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Network Systems & Technologies (P) Ltd",
+      "location": "Technopark, India",
+      "period": "July 2013 — Aug 2013",
+      "items": [
+        "Built Android applications integrated with Toshiba medical devices."
+      ],
+      "tags": []
+    },
+    {
+      "role": "Software Engineer — Android",
+      "company": "Zayan Infotech India (P) Ltd",
+      "location": "Technopark, India",
+      "period": "July 2012 — May 2013",
+      "items": [
+        "Built <strong>English Grammar</strong> — the <strong>#1 education app</strong> on the Play Store in 2013.",
+        "Developed a range of educational applications from concept to launch.",
+        "Improved app stability by analyzing user behavior and crash reports."
+      ],
+      "tags": ["Android", "Education", "Top-Ranked"]
+    },
+    {
+      "role": "Manager — Smart Phone Apps",
+      "company": "Schogini Systems (P) Ltd",
+      "location": "Technopark, India — Client: iGenApps",
+      "period": "May 2010 — July 2012",
+      "items": [
+        "Built <strong>iGenApps</strong> — a no-code mobile app/website builder used by thousands.",
+        "Developed from scratch in Titanium, then ported to native Android and iOS.",
+        "Implemented Maps, SMS, Phone, Twitter, Facebook, In-App Purchase, and Push Notifications.",
+        "Led game development using Cocos2D, Box2D, and Corona across Android and iOS."
+      ],
+      "tags": ["Titanium", "Leadership", "Game Dev"]
+    }
+  ],
+  "aiProjects": [
+    {
+      "name": "School Events RAG — Multi-Agent Capstone",
+      "tags": ["Featured", "AI/RAG", "LangGraph", "Multi-Agent", "MCP", "FastAPI", "React"],
+      "description": "Production-style RAG application that helps parents find school events and programs via natural-language questions. A multi-agent system orchestrated by LangGraph routes queries between a local Qdrant vector store of school data and the live web (Tavily) with fallback logic.",
+      "features": [
+        "RecursiveCharacterTextSplitter (1000/200 chunks) — improved recall by 2× over full-doc indexing",
+        "Multi-agent orchestration: LocalEvents agent + WebSearch agent with LangGraph routing",
+        "Gmail MCP integration — searches parent's Gmail for school emails via Model Context Protocol",
+        "FastAPI backend + React frontend, deployable to Railway & Vercel",
+        "Designed for production: env-driven config, OAuth, deployment scripts, Docker support"
+      ],
+      "link": "https://github.com/vipvijayan/learn_ai"
+    },
+    {
+      "name": "Vibe-Coded LLM Chat App",
+      "tags": ["AI/LLM", "React", "FastAPI", "OpenAI", "Vercel"],
+      "description": "My first LLM-powered application — built end-to-end using AI-assisted development (\"vibe coding\") in Cursor. React frontend + FastAPI backend proxying OpenAI gpt-4.1-mini, deployed to Vercel. The capstone of the AI Engineer Challenge intro course.",
+      "features": [],
+      "link": "https://github.com/vipvijayan/The-AI-Engineer-Challenge"
+    }
+  ],
+  "learning": {
+    "eyebrow": "AI Engineering Bootcamp",
+    "title": "14 modules — from prototyping to production",
+    "subtitle": "Completed the AI Makerspace AI Engineering Bootcamp (Fall 2025 cohort).",
+    "tracks": [
+      {
+        "icon": "🧱",
+        "title": "Foundations",
+        "items": [
+          "<strong>Prototyping Best Practices & Vibe Coding</strong> — AI-assisted dev workflow",
+          "<strong>Embeddings & RAG</strong> — vector representations & retrieval",
+          "<strong>End-to-End RAG</strong> — first production-shaped RAG pipeline"
+        ]
+      },
+      {
+        "icon": "🏭",
+        "title": "Production RAG",
+        "items": [
+          "<strong>LCEL & LangGraph</strong> with LangChain-powered RAG",
+          "<strong>Ollama</strong> — running local open-source LLMs",
+          "<strong>Synthetic Data Generation</strong> + LangSmith tracing",
+          "<strong>RAGAS</strong> — evaluating RAG & agent quality",
+          "<strong>Advanced Retrieval</strong> — re-ranking & smarter pipelines"
+        ]
+      },
+      {
+        "icon": "🤖",
+        "title": "Agents",
+        "items": [
+          "<strong>First Agent with LangGraph</strong> — stateful agentic flows",
+          "<strong>Multi-Agent Systems</strong> — agent orchestration & handoffs",
+          "<strong>OpenAI Agents SDK</strong> — official agents framework",
+          "<strong>Open Deep Research</strong> — deep-research agent patterns"
+        ]
+      },
+      {
+        "icon": "🚀",
+        "title": "Production & Protocols",
+        "items": [
+          "<strong>MCP (Model Context Protocol)</strong> — Gmail & tool integration",
+          "<strong>LangGraph Platform</strong> — deployment & scaling",
+          "<strong>Production RAG & Guardrails</strong> — safety, monitoring, reliability"
+        ]
+      }
+    ],
+    "skillsTitle": "🔑 Key Skills Acquired",
+    "skills": [
+      { "title": "Embeddings & vector stores", "text": "Built, tuned, and persisted embeddings for semantic search." },
+      { "title": "End-to-end RAG pipelines", "text": "Architected document ingestion, retrieval, and generation flows." },
+      { "title": "Advanced retrieval techniques", "text": "Dense, sparse, and hybrid search; chunking; reranking; and Maximum Marginal Relevance (MMR) for relevance/latency trade-offs." },
+      { "title": "Multi-agent orchestration", "text": "Designed and orchestrated multi-agent workflows with LangGraph." },
+      { "title": "Agent integrations", "text": "Implemented agent patterns and pipelines using LangChain and the OpenAI Agents SDK." },
+      { "title": "Synthetic data & knowledge graphs", "text": "Generated synthetic datasets and structured knowledge for training and testing." },
+      { "title": "Evaluation & observability", "text": "Instrumented experiments and evaluated agents/RAG with LangSmith and RAGas." },
+      { "title": "Production RAG patterns", "text": "Designed deployment-ready architectures addressing scaling, caching, and monitoring." },
+      { "title": "Guardrails & safety", "text": "Implemented policies, filtering, and runtime controls for safer, auditable model behavior." },
+      { "title": "Performance & caching", "text": "Applied caching strategies and response-time tuning for production performance." },
+      { "title": "Local model testing", "text": "Validated models and workflows locally using Ollama." }
+    ],
+    "capstone": {
+      "icon": "🏆",
+      "title": "Capstone: School Events Multi-Agent RAG",
+      "text": "End-to-end project combining RAG, multi-agent orchestration with LangGraph, MCP-driven Gmail integration, FastAPI backend, and a React frontend — shipped with Railway + Vercel deployment."
+    }
+  },
+  "projects": [
+    {
+      "name": "Stop & Shop ScanIT",
+      "tags": ["Featured", "iOS", "Android", "React Native"],
+      "description": "Retail mobile and handheld app for in-store shopping — scan items, track a budget, and electronically self-checkout. Deployed across <strong>420+ Ahold banners</strong> in the US with <strong>720K+ shopping trips per month</strong>.",
+      "features": [
+        "Bluetooth Low Energy scanner integration",
+        "Biometric authentication for wallet",
+        "Native Wi-Fi auto-connect modules",
+        "Constant socket connection for in-store devices"
+      ],
+      "links": [
+        { "text": "Play Store →", "url": "https://play.google.com/store/apps/details?id=com.modivmedia.scanitss" },
+        { "text": "App Store →", "url": "https://apps.apple.com/us/app/stop-shop-scan-it-mobile/id426163468" }
+      ]
+    },
+    {
+      "name": "Stop & Shop Mobile App",
+      "tags": ["React Native", "Native Modules"],
+      "description": "Coupon and rewards app where shoppers save money by applying digital coupons directly to their loyalty card. Built on React Native with custom native modules.",
+      "features": [],
+      "links": [
+        { "text": "Play Store →", "url": "https://play.google.com/store/apps/details?id=com.stopandshop.mobile.droid" },
+        { "text": "App Store →", "url": "https://itunes.apple.com/gb/app/stop-shop/id423801622?mt=8" }
+      ]
+    },
+    {
+      "name": "Michigan University VR Apps",
+      "tags": ["Android NDK", "C++", "VR"],
+      "description": "Virtual reality apps built for the University of Michigan using Google Cardboard and Samsung Gear VR with Oculus SDK. C++ and Android NDK used for low-level VR rendering.",
+      "features": [],
+      "links": [
+        { "text": "Play Store →", "url": "https://play.google.com/store/apps/details?id=com.MichiganVR" }
+      ]
+    },
+    {
+      "name": "Anthem Healthcare Payer",
+      "tags": ["Kony", "Cross-Platform"],
+      "description": "Cross-platform healthcare services app for WellPoint (Anthem), one of the largest US health insurers. Built on Kony for both iOS and Android.",
+      "features": [],
+      "links": []
+    },
+    {
+      "name": "InjoyGiving",
+      "tags": ["iOS", "Android"],
+      "description": "Dubai-based unique gifting platform that lets users send personalized gifts anywhere in the world. Each gift generates a unique QR code redeemable at vendors.",
+      "features": [],
+      "links": []
+    },
+    {
+      "name": "English Grammar",
+      "tags": ["Android", "Top-Ranked"],
+      "description": "Hit the <strong>#1 Education App</strong> on the Google Play Store in 2013. Helped thousands of students learn English grammar through interactive practice.",
+      "features": [],
+      "links": []
+    },
+    {
+      "name": "iGenApps — App Builder",
+      "tags": ["Titanium", "Cross-Platform"],
+      "description": "No-code mobile app/website builder that lets users create apps and websites from their smartphone — no programming required.",
+      "features": [],
+      "links": [
+        { "text": "Wikipedia →", "url": "https://en.wikipedia.org/wiki/IGenApps" }
+      ]
+    }
+  ],
+  "personalProjects": [
+    {
+      "name": "Flutter Themer",
+      "tags": ["Featured", "Flutter", "Design System", "Web"],
+      "description": "A web-based tool for theming an entire Flutter app with a live preview. It lets developers copy the generated theme file directly into their project and apply a professional visual system across the app.",
+      "features": [
+        "Live theme preview while you adjust colors and styles",
+        "Copy-ready theme file for direct Flutter integration",
+        "Built to help teams standardize app-wide styling"
+      ],
+      "links": [
+        { "text": "Visit Site →", "url": "https://flutterthemer.github.io/" }
+      ]
+    }
+  ],
+  "contact": {
+    "eyebrow": "Let's Connect",
+    "title": "Looking for a mobile engineer who ships?",
+    "description": "I'm always interested in new challenges — whether it's leading a mobile team, architecting a greenfield app, or scaling an existing product. Let's talk.",
+    "email": "nair.vijayan.vipin@gmail.com",
+    "phone": "+1 (339) 235-8886",
+    "socials": [
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/vipin-v-nair-25554258/" },
+      { "label": "GitHub", "url": "https://github.com/vipvijayan" },
+      { "label": "Medium", "url": "https://vipinvijayannair.medium.com/" },
+      { "label": "HackerRank", "url": "https://www.hackerrank.com/VipinVijayan" }
+    ]
+  },
+  "nav": [
+    { "label": "Home", "href": "#home" },
+    { "label": "About", "href": "#about" },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "AI Engineering", "href": "#ai" },
+    { "label": "Learning", "href": "#learning" },
+    { "label": "Certification", "href": "#certification" },
+    { "label": "Experience", "href": "#experience" },
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Contact", "href": "#contact" }
+  ]
+}
