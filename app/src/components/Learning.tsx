@@ -1,10 +1,15 @@
-function Learning({ data }) {
-  const { learning } = data
+import { memo } from 'react'
+import type { Learning as LearningType } from '../types'
 
+interface LearningProps {
+  learning: LearningType
+}
+
+const Learning = memo(function Learning({ learning }: LearningProps) {
   return (
     <section id="learning" className="py-20 bg-[var(--color-bg-soft)]">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center mb-12">
+        <div data-aos="fade-up" className="text-center mb-12">
           <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[var(--color-primary)] mb-3">{learning.eyebrow}</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{learning.title}</h2>
           <p className="text-[var(--color-text-soft)] max-w-2xl mx-auto">{learning.subtitle}</p>
@@ -12,7 +17,7 @@ function Learning({ data }) {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {learning.tracks.map((track, i) => (
-            <div key={i} className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-5">
+            <div key={i} data-aos="fade-up" data-aos-delay={i * 60} className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-5">
               <h3 className="font-bold mb-3 flex items-center gap-2">
                 <span>{track.icon}</span> {track.title}
               </h3>
@@ -25,7 +30,7 @@ function Learning({ data }) {
           ))}
         </div>
 
-        <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-6 mb-8">
+        <div data-aos="fade-up" className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-6 mb-8">
           <h3 className="font-bold mb-4">{learning.skillsTitle}</h3>
           <ul className="grid sm:grid-cols-2 gap-3">
             {learning.skills.map((skill, i) => (
@@ -37,7 +42,7 @@ function Learning({ data }) {
           </ul>
         </div>
 
-        <div className="flex items-start gap-4 bg-[var(--color-bg-card)] border border-[var(--color-primary)]/20 rounded-xl p-6">
+        <div data-aos="fade-up" className="flex items-start gap-4 bg-[var(--color-bg-card)] border border-[var(--color-primary)]/20 rounded-xl p-6">
           <span className="text-3xl">{learning.capstone.icon}</span>
           <div>
             <h3 className="font-bold mb-1">{learning.capstone.title}</h3>
@@ -47,6 +52,6 @@ function Learning({ data }) {
       </div>
     </section>
   )
-}
+})
 
 export default Learning

@@ -1,12 +1,17 @@
-import { useEffect } from 'react'
+import { useEffect, memo } from 'react'
+import type { NavItem } from '../types'
 
-function Header({ data }) {
+interface HeaderProps {
+  nav: NavItem[]
+}
+
+const Header = memo(function Header({ nav }: HeaderProps) {
   useEffect(() => {
     const toggle = document.getElementById('theme-toggle')
     if (!toggle) return
     const storageKey = 'portfolio-theme'
     const root = document.documentElement
-    const apply = (theme) => {
+    const apply = (theme: string) => {
       root.setAttribute('data-theme', theme)
       toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false')
     }
@@ -31,8 +36,8 @@ function Header({ data }) {
       menu.classList.toggle('open')
       document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : ''
     }
-    const close = (e) => {
-      if (!menu.contains(e.target) && !toggle.contains(e.target) && menu.classList.contains('open')) {
+    const close = (e: MouseEvent) => {
+      if (!menu.contains(e.target as Node) && !toggle.contains(e.target as Node) && menu.classList.contains('open')) {
         toggle.classList.remove('active')
         menu.classList.remove('open')
         document.body.style.overflow = ''
@@ -43,6 +48,7 @@ function Header({ data }) {
     return () => {
       toggle.removeEventListener('click', onClick)
       document.removeEventListener('click', close)
+      document.body.style.overflow = ''
     }
   }, [])
 
@@ -51,7 +57,7 @@ function Header({ data }) {
       <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <div id="nav-menu">
           <ul className="flex items-center gap-6 list-none m-0 p-0">
-            {data.nav.map((item, i) => (
+            {nav.map((item, i) => (
               <li key={i}>
                 <a
                   href={item.href}
@@ -79,6 +85,6 @@ function Header({ data }) {
       </nav>
     </header>
   )
-}
+})
 
 export default Header

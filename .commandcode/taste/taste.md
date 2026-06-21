@@ -14,3 +14,6 @@
 # design
 - For project cards, use a clean professional layout without decorative CSS-only thumbnail mockups or animated graphics. Confidence: 0.70
 
+# typescript
+- Use TypeScript. Confidence: 0.65
+

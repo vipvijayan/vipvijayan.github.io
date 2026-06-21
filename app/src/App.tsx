@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import type { PortfolioData } from './types'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Certification from './components/Certification'
@@ -13,7 +14,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [data, setData] = useState(null)
+  const [data, setData] = useState<PortfolioData | null>(null)
 
   useEffect(() => {
     fetch('/data/portfolio.json')
@@ -35,20 +36,20 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300">
-      <Header data={data} />
+      <Header nav={data.nav} />
       <main>
-        <Hero data={data} />
-        <Certification data={data} />
-        <About data={data} />
-        <Skills data={data} />
-        <Experience data={data} />
-        <AiProjects data={data} />
-        <Learning data={data} />
-        <Projects data={data} />
-        <PersonalProjects data={data} />
-        <Contact data={data} />
+        <Hero hero={data.hero} />
+        <Certification certification={data.certification} />
+        <About about={data.about} yearsExperience={data.hero.yearsExperience} />
+        <Skills skills={data.skills} />
+        <Experience experience={data.experience} />
+        <AiProjects aiProjects={data.aiProjects} />
+        <Learning learning={data.learning} />
+        <Projects projects={data.projects} />
+        <PersonalProjects personalProjects={data.personalProjects} />
+        <Contact contact={data.contact} />
       </main>
-      <Footer data={data} />
+      <Footer footer={data.footer} />
     </div>
   )
 }

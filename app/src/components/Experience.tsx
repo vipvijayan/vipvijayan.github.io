@@ -1,8 +1,15 @@
-function Experience({ data }) {
+import { memo } from 'react'
+import type { Experience as ExperienceType } from '../types'
+
+interface ExperienceProps {
+  experience: ExperienceType[]
+}
+
+const Experience = memo(function Experience({ experience }: ExperienceProps) {
   return (
     <section id="experience" className="py-20 bg-[var(--color-bg-soft)]">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center mb-12">
+        <div data-aos="fade-up" className="text-center mb-12">
           <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[var(--color-primary)] mb-3">Career Journey</span>
           <h2 className="text-3xl md:text-4xl font-bold">Professional Experience</h2>
         </div>
@@ -10,8 +17,8 @@ function Experience({ data }) {
         <div className="relative max-w-3xl mx-auto">
           <div className="absolute left-4 top-0 bottom-0 w-px bg-[var(--color-border)]"></div>
 
-          {data.experience.map((job, i) => (
-            <div key={i} className="relative pl-12 pb-10 last:pb-0">
+          {experience.map((job, i) => (
+            <div key={i} data-aos="fade-up" data-aos-delay={i * 80} className="relative pl-12 pb-10 last:pb-0">
               <div className="absolute left-2.5 top-1.5 w-3 h-3 rounded-full bg-[var(--color-primary)] border-2 border-[var(--color-bg)] z-10"></div>
 
               <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-5">
@@ -46,6 +53,6 @@ function Experience({ data }) {
       </div>
     </section>
   )
-}
+})
 
 export default Experience

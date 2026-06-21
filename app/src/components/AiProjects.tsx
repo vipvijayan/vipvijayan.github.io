@@ -1,10 +1,17 @@
-function AiProjects({ data }) {
-  const visible = data.aiProjects.filter(p => !p.hide)
+import { useMemo, memo } from 'react'
+import type { AiProject } from '../types'
+
+interface AiProjectsProps {
+  aiProjects: AiProject[]
+}
+
+const AiProjects = memo(function AiProjects({ aiProjects }: AiProjectsProps) {
+  const visible = useMemo(() => aiProjects.filter(p => !p.hide), [aiProjects])
 
   return (
     <section id="ai" className="py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center mb-12">
+        <div data-aos="fade-up" className="text-center mb-12">
           <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[var(--color-primary)] mb-3">AI Engineering</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Building with LLMs, RAG & Agents</h2>
           <p className="text-[var(--color-text-soft)] max-w-2xl mx-auto">Projects from the AI Makerspace Bootcamp — prototyping to production.</p>
@@ -12,7 +19,7 @@ function AiProjects({ data }) {
 
         <div className="grid md:grid-cols-2 gap-6">
           {visible.map((project, i) => (
-            <article key={i} className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-colors duration-200">
+            <article key={i} data-aos="fade-up" data-aos-delay={i * 60} className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-colors duration-200">
               <div className="flex flex-wrap gap-1.5 mb-4">
                 {project.tags.map((tag, j) => (
                   <span key={j} className={`text-xs font-medium px-2.5 py-1 rounded-full ${tag === 'Featured' ? 'bg-[var(--color-primary)] text-white' : tag.includes('AI') ? 'bg-[var(--color-accent)]/10 text-[var(--color-accent)]' : 'bg-[var(--color-bg-soft)] text-[var(--color-text-soft)] border border-[var(--color-border)]'}`}>{tag}</span>
@@ -38,6 +45,6 @@ function AiProjects({ data }) {
       </div>
     </section>
   )
-}
+})
 
 export default AiProjects
