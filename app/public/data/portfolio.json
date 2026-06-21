@@ -1,11 +1,29 @@
 {
   "nav": [
-    { "label": "About", "href": "#about" },
-    { "label": "Skills", "href": "#skills" },
-    { "label": "Experience", "href": "#experience" },
-    { "label": "AI Projects", "href": "#ai" },
-    { "label": "Projects", "href": "#projects" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Skills",
+      "href": "#skills"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "label": "AI Projects",
+      "href": "#ai"
+    },
+    {
+      "label": "Projects",
+      "href": "#projects"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "hero": {
     "name": "Vipin Vijayan Nair",
@@ -26,11 +44,11 @@
     "imageAlt": "AI Makerspace Bootcamp certificate",
     "badge": "Verified Certificate",
     "heading": "AI Makerspace Bootcamp",
-    "issuer": "Issued by AI Makerspace • 2025",
+    "issuer": "Issued by AI Makerspace \u2022 2025",
     "link": "https://www.aimakerspace.io/",
-    "linkText": "Visit AI Makerspace →",
+    "linkText": "Visit AI Makerspace \u2192",
     "demoLink": "/docs/School Assistant.pdf",
-    "demoLinkText": "📄 View School Assistant Demo →",
+    "demoLinkText": "\ud83d\udcc4 View School Assistant Demo \u2192",
     "highlights": [
       "Built production-grade RAG systems with <strong>LangGraph</strong>, <strong>ChromaDB</strong>, and <strong>OpenAI</strong>",
       "Deployed 8+ working AI prototypes to <strong>HuggingFace Spaces</strong>",
@@ -40,7 +58,7 @@
   },
   "about": {
     "paragraphs": [
-      "I'm a <strong>Staff Software Engineer</strong> at Visa with <strong>{yearsExperience}+ years</strong> of experience building production-grade mobile applications. My expertise spans the full mobile development lifecycle — from native iOS and Android to cross-platform solutions using React Native and Flutter.",
+      "I'm a <strong>Staff Software Engineer</strong> at Visa with <strong>{yearsExperience}+ years</strong> of experience building production-grade mobile applications. My expertise spans the full mobile development lifecycle \u2014 from native iOS and Android to cross-platform solutions using React Native and Flutter.",
       "At Visa, I lead the development of <strong>mobile payment solutions</strong> that serve millions of users worldwide. I specialize in <strong>UI/UX engineering</strong>, creating intuitive interfaces for complex financial products while ensuring accessibility and performance standards.",
       "Beyond mobile development, I'm deeply engaged in <strong>AI engineering</strong>, exploring how <strong>LLMs, RAG systems, and agentic workflows</strong> can enhance mobile experiences. I believe in building products that are not only functional but also intelligent and user-centric."
     ],
@@ -48,10 +66,26 @@
     "visa": "Staff Design Engineer, Mobile",
     "focus": "AI and Mobile Engineering",
     "highlights": [
-      { "icon": "📱", "title": "Mobile Expert", "text": "Native iOS/Android + React Native/Flutter, shipping apps to millions of users." },
-      { "icon": "🤖", "title": "AI Enthusiast", "text": "Building with LLMs, RAG pipelines, and agentic workflows for real-world products." },
-      { "icon": "🏗️", "title": "System Designer", "text": "Scalable architectures, performance optimization, and production-grade solutions." },
-      { "icon": "🎨", "title": "UI/UX Focused", "text": "Intuitive interfaces for complex products with accessibility and performance in mind." }
+      {
+        "icon": "\ud83d\udcf1",
+        "title": "Mobile Expert",
+        "text": "Native iOS/Android + React Native/Flutter, shipping apps to millions of users."
+      },
+      {
+        "icon": "\ud83e\udd16",
+        "title": "AI Enthusiast",
+        "text": "Building with LLMs, RAG pipelines, and agentic workflows for real-world products."
+      },
+      {
+        "icon": "\ud83c\udfd7\ufe0f",
+        "title": "System Designer",
+        "text": "Scalable architectures, performance optimization, and production-grade solutions."
+      },
+      {
+        "icon": "\ud83c\udfa8",
+        "title": "UI/UX Focused",
+        "text": "Intuitive interfaces for complex products with accessibility and performance in mind."
+      }
     ]
   },
   "skills": {
@@ -61,37 +95,79 @@
       "categories": [
         {
           "title": "LLMs & GenAI",
-          "icon": "🤖",
+          "icon": "\ud83e\udd16",
           "featured": true,
           "badge": "Primary",
-          "tags": ["OpenAI", "Anthropic", "Gemini", "GPT-4o", "Claude", "LangChain", "LangGraph"]
+          "tags": [
+            "OpenAI",
+            "Anthropic",
+            "Gemini",
+            "GPT-4o",
+            "Claude",
+            "LangChain",
+            "LangGraph"
+          ]
         },
         {
           "title": "RAG Systems",
-          "icon": "📚",
+          "icon": "\ud83d\udcda",
           "featured": true,
           "badge": "Primary",
-          "tags": ["ChromaDB", "Pinecone", "Qdrant", "FAISS", "Vector Embeddings", "Hybrid Search"]
+          "tags": [
+            "ChromaDB",
+            "Pinecone",
+            "Qdrant",
+            "FAISS",
+            "Vector Embeddings",
+            "Hybrid Search"
+          ]
         },
         {
           "title": "Agentic AI",
-          "icon": "🔄",
-          "tags": ["MCP Protocol", "Tool Use", "Multi-Agent Systems", "ReAct", "Chain of Thought"]
+          "icon": "\ud83d\udd04",
+          "tags": [
+            "MCP Protocol",
+            "Tool Use",
+            "Multi-Agent Systems",
+            "ReAct",
+            "Chain of Thought"
+          ]
         },
         {
           "title": "AI Frameworks",
-          "icon": "⚙️",
-          "tags": ["LangChain", "LangGraph", "LlamaIndex", "HuggingFace", "OpenAI API", "Anthropic SDK"]
+          "icon": "\u2699\ufe0f",
+          "tags": [
+            "LangChain",
+            "LangGraph",
+            "LlamaIndex",
+            "HuggingFace",
+            "OpenAI API",
+            "Anthropic SDK"
+          ]
         },
         {
           "title": "Vector Databases",
-          "icon": "🗄️",
-          "tags": ["ChromaDB", "Pinecone", "Qdrant", "FAISS", "Weaviate", "Milvus"]
+          "icon": "\ud83d\uddc4\ufe0f",
+          "tags": [
+            "ChromaDB",
+            "Pinecone",
+            "Qdrant",
+            "FAISS",
+            "Weaviate",
+            "Milvus"
+          ]
         },
         {
           "title": "AI Deployment",
-          "icon": "🚀",
-          "tags": ["HuggingFace Spaces", "Streamlit", "Gradio", "Docker", "REST APIs", "FastAPI"]
+          "icon": "\ud83d\ude80",
+          "tags": [
+            "HuggingFace Spaces",
+            "Streamlit",
+            "Gradio",
+            "Docker",
+            "REST APIs",
+            "FastAPI"
+          ]
         }
       ]
     },
@@ -101,23 +177,49 @@
       "categories": [
         {
           "title": "iOS Development",
-          "icon": "🍎",
-          "tags": ["Swift", "SwiftUI", "UIKit", "Objective-C", "Xcode", "Core Data"]
+          "icon": "\ud83c\udf4e",
+          "tags": [
+            "Swift",
+            "SwiftUI",
+            "UIKit",
+            "Objective-C",
+            "Xcode",
+            "Core Data"
+          ]
         },
         {
           "title": "Android Development",
-          "icon": "🤖",
-          "tags": ["Kotlin", "Java", "Jetpack Compose", "Android Studio", "Material Design"]
+          "icon": "\ud83e\udd16",
+          "tags": [
+            "Kotlin",
+            "Java",
+            "Jetpack Compose",
+            "Android Studio",
+            "Material Design"
+          ]
         },
         {
           "title": "Cross-Platform",
-          "icon": "🌐",
-          "tags": ["React Native", "Flutter", "Dart", "TypeScript", "Expo"]
+          "icon": "\ud83c\udf10",
+          "tags": [
+            "React Native",
+            "Flutter",
+            "Dart",
+            "TypeScript",
+            "Expo"
+          ]
         },
         {
           "title": "Mobile Tools",
-          "icon": "🛠️",
-          "tags": ["Firebase", "Fastlane", "TestFlight", "Play Console", "CI/CD", "Git"]
+          "icon": "\ud83d\udee0\ufe0f",
+          "tags": [
+            "Firebase",
+            "Fastlane",
+            "TestFlight",
+            "Play Console",
+            "CI/CD",
+            "Git"
+          ]
         }
       ]
     }
@@ -126,7 +228,7 @@
     {
       "role": "Staff Design Engineer, Mobile",
       "company": "Visa",
-      "period": "Apr 2022 – Present",
+      "period": "Apr 2022 \u2013 Present",
       "location": "Austin, Texas, USA",
       "items": [
         "Leading mobile UI/UX engineering for Visa's payment applications serving millions of users worldwide",
@@ -134,53 +236,79 @@
         "Established mobile design system and component library adopted across multiple product teams",
         "Driving AI integration into mobile products, building intelligent features with LLM-powered workflows"
       ],
-      "tags": ["React Native", "Swift", "Kotlin", "AI Integration", "Design Systems"]
+      "tags": [
+        "React Native",
+        "Swift",
+        "Kotlin",
+        "AI Integration",
+        "Design Systems"
+      ]
     },
     {
       "role": "Lead Mobile Engineer",
       "company": "Fidelity Investments",
-      "period": "2019 – 2022",
+      "period": "2019 \u2013 2022",
       "location": "Boston, MA",
       "items": [
         "Led a team of 6 mobile engineers building the Fidelity mobile trading platform",
         "Implemented real-time portfolio tracking and trading features with sub-second latency",
         "Drove adoption of automated testing, achieving 90%+ code coverage across mobile apps"
       ],
-      "tags": ["React Native", "iOS", "Android", "FinTech"]
+      "tags": [
+        "React Native",
+        "iOS",
+        "Android",
+        "FinTech"
+      ]
     },
     {
       "role": "Senior Mobile Developer",
       "company": "Wayfair",
-      "period": "2017 – 2019",
+      "period": "2017 \u2013 2019",
       "location": "Boston, MA",
       "items": [
         "Built and maintained the Wayfair iOS and Android shopping apps",
         "Optimized app performance, reducing launch time by 40% and crash rate by 60%",
         "Implemented AR features for product visualization using ARKit and ARCore"
       ],
-      "tags": ["iOS", "Android", "Swift", "ARKit", "Performance"]
+      "tags": [
+        "iOS",
+        "Android",
+        "Swift",
+        "ARKit",
+        "Performance"
+      ]
     },
     {
       "role": "Mobile Developer",
       "company": "Rapid7",
-      "period": "2015 – 2017",
+      "period": "2015 \u2013 2017",
       "location": "Boston, MA",
       "items": [
         "Developed mobile security monitoring apps for iOS and Android",
         "Built real-time notification and alerting systems for cybersecurity events"
       ],
-      "tags": ["iOS", "Android", "Security", "Real-time"]
+      "tags": [
+        "iOS",
+        "Android",
+        "Security",
+        "Real-time"
+      ]
     },
     {
       "role": "iOS Developer",
       "company": "Localytics (now Upland Software)",
-      "period": "2013 – 2015",
+      "period": "2013 \u2013 2015",
       "location": "Boston, MA",
       "items": [
         "Built iOS SDK components for mobile analytics and marketing automation",
         "Developed demo applications showcasing platform capabilities"
       ],
-      "tags": ["iOS", "SDK", "Analytics"]
+      "tags": [
+        "iOS",
+        "SDK",
+        "Analytics"
+      ]
     }
   ],
   "aiProjects": [
@@ -188,7 +316,13 @@
       "name": "AI-Powered School Events Assistant",
       "hide": false,
       "description": "Production-grade RAG system for school event management with intelligent chat interface, real-time data sync, and admin dashboard.",
-      "tags": ["RAG", "LangGraph", "ChromaDB", "OpenAI", "Featured"],
+      "tags": [
+        "RAG",
+        "LangGraph",
+        "ChromaDB",
+        "OpenAI",
+        "Featured"
+      ],
       "features": [
         "Multi-document RAG pipeline with intelligent document routing",
         "Real-time event sync with Google Sheets integration",
@@ -197,10 +331,15 @@
       "link": ""
     },
     {
-      "name": "Forge – AI Workflow Orchestrator",
+      "name": "Forge \u2013 AI Workflow Orchestrator",
       "hide": false,
       "description": "Visual tool for building complex AI workflows with real-time monitoring, multi-agent orchestration, and production-grade error handling.",
-      "tags": ["LangGraph", "Multi-Agent", "MCP", "HuggingFace"],
+      "tags": [
+        "LangGraph",
+        "Multi-Agent",
+        "MCP",
+        "HuggingFace"
+      ],
       "features": [
         "Visual node-based workflow builder for AI pipelines",
         "Real-time execution monitoring with cost tracking",
@@ -212,7 +351,11 @@
       "name": "VSPP Portal (Project Hawk)",
       "hide": false,
       "description": "Enterprise-grade AI assistant for Visa's Strategic Product Planning with RAG-powered document analysis and intelligent recommendations.",
-      "tags": ["RAG", "LangGraph", "Enterprise AI"],
+      "tags": [
+        "RAG",
+        "LangGraph",
+        "Enterprise AI"
+      ],
       "features": [
         "Multi-document RAG with intelligent chunking and retrieval",
         "Context-aware chat with source citations",
@@ -221,10 +364,15 @@
       "link": ""
     },
     {
-      "name": "Eagle Eye – Visual Data Extractor",
+      "name": "Eagle Eye \u2013 Visual Data Extractor",
       "hide": false,
       "description": "Multi-modal AI agent that extracts structured data from PDFs and images using Claude vision capabilities with MCP protocol integration.",
-      "tags": ["Vision AI", "MCP", "Claude", "Multi-Modal"],
+      "tags": [
+        "Vision AI",
+        "MCP",
+        "Claude",
+        "Multi-Modal"
+      ],
       "features": [
         "PDF and image processing with OCR capabilities",
         "Structured data extraction using Claude vision",
@@ -233,34 +381,14 @@
       "link": ""
     },
     {
-      "name": "Blitz Validator",
-      "hide": false,
-      "description": "Production-grade AI validation system for Visa's payment data with real-time processing, batch operations, and comprehensive audit trails.",
-      "tags": ["Validation", "AI Agents", "Production"],
-      "features": [
-        "Real-time payment data validation with AI scoring",
-        "Batch processing for high-volume data validation",
-        "Comprehensive audit trails and compliance reporting"
-      ],
-      "link": ""
-    },
-    {
-      "name": "Blitz (Earlier Generation)",
-      "hide": false,
-      "description": "Earlier version of the AI validation system demonstrating the evolution from basic validation to production-grade intelligent processing.",
-      "tags": ["Validation", "Evolution"],
-      "features": [
-        "Basic payment data validation workflows",
-        "Foundation for advanced AI-powered validation",
-        "Demonstrates iterative improvement in AI systems"
-      ],
-      "link": ""
-    },
-    {
       "name": "Vibe-Coded LLM Chat App",
       "hide": false,
       "description": "Full-featured chat application built with Streamlit, supporting multiple LLM providers with streaming responses and conversation history.",
-      "tags": ["Chat App", "Streamlit", "Multi-LLM"],
+      "tags": [
+        "Chat App",
+        "Streamlit",
+        "Multi-LLM"
+      ],
       "features": [
         "Multi-provider LLM support (OpenAI, Anthropic, Gemini)",
         "Streaming response display with real-time updates",
@@ -269,10 +397,14 @@
       "link": ""
     },
     {
-      "name": "MDL Verifier – Mobile Driving License",
+      "name": "MDL Verifier \u2013 Mobile Driving License",
       "hide": false,
       "description": "AI-powered document verification system for mobile driving licenses using computer vision and OCR for real-time identity validation.",
-      "tags": ["Computer Vision", "OCR", "Document Verification"],
+      "tags": [
+        "Computer Vision",
+        "OCR",
+        "Document Verification"
+      ],
       "features": [
         "Real-time document scanning and verification",
         "OCR extraction of driving license details",
@@ -287,7 +419,7 @@
     "subtitle": "Committed to staying at the forefront of AI engineering through continuous learning and hands-on projects.",
     "tracks": [
       {
-        "icon": "🤖",
+        "icon": "\ud83e\udd16",
         "title": "LLMs & GenAI",
         "items": [
           "OpenAI API mastery",
@@ -297,7 +429,7 @@
         ]
       },
       {
-        "icon": "📚",
+        "icon": "\ud83d\udcda",
         "title": "RAG & Vector Systems",
         "items": [
           "ChromaDB & Pinecone",
@@ -307,7 +439,7 @@
         ]
       },
       {
-        "icon": "🔄",
+        "icon": "\ud83d\udd04",
         "title": "Agentic AI",
         "items": [
           "LangGraph workflows",
@@ -317,7 +449,7 @@
         ]
       },
       {
-        "icon": "⚙️",
+        "icon": "\u2699\ufe0f",
         "title": "AI Infrastructure",
         "items": [
           "HuggingFace deployment",
@@ -329,15 +461,33 @@
     ],
     "skillsTitle": "Skills Developed",
     "skills": [
-      { "title": "RAG Pipeline Design", "text": "End-to-end retrieval-augmented generation systems" },
-      { "title": "Agent Orchestration", "text": "Multi-agent workflows with LangGraph" },
-      { "title": "Vector Database Optimization", "text": "Efficient storage and retrieval of embeddings" },
-      { "title": "AI Evaluation", "text": "Metrics, testing, and production monitoring" },
-      { "title": "MCP Protocol", "text": "Model Context Protocol for tool integration" },
-      { "title": "Prompt Engineering", "text": "Advanced patterns for reliable AI outputs" }
+      {
+        "title": "RAG Pipeline Design",
+        "text": "End-to-end retrieval-augmented generation systems"
+      },
+      {
+        "title": "Agent Orchestration",
+        "text": "Multi-agent workflows with LangGraph"
+      },
+      {
+        "title": "Vector Database Optimization",
+        "text": "Efficient storage and retrieval of embeddings"
+      },
+      {
+        "title": "AI Evaluation",
+        "text": "Metrics, testing, and production monitoring"
+      },
+      {
+        "title": "MCP Protocol",
+        "text": "Model Context Protocol for tool integration"
+      },
+      {
+        "title": "Prompt Engineering",
+        "text": "Advanced patterns for reliable AI outputs"
+      }
     ],
     "capstone": {
-      "icon": "🎓",
+      "icon": "\ud83c\udf93",
       "title": "Capstone Project: AI-Powered School Events Assistant",
       "text": "Built a production-grade RAG system that processes school event documents, provides intelligent chat assistance, and integrates with Google Sheets for real-time data sync."
     }
@@ -346,7 +496,11 @@
     {
       "name": "Visa NFC Reader",
       "description": "Native iOS app for reading NFC payment cards, displaying tokenized card details, and validating Visa payment tokens.",
-      "tags": ["iOS", "NFC", "Featured"],
+      "tags": [
+        "iOS",
+        "NFC",
+        "Featured"
+      ],
       "features": [
         "NFC tag reading and payment card detection",
         "Tokenized card data display and validation",
@@ -357,7 +511,11 @@
     {
       "name": "Authorize.NET Integration",
       "description": "Secure payment processing library for iOS and Android, supporting tokenization and recurring billing.",
-      "tags": ["iOS", "Android", "FinTech"],
+      "tags": [
+        "iOS",
+        "Android",
+        "FinTech"
+      ],
       "features": [
         "Cross-platform payment SDK",
         "PCI-compliant tokenization",
@@ -368,7 +526,10 @@
     {
       "name": "D2C E-Commerce Platform",
       "description": "Full-stack mobile commerce application with real-time inventory, push notifications, and loyalty program.",
-      "tags": ["React Native", "Featured"],
+      "tags": [
+        "React Native",
+        "Featured"
+      ],
       "features": [
         "Real-time inventory management",
         "Push notification system for order updates",
@@ -379,7 +540,11 @@
     {
       "name": "OPS Wallet",
       "description": "Digital wallet application for managing payments, loyalty cards, and financial transactions.",
-      "tags": ["iOS", "Android", "FinTech"],
+      "tags": [
+        "iOS",
+        "Android",
+        "FinTech"
+      ],
       "features": [
         "Multi-card wallet management",
         "Secure payment processing",
@@ -390,7 +555,10 @@
     {
       "name": "CBDC Wallet Suite",
       "description": "Central Bank Digital Currency wallet prototypes for Visa, exploring future of digital payments.",
-      "tags": ["Innovation", "FinTech"],
+      "tags": [
+        "Innovation",
+        "FinTech"
+      ],
       "features": [
         "CBDC transaction flows and user experience",
         "Offline payment capabilities",
@@ -401,7 +569,10 @@
     {
       "name": "MDL Verifier",
       "description": "Mobile Driving License verification system using AI-powered document scanning and validation.",
-      "tags": ["AI", "Document Verification"],
+      "tags": [
+        "AI",
+        "Document Verification"
+      ],
       "features": [
         "Real-time document scanning",
         "AI-powered authenticity checks",
@@ -412,7 +583,11 @@
     {
       "name": "Stop & Shop ScanIT",
       "description": "Mobile grocery scanning app for self-checkout, loyalty rewards, and personalized offers.",
-      "tags": ["iOS", "Android", "Retail"],
+      "tags": [
+        "iOS",
+        "Android",
+        "Retail"
+      ],
       "features": [
         "Barcode scanning for self-checkout",
         "Loyalty rewards integration",
@@ -423,7 +598,10 @@
     {
       "name": "Stop & Shop Mobile App",
       "description": "Full-featured grocery shopping app with order management, delivery tracking, and digital coupons.",
-      "tags": ["React Native", "Retail"],
+      "tags": [
+        "React Native",
+        "Retail"
+      ],
       "features": [
         "Online ordering and delivery tracking",
         "Digital coupon management",
@@ -434,7 +612,10 @@
     {
       "name": "Michigan University VR Apps",
       "description": "Virtual reality educational applications for immersive learning experiences at the University of Michigan.",
-      "tags": ["VR", "Education"],
+      "tags": [
+        "VR",
+        "Education"
+      ],
       "features": [
         "Immersive 3D educational environments",
         "Interactive simulations for complex concepts",
@@ -445,7 +626,11 @@
     {
       "name": "Anthem Healthcare Payer",
       "description": "Healthcare payer mobile application for benefits management, claims processing, and provider search.",
-      "tags": ["Healthcare", "iOS", "Android"],
+      "tags": [
+        "Healthcare",
+        "iOS",
+        "Android"
+      ],
       "features": [
         "Benefits and eligibility management",
         "Claims submission and tracking",
@@ -456,7 +641,10 @@
     {
       "name": "InjoyGiving",
       "description": "Social giving platform enabling charitable donations and community impact tracking.",
-      "tags": ["Social Impact", "Mobile"],
+      "tags": [
+        "Social Impact",
+        "Mobile"
+      ],
       "features": [
         "Charitable donation processing",
         "Community impact dashboard",
@@ -467,7 +655,10 @@
     {
       "name": "English Grammar",
       "description": "Educational app for learning English grammar with interactive exercises and progress tracking.",
-      "tags": ["Education", "iOS"],
+      "tags": [
+        "Education",
+        "iOS"
+      ],
       "features": [
         "Interactive grammar exercises",
         "Progress tracking and analytics",
@@ -478,7 +669,10 @@
     {
       "name": "iGenApps",
       "description": "Mobile app builder platform enabling non-technical users to create native iOS and Android applications.",
-      "tags": ["No-Code", "Mobile Builder"],
+      "tags": [
+        "No-Code",
+        "Mobile Builder"
+      ],
       "features": [
         "Visual app builder interface",
         "Native iOS and Android code generation",
@@ -491,7 +685,10 @@
     {
       "name": "Flutter Themer",
       "description": "A website which helps you theme your entire Flutter app and shows a live preview. Simply copy the theme file and apply it in your Flutter project to style your entire app in a professional way.",
-      "tags": ["Flutter", "Featured"],
+      "tags": [
+        "Flutter",
+        "Featured"
+      ],
       "features": [
         "Live preview of Flutter themes in real-time",
         "One-click theme file generation for easy integration",
@@ -499,30 +696,57 @@
         "Professional-grade themes ready for production apps"
       ],
       "links": [
-        { "text": "Visit Site →", "url": "https://flutterthemer.github.io/" }
+        {
+          "text": "Visit Site \u2192",
+          "url": "https://flutterthemer.github.io/"
+        }
       ]
     }
   ],
   "contact": {
     "eyebrow": "Get in Touch",
     "title": "Let's Connect",
-    "description": "I'm always interested in discussing AI engineering, mobile development, or potential collaborations. Whether you're architecting a greenfield app, or scaling an existing product — let's talk.",
+    "description": "I'm always interested in discussing AI engineering, mobile development, or potential collaborations. Whether you're architecting a greenfield app, or scaling an existing product \u2014 let's talk.",
     "email": "nair.vijayan.vipin@gmail.com",
     "phone": "+1 (469) 500-4555",
     "socials": [
-      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/vipvijayan/" },
-      { "label": "GitHub", "url": "https://github.com/vipvijayan" },
-      { "label": "Medium", "url": "https://medium.com/@vipvijayan" },
-      { "label": "HackerRank", "url": "https://www.hackerrank.com/vipvijayan" }
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/vipvijayan/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/vipvijayan"
+      },
+      {
+        "label": "Medium",
+        "url": "https://medium.com/@vipvijayan"
+      },
+      {
+        "label": "HackerRank",
+        "url": "https://www.hackerrank.com/vipvijayan"
+      }
     ]
   },
   "footer": {
-    "text": "© 2025 Vipin Vijayan Nair. Built with React, Tailwind CSS, and a passion for clean code.",
+    "text": "\u00a9 2025 Vipin Vijayan Nair. Built with React, Tailwind CSS, and a passion for clean code.",
     "links": [
-      { "text": "About", "href": "#about" },
-      { "text": "Skills", "href": "#skills" },
-      { "text": "Projects", "href": "#projects" },
-      { "text": "Contact", "href": "#contact" }
+      {
+        "text": "About",
+        "href": "#about"
+      },
+      {
+        "text": "Skills",
+        "href": "#skills"
+      },
+      {
+        "text": "Projects",
+        "href": "#projects"
+      },
+      {
+        "text": "Contact",
+        "href": "#contact"
+      }
     ]
   }
 }
