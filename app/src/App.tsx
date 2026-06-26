@@ -1,55 +1,42 @@
-import { useEffect, useState } from 'react'
-import type { PortfolioData } from './types'
+import { Suspense, lazy } from 'react'
+import portfolioData from './data/portfolio.json'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Certification from './components/Certification'
-import About from './components/About'
-import Skills from './components/Skills'
-import Experience from './components/Experience'
-import AiProjects from './components/AiProjects'
-import Learning from './components/Learning'
-import Projects from './components/Projects'
-import PersonalProjects from './components/PersonalProjects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+
+const Certification = lazy(() => import('./components/Certification'))
+const About = lazy(() => import('./components/About'))
+const Skills = lazy(() => import('./components/Skills'))
+const Experience = lazy(() => import('./components/Experience'))
+const AiProjects = lazy(() => import('./components/AiProjects'))
+const Learning = lazy(() => import('./components/Learning'))
+const Projects = lazy(() => import('./components/Projects'))
+const PersonalProjects = lazy(() => import('./components/PersonalProjects'))
+const Contact = lazy(() => import('./components/Contact'))
+const Footer = lazy(() => import('./components/Footer'))
 
 function App() {
-  const [data, setData] = useState<PortfolioData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/portfolio.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(err => console.error('Failed to load portfolio data:', err))
-  }, [])
-
-  if (!data) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg)] text-[var(--color-text)]">
-        <div className="text-center">
-          <div className="w-10 h-10 border-2 border-[var(--color-border)] border-t-[var(--color-primary)] rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-[var(--color-text-muted)]">Loading portfolio...</p>
-        </div>
-      </div>
-    )
-  }
+  const data = portfolioData
 
   return (
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300">
       <Header nav={data.nav} />
       <main>
         <Hero hero={data.hero} />
-        <Certification certification={data.certification} />
-        <About about={data.about} yearsExperience={data.hero.yearsExperience} />
-        <Skills skills={data.skills} />
-        <Experience experience={data.experience} />
-        <AiProjects aiProjects={data.aiProjects} />
-        <Learning learning={data.learning} />
-        <Projects projects={data.projects} />
-        <PersonalProjects personalProjects={data.personalProjects} />
-        <Contact contact={data.contact} />
+        <Suspense fallback={null}>
+          <Certification certification={data.certification} />
+          <About about={data.about} yearsExperience={data.hero.yearsExperience} />
+          <Skills skills={data.skills} />
+          <Experience experience={data.experience} />
+          <AiProjects aiProjects={data.aiProjects} />
+          <Learning learning={data.learning} />
+          <Projects projects={data.projects} />
+          <PersonalProjects personalProjects={data.personalProjects} />
+          <Contact contact={data.contact} />
+        </Suspense>
       </main>
-      <Footer footer={data.footer} />
+      <Suspense fallback={null}>
+        <Footer footer={data.footer} />
+      </Suspense>
     </div>
   )
 }
