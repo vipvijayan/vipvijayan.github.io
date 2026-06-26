@@ -61,7 +61,7 @@ const Hero = memo(function Hero({ hero }: HeroProps) {
         </h1>
 
         <p data-aos="fade-up" data-aos-delay="100" className="text-lg md:text-xl text-[var(--color-text-soft)] leading-relaxed max-w-3xl mb-10">
-          <strong className="text-[var(--color-text)]">Staff Design Engineer at Visa</strong> with <strong className="text-[var(--color-text)]">{years} years</strong> shipping production mobile apps to millions and building <strong className="text-[var(--color-text)]">enterprise AI systems</strong> — from <strong className="text-[var(--color-text)]">RAG-powered document analysis</strong> and <strong className="text-[var(--color-text)]">multi-agent workflow orchestrators</strong> to <strong className="text-[var(--color-text)]">payment validation engines</strong> and <strong className="text-[var(--color-text)]">computer vision pipelines</strong>. Previously built fintech apps at Fidelity, e-commerce at Wayfair, and security tools at Rapid7.
+          <span dangerouslySetInnerHTML={{ __html: hero.subtitle }} />
         </p>
 
         <div data-aos="fade-up" data-aos-delay="200" className="flex flex-wrap gap-4 mb-12">

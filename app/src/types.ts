@@ -5,6 +5,7 @@ export interface NavItem {
 
 export interface Hero {
   name: string
+  subtitle: string
   roles: string[]
   yearsExperience: number
   appsShipped: number

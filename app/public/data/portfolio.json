@@ -27,6 +27,7 @@
   ],
   "hero": {
     "name": "Vipin Vijayan Nair",
+    "subtitle": "Staff Design Engineer @ Visa — 16 years shipping production apps at scale. Focused on <strong style=\"color: var(--color-text)\">AI applications</strong>, <strong style=\"color: var(--color-text)\">Mobile applications</strong>, <strong style=\"color: var(--color-text)\">Web deployments</strong>, and <strong style=\"color: var(--color-text)\">Tap to Pay</strong>.",
     "roles": [
       "AI Engineer",
       "iOS & Android Developer",
@@ -58,13 +59,11 @@
   },
   "about": {
     "paragraphs": [
-      "I'm a <strong>Staff Software Engineer</strong> at Visa with <strong>{yearsExperience}+ years</strong> of experience building production-grade mobile applications. My expertise spans the full mobile development lifecycle \u2014 from native iOS and Android to cross-platform solutions using React Native and Flutter.",
-      "At Visa, I lead the development of <strong>mobile payment solutions</strong> that serve millions of users worldwide. I specialize in <strong>UI/UX engineering</strong>, creating intuitive interfaces for complex financial products while ensuring accessibility and performance standards.",
-      "Beyond mobile development, I'm deeply engaged in <strong>AI engineering</strong>, exploring how <strong>LLMs, RAG systems, and agentic workflows</strong> can enhance mobile experiences. I believe in building products that are not only functional but also intelligent and user-centric."
+      "Staff Design Engineer @ Visa — Building AI-powered systems and shipping mobile/web apps used by millions. Currently: AI apps, web deployments, Tap to Pay."
     ],
-    "location": "Austin, Texas, US and Quincy, MA",
-    "visa": "Staff Design Engineer, Mobile",
-    "focus": "AI and Mobile Engineering",
+    "location": "Austin, Texas, Quincy, MA (US), Technopark Trivandrum (India)",
+    "visa": "Staff Design Engineer",
+    "focus": "AI, Mobile Engineering, Kubernetes, Cloud, RAG, LLMs, Agentic AI",
     "highlights": [
       {
         "icon": "\ud83d\udcf1",
@@ -259,40 +258,6 @@
         "iOS",
         "Android",
         "FinTech"
-      ]
-    },
-    {
-      "role": "Senior Mobile Developer",
-      "company": "Wayfair",
-      "period": "2017 \u2013 2019",
-      "location": "Boston, MA",
-      "items": [
-        "Built and maintained the Wayfair iOS and Android shopping apps",
-        "Optimized app performance, reducing launch time by 40% and crash rate by 60%",
-        "Implemented AR features for product visualization using ARKit and ARCore"
-      ],
-      "tags": [
-        "iOS",
-        "Android",
-        "Swift",
-        "ARKit",
-        "Performance"
-      ]
-    },
-    {
-      "role": "Mobile Developer",
-      "company": "Rapid7",
-      "period": "2015 \u2013 2017",
-      "location": "Boston, MA",
-      "items": [
-        "Developed mobile security monitoring apps for iOS and Android",
-        "Built real-time notification and alerting systems for cybersecurity events"
-      ],
-      "tags": [
-        "iOS",
-        "Android",
-        "Security",
-        "Real-time"
       ]
     },
     {
