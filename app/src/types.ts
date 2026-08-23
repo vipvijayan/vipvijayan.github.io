@@ -13,8 +13,6 @@ export interface Hero {
 }
 
 export interface Certification {
-  title: string
-  subtitle: string
   image: string
   imageAlt: string
   badge: string
@@ -25,6 +23,13 @@ export interface Certification {
   demoLink: string
   demoLinkText: string
   highlights: string[]
+}
+
+export interface CertificationsSection {
+  eyebrow: string
+  title: string
+  subtitle: string
+  items: Certification[]
 }
 
 export interface AboutHighlight {
@@ -145,7 +150,7 @@ export interface Footer {
 export interface PortfolioData {
   nav: NavItem[]
   hero: Hero
-  certification: Certification
+  certifications: CertificationsSection
   about: About
   skills: Skills
   experience: Experience[]

@@ -23,7 +23,7 @@ function App() {
       <main>
         <Hero hero={data.hero} />
         <Suspense fallback={null}>
-          <Certification certification={data.certification} />
+          <Certification certifications={data.certifications} />
           <About about={data.about} yearsExperience={data.hero.yearsExperience} />
           <Skills skills={data.skills} />
           <Experience experience={data.experience} />

@@ -38,23 +38,45 @@
     "appsShipped": 10,
     "aiModulesCompleted": 14
   },
-  "certification": {
-    "title": "AI Certification",
-    "subtitle": "Verified AI engineering credentials from leading institutions.",
-    "image": "/certifications/ai-makerspace-cert.jpeg",
-    "imageAlt": "AI Makerspace Bootcamp certificate",
-    "badge": "Verified Certificate",
-    "heading": "AI Makerspace Bootcamp",
-    "issuer": "Issued by AI Makerspace \u2022 2025",
-    "link": "https://www.aimakerspace.io/",
-    "linkText": "Visit AI Makerspace \u2192",
-    "demoLink": "/docs/School Assistant.pdf",
-    "demoLinkText": "\ud83d\udcc4 View School Assistant Demo \u2192",
-    "highlights": [
-      "Built production-grade RAG systems with <strong>LangGraph</strong>, <strong>ChromaDB</strong>, and <strong>OpenAI</strong>",
-      "Deployed 8+ working AI prototypes to <strong>HuggingFace Spaces</strong>",
-      "Completed 14 specialized AI modules across <strong>RAG, LLMs, MCP, and Agentic AI</strong>",
-      "Mastered end-to-end <strong>AI pipeline design</strong> from data ingestion to evaluation"
+  "certifications": {
+    "eyebrow": "Certifications",
+    "title": "Certifications",
+    "subtitle": "Verified engineering credentials from leading institutions.",
+    "items": [
+      {
+        "image": "/certifications/ai-makerspace-cert.jpeg",
+        "imageAlt": "AI Makerspace Bootcamp certificate",
+        "badge": "Verified Certificate",
+        "heading": "AI Makerspace Bootcamp",
+        "issuer": "Issued by AI Makerspace \u2022 2025",
+        "link": "https://www.aimakerspace.io/",
+        "linkText": "Visit AI Makerspace \u2192",
+        "demoLink": "/docs/School Assistant.pdf",
+        "demoLinkText": "\ud83d\udcc4 View School Assistant Demo \u2192",
+        "highlights": [
+          "Built production-grade RAG systems with <strong>LangGraph</strong>, <strong>ChromaDB</strong>, and <strong>OpenAI</strong>",
+          "Deployed 8+ working AI prototypes to <strong>HuggingFace Spaces</strong>",
+          "Completed 14 specialized AI modules across <strong>RAG, LLMs, MCP, and Agentic AI</strong>",
+          "Mastered end-to-end <strong>AI pipeline design</strong> from data ingestion to evaluation"
+        ]
+      },
+      {
+        "image": "/certifications/kubernetes-lfd259-cert.jpeg",
+        "imageAlt": "Kubernetes for Developers LFD259 certificate",
+        "badge": "Verified Certificate",
+        "heading": "Kubernetes for Developers (LFD259)",
+        "issuer": "Issued by The Linux Foundation \u2022 2026 \u2022 Credential ID: LF-pb9xshlpof",
+        "link": "https://training.linuxfoundation.org/training/kubernetes-for-developers/",
+        "linkText": "Visit The Linux Foundation \u2192",
+        "demoLink": "/docs/kubernetes-lfd259-certificate.pdf",
+        "demoLinkText": "\ud83d\udcc4 View Certificate PDF \u2192",
+        "highlights": [
+          "Containerized applications and deployed them to <strong>Kubernetes</strong> clusters",
+          "Managed workloads with <strong>Pods, Deployments, Services</strong>, and <strong>Ingress</strong>",
+          "Configured apps using <strong>ConfigMaps, Secrets</strong>, and persistent storage",
+          "Scaled, updated, and troubleshot deployments with <strong>kubectl</strong>"
+        ]
+      }
     ]
   },
   "about": {
