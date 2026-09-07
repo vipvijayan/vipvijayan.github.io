@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import type { Learning as LearningType } from '../types'
+import Icon from './Icon'
 
 interface LearningProps {
   learning: LearningType
@@ -19,7 +20,7 @@ const Learning = memo(function Learning({ learning }: LearningProps) {
           {learning.tracks.map((track, i) => (
             <div key={i} data-aos="fade-up" data-aos-delay={i * 60} className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-5">
               <h3 className="font-bold mb-3 flex items-center gap-2">
-                <span>{track.icon}</span> {track.title}
+                <Icon icon={track.icon} className="h-5 w-5 text-base" /> {track.title}
               </h3>
               <ul className="space-y-2">
                 {track.items.map((item, j) => (
@@ -43,10 +44,13 @@ const Learning = memo(function Learning({ learning }: LearningProps) {
         </div>
 
         <div data-aos="fade-up" className="flex items-start gap-4 bg-[var(--color-bg-card)] border border-[var(--color-primary)]/20 rounded-xl p-6">
-          <span className="text-3xl">{learning.capstone.icon}</span>
+          <Icon icon={learning.capstone.icon} className="h-8 w-8 text-3xl" />
           <div>
             <h3 className="font-bold mb-1">{learning.capstone.title}</h3>
-            <p className="text-sm text-[var(--color-text-soft)]" dangerouslySetInnerHTML={{ __html: learning.capstone.text }} />
+            <div className="text-sm text-[var(--color-text-soft)] [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mt-2 [&_li]:mt-1" dangerouslySetInnerHTML={{ __html: learning.capstone.text }} />
+            {learning.capstone.link && (
+              <a href={learning.capstone.link} target="_blank" rel="noopener" className="inline-block mt-3 text-sm text-[var(--color-primary)] font-medium hover:underline">{learning.capstone.linkText || 'View on GitHub \u2192'}</a>
+            )}
           </div>
         </div>
       </div>

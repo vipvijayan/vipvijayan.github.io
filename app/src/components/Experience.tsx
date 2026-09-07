@@ -14,7 +14,7 @@ const Experience = memo(function Experience({ experience }: ExperienceProps) {
           <h2 className="text-3xl md:text-4xl font-bold">Professional Experience</h2>
         </div>
 
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative">
           <div className="absolute left-4 top-0 bottom-0 w-px bg-[var(--color-border)]"></div>
 
           {experience.map((job, i) => (

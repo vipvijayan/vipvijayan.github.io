@@ -98,6 +98,8 @@ export interface LearningCapstone {
   icon: string
   title: string
   text: string
+  link?: string
+  linkText?: string
 }
 
 export interface Learning {

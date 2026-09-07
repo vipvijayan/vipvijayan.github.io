@@ -27,7 +27,7 @@
   ],
   "hero": {
     "name": "Vipin Vijayan Nair",
-    "subtitle": "Staff Design Engineer @ Visa — 16 years shipping production apps at scale. Focused on <strong style=\"color: var(--color-text)\">AI applications</strong>, <strong style=\"color: var(--color-text)\">Mobile applications</strong>, <strong style=\"color: var(--color-text)\">Web deployments</strong>, and <strong style=\"color: var(--color-text)\">Tap to Pay</strong>.",
+    "subtitle": "Staff Design Engineer @ Visa \u2014 16 years shipping production apps at scale. Focusing on <strong style=\"color: var(--color-text)\">AI</strong>, <strong style=\"color: var(--color-text)\">Mobile</strong> and <strong style=\"color: var(--color-text)\">Web Development</strong>...",
     "roles": [
       "AI Engineer",
       "iOS & Android Developer",
@@ -39,7 +39,7 @@
     "aiModulesCompleted": 14
   },
   "certifications": {
-    "eyebrow": "Certifications",
+    "eyebrow": "Credentials",
     "title": "Certifications",
     "subtitle": "Verified engineering credentials from leading institutions.",
     "items": [
@@ -81,29 +81,30 @@
   },
   "about": {
     "paragraphs": [
-      "Staff Design Engineer @ Visa — Building AI-powered systems and shipping mobile/web apps used by millions. Currently: AI apps, web deployments, Tap to Pay."
+      "Staff Design Engineer @ Visa \u2014 Building AI-powered systems and shipping mobile/web apps used by millions. Currently: AI apps, web deployments, Tap to Pay.",
+      "Mobile developer experienced in building and managing applications across Android, iOS, and Windows Phone, with hands-on cross-platform work in React Native, Flutter, Kony, and Titanium. Solid understanding of Android and iOS UI guidelines, end-user requirement analysis, and the full SDLC \u2014 including Bluetooth Low Energy, in-app purchases, Android NDK, offline storage, threading, and performance tuning \u2014 with 10+ apps deployed to the App Store and Play Store."
     ],
     "location": "Austin, Texas, Quincy, MA (US), Technopark Trivandrum (India)",
     "visa": "Staff Design Engineer",
     "focus": "AI, Mobile Engineering, Kubernetes, Cloud, RAG, LLMs, Agentic AI",
     "highlights": [
       {
-        "icon": "\ud83d\udcf1",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M12 18h.01\"/></svg>",
         "title": "Mobile Expert",
         "text": "Native iOS/Android + React Native/Flutter, shipping apps to millions of users."
       },
       {
-        "icon": "\ud83e\udd16",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"/><path d=\"M20 3v4\"/><path d=\"M22 5h-4\"/><path d=\"M4 17v2\"/><path d=\"M5 18H3\"/></svg>",
         "title": "AI Enthusiast",
         "text": "Building with LLMs, RAG pipelines, and agentic workflows for real-world products."
       },
       {
-        "icon": "\ud83c\udfd7\ufe0f",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"7\" height=\"7\" x=\"14\" y=\"3\" rx=\"1\"/><path d=\"M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3\"/></svg>",
         "title": "System Designer",
         "text": "Scalable architectures, performance optimization, and production-grade solutions."
       },
       {
-        "icon": "\ud83c\udfa8",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08\"/><path d=\"M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z\"/></svg>",
         "title": "UI/UX Focused",
         "text": "Intuitive interfaces for complex products with accessibility and performance in mind."
       }
@@ -116,78 +117,121 @@
       "categories": [
         {
           "title": "LLMs & GenAI",
-          "icon": "\ud83e\udd16",
-          "featured": true,
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/></svg>",
           "badge": "Primary",
           "tags": [
             "OpenAI",
             "Anthropic",
+            "Anthropic Messages API",
             "Gemini",
             "GPT-4o",
             "Claude",
-            "LangChain",
-            "LangGraph"
+            "Multi-Provider Architecture",
+            "Factory Patterns",
+            "Provider Abstraction Patterns",
+            "Prompt Caching",
+            "Token Budgets & Management"
           ]
         },
         {
           "title": "RAG Systems",
-          "icon": "\ud83d\udcda",
-          "featured": true,
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 7v14\"/><path d=\"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z\"/></svg>",
           "badge": "Primary",
           "tags": [
             "ChromaDB",
-            "Pinecone",
             "Qdrant",
-            "FAISS",
             "Vector Embeddings",
-            "Hybrid Search"
+            "Hybrid Search",
+            "Chunking"
           ]
         },
         {
-          "title": "Agentic AI",
-          "icon": "\ud83d\udd04",
+          "title": "Agentic AI & Orchestration",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"8\" height=\"8\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M7 11v4a2 2 0 0 0 2 2h4\"/><rect width=\"8\" height=\"8\" x=\"13\" y=\"13\" rx=\"2\"/></svg>",
           "tags": [
             "MCP Protocol",
             "Tool Use",
             "Multi-Agent Systems",
             "ReAct",
-            "Chain of Thought"
+            "Chain of Thought",
+            "Error Recovery"
           ]
         },
         {
-          "title": "AI Frameworks",
-          "icon": "\u2699\ufe0f",
+          "title": "Prompt & Context Engineering",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"/><path d=\"M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z\"/></svg>",
+          "tags": [
+            "Templating",
+            "Context Management",
+            "Truncation Strategies",
+            "Prompt Security",
+            "Few-Shot In-Context"
+          ]
+        },
+        {
+          "title": "AI Frameworks & Deployment",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z\"/><path d=\"M3.3 7 12 12l8.7-5\"/><path d=\"M12 22V12\"/></svg>",
           "tags": [
             "LangChain",
             "LangGraph",
             "LlamaIndex",
             "HuggingFace",
             "OpenAI API",
-            "Anthropic SDK"
-          ]
-        },
-        {
-          "title": "Vector Databases",
-          "icon": "\ud83d\uddc4\ufe0f",
-          "tags": [
-            "ChromaDB",
-            "Pinecone",
-            "Qdrant",
-            "FAISS",
-            "Weaviate",
-            "Milvus"
-          ]
-        },
-        {
-          "title": "AI Deployment",
-          "icon": "\ud83d\ude80",
-          "tags": [
+            "Anthropic SDK",
             "HuggingFace Spaces",
-            "Streamlit",
-            "Gradio",
             "Docker",
-            "REST APIs",
-            "FastAPI"
+            "REST APIs"
+          ]
+        },
+        {
+          "title": "Platform & Production Engineering",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"8\" x=\"2\" y=\"2\" rx=\"2\" ry=\"2\"/><rect width=\"20\" height=\"8\" x=\"2\" y=\"14\" rx=\"2\" ry=\"2\"/><line x1=\"6\" x2=\"6.01\" y1=\"6\" y2=\"6\"/><line x1=\"6\" x2=\"6.01\" y1=\"18\" y2=\"18\"/></svg>",
+          "badge": "Platform",
+          "tags": [
+            "Python",
+            "FastAPI",
+            "PostgreSQL",
+            "SQLAlchemy 2.0",
+            "Hazelcast",
+            "MinIO",
+            "Pydantic",
+            "Uvicorn",
+            "Alembic",
+            "asyncpg",
+            "async HTTP",
+            "JWT/OAuth2",
+            "Rate Limiting",
+            "Quota Management",
+            "Multi-Pod Coordination",
+            "Error Classification",
+            "Exponential Backoff",
+            "Concurrency",
+            "Coordination",
+            "Deadlock Prevention",
+            "Fluent Bit",
+            "ClickHouse",
+            "Grafana",
+            "OpenTelemetry",
+            "LangSmith",
+            "Python logging",
+            "Structured JSON Logging",
+            "Request Correlation",
+            "GenAI Token & Latency Metrics",
+            "Audit Logging",
+            "Pydantic Validation",
+            "Feature Flags",
+            "Kill-Switches",
+            "OAuth2",
+            "Encryption",
+            "REST Endpoints",
+            "Data Contexts & Injection",
+            "Pagination",
+            "Unit/Integration Tests",
+            "Mocks",
+            "Caching",
+            "Parallelization",
+            "Pooling",
+            "Design Patterns"
           ]
         }
       ]
@@ -198,7 +242,7 @@
       "categories": [
         {
           "title": "iOS Development",
-          "icon": "\ud83c\udf4e",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M12 18h.01\"/></svg>",
           "tags": [
             "Swift",
             "SwiftUI",
@@ -210,7 +254,7 @@
         },
         {
           "title": "Android Development",
-          "icon": "\ud83e\udd16",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 8V4H8\"/><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"/><path d=\"M2 14h2\"/><path d=\"M20 14h2\"/><path d=\"M15 13v2\"/><path d=\"M9 13v2\"/></svg>",
           "tags": [
             "Kotlin",
             "Java",
@@ -221,8 +265,9 @@
         },
         {
           "title": "Cross-Platform",
-          "icon": "\ud83c\udf10",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z\"/><path d=\"m6.08 9.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.48-1.59\"/><path d=\"m6.08 14.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.48-1.59\"/></svg>",
           "tags": [
+            "React",
             "React Native",
             "Flutter",
             "Dart",
@@ -232,7 +277,7 @@
         },
         {
           "title": "Mobile Tools",
-          "icon": "\ud83d\udee0\ufe0f",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg>",
           "tags": [
             "Firebase",
             "Fastlane",
@@ -247,95 +292,168 @@
   },
   "experience": [
     {
-      "role": "Staff Design Engineer, Mobile",
+      "role": "Staff Design Engineer",
       "company": "Visa",
       "period": "Apr 2022 \u2013 Present",
       "location": "Austin, Texas, USA",
       "items": [
         "Leading mobile UI/UX engineering for Visa's payment applications serving millions of users worldwide",
-        "Architected and delivered cross-platform mobile solutions using React Native and native iOS/Android",
+        "Architected and delivered cross-platform mobile solutions using Flutter and native iOS/Android",
         "Established mobile design system and component library adopted across multiple product teams",
-        "Driving AI integration into mobile products, building intelligent features with LLM-powered workflows"
+        "Driving AI integration into mobile products, building intelligent features with LLM-powered workflows",
+        "Integrated multiple LLM providers (OpenAI, Anthropic, Gemini) behind a unified interface",
+        "Implemented streaming response handling with real-time updates",
+        "Built persistent conversation history and session management",
+        "Added token usage and cost tracking per request",
+        "Architected provider-level prompt caching for Anthropic Claude with cache breakpoint management, token and cost attribution, and React/TypeScript usage dashboards",
+        "Asynchronous JSON logging with request correlation, user & project context, HTTP performance metrics, GenAI token usage, model latency, and error categorization",
+        "Container stdout log emission collected and enriched by infrastructure-managed Fluent Bit and forwarded to ClickHouse for high-performance storage and analysis",
+        "Grafana dashboards and Explore views for multi-environment log search by request ID, project ID, severity, and time range",
+        "Custom admin tooling that generates environment-aware Grafana queries enabling rapid navigation from application errors to complete operational context",
+        "Built a Flutter retail checkout app with ISO/IEC 18013-5 mobile driver's license age verification \u2014 QR and NFC engagement, BLE credential exchange, and selective disclosure \u2014 using Kotlin/MethodChannel on Android and Visa Nova UI components",
+        "Part of the team that built Eagle Eye, an enterprise accessibility monitoring platform \u2014 React/TypeScript dashboard on Visa Nova with code-first GraphQL (Pothos, Prisma, Apollo Client) and automated WCAG/VGAR scanning",
+        "Part of the team that built Forge, a self-service static-site deployment platform \u2014 React 19/TypeScript frontend on Visa Nova with Go REST APIs, concurrent deployment workers, Hazelcast queues, S3-compatible storage, and Kubernetes/OpenShift deployment"
       ],
       "tags": [
-        "React Native",
+        "Flutter",
         "Swift",
         "Kotlin",
         "AI Integration",
-        "Design Systems"
+        "Design Systems",
+        "Figma",
+        "Observability",
+        "Kubernetes"
       ]
     },
     {
-      "role": "Lead Mobile Engineer",
-      "company": "Fidelity Investments",
-      "period": "2019 \u2013 2022",
-      "location": "Boston, MA",
+      "role": "Lead II Software Engineering",
+      "company": "UST Global Inc",
+      "period": "Feb 2018 \u2013 Jan 2022",
+      "location": "Quincy, MA, USA \u2014 Client: Stop & Shop",
       "items": [
-        "Led a team of 6 mobile engineers building the Fidelity mobile trading platform",
-        "Implemented real-time portfolio tracking and trading features with sub-second latency",
-        "Drove adoption of automated testing, achieving 90%+ code coverage across mobile apps"
+        "iOS and Android native retail mobile application and handheld application for in-store shopping",
+        "Analysis of client requirements and implementation of the detailed design",
+        "Implemented scanner and Bluetooth functionality",
+        "Implemented electronic self-checkout and wallet functionality",
+        "Implemented biometrics to authenticate the user into the wallet",
+        "Worked on Android kiosk applications that let users start their shopping trip by scanning their loyalty cards, including native card scanning functionality",
+        "Coupon application built on React Native that helps users save money by applying coupons directly to their Stop & Shop card",
+        "Built native modules for Wi-Fi auto-connect functionality",
+        "Contributed to building reusable components",
+        "Implemented Google Firebase Analytics",
+        "Implemented location services to find the customer's store",
+        "Push notification support and integration",
+        "Continuous integration using GitHub, Jenkins, and Fastlane",
+        "Defect analysis and fixing, pushing builds to production and providing production support",
+        "Provided technical and feasible solutions for R&D tasks"
       ],
       "tags": [
-        "React Native",
         "iOS",
         "Android",
-        "FinTech"
+        "React Native",
+        "BLE",
+        "Biometrics",
+        "CI/CD"
       ]
     },
     {
-      "role": "iOS Developer",
-      "company": "Localytics (now Upland Software)",
-      "period": "2013 \u2013 2015",
-      "location": "Boston, MA",
+      "role": "Sr Software Developer",
+      "company": "UST Global Inc",
+      "period": "Sept 2013 \u2013 Feb 2018",
+      "location": "Technopark, India",
       "items": [
-        "Built iOS SDK components for mobile analytics and marketing automation",
-        "Developed demo applications showcasing platform capabilities"
+        "Worked on mobile projects across Android, iOS, Kony, and Titanium",
+        "Built virtual reality projects for Michigan University using Google Cardboard and Oculus SDKs \u2014 Android",
+        "Built InjoyGiving, a gifting application for sending personalized gifts \u2014 Android and iOS",
+        "Built the Anthem health insurance provider application on Kony supporting Android and iOS"
       ],
       "tags": [
+        "Android",
         "iOS",
-        "SDK",
-        "Analytics"
+        "Kony",
+        "Titanium",
+        "VR"
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Quest \u2014 Network Systems & Technologies (P) Ltd",
+      "period": "July 2013 \u2013 Aug 2013",
+      "location": "Technopark, India",
+      "items": [
+        "Worked on Android applications that connect with Toshiba medical devices"
+      ],
+      "tags": [
+        "Android"
+      ]
+    },
+    {
+      "role": "Software Engineer \u2013 Android",
+      "company": "Zayan Infotech India (P) Ltd",
+      "period": "July 2012 \u2013 May 2013",
+      "location": "Technopark, India",
+      "items": [
+        "English Grammar: mobile application to study English grammar with practice exercises",
+        "English Grammar became the #1 application in the Play Store education category in 2013",
+        "Worked on various other educational applications including practice applications for students",
+        "Analysis of requirements and implementation of the detailed design",
+        "Worked on applications from scratch through launch",
+        "Improved application stability by analyzing usage and crash reports"
+      ],
+      "tags": [
+        "Android",
+        "Education"
+      ]
+    },
+    {
+      "role": "Manager \u2013 Smart Phone Apps",
+      "company": "Schogini Systems (P) Ltd",
+      "period": "May 2010 \u2013 July 2012",
+      "location": "Technopark, India \u2014 Client: iGenApps",
+      "items": [
+        "iGenApps: mobile application for Android to build websites or apps without any programming skills, from a smartphone",
+        "Developed from scratch in Titanium, then ported to native Android and iOS",
+        "Implemented Maps, phone calling, SMS, Twitter, Facebook, in-app purchase, and push notification",
+        "Apps can be synced between Android and iOS",
+        "Worked on games and various applications in Android, iOS, PHP, Flash, and ActionScript"
+      ],
+      "tags": [
+        "Titanium",
+        "Android",
+        "iOS",
+        "Game Dev"
       ]
     }
   ],
   "aiProjects": [
     {
-      "name": "AI-Powered School Events Assistant",
+      "name": "Forge \u2013 Enterprise Static-Site Deployment Platform",
       "hide": false,
-      "description": "Production-grade RAG system for school event management with intelligent chat interface, real-time data sync, and admin dashboard.",
+      "description": "Contributed to a self-service platform that enables teams to upload, version, deploy, and manage static web applications through production URLs, with collaboration, analytics, and administrative monitoring.",
       "tags": [
-        "RAG",
-        "LangGraph",
-        "ChromaDB",
-        "OpenAI",
-        "Featured"
+        "Go",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Hazelcast",
+        "MinIO/S3",
+        "Kubernetes",
+        "Visa Nova"
       ],
       "features": [
-        "Multi-document RAG pipeline with intelligent document routing",
-        "Real-time event sync with Google Sheets integration",
-        "Admin dashboard for event management and analytics"
+        "Contributed to a React 19 and TypeScript frontend using Visa Nova, Zustand, Vite, and interactive data visualizations",
+        "Helped build REST APIs and concurrent deployment workers in Go using Chi, PostgreSQL, Hazelcast queues/cache, and S3-compatible object storage",
+        "Contributed to secure multi-tenant access using JWT/SSO authentication, LDAP integration, PostgreSQL row-level security, and separate application/admin connection pools",
+        "Helped create user-scoped and administrator analytics for deployments, project growth, engagement, storage, views, contributors, and comment-resolution metrics",
+        "Contributed to operational resilience through retries, circuit breakers, health probes, worker heartbeats, stuck-job detection, graceful shutdown, and structured logging",
+        "Supported production deployment using Docker, Kubernetes/OpenShift, Helm, Nginx, GitHub Actions, and environment-specific configuration",
+        "Helped establish automated testing with Vitest, React Testing Library, Playwright, Go unit/integration tests, and MSW-backed API mocks",
+        "Contributed to a Go CLI for deployment uploads, activation, status tracking, project listing, authentication, and comment management"
       ],
       "link": ""
     },
     {
-      "name": "Forge \u2013 AI Workflow Orchestrator",
-      "hide": false,
-      "description": "Visual tool for building complex AI workflows with real-time monitoring, multi-agent orchestration, and production-grade error handling.",
-      "tags": [
-        "LangGraph",
-        "Multi-Agent",
-        "MCP",
-        "HuggingFace"
-      ],
-      "features": [
-        "Visual node-based workflow builder for AI pipelines",
-        "Real-time execution monitoring with cost tracking",
-        "Multi-agent orchestration with custom tool integration"
-      ],
-      "link": ""
-    },
-    {
-      "name": "VSPP Portal (Project Hawk)",
+      "name": "VSPP Portal",
       "hide": false,
       "description": "Enterprise-grade AI assistant for Visa's Strategic Product Planning with RAG-powered document analysis and intelligent recommendations.",
       "tags": [
@@ -351,51 +469,23 @@
       "link": ""
     },
     {
-      "name": "Eagle Eye \u2013 Visual Data Extractor",
+      "name": "Anthropic Prompt Caching & Cost Attribution",
       "hide": false,
-      "description": "Multi-modal AI agent that extracts structured data from PDFs and images using Claude vision capabilities with MCP protocol integration.",
+      "description": "Provider-level prompt caching layer for Anthropic Claude with cache breakpoint management, token and cost attribution, and administrative usage dashboards.",
       "tags": [
-        "Vision AI",
-        "MCP",
-        "Claude",
-        "Multi-Modal"
+        "Prompt Caching",
+        "Anthropic Claude",
+        "FastAPI",
+        "PostgreSQL",
+        "React",
+        "TypeScript"
       ],
       "features": [
-        "PDF and image processing with OCR capabilities",
-        "Structured data extraction using Claude vision",
-        "MCP protocol integration for tool orchestration"
-      ],
-      "link": ""
-    },
-    {
-      "name": "Vibe-Coded LLM Chat App",
-      "hide": false,
-      "description": "Full-featured chat application built with Streamlit, supporting multiple LLM providers with streaming responses and conversation history.",
-      "tags": [
-        "Chat App",
-        "Streamlit",
-        "Multi-LLM"
-      ],
-      "features": [
-        "Multi-provider LLM support (OpenAI, Anthropic, Gemini)",
-        "Streaming response display with real-time updates",
-        "Persistent conversation history and management"
-      ],
-      "link": ""
-    },
-    {
-      "name": "MDL Verifier \u2013 Mobile Driving License",
-      "hide": false,
-      "description": "AI-powered document verification system for mobile driving licenses using computer vision and OCR for real-time identity validation.",
-      "tags": [
-        "Computer Vision",
-        "OCR",
-        "Document Verification"
-      ],
-      "features": [
-        "Real-time document scanning and verification",
-        "OCR extraction of driving license details",
-        "AI-powered authenticity validation"
+        "Architected provider-level prompt caching for Anthropic Claude by transforming reusable system prompts and conversation prefixes into cache-controlled content blocks across planning, code generation, correction, revision, and AI-context workflows",
+        "Implemented cache breakpoint management for large static prompts, supporting one system and up to three user-message cache points while preserving provider-agnostic request handling",
+        "Normalized Anthropic cache creation and cache read token metrics through the FastAPI provider abstraction and persisted them in PostgreSQL for request-level observability, analytics, and quota enforcement",
+        "Built model-specific cost attribution for standard input/output tokens and cached reads/writes, exposing usage and savings through React/TypeScript administrative dashboards",
+        "Added automated tests covering cache eligibility, payload transformation, usage propagation, retries, and multi-step token aggregation"
       ],
       "link": ""
     }
@@ -406,7 +496,7 @@
     "subtitle": "Committed to staying at the forefront of AI engineering through continuous learning and hands-on projects.",
     "tracks": [
       {
-        "icon": "\ud83e\udd16",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/></svg>",
         "title": "LLMs & GenAI",
         "items": [
           "OpenAI API mastery",
@@ -416,17 +506,17 @@
         ]
       },
       {
-        "icon": "\ud83d\udcda",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg>",
         "title": "RAG & Vector Systems",
         "items": [
-          "ChromaDB & Pinecone",
+          "ChromaDB & Qdrant",
           "Semantic search optimization",
           "Document chunking strategies",
           "Hybrid retrieval approaches"
         ]
       },
       {
-        "icon": "\ud83d\udd04",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"6\" x2=\"6\" y1=\"3\" y2=\"15\"/><circle cx=\"18\" cy=\"6\" r=\"3\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><path d=\"M18 9a9 9 0 0 1-9 9\"/></svg>",
         "title": "Agentic AI",
         "items": [
           "LangGraph workflows",
@@ -436,7 +526,7 @@
         ]
       },
       {
-        "icon": "\u2699\ufe0f",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"/></svg>",
         "title": "AI Infrastructure",
         "items": [
           "HuggingFace deployment",
@@ -446,55 +536,98 @@
         ]
       }
     ],
-    "skillsTitle": "Skills Developed",
+    "skillsTitle": "Key Production & AI Engineering Skills",
     "skills": [
       {
-        "title": "RAG Pipeline Design",
-        "text": "End-to-end retrieval-augmented generation systems"
+        "title": "LLM Integration & Multi-Provider Architecture",
+        "text": "factory patterns, prompt caching, token management"
       },
       {
-        "title": "Agent Orchestration",
-        "text": "Multi-agent workflows with LangGraph"
+        "title": "AI Agent Orchestration",
+        "text": "state machines, self-healing, error recovery"
+      },
+      {
+        "title": "Prompt Engineering & Context Management",
+        "text": "templating, truncation, security"
+      },
+      {
+        "title": "Rate Limiting & Quota Management",
+        "text": "distributed systems, multi-pod coordination"
+      },
+      {
+        "title": "Error Classification & Resilience",
+        "text": "error handling, exponential backoff"
+      },
+      {
+        "title": "API Design & Data Injection",
+        "text": "REST endpoints, data contexts, pagination"
+      },
+      {
+        "title": "Testing & Quality Assurance",
+        "text": "unit tests, mocks, integration tests"
+      },
+      {
+        "title": "Database Design",
+        "text": "schema optimization, indexes, observability"
+      },
+      {
+        "title": "Security & Access Control",
+        "text": "OAuth2, encryption, audit logging"
+      },
+      {
+        "title": "Performance Optimization",
+        "text": "caching, parallelization, pooling"
+      },
+      {
+        "title": "Observability & Monitoring",
+        "text": "LangSmith, OpenTelemetry, logging"
+      },
+      {
+        "title": "Configuration Management",
+        "text": "Pydantic, feature flags, kill-switches"
+      },
+      {
+        "title": "Full-Stack Development",
+        "text": "Backend, Frontend, Infrastructure skills"
+      },
+      {
+        "title": "Software Architecture",
+        "text": "Design patterns, best practices"
+      },
+      {
+        "title": "Production Systems",
+        "text": "Uptime, graceful degradation, observability"
+      },
+      {
+        "title": "Distributed Systems",
+        "text": "Concurrency, coordination, deadlock prevention"
+      },
+      {
+        "title": "LLM-Specific Patterns",
+        "text": "Prompt caching, chunking, token budgets"
+      },
+      {
+        "title": "RAG Pipeline Design",
+        "text": "End-to-end retrieval-augmented generation systems \u2014 ingestion, chunking, retrieval, and generation"
       },
       {
         "title": "Vector Database Optimization",
-        "text": "Efficient storage and retrieval of embeddings"
-      },
-      {
-        "title": "AI Evaluation",
-        "text": "Metrics, testing, and production monitoring"
+        "text": "Efficient storage, indexing, and retrieval of embeddings at scale"
       },
       {
         "title": "MCP Protocol",
-        "text": "Model Context Protocol for tool integration"
-      },
-      {
-        "title": "Prompt Engineering",
-        "text": "Advanced patterns for reliable AI outputs"
+        "text": "Model Context Protocol for secure tool and data-source integration"
       }
     ],
     "capstone": {
-      "icon": "\ud83c\udf93",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"8\" r=\"6\"/><path d=\"M15.477 12.89 17 22l-5-3-5 3 1.523-9.11\"/></svg>",
       "title": "Capstone Project: AI-Powered School Events Assistant",
-      "text": "Built a production-grade RAG system that processes school event documents, provides intelligent chat assistance, and integrates with Google Sheets for real-time data sync."
+      "text": "An AI-powered chat application that helps parents find school events and programs using natural-language questions. Built as a multi-agent RAG system: a LocalEvents agent retrieves from a Qdrant vector store of school event documents, a WebSearch agent uses Tavily for current online results, and LangGraph orchestrates routing with fallback between them. Also includes Gmail integration for searching a parent's inbox for school communications, RAGAS-based evaluation, and a React + FastAPI stack deployable to Vercel and Railway.<ul><li>Multi-agent orchestration with LangGraph: LocalEvents agent over Qdrant plus Tavily web-search agent, with fallback routing</li><li>RecursiveCharacterTextSplitter chunking (1000 chars / 200 overlap) that split 65 source documents into 145 chunks, significantly improving retrieval recall</li><li>Gmail integration via a Model Context Protocol server to search a parent's inbox for school emails</li><li>FastAPI backend with authentication, school selection, child profiles, interests, bookmarks, and preferences</li><li>RAGAS evaluation harness with API and WebSocket endpoints for measuring retrieval and generation quality</li><li>React + Axios frontend, configurable retrieval methods, and local-mode plus Railway/Vercel deployment</li></ul>",
+      "link": "https://github.com/vipvijayan/learn_ai/tree/school_app_3",
+      "linkText": "View on GitHub \u2192"
     }
   },
   "projects": [
-    {
-      "name": "Visa NFC Reader",
-      "description": "Native iOS app for reading NFC payment cards, displaying tokenized card details, and validating Visa payment tokens.",
-      "tags": [
-        "iOS",
-        "NFC",
-        "Featured"
-      ],
-      "features": [
-        "NFC tag reading and payment card detection",
-        "Tokenized card data display and validation",
-        "Secure communication with Visa backend services"
-      ],
-      "links": []
-    },
     {
       "name": "Authorize.NET Integration",
       "description": "Secure payment processing library for iOS and Android, supporting tokenization and recurring billing.",
@@ -514,8 +647,7 @@
       "name": "D2C E-Commerce Platform",
       "description": "Full-stack mobile commerce application with real-time inventory, push notifications, and loyalty program.",
       "tags": [
-        "React Native",
-        "Featured"
+        "React Native"
       ],
       "features": [
         "Real-time inventory management",
@@ -555,15 +687,66 @@
     },
     {
       "name": "MDL Verifier",
-      "description": "Mobile Driving License verification system using AI-powered document scanning and validation.",
+      "description": "Flutter-based retail checkout and digital identity verification application that validates age using ISO/IEC 18013-5 mobile driver's licenses, with QR code and NFC device engagement, BLE credential exchange, selective age verification, and portrait-based identity confirmation.",
       "tags": [
-        "AI",
-        "Document Verification"
+        "Flutter",
+        "Dart",
+        "Kotlin",
+        "ISO/IEC 18013-5",
+        "NFC",
+        "BLE",
+        "MethodChannel",
+        "Visa Nova"
       ],
       "features": [
-        "Real-time document scanning",
-        "AI-powered authenticity checks",
-        "Integration with government databases"
+        "Built a cross-platform Flutter retail checkout application with product browsing, cart management, transaction workflows, age-restricted item detection, and digital identity verification",
+        "Implemented ISO/IEC 18013-5 mDL verification on Android using Kotlin and Android identity APIs, supporting QR code and NFC engagement with BLE credential transport",
+        "Generated session-bound mDL document requests for selective disclosure of Portrait and age assertions, including age_over_18, age_over_21, age_over_25, and age_over_65",
+        "Developed bidirectional Flutter\u2013Android communication using MethodChannel APIs to exchange QR payloads, selected age requirements, connection status, verification errors, portrait data, and verification results",
+        "Parsed encrypted device responses using session transcripts and ephemeral reader keys, extracted issuer-provided attributes, and cleared credential data after processing to reduce retention of sensitive information",
+        "Integrated camera-based QR scanning with custom scan overlays, lifecycle handling, permission management, and user-facing scanner error states",
+        "Implemented NFC reader-mode workflows, device engagement negotiation, BLE connection management, and real-time verification status updates",
+        "Designed reactive application state using Provider and ChangeNotifier to coordinate cart totals, restricted-item rules, verification status, scanner state, native callbacks, and navigation",
+        "Built accessible, reusable Flutter interfaces with Visa Nova components, including product grids, cart controls, verification prompts, loading states, result screens, banners, and checkout animations",
+        "Configured development, staging, and production flavors with separate application identifiers, release signing, ProGuard minification, and Flutter entry points",
+        "Applied strict static analysis through Very Good Analysis and established Flutter widget-testing and coverage infrastructure"
+      ],
+      "links": []
+    },
+    {
+      "name": "Visa NFC Reader",
+      "description": "Native iOS app for reading NFC payment cards, displaying tokenized card details, and validating Visa payment tokens.",
+      "tags": [
+        "iOS",
+        "NFC"
+      ],
+      "features": [
+        "NFC tag reading and payment card detection",
+        "Tokenized card data display and validation",
+        "Secure communication with Visa backend services"
+      ],
+      "links": []
+    },
+    {
+      "name": "Eagle Eye \u2013 Automated Accessibility Monitoring Platform",
+      "description": "Contributed to a TypeScript monorepo that automates accessibility testing and monitoring across enterprise web applications. Helped develop a React dashboard using Visa's Nova Design System and Apollo Client, a GraphQL API built with Pothos, Prisma, PostgreSQL, and Node.js, plus browser-injected and iframe-based tools for real-time accessibility scanning and issue visualization. Contributed to WCAG/VGAR test workflows, shared TypeScript models, GraphQL code generation, automated testing with Vitest, and CI/CD pipelines supporting per-branch deployments.",
+      "tags": [
+        "Accessibility",
+        "React",
+        "TypeScript",
+        "GraphQL",
+        "Node.js",
+        "Prisma",
+        "PostgreSQL",
+        "Nova Design System"
+      ],
+      "features": [
+        "Contributed to an enterprise accessibility monitoring platform using React, TypeScript, GraphQL, Node.js, Prisma, and PostgreSQL",
+        "Helped build automated browser-based accessibility tests that detect, report, and visualize WCAG/VGAR violations in real time",
+        "Helped design code-first GraphQL APIs with Pothos and Prisma and integrated them with Apollo Client and generated type-safe operations",
+        "Helped create reusable UI workflows using Visa's Nova Design System for reviewing scan results, application health, and accessibility trends",
+        "Helped maintain a PNPM monorepo with shared libraries across dashboard, API, scanning client, and real-time results applications",
+        "Contributed to reliability improvements through Vitest coverage, TypeScript validation, database migrations, CI/CD automation, and isolated branch deployments"
       ],
       "links": []
     },
@@ -673,8 +856,7 @@
       "name": "Flutter Themer",
       "description": "A website which helps you theme your entire Flutter app and shows a live preview. Simply copy the theme file and apply it in your Flutter project to style your entire app in a professional way.",
       "tags": [
-        "Flutter",
-        "Featured"
+        "Flutter"
       ],
       "features": [
         "Live preview of Flutter themes in real-time",
@@ -686,6 +868,63 @@
         {
           "text": "Visit Site \u2192",
           "url": "https://flutterthemer.github.io/"
+        }
+      ]
+    },
+    {
+      "name": "Youtube Channel Blocker",
+      "description": "Async Python + Playwright automation suite that filters unwanted YouTube content via keyword-driven DOM scanning and UI action automation \u2014 featuring a CLI with environment validation, session persistence, and rate-limit-aware pacing.",
+      "tags": [
+        "Python 3",
+        "asyncio",
+        "Playwright",
+        "Chromium Automation",
+        "YouTube Data API"
+      ],
+      "features": [
+        "Cleans up YouTube Home and Subscriptions feeds by matching video cards against a configurable keyword/channel blocklist",
+        "Automates \"Don't recommend channel\", \"Not interested\", and \"Hide\" actions on detected cards",
+        "Async browser driver with anti-detection pacing: randomized delays, cooldowns, and persistent session profiles",
+        "YouTube Data API channel-discovery fetcher for building blocklists from subscriptions",
+        "Google My Activity comments deleter",
+        "Full CLI with setup / doctor / start / keywords / config commands and self-healing venv bootstrap"
+      ],
+      "links": [
+        {
+          "text": "View on GitHub \u2192",
+          "url": "https://github.com/vipvijayan/yt_channel_blocker"
+        }
+      ]
+    },
+    {
+      "name": "CKAD Exercises \u2014 Study Site",
+      "description": "A fully static, offline-first study site for the Certified Kubernetes Application Developer (CKAD) exam \u2014 229 exercises across 19 curriculum domains, with every solution executed against a live kind cluster (Kubernetes v1.36) and corrected where the upstream instructions had gone stale.",
+      "tags": [
+        "Kubernetes",
+        "CKAD",
+        "Static Site",
+        "Vanilla JS",
+        "Tailwind CSS",
+        "Python",
+        "kind"
+      ],
+      "features": [
+        "229 exercises across 19 curriculum domains \u2014 Core Concepts, Pod Design, Configuration, Helm, CRDs, Network Policies, Ingress, PV/PVC, RBAC, and more",
+        "Every exercise and solution run against a real kind cluster (Kubernetes v1.36, containerd) and corrected where upstream text no longer matched current behavior",
+        "Click-to-reveal answers plus instant full-text search across all 229 questions and answers",
+        "Fully static and offline \u2014 no server, no build step, no runtime network calls; open index.html directly from disk",
+        "Official docs breadcrumbs linking each exercise to the exact kubernetes.io page \u2014 the only resource allowed in the exam",
+        "Python generator parses the 19 Markdown sources into JS data bundles; Tailwind v4 source compiled to minified CSS",
+        "Dark/light theme with OS-preference detection and a responsive desktop sidebar / mobile drawer layout"
+      ],
+      "links": [
+        {
+          "text": "Visit Site \u2192",
+          "url": "https://k8s-exam.github.io/k8s/"
+        },
+        {
+          "text": "View on GitHub \u2192",
+          "url": "https://github.com/vipvijayan/k8_ckad"
         }
       ]
     }
@@ -708,7 +947,7 @@
     ]
   },
   "footer": {
-    "text": "\u00a9 2025 Vipin Vijayan Nair. Built with React, Tailwind CSS, and a passion for clean code.",
+    "text": "\u00a9 2026 Vipin Vijayan Nair",
     "links": [
       {
         "text": "About",
