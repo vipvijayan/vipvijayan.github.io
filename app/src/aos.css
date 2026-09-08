@@ -1,0 +1,125 @@
+/* Minimal AOS stylesheet.
+   Replaces aos/dist/aos.css (26 KB) with only the animations this site uses:
+   fade-up, fade-down, fade-left, fade-right, zoom-in, zoom-out + delays. */
+
+[data-aos] {
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+[data-aos^="fade"][data-aos^="fade"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos^="fade"][data-aos^="fade"].aos-animate {
+  opacity: 1;
+  transform: none;
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, 100px, 0);
+}
+
+[data-aos="fade-down"] {
+  transform: translate3d(0, -100px, 0);
+}
+
+[data-aos="fade-right"] {
+  transform: translate3d(-100px, 0, 0);
+}
+
+[data-aos="fade-left"] {
+  transform: translate3d(100px, 0, 0);
+}
+
+[data-aos^="zoom"][data-aos^="zoom"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos^="zoom"][data-aos^="zoom"].aos-animate {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.6);
+}
+
+[data-aos="zoom-out"] {
+  transform: scale(1.2);
+}
+
+/* transition delays: 0-700ms in 10ms steps */
+[data-aos][data-aos][data-aos-delay="0"]{transition-delay:0ms}
+[data-aos][data-aos][data-aos-delay="10"]{transition-delay:10ms}
+[data-aos][data-aos][data-aos-delay="20"]{transition-delay:20ms}
+[data-aos][data-aos][data-aos-delay="30"]{transition-delay:30ms}
+[data-aos][data-aos][data-aos-delay="40"]{transition-delay:40ms}
+[data-aos][data-aos][data-aos-delay="50"]{transition-delay:50ms}
+[data-aos][data-aos][data-aos-delay="60"]{transition-delay:60ms}
+[data-aos][data-aos][data-aos-delay="70"]{transition-delay:70ms}
+[data-aos][data-aos][data-aos-delay="80"]{transition-delay:80ms}
+[data-aos][data-aos][data-aos-delay="90"]{transition-delay:90ms}
+[data-aos][data-aos][data-aos-delay="100"]{transition-delay:100ms}
+[data-aos][data-aos][data-aos-delay="110"]{transition-delay:110ms}
+[data-aos][data-aos][data-aos-delay="120"]{transition-delay:120ms}
+[data-aos][data-aos][data-aos-delay="130"]{transition-delay:130ms}
+[data-aos][data-aos][data-aos-delay="140"]{transition-delay:140ms}
+[data-aos][data-aos][data-aos-delay="150"]{transition-delay:150ms}
+[data-aos][data-aos][data-aos-delay="160"]{transition-delay:160ms}
+[data-aos][data-aos][data-aos-delay="170"]{transition-delay:170ms}
+[data-aos][data-aos][data-aos-delay="180"]{transition-delay:180ms}
+[data-aos][data-aos][data-aos-delay="190"]{transition-delay:190ms}
+[data-aos][data-aos][data-aos-delay="200"]{transition-delay:200ms}
+[data-aos][data-aos][data-aos-delay="210"]{transition-delay:210ms}
+[data-aos][data-aos][data-aos-delay="220"]{transition-delay:220ms}
+[data-aos][data-aos][data-aos-delay="230"]{transition-delay:230ms}
+[data-aos][data-aos][data-aos-delay="240"]{transition-delay:240ms}
+[data-aos][data-aos][data-aos-delay="250"]{transition-delay:250ms}
+[data-aos][data-aos][data-aos-delay="260"]{transition-delay:260ms}
+[data-aos][data-aos][data-aos-delay="270"]{transition-delay:270ms}
+[data-aos][data-aos][data-aos-delay="280"]{transition-delay:280ms}
+[data-aos][data-aos][data-aos-delay="290"]{transition-delay:290ms}
+[data-aos][data-aos][data-aos-delay="300"]{transition-delay:300ms}
+[data-aos][data-aos][data-aos-delay="310"]{transition-delay:310ms}
+[data-aos][data-aos][data-aos-delay="320"]{transition-delay:320ms}
+[data-aos][data-aos][data-aos-delay="330"]{transition-delay:330ms}
+[data-aos][data-aos][data-aos-delay="340"]{transition-delay:340ms}
+[data-aos][data-aos][data-aos-delay="350"]{transition-delay:350ms}
+[data-aos][data-aos][data-aos-delay="360"]{transition-delay:360ms}
+[data-aos][data-aos][data-aos-delay="370"]{transition-delay:370ms}
+[data-aos][data-aos][data-aos-delay="380"]{transition-delay:380ms}
+[data-aos][data-aos][data-aos-delay="390"]{transition-delay:390ms}
+[data-aos][data-aos][data-aos-delay="400"]{transition-delay:400ms}
+[data-aos][data-aos][data-aos-delay="410"]{transition-delay:410ms}
+[data-aos][data-aos][data-aos-delay="420"]{transition-delay:420ms}
+[data-aos][data-aos][data-aos-delay="430"]{transition-delay:430ms}
+[data-aos][data-aos][data-aos-delay="440"]{transition-delay:440ms}
+[data-aos][data-aos][data-aos-delay="450"]{transition-delay:450ms}
+[data-aos][data-aos][data-aos-delay="460"]{transition-delay:460ms}
+[data-aos][data-aos][data-aos-delay="470"]{transition-delay:470ms}
+[data-aos][data-aos][data-aos-delay="480"]{transition-delay:480ms}
+[data-aos][data-aos][data-aos-delay="490"]{transition-delay:490ms}
+[data-aos][data-aos][data-aos-delay="500"]{transition-delay:500ms}
+[data-aos][data-aos][data-aos-delay="510"]{transition-delay:510ms}
+[data-aos][data-aos][data-aos-delay="520"]{transition-delay:520ms}
+[data-aos][data-aos][data-aos-delay="530"]{transition-delay:530ms}
+[data-aos][data-aos][data-aos-delay="540"]{transition-delay:540ms}
+[data-aos][data-aos][data-aos-delay="550"]{transition-delay:550ms}
+[data-aos][data-aos][data-aos-delay="560"]{transition-delay:560ms}
+[data-aos][data-aos][data-aos-delay="570"]{transition-delay:570ms}
+[data-aos][data-aos][data-aos-delay="580"]{transition-delay:580ms}
+[data-aos][data-aos][data-aos-delay="590"]{transition-delay:590ms}
+[data-aos][data-aos][data-aos-delay="600"]{transition-delay:600ms}
+[data-aos][data-aos][data-aos-delay="610"]{transition-delay:610ms}
+[data-aos][data-aos][data-aos-delay="620"]{transition-delay:620ms}
+[data-aos][data-aos][data-aos-delay="630"]{transition-delay:630ms}
+[data-aos][data-aos][data-aos-delay="640"]{transition-delay:640ms}
+[data-aos][data-aos][data-aos-delay="650"]{transition-delay:650ms}
+[data-aos][data-aos][data-aos-delay="660"]{transition-delay:660ms}
+[data-aos][data-aos][data-aos-delay="670"]{transition-delay:670ms}
+[data-aos][data-aos][data-aos-delay="680"]{transition-delay:680ms}
+[data-aos][data-aos][data-aos-delay="690"]{transition-delay:690ms}
+[data-aos][data-aos][data-aos-delay="700"]{transition-delay:700ms}

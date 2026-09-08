@@ -19,7 +19,7 @@ const Certification = memo(function Certification({ certifications }: Certificat
           {certifications.items.map((certification, idx) => (
             <div key={idx} className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl overflow-hidden grid md:grid-cols-2 gap-0">
               <div data-aos="fade-right" className="p-6 flex items-center justify-center bg-[var(--color-bg-soft)]">
-                <img src={certification.image} alt={certification.imageAlt} width="400" height="300" className="rounded-lg max-h-80 w-auto" loading="lazy" />
+                <img src={certification.image} alt={certification.imageAlt} width="400" height="300" className="rounded-lg max-h-80 w-auto" loading="lazy" decoding="async" />
               </div>
               <div data-aos="fade-left" className="p-8">
                 <div className="inline-block bg-[var(--color-success)]/10 text-[var(--color-success)] text-sm font-semibold px-3 py-1 rounded-full mb-4">{certification.badge}</div>

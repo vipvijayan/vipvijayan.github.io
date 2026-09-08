@@ -44,7 +44,7 @@
     "subtitle": "Verified engineering credentials from leading institutions.",
     "items": [
       {
-        "image": "/certifications/ai-makerspace-cert.jpeg",
+        "image": "/certifications/ai-makerspace-cert.webp",
         "imageAlt": "AI Makerspace Bootcamp certificate",
         "badge": "Verified Certificate",
         "heading": "AI Makerspace Bootcamp",
@@ -61,7 +61,7 @@
         ]
       },
       {
-        "image": "/certifications/kubernetes-lfd259-cert.jpeg",
+        "image": "/certifications/kubernetes-lfd259-cert.webp",
         "imageAlt": "Kubernetes for Developers LFD259 certificate",
         "badge": "Verified Certificate",
         "heading": "Kubernetes for Developers (LFD259)",
