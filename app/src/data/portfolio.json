@@ -55,7 +55,6 @@
         "demoLinkText": "\ud83d\udcc4 View School Assistant Demo \u2192",
         "highlights": [
           "Built production-grade RAG systems with <strong>LangGraph</strong>, <strong>ChromaDB</strong>, and <strong>OpenAI</strong>",
-          "Deployed 8+ working AI prototypes to <strong>HuggingFace Spaces</strong>",
           "Completed 14 specialized AI modules across <strong>RAG, LLMs, MCP, and Agentic AI</strong>",
           "Mastered end-to-end <strong>AI pipeline design</strong> from data ingestion to evaluation"
         ]
@@ -176,10 +175,8 @@
             "LangChain",
             "LangGraph",
             "LlamaIndex",
-            "HuggingFace",
             "OpenAI API",
             "Anthropic SDK",
-            "HuggingFace Spaces",
             "Docker",
             "REST APIs"
           ]
@@ -530,7 +527,6 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"/></svg>",
         "title": "AI Infrastructure",
         "items": [
-          "HuggingFace deployment",
           "Model fine-tuning basics",
           "AI evaluation metrics",
           "Production monitoring"
