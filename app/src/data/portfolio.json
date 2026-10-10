@@ -60,6 +60,23 @@
         ]
       },
       {
+        "image": "/certifications/kubernetes-lfs158-cert.webp",
+        "imageAlt": "Introduction to Kubernetes LFS158 certificate",
+        "badge": "Verified Certificate",
+        "heading": "Introduction to Kubernetes (LFS158)",
+        "issuer": "Issued by The Linux Foundation \u2022 2026 \u2022 Credential ID: LF-9j538jf7nu",
+        "link": "https://training.linuxfoundation.org/training/introduction-to-kubernetes/",
+        "linkText": "Visit The Linux Foundation \u2192",
+        "demoLink": "/docs/kubernetes-lfs158-certificate.pdf",
+        "demoLinkText": "\ud83d\udcc4 View Certificate PDF \u2192",
+        "highlights": [
+          "Covered Kubernetes origin, architecture, primary components, and core building blocks",
+          "Set up and accessed a local Kubernetes cluster using Minikube",
+          "Deployed and accessed containerized applications on a Kubernetes environment",
+          "Learned <strong>ConfigMaps</strong>, <strong>Secrets</strong>, and <strong>Ingress</strong> for app configuration and exposure"
+        ]
+      },
+      {
         "image": "/certifications/kubernetes-lfd259-cert.webp",
         "imageAlt": "Kubernetes for Developers LFD259 certificate",
         "badge": "Verified Certificate",
